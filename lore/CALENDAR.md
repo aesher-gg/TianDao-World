@@ -1,13 +1,17 @@
-# Kalender TianDao
+# KALENDER RESMI TIANDAO-WORLD
 
-## Struktur Waktu
-- 1 tahun terdiri dari 4 musim: Semi, Panas, Gugur, Dingin.
-- Satu tanggal menggunakan format `Tanggal Bulan`.
-- Jam dunia dicatat dalam format 24 jam.
-- Hari mengikuti siklus tujuh hari.
+## Struktur
+- 1 tahun = 4 musim.
+- 1 tahun = 12 bulan.
+- 1 minggu = 7 hari.
+- 1 hari = 24 jam untuk pencatatan sistem.
+- Format tanggal: `Tahun XXXX | Musim | Tanggal DD | Bulan Nama | Hari`.
 
-## Epoch
-**Tahun 1, Musim Semi, Tanggal 1 Bulan 1** adalah titik awal kalender permainan untuk karakter baru.
+## Musim
+1. Semi
+2. Panas
+3. Gugur
+4. Dingin
 
 ## Bulan
 1. Bulan Bunga — Semi
@@ -23,5 +27,14 @@
 11. Bulan Es — Dingin
 12. Bulan Malam Panjang — Dingin
 
-## Aturan GM
-Waktu hanya maju melalui aksi/event yang valid. Durasi perjalanan, istirahat, kultivasi dan combat dicatat oleh Time System. Event terjadwal memakai tanggal yang ditentukan event tersebut.
+## Siklus Hari
+Hari ke-1 Senin, ke-2 Selasa, ke-3 Rabu, ke-4 Kamis, ke-5 Jumat, ke-6 Sabtu, ke-7 Minggu. Setelah Minggu kembali ke Senin.
+
+## Epoch
+**Tahun 1, Musim Semi, Tanggal 1, Bulan Bunga, Hari Senin** adalah titik awal kalender permainan.
+
+## Peristiwa Kalender
+Festival, hari pasar, upacara faction, dan event terjadwal harus memiliki tanggal resmi. GM boleh membuat kegiatan harian lokal, tetapi kegiatan tersebut tidak boleh mengubah kalender global.
+
+## Aturan Waktu
+Waktu hanya maju melalui aksi/event valid. Durasi perjalanan, istirahat, kultivasi, combat, dan efek kondisi mengikuti `core/02_TIME_SYSTEM.md`. Tidak ada lompatan waktu tersembunyi.
