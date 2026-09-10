@@ -12,28 +12,22 @@ Tanah Salju Beiming adalah wilayah utara dengan musim dingin panjang, dataran be
 ## Lokasi Canon
 ### Kota Beixue
 Kota benteng yang menjadi pintu utama menuju wilayah utara.
-
 ### Benteng Hanjiang
 Pos pertahanan dan perdagangan yang mengontrol salah satu jalur darat utara.
-
 ### Desa Xuehe
 Permukiman kecil di tepi sungai beku. Bergantung pada hasil buruan dan suplai dari kota.
-
 ### Lembah Bingxin
 Lembah dengan temperatur ekstrem dan medan yang menuntut persiapan.
-
 ### Reruntuhan Tianhan
 Situs kuno yang sebagian besar tertutup es. Isi, ancaman dan akses ruang dalam ditentukan oleh lore/event resmi.
 
 ## Faction Utama
 ### Sekte Salju Xuanyin
-Sekte kultivasi utara dengan kepentingan atas tradisi dan sumber daya spiritual wilayah dingin.
-
+**ID: REG-009.** Sekte kultivasi utara dengan kepentingan atas tradisi dan sumber daya spiritual wilayah dingin.
 ### Benteng Besi Beichen
-Kekuatan militer dan penjaga jalur utara.
-
+**ID: REG-010.** Kekuatan militer dan penjaga jalur utara.
 ### Paviliun Salju Putih
-Jaringan pedagang dan pengangkut wilayah dingin.
+**ID: REG-011.** Jaringan pedagang dan pengangkut wilayah dingin.
 
 ## Hubungan Faction Dasar
 - Benteng Besi Beichen ↔ Paviliun Salju Putih: kerja sama logistik dan keamanan.
