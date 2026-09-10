@@ -33,6 +33,10 @@
 - `systems/16_KARMA.md`
 - `systems/17_REPUTATION.md`
 - `systems/18_LOOT.md`
+- `systems/19_REGIONAL_MONSTER_ECOSYSTEM.md`
+- `systems/20_TRAVEL_ROUTES.md`
+- `systems/21_REGIONAL_ECONOMY.md`
+- `systems/22_REGIONAL_FACTION_RELATIONS.md`
 
 ## Characters
 - `characters/players.md`
@@ -48,6 +52,8 @@
 
 ## Events
 - `events/39_CUSTOM_EVENTS.md`
+- `events/world_events/00_WORLD_EVENT_REGISTRY.md`
+- `events/scheduled_events/00_SCHEDULED_EVENT_REGISTRY.md`
 - `events/world_events/`
 - `events/scheduled_events/`
 
