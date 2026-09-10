@@ -12,28 +12,22 @@ Laut Dongming adalah kawasan kepulauan luas dengan pelabuhan, arus laut spiritua
 ## Lokasi Canon
 ### Kota Haicheng
 Pelabuhan utama perdagangan timur dan titik keberangkatan banyak kapal.
-
 ### Pulau Yuehai
 Pulau berpenduduk dengan pasar laut dan penginapan bagi pelaut serta kultivator.
-
 ### Kepulauan Lanyue
 Gugusan pulau dengan jalur pelayaran yang lebih berbahaya dan kondisi cuaca berubah cepat.
-
 ### Jurang Laut Canglong
 Wilayah laut dalam yang jarang dijelajahi. Informasi mengenai bagian terdalam harus berasal dari sumber canon atau pengetahuan NPC yang sah.
-
 ### Pulau Qionghua
 Pulau spiritual dengan vegetasi khas dan sumber daya lokal yang terbatas.
 
 ## Faction Utama
 ### Istana Naga Dongming
-Kekuatan kultivator laut dan klan spiritual. Memiliki kepentingan atas wilayah dan jalur laut tertentu.
-
+**ID: REG-006.** Kekuatan kultivator laut dan klan spiritual. Memiliki kepentingan atas wilayah dan jalur laut tertentu.
 ### Sekte Pedang Ombak
-Perguruan yang memadukan pedang dan mobilitas di medan laut.
-
+**ID: REG-007.** Perguruan yang memadukan pedang dan mobilitas di medan laut.
 ### Aliansi Pedagang Haixu
-Jaringan niaga antarpulau. Kontrak, reputasi dan keamanan menentukan akses.
+**ID: REG-008.** Jaringan niaga antarpulau. Kontrak, reputasi dan keamanan menentukan akses.
 
 ## Hubungan Faction Dasar
 - Istana Naga Dongming ↔ Aliansi Pedagang Haixu: hubungan dagang yang bergantung pada izin dan jalur.
