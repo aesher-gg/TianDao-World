@@ -20,7 +20,13 @@ C. Karakter baru: nama dan lokasi awal harus valid.
 Track HP, Qi, Stamina, Satiety, kondisi, trauma, Karma, waktu, inventory, bobot, cultivation progress, Law Origin Log, dan Item Origin Log. Tidak ada retroactive edit.
 
 ## 4. Waktu
-Aksi non-kultivasi maksimal 3 jam per giliran. Kultivasi murni maksimal 1 bulan hanya jika: aktivitas tunggal kultivasi, lokasi aman/stasioner, logistik jelas, checkpoint wajib, dan durasi <= 1 bulan. Maksimal 3 bulan kultivasi intensif berturut-turut, lalu minimal 1 minggu istirahat.
+- Aksi non-kultivasi maksimal 3 jam per giliran.
+- Tidur adalah pengecualian resmi dari batas 3 jam. Player dapat menyatakan tidur untuk memajukan waktu beberapa jam, dan GM menentukan durasi yang wajar berdasarkan kondisi, lingkungan, dan situasi dunia.
+- Tidur tidak menghentikan dunia dan tidak menjamin keamanan. NPC, event, cuaca, ancaman, dan kejadian dunia tetap dapat berlangsung selama karakter tidur.
+- Pemulihan selama tidur mengikuti modul terkait dan tidak otomatis penuh. Satiety tetap diproses selama waktu berlalu.
+- Istirahat biasa tetap mengikuti batas 3 jam dan tidak otomatis dianggap tidur.
+- Tidak ada time skip tersembunyi; setiap lompatan waktu harus memiliki alasan dan durasi yang jelas.
+- Kultivasi murni maksimal 1 bulan hanya jika: aktivitas tunggal kultivasi, lokasi aman/stasioner, logistik jelas, checkpoint wajib, dan durasi <= 1 bulan. Maksimal 3 bulan kultivasi intensif berturut-turut, lalu minimal 1 minggu istirahat.
 
 ## 5. Custom Content
 39_CUSTOM_EVENTS wajib dimuat awal setiap sesi. 39–42 dikelola Admin. Jika konflik dengan data resmi, custom content menjadi override. Konten yang tidak tercatat tidak dapat diklaim sebagai fakta.
