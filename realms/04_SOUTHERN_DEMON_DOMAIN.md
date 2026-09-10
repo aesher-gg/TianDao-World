@@ -33,7 +33,7 @@ Konfederasi beberapa klan yao. Setiap klan memiliki kepentingan internal; keputu
 Kelompok kultivator yang berakar di kawasan pegunungan api. Kepentingan mereka berpusat pada kultivasi dan sumber daya panas bumi.
 
 ### Serikat Seratus Daun
-Organisasi pemburu dan pedagang bahan alam langka. Transaksi tunduk pada aturan lokasi dan sumber barang.
+**ID: CRI-001; nama dan identitas faction mengikuti `factions/criminal/00_CRIMINAL_DATABASE.md`.** Di wilayah ini mereka dapat tampil di permukaan sebagai pemburu/pedagang bahan alam langka, sementara aktivitas ilegal seperti penyelundupan, kontrak ilegal, atau pertukaran informasi hanya boleh terjadi melalui jalur yang sah dan berisiko. Deskripsi regional ini tidak memberi status legal otomatis dan tidak menghapus identitas kriminalnya.
 
 ## Hubungan Faction Dasar
 - Istana Yaohuang ↔ Sekte Api Merah: hubungan pragmatis dengan kepentingan yang dapat tumpang tindih.
@@ -54,7 +54,7 @@ Durasi dan tingkat keamanan ditentukan oleh sarana, kondisi dan event resmi.
 
 ## Habitat dan Ancaman
 - Hutan: spirit beast dan monster sesuai database.
-- Rawa: makhluk air dan medan buruk bila tercatat.
+- Rawa: makhluk air dan medan buruk bila tercatat dalam database.
 - Lembah: flora khusus dan bahaya lingkungan sesuai database.
 - Pegunungan: makhluk tahan panas dan bahaya geologis bila tersedia dalam database.
 Tidak boleh ada loot baru tanpa sumber resmi.
