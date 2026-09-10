@@ -50,6 +50,9 @@
 - `story/ACTIVE_THREADS.md` — unresolved quests, conflicts, promises, contracts, and other active threads
 - `story/STORY_TIMELINE.md` — compact chronological index of major resolved events
 
+## Audits
+- `audits/2026-09-10_WORLD_AUDIT.md` — repository/runtime integrity audit
+
 ## Factions — Canon Databases
 - `factions/sects/00_SECT_DATABASE.md`
 - `factions/dojos/00_DOJO_DATABASE.md`
