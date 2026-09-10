@@ -44,6 +44,7 @@
 - `factions/imperial/00_IMPERIAL_DATABASE.md`
 - `factions/criminal/00_CRIMINAL_DATABASE.md`
 - `factions/organizations/00_ORGANIZATION_DATABASE.md`
+- `factions/regional/00_REGIONAL_FACTION_DATABASE.md`
 
 ## Events
 - `events/39_CUSTOM_EVENTS.md`
