@@ -1,7 +1,7 @@
 # Runtime State Validator
 
 ## Tujuan
-Memastikan state yang akan diterapkan merupakan hasil transisi sah, bukan klaim atau retcon.
+Memastikan state dan persistent memory yang akan diterapkan merupakan hasil transisi sah, bukan klaim, kebocoran antar-character, atau retcon.
 
 ## Pre-Resolution Validation
 - [ ] Waktu dunia valid dan tidak mundur.
@@ -15,9 +15,11 @@ Memastikan state yang akan diterapkan merupakan hasil transisi sah, bukan klaim 
 - [ ] Informasi yang digunakan memang diketahui karakter.
 - [ ] Event/faction/NPC yang relevan dimuat.
 - [ ] Durasi aksi memenuhi Time System.
+- [ ] Character History yang dimuat cocok dengan Active Character ID.
+- [ ] Shared story memory yang digunakan memang relevan.
 
 ## Post-Resolution Validation
-- [ ] Waktu bertambah tepat sesuai resolusi.
+- [ ] Waktu bertambah tepat.
 - [ ] Semua cost diterapkan.
 - [ ] Tidak ada resource negatif/di atas cap tanpa aturan resmi.
 - [ ] Cedera/status negatif tidak hilang tanpa penyebab sah.
@@ -27,6 +29,11 @@ Memastikan state yang akan diterapkan merupakan hasil transisi sah, bukan klaim 
 - [ ] NPC reaction tidak memberi pengetahuan yang tidak mereka miliki.
 - [ ] Event hanya berubah jika trigger terpenuhi.
 - [ ] State baru dapat ditelusuri ke sumber.
+- [ ] Character History update hanya memuat fakta yang benar-benar terjadi.
+- [ ] Character History tidak memuat data Character lain.
+- [ ] Active Threads memiliki origin dan status yang dapat ditelusuri.
+- [ ] World State/Timeline hanya diperbarui untuk fakta shared/world-level yang terkonfirmasi.
+- [ ] Write-back status diketahui dan tidak dipalsukan.
 
 ## Invalid State
-Jika satu pemeriksaan material gagal, jangan menerapkan state. Kembali ke nilai terakhir yang terverifikasi atau minta klarifikasi bila konteks aksi yang sah belum cukup.
+Jika satu pemeriksaan material gagal, jangan menerapkan state. Kembali ke nilai terakhir yang terverifikasi atau minta klarifikasi bila konteks aksi yang sah belum cukup. Jangan menulis memory yang bergantung pada state yang gagal.
