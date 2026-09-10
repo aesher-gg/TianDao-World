@@ -11,6 +11,7 @@
 - `core/03_ACTION_SYSTEM.md`
 - `core/04_ANTI_CHEAT.md`
 - `core/05_SAVE_INTEGRITY.md`
+- `core/06_ID_AND_SAVE_SYSTEM.md`
 
 ## Realms
 - `realms/01_WORLD_MAP.md`
@@ -39,8 +40,9 @@
 - `systems/22_REGIONAL_FACTION_RELATIONS.md`
 
 ## Characters
-- `characters/players.md`
-- `characters/players/`
+- `characters/players.md` — Player Registry
+- `characters/character_registry.md` — Character Registry
+- `characters/players/` — Individual Current Character State files
 
 ## Factions — Canon Databases
 - `factions/sects/00_SECT_DATABASE.md`
@@ -90,10 +92,10 @@
 3. Relevant realm/system modules.
 4. Faction databases dan city/NPC databases bila relevan.
 5. Lore yang relevan.
-6. Current character state.
+6. Current character state yang sesuai dengan Character ID aktif.
 7. Player intent.
 
 ## Runtime Prompt Contract
 - `gm/PLAYER_BOOT_PROMPT.md` digunakan sekali pada boot karakter/sesi baru untuk memuat World Bible dan current state.
 - `gm/ACTION_RUNTIME_PROMPT.md` digunakan pada setiap aksi gameplay berikutnya.
-- Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, dan seluruh sumber yang ditunjuk INDEX.
+- Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
