@@ -4,9 +4,17 @@
 Menjaga agar state karakter dan dunia dapat ditelusuri, tidak berubah diam-diam, dan tidak dapat di-retcon untuk memperoleh keuntungan.
 
 ## Pemisahan Data
-- `characters/players.md`: katalog/starting data karakter.
-- `characters/players/<character>.md`: current character state operasional setelah karakter dimainkan.
+- `characters/players.md`: Player Registry dan pemetaan Player → Character; bukan current state.
+- `characters/character_registry.md`: Character Registry dan pemetaan Character ID → Player ID → Current State; bukan current state.
+- `characters/players/<CHARACTER_ID>.md`: current character state operasional untuk satu Character.
+- `core/06_ID_AND_SAVE_SYSTEM.md`: aturan ID, isolasi, dan lifecycle save.
 - World Bible, System, Custom/Admin, dan Event resmi: sumber aturan/fakta dunia sesuai hierarki prioritas.
+
+## Identity Integrity
+- Player ID dan Character ID harus unik dan stabil.
+- Character ID tidak boleh dipakai ulang setelah Character mati permanen/diarsipkan.
+- Nama Character bukan primary identifier.
+- State satu Character tidak boleh menimpa state Character lain.
 
 ## Origin Log Wajib
 Setiap perubahan material pada state harus memiliki asal yang dapat ditelusuri, minimal:
@@ -26,6 +34,8 @@ Perubahan item, equipment, currency, teknik, realm, HP, Qi, Stamina, Satiety, ko
 ## Konflik Data
 Prioritas sumber mengikuti aturan Core/GM: Canon/Admin dan Custom/Admin yang berlaku mengungguli interpretasi GM; System mengatur resolusi mekanis; Current State mencerminkan hasil yang telah sah; klaim player tanpa bukti tidak mengubah state.
 
+Untuk konflik antar-character, gunakan Character ID sebagai identitas utama dan jangan pernah menggabungkan state dua Character.
+
 ## Anti-Retcon
 - Dilarang menambahkan item/teknik/status/uang setelah fakta tanpa asal.
 - Dilarang menghapus cedera, utang, cooldown, kehilangan item, reputasi buruk, atau konsekuensi tanpa proses pemulihan yang sah.
@@ -34,13 +44,14 @@ Prioritas sumber mengikuti aturan Core/GM: Canon/Admin dan Custom/Admin yang ber
 
 ## Integrity Check
 Sebelum menerima state baru, GM harus memeriksa:
-1. lokasi dan waktu konsisten;
-2. resource tidak melebihi kapasitas;
-3. inventory memiliki sumber;
-4. teknik dan realm memiliki jalur perkembangan yang sah;
-5. kondisi negatif memiliki penyebab dan belum dihapus tanpa penyembuhan;
-6. faction rank/reputation memiliki event atau interaksi yang mendasari;
-7. perubahan besar memiliki event/Canon yang mendukung.
+1. Player ID dan Character ID valid serta cocok dengan Registry;
+2. lokasi dan waktu konsisten;
+3. resource tidak melebihi kapasitas;
+4. inventory memiliki sumber;
+5. teknik dan realm memiliki jalur perkembangan yang sah;
+6. kondisi negatif memiliki penyebab dan belum dihapus tanpa penyembuhan;
+7. faction rank/reputation memiliki event atau interaksi yang mendasari;
+8. perubahan besar memiliki event/Canon yang mendukung.
 
 ## Restore / Recovery
 Jika save rusak atau data hilang, GM tidak boleh mengisi kekosongan dengan tebakan. Gunakan snapshot/Origin Log terakhir yang dapat dibuktikan. Jika tidak ada bukti yang cukup, state dikembalikan ke nilai terakhir yang terverifikasi, bukan nilai yang diminta player.
