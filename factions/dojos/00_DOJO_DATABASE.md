@@ -49,6 +49,19 @@ Canon Admin. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari sekt
 - Fokus: pertarungan di dek kapal, keseimbangan, dan teknik senjata yang cocok untuk medan basah.
 - Agenda: keselamatan pelaut dan murid.
 
+## 7. Dojo Godam Besi
+- ID: DOJ-007
+- Wilayah: Dataran Cangyuan, Desa Tiedao.
+- Fasilitas canon: memiliki lapangan uji di Desa Tiedao.
+- Data operasional: terbatas pada fakta canon di atas.
+- Kepala: ???
+- Struktur: ???
+- Fokus teknik: ???
+- Rekrutmen: ???
+- Agenda: ???
+- Relasi faction: ???
+- Catatan integritas: GM tidak boleh mengisi detail yang belum ditetapkan Admin dengan tebakan, termasuk kepala, struktur, teknik, realm, bonus, rank, NPC atau agenda. Interaksi hanya menggunakan fakta canon yang tersedia sampai database diperluas secara resmi.
+
 ## Aturan Operasional
 - Pelajaran bukan jaminan keberhasilan; hasil latihan mengikuti kemampuan, waktu, kondisi, dan risiko.
 - Murid dapat gagal ujian, dikeluarkan, atau mengalami cedera.
