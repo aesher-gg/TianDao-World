@@ -43,6 +43,12 @@
 - `characters/players.md` — Player Registry
 - `characters/character_registry.md` — Character Registry
 - `characters/players/` — Individual Current Character State files
+- `character_history/` — Persistent private story memory per Character ID
+
+## Persistent Story Memory
+- `story/WORLD_STATE.md` — shared world facts with ongoing consequences
+- `story/ACTIVE_THREADS.md` — unresolved quests, conflicts, promises, contracts, and other active threads
+- `story/STORY_TIMELINE.md` — compact chronological index of major resolved events
 
 ## Factions — Canon Databases
 - `factions/sects/00_SECT_DATABASE.md`
@@ -92,10 +98,14 @@
 3. Relevant realm/system modules.
 4. Faction databases dan city/NPC databases bila relevan.
 5. Lore yang relevan.
-6. Current character state yang sesuai dengan Character ID aktif.
-7. Player intent.
+6. Shared persistent world state dan active story threads bila relevan.
+7. Current character state yang sesuai dengan Character ID aktif.
+8. Character History milik Character ID aktif bila tersedia.
+9. Player intent.
 
 ## Runtime Prompt Contract
-- `gm/PLAYER_BOOT_PROMPT.md` digunakan sekali pada boot karakter/sesi baru untuk memuat World Bible dan current state.
+- `gm/PLAYER_BOOT_PROMPT.md` digunakan sekali pada boot karakter/sesi baru untuk memuat World Bible, current state, dan memory yang relevan.
 - `gm/ACTION_RUNTIME_PROMPT.md` digunakan pada setiap aksi gameplay berikutnya.
+- Setiap aksi yang menghasilkan perubahan material wajib melewati Save Pipeline.
+- Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; memory hanya mencatat fakta yang benar-benar telah terjadi.
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
