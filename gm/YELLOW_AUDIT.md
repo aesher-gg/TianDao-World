@@ -1,14 +1,14 @@
 # AUDIT INTEGRITAS YELLOW — TIANDAO-WORLD
 
 ## Status
-Audit menyeluruh terhadap hasil pengembangan Yellow. Audit ini **tidak memulai item ❌** dan tidak menambah canon baru tanpa sumber.
+**YELLOW — INTEGRITY VERIFIED.** Seluruh open sync item dari audit Yellow telah ditutup. Audit ini tetap tidak memulai item ❌.
 
 ## Scope
 Dicek terhadap:
 - `INDEX.md`
 - `realms/01_WORLD_MAP.md`
 - seluruh modul regional `realms/02`–`realms/07`
-- database sect, dojo, imperial, criminal, organization
+- database sect, dojo, imperial, criminal, organization, dan regional faction
 - `lore/CITY_VILLAGE_DATABASE.md`
 - `lore/NPC_DATABASE.md`
 - `core/04_ANTI_CHEAT.md`
@@ -16,69 +16,51 @@ Dicek terhadap:
 - `custom/41_CUSTOM_SECTS.md`
 - `events/39_CUSTOM_EVENTS.md`
 
-## Hasil Ringkas
-### PASS — Tidak ditemukan konflik nama exact pada registry utama
-- ID faction pada database Yellow menggunakan namespace terpisah: SEC, DOJ, ORG, CRI.
-- `Seratus Racun` tidak lagi muncul; nama aktif adalah **Serikat Seratus Daun**.
-- **Paviliun Seribu Daun** dan **Serikat Seratus Daun** bukan nama exact yang sama. Keduanya wajib diperlakukan sebagai dua faction berbeda.
-- `Aula Segel Tianhe` dan `Persekutuan Pengrajin Tianhe` juga merupakan dua faction berbeda; kemiripan kata tidak boleh dianggap sebagai identitas yang sama.
+## Hasil
+### PASS — Nama faction
+Tidak ditemukan konflik nama exact pada registry utama. `Serikat Seratus Daun` dan `Paviliun Seribu Daun` tetap dua faction berbeda; `Aula Segel Tianhe` dan `Persekutuan Pengrajin Tianhe` juga berbeda.
 
-### FIXED — Konflik deskripsi Serikat Seratus Daun
-Temuan awal: modul Domain Yaohuang Selatan menggambarkan Serikat Seratus Daun sebagai organisasi pemburu/pedagang bahan alam langka, sedangkan registry kriminal CRI-001 menetapkannya sebagai faction kriminal dengan penyelundupan, kontrak ilegal dan informasi.
+### PASS — Identitas Serikat Seratus Daun
+Deskripsi regional dan registry kriminal CRI-001 sudah sinkron: tampilan pemburu/pedagang dapat menjadi aktivitas permukaan, sedangkan identitas kriminal dan aktivitas ilegal tetap mengikuti registry resmi.
 
-Perbaikan: deskripsi regional sekarang menyatakan bahwa aktivitas pemburu/pedagang dapat menjadi tampilan permukaan, sementara aktivitas ilegal mengikuti registry CRI-001. Status kriminal dan konsekuensi hukum tidak hilang. Dengan demikian satu faction memiliki identitas yang konsisten lintas modul.
+### PASS — Sinkronisasi lokasi
+Registry kota/desa/lokasi sudah memuat referensi regional yang diperlukan, termasuk Desa Tiedao dan lapangan uji Dojo Godam Besi.
 
-### FIXED — Sinkronisasi lokasi
-Registry kota/desa sebelumnya tidak memuat semua permukiman yang disebut modul regional. Registry sekarang menampung seluruh kota/desa/pos/benteng/pelabuhan yang dirujuk, sekaligus membedakan lokasi non-permukiman seperti lembah, hutan, puncak, reruntuhan, oasis dan wilayah laut/gurun.
+### FIXED → PASS — Dojo Godam Besi
+Dojo Godam Besi kini terdaftar sebagai **DOJ-007** di `factions/dojos/00_DOJO_DATABASE.md`, dengan fakta canon minimal: berada di Desa Tiedao dan memiliki lapangan uji. Kepala, struktur, teknik, rank, bonus, NPC, agenda, dan data operasional yang belum canon tetap `???`/terbatas dan tidak boleh ditebak GM.
 
-Contoh yang disinkronkan: Kota Lingshan, Desa Yunmu, Kota Nanyao, Pelabuhan Chixia, Benteng Hanjiang, Desa Xuehe, Kota Shajing, Kota Jinyue, serta lokasi non-permukiman seperti Lembah Qinghe.
+### FIXED → PASS — 14 faction regional
+Dibuat `factions/regional/00_REGIONAL_FACTION_DATABASE.md` sebagai registry global khusus faction regional yang tidak tepat dipaksa masuk kategori sekte/dojo/imperial/criminal/organisasi umum. Ke-14 faction menerima ID resmi REG-001 sampai REG-014 dengan data hanya dari modul regional:
+- REG-001 Sekte Gunung Qingluan
+- REG-002 Istana Bambu Giok
+- REG-003 Paviliun Pemburu Roh
+- REG-004 Istana Yaohuang
+- REG-005 Sekte Api Merah
+- REG-006 Istana Naga Dongming
+- REG-007 Sekte Pedang Ombak
+- REG-008 Aliansi Pedagang Haixu
+- REG-009 Sekte Salju Xuanyin
+- REG-010 Benteng Besi Beichen
+- REG-011 Paviliun Salju Putih
+- REG-012 Kuil Sembilan Teratai
+- REG-013 Sekte Pasir Emas
+- REG-014 Liga Kafilah Jinyue
 
-### OPEN — Referensi Dojo Godam Besi belum memiliki registry faction
-`Desa Tiedao` merujuk pada lapangan uji **Dojo Godam Besi**, tetapi dojo tersebut belum memiliki entri di `factions/dojos/00_DOJO_DATABASE.md`.
-
-Keputusan audit: **jangan mengarang kepala dojo, struktur, spesialisasi, teknik, NPC, rank, atau modifier.** Referensi lokasi dipertahankan karena sudah menjadi fakta pada registry lokasi, tetapi interaksi faction yang membutuhkan data resmi harus dianggap belum terdefinisi sampai Admin mendaftarkannya.
-
-### OPEN — Faction regional belum seluruhnya masuk global registry
-Beberapa faction pada modul regional belum memiliki ID pada database faction global. Ini bukan bukti kontradiksi isi, tetapi merupakan celah sinkronisasi yang dapat menyebabkan GM membuat data ganda.
-
-Faction yang perlu registry resmi sebelum diberi data operasional tambahan:
-- Pegunungan Qingluan: Sekte Gunung Qingluan; Istana Bambu Giok; Paviliun Pemburu Roh.
-- Domain Yaohuang Selatan: Istana Yaohuang; Sekte Api Merah.
-- Laut Dongming: Istana Naga Dongming; Sekte Pedang Ombak; Aliansi Pedagang Haixu.
-- Tanah Salju Beiming: Sekte Salju Xuanyin; Benteng Besi Beichen; Paviliun Salju Putih.
-- Gurun Jinyan: Kuil Sembilan Teratai; Sekte Pasir Emas; Liga Kafilah Jinyue.
-
-Aturan sementara: modul regional hanya boleh menggunakan fakta yang sudah tertulis di modul tersebut untuk faction-faction ini. GM tidak boleh mengisi struktur, pemimpin, teknik, aset, rank, bonus, atau agenda tambahan dari tebakan.
+Semua modul regional terkait telah diberi ID silang agar nama faction tidak lagi berdiri tanpa registry global. ID tidak memberi kekuatan, teknik, aset, pemimpin, rank, modifier atau agenda baru.
 
 ### PASS — NPC knowledge / information leakage
-NPC Database tidak memberikan realm, inventory, lokasi rahasia, teknik tersembunyi, atau akses global yang tidak perlu. Pengetahuan NPC dibatasi oleh peran, pengalaman dan akses. NPC kriminal `???` tetap dilindungi dari kebocoran identitas.
+Pengetahuan NPC tetap dibatasi oleh peran, pengalaman, akses dan informasi in-character. NPC tidak memperoleh pengetahuan player hanya karena GM/pembaca mengetahuinya.
 
-Tambahan pengaman pada Anti-Cheat: NPC tidak boleh mengetahui identitas, lokasi, inventory, niat, teknik atau riwayat player hanya karena diketahui GM/pembaca.
+### PASS — Relasi faction
+Tidak ditemukan kontradiksi relasi langsung. Relasi regional tetap merupakan hubungan dasar dan tidak menghapus agenda NPC atau event.
 
-### PASS — Relasi faction utama
-Relasi yang diperiksa tidak memiliki kontradiksi langsung yang memaksa dua sikap berlawanan pada faction yang sama. Kompetisi Canglan–Feiyun konsisten antara database dan Dataran Cangyuan. Hubungan Dinasti–faction juga tetap bersifat selektif/kontraktual dan tidak mengubah faction independen menjadi bawahan otomatis.
+### PASS — Anti-cheat / save integrity
+Hardening sebelumnya tetap berlaku untuk provenance item/currency/technique/status, time skip, aksi berantai, auto-resolution combat, status negatif, knowledge NPC, transisi state, retcon, generated canon, dan recovery save.
 
-Relasi regional tetap diperlakukan sebagai hubungan dasar, bukan keadaan permanen yang meniadakan agenda NPC atau event.
+## Penutupan Open Sync
+**0 open sync items tersisa.**
 
-### PASS — Anti-cheat / save integrity setelah hardening
-Celah yang diperkuat:
-- klaim item/currency/technique/status tanpa provenance;
-- time skip tersembunyi dan aksi berantai ilegal;
-- auto-hit/auto-crit/auto-kill;
-- penghapusan status negatif tanpa pemulihan;
-- kebocoran knowledge NPC;
-- perubahan Current State tanpa transisi;
-- retcon terhadap inventory, debt, cooldown, reputation, faction rank dan waktu;
-- generated GM content yang diam-diam menjadi canon dunia luas;
-- recovery save dengan tebakan yang menguntungkan player.
+Yellow sekarang **lulus dan terkunci secara integritas** pada level registry/sinkronisasi. Data operasional yang belum canon sengaja tetap terbatas agar penutupan audit tidak berubah menjadi penciptaan lore ilegal.
 
-`core/05_SAVE_INTEGRITY.md` sekarang mewajibkan Origin Log untuk perubahan material dan pemeriksaan sebelum menerima state baru.
-
-## Kesimpulan Audit
-**Yellow lulus audit integritas pada level aturan inti, dengan 2 open sync items:**
-1. Dojo Godam Besi belum diregistrasikan.
-2. 14 faction regional belum memiliki entri global registry.
-
-Kedua temuan tersebut sengaja **tidak diisi dengan data buatan** selama audit. Penyelesaian harus berasal dari keputusan Canon/Admin atau tahap pengembangan berikutnya.
-
-**Status ❌:** BELUM DIMULAI.
+## Tahap Berikutnya
+**Status ❌: BELUM DIMULAI.** Tidak ada modul ❌ yang diubah sebagai bagian dari penutupan Open Sync ini.
