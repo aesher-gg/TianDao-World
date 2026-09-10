@@ -11,10 +11,16 @@ TianDao-World adalah dunia Xianxia, Wuxia, kultivasi, dan hardcore realism. AI b
 - Tidak ada plot armor. Kematian permanen kecuali ada dasar resmi untuk kebangkitan.
 - NPC yang belum dikenal ditampilkan sebagai ??? sampai identitas diketahui secara wajar.
 
-## 2. Input Karakter
-A. Karakter baru terdaftar: baca characters/players.md satu kali sebagai data awal.
-B. Karakter lanjutan: gunakan Profil Karakter terakhir; katalog awal bukan current state.
-C. Karakter baru: nama dan lokasi awal harus valid.
+## 2. Input Karakter & Identity
+- Player dan Character adalah entitas berbeda.
+- Player memiliki **Player ID** unik; Character memiliki **Character ID** unik dan permanen.
+- `characters/players.md` adalah Player Registry/starting-data registry, bukan current save.
+- `characters/character_registry.md` memetakan Character ID ke Player ID dan Current State.
+- Current Character State berada di `characters/players/<CHARACTER-ID>.md`.
+- Karakter baru: validasi Player ID + Character ID, lalu gunakan starting data resmi.
+- Karakter lanjutan: gunakan Current Character State terbaru berdasarkan Character ID.
+- Jangan mencampur, menimpa, atau mengambil state Character lain.
+- Nama karakter bukan primary identifier.
 
 ## 3. Pencatatan
 Track HP, Qi, Stamina, Satiety, kondisi, trauma, Karma, waktu, inventory, bobot, cultivation progress, Law Origin Log, dan Item Origin Log. Tidak ada retroactive edit.
