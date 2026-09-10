@@ -12,28 +12,22 @@ Gurun Jinyan adalah kawasan luas dengan oasis, tebing batu, kuil kuno, makam dan
 ## Lokasi Canon
 ### Kota Shajing
 Kota oasis dan pusat kafilah. Menjadi titik penting untuk persiapan perjalanan gurun.
-
 ### Kota Jinyue
 Pusat perdagangan gurun dengan hubungan kuat terhadap jaringan kafilah.
-
 ### Oasis Qingyu
 Sumber air dan tempat persinggahan. Akses dan kapasitasnya tidak boleh diasumsikan di luar data canon.
-
 ### Laut Pasir Wuheng
 Hamparan pasir luas tanpa banyak penanda tetap. Orientasi dan rute harus ditentukan oleh kondisi perjalanan.
-
 ### Makam Tianri
 Kompleks makam kuno. Status ruang dalam, penjaga, peninggalan dan aksesnya hanya mengikuti lore atau event resmi.
 
 ## Faction Utama
 ### Kuil Sembilan Teratai
-Pusat spiritual dan persinggahan pengembara suci. Sikap terhadap pendatang ditentukan oleh aturan kuil dan NPC terkait.
-
+**ID: REG-012.** Pusat spiritual dan persinggahan pengembara suci. Sikap terhadap pendatang ditentukan oleh aturan kuil dan NPC terkait.
 ### Sekte Pasir Emas
-Kelompok kultivator gurun dengan kepentingan pada teknik dan sumber daya wilayah.
-
+**ID: REG-013.** Kelompok kultivator gurun dengan kepentingan pada teknik dan sumber daya wilayah.
 ### Liga Kafilah Jinyue
-Jaringan perdagangan dan transportasi gurun. Kontrak, reputasi dan keamanan menentukan akses.
+**ID: REG-014.** Jaringan perdagangan dan transportasi gurun. Kontrak, reputasi dan keamanan menentukan akses.
 
 ## Hubungan Faction Dasar
 - Liga Kafilah Jinyue ↔ Kota Shajing/Jinyue: hubungan ekonomi dan logistik.
