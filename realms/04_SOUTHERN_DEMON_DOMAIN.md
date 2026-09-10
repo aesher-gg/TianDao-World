@@ -12,28 +12,22 @@ Domain Yaohuang Selatan adalah kawasan liar, lembap dan sulit dikendalikan oleh 
 ## Lokasi Canon
 ### Kota Nanyao
 Kota perbatasan yang menjadi titik perdagangan manusia-yao. Hukum kota berlaku bagi semua penghuni yang berada di dalam yurisdiksinya.
-
 ### Pelabuhan Chixia
 Pelabuhan selatan yang menghubungkan jalur darat dan laut. Perdagangan, pengangkutan dan pemeriksaan barang menjadi aktivitas utama.
-
 ### Hutan Cangmang
 Hutan lebat dengan banyak habitat makhluk liar dan spirit beast. Jalur aman tidak boleh diasumsikan.
-
 ### Lembah Seratus Bunga
 Lembah dengan flora khusus dan kondisi lingkungan yang dapat berbahaya tanpa persiapan.
-
 ### Pegunungan Huoyan
 Pegunungan dengan aktivitas panas bumi dan material mineral tertentu. Aktivitas vulkanik dapat menjadi bahaya alam tersendiri.
 
 ## Faction Utama
 ### Istana Yaohuang
-Konfederasi beberapa klan yao. Setiap klan memiliki kepentingan internal; keputusan konfederasi tidak berarti semua anggota memiliki sikap identik.
-
+**ID: REG-004.** Konfederasi beberapa klan yao. Setiap klan memiliki kepentingan internal; keputusan konfederasi tidak berarti semua anggota memiliki sikap identik.
 ### Sekte Api Merah
-Kelompok kultivator yang berakar di kawasan pegunungan api. Kepentingan mereka berpusat pada kultivasi dan sumber daya panas bumi.
-
+**ID: REG-005.** Kelompok kultivator yang berakar di kawasan pegunungan api. Kepentingan mereka berpusat pada kultivasi dan sumber daya panas bumi.
 ### Serikat Seratus Daun
-**ID: CRI-001; nama dan identitas faction mengikuti `factions/criminal/00_CRIMINAL_DATABASE.md`.** Di wilayah ini mereka dapat tampil di permukaan sebagai pemburu/pedagang bahan alam langka, sementara aktivitas ilegal seperti penyelundupan, kontrak ilegal, atau pertukaran informasi hanya boleh terjadi melalui jalur yang sah dan berisiko. Deskripsi regional ini tidak memberi status legal otomatis dan tidak menghapus identitas kriminalnya.
+**ID: CRI-001; registry kriminal utama.** Di wilayah ini mereka dapat tampil di permukaan sebagai pemburu/pedagang bahan alam langka, sementara aktivitas ilegal seperti penyelundupan, kontrak ilegal, atau pertukaran informasi hanya boleh terjadi melalui jalur yang sah dan berisiko. Deskripsi regional ini tidak memberi status legal otomatis dan tidak menghapus identitas kriminalnya.
 
 ## Hubungan Faction Dasar
 - Istana Yaohuang ↔ Sekte Api Merah: hubungan pragmatis dengan kepentingan yang dapat tumpang tindih.
