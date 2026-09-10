@@ -27,13 +27,13 @@ Hutan berkabut dengan jarak pandang buruk. Arah perjalanan dan jarak harus diper
 
 ## Faction Utama
 ### Sekte Gunung Qingluan
-Sekte ortodoks yang menjaga sebagian wilayah pegunungan dan jalur kultivasi lokal.
+**ID: REG-001.** Sekte ortodoks yang menjaga sebagian wilayah pegunungan dan jalur kultivasi lokal.
 
 ### Istana Bambu Giok
-Perguruan spiritual dengan perhatian pada pengobatan, teknik spiritual dan pengetahuan bahan.
+**ID: REG-002.** Perguruan spiritual dengan perhatian pada pengobatan, teknik spiritual dan pengetahuan bahan.
 
 ### Paviliun Pemburu Roh
-Jaringan pemburu monster dan pengumpul material. Kontrak dan reputasi menentukan tingkat kepercayaan.
+**ID: REG-003.** Jaringan pemburu monster dan pengumpul material. Kontrak dan reputasi menentukan tingkat kepercayaan.
 
 ## Hubungan Faction Dasar
 - Sekte Gunung Qingluan ↔ Istana Bambu Giok: kooperatif dalam pengetahuan dan keselamatan pegunungan.
