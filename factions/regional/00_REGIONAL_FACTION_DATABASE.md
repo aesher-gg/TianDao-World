@@ -15,6 +15,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Sekte
 - Wilayah: Pegunungan Qingluan.
 - Canon: sekte ortodoks yang menjaga sebagian wilayah pegunungan dan jalur kultivasi lokal.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: kooperatif dengan Istana Bambu Giok; memiliki kepentingan material spiritual yang dapat menimbulkan kompetisi.
 
 ### Istana Bambu Giok
@@ -22,6 +24,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Perguruan spiritual
 - Wilayah: Pegunungan Qingluan.
 - Canon: berfokus pada pengobatan, teknik spiritual dan pengetahuan bahan.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: kooperatif dengan Sekte Gunung Qingluan; kepentingan material dapat tetap kompetitif.
 
 ### Paviliun Pemburu Roh
@@ -29,6 +33,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Jaringan pemburu/pengumpul
 - Wilayah: Pegunungan Qingluan.
 - Canon: pemburu monster dan pengumpul material; kontrak dan reputasi menentukan tingkat kepercayaan.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: transaksional dengan Sekte Gunung Qingluan dan Istana Bambu Giok.
 
 ## Domain Yaohuang Selatan
@@ -37,6 +43,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Konfederasi klan yao
 - Wilayah: Domain Yaohuang Selatan.
 - Canon: konfederasi beberapa klan yao dengan kepentingan internal berbeda.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: pragmatis dengan Sekte Api Merah; perdagangan dengan Serikat Seratus Daun bergantung pada individu dan klan.
 
 ### Sekte Api Merah
@@ -44,6 +52,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Sekte/kultivator
 - Wilayah: Domain Yaohuang Selatan, berakar di kawasan pegunungan api.
 - Canon: kepentingan berpusat pada kultivasi dan sumber daya panas bumi.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: pragmatis dengan Istana Yaohuang; hubungan komersial dengan Serikat Seratus Daun dapat berubah berdasarkan kontrak.
 
 ## Laut Dongming
@@ -52,6 +62,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Kekuatan laut/klan spiritual
 - Wilayah: Laut Dongming.
 - Canon: memiliki kepentingan atas wilayah dan jalur laut tertentu.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: hubungan dagang dengan Aliansi Pedagang Haixu; saling menghormati namun berkepentingan wilayah berbeda dengan Sekte Pedang Ombak.
 
 ### Sekte Pedang Ombak
@@ -59,6 +71,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Sekte/perguruan
 - Wilayah: Laut Dongming.
 - Canon: memadukan pedang dan mobilitas di medan laut.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: dapat bekerja sama dalam pengawalan dengan Aliansi Pedagang Haixu; memiliki kepentingan wilayah berbeda dengan Istana Naga Dongming.
 
 ### Aliansi Pedagang Haixu
@@ -66,6 +80,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Aliansi perdagangan
 - Wilayah: Laut Dongming.
 - Canon: jaringan niaga antarpulau; kontrak, reputasi dan keamanan menentukan akses.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: berdagang dengan Istana Naga Dongming dan dapat menggunakan pengawalan Sekte Pedang Ombak.
 
 ## Tanah Salju Beiming
@@ -74,6 +90,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Sekte
 - Wilayah: Tanah Salju Beiming.
 - Canon: memiliki kepentingan atas tradisi dan sumber daya spiritual wilayah dingin.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: berhubungan dengan Benteng Besi Beichen atas keamanan wilayah dan dengan Paviliun Salju Putih melalui pertukaran sumber daya/kontrak.
 
 ### Benteng Besi Beichen
@@ -81,6 +99,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Kekuatan militer/penjaga jalur
 - Wilayah: Tanah Salju Beiming.
 - Canon: menjaga jalur utara dan memiliki fungsi pertahanan serta keamanan.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: bekerja sama dalam logistik dan keamanan dengan Paviliun Salju Putih; memiliki hubungan keamanan wilayah dengan Sekte Salju Xuanyin.
 
 ### Paviliun Salju Putih
@@ -88,6 +108,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Jaringan pedagang/pengangkut
 - Wilayah: Tanah Salju Beiming.
 - Canon: jaringan perdagangan dan pengangkutan wilayah dingin.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: bekerja sama dengan Benteng Besi Beichen; pertukaran sumber daya dengan Sekte Salju Xuanyin berlangsung melalui kontrak.
 
 ## Gurun Jinyan
@@ -96,6 +118,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Pusat spiritual/kuil
 - Wilayah: Gurun Jinyan.
 - Canon: pusat spiritual dan persinggahan pengembara suci.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: hubungan sosial dan perlindungan dengan Liga Kafilah Jinyue bergantung konteks; memiliki kepentingan spiritual berbeda dari Sekte Pasir Emas.
 
 ### Sekte Pasir Emas
@@ -103,6 +127,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Sekte/kultivator
 - Wilayah: Gurun Jinyan.
 - Canon: memiliki kepentingan pada teknik dan sumber daya wilayah.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: dapat bekerja sama dengan Liga Kafilah Jinyue melalui kontrak; memiliki kepentingan spiritual dan kultivasi berbeda dari Kuil Sembilan Teratai.
 
 ### Liga Kafilah Jinyue
@@ -110,6 +136,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Kategori: Jaringan perdagangan/transportasi
 - Wilayah: Gurun Jinyan.
 - Canon: jaringan perdagangan dan transportasi gurun; kontrak, reputasi dan keamanan menentukan akses.
+- Agenda: ??? (belum ditetapkan secara eksplisit dalam Canon registry).
+- NPC utama: ??? (belum ditetapkan).
 - Relasi dasar: terhubung secara ekonomi/logistik dengan Kota Shajing dan Kota Jinyue; dapat bekerja sama dengan Kuil Sembilan Teratai dan Sekte Pasir Emas sesuai konteks/kontrak.
 
 ## Batas Data
