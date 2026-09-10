@@ -72,6 +72,8 @@
 
 ## AI Game Master
 - `gm/GM_PROMPT.md`
+- `gm/PLAYER_BOOT_PROMPT.md`
+- `gm/ACTION_RUNTIME_PROMPT.md`
 - `gm/RESPONSE_FORMAT.md`
 - `gm/CHECKLIST.md`
 - `gm/VALIDATION_RULES.md`
@@ -90,3 +92,8 @@
 5. Lore yang relevan.
 6. Current character state.
 7. Player intent.
+
+## Runtime Prompt Contract
+- `gm/PLAYER_BOOT_PROMPT.md` digunakan sekali pada boot karakter/sesi baru untuk memuat World Bible dan current state.
+- `gm/ACTION_RUNTIME_PROMPT.md` digunakan pada setiap aksi gameplay berikutnya.
+- Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, dan seluruh sumber yang ditunjuk INDEX.
