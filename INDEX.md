@@ -38,12 +38,12 @@
 - `characters/players.md`
 - `characters/players/`
 
-## Factions
-- `factions/sects/`
-- `factions/dojos/`
-- `factions/imperial/`
-- `factions/criminal/`
-- `factions/organizations/`
+## Factions — Canon Databases
+- `factions/sects/00_SECT_DATABASE.md`
+- `factions/dojos/00_DOJO_DATABASE.md`
+- `factions/imperial/00_IMPERIAL_DATABASE.md`
+- `factions/criminal/00_CRIMINAL_DATABASE.md`
+- `factions/organizations/00_ORGANIZATION_DATABASE.md`
 
 ## Events
 - `events/39_CUSTOM_EVENTS.md`
@@ -56,6 +56,7 @@
 - `custom/42_CUSTOM_TECHNIQUES.md`
 
 ## Lore
+- `lore/CITY_VILLAGE_DATABASE.md`
 - `lore/NPC_DATABASE.md`
 - `lore/HISTORY.md`
 - `lore/CALENDAR.md`
@@ -67,3 +68,12 @@
 - `gm/RESPONSE_FORMAT.md`
 - `gm/CHECKLIST.md`
 - `gm/VALIDATION_RULES.md`
+
+## Load Order
+1. Core rules.
+2. Custom content dan event resmi.
+3. Relevant realm/system modules.
+4. Faction databases dan city/NPC databases bila relevan.
+5. Lore yang relevan.
+6. Current character state.
+7. Player intent.
