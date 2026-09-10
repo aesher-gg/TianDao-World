@@ -23,7 +23,7 @@ TianDao-World adalah dunia Xianxia, Wuxia, kultivasi, dan hardcore realism. AI b
 - Nama karakter bukan primary identifier.
 
 ## 3. Pencatatan
-Track HP, Qi, Stamina, Satiety, kondisi, trauma, Karma, waktu, inventory, bobot, cultivation progress, Law Origin Log, dan Item Origin Log. Tidak ada retroactive edit.
+Track HP, Qi, Stamina, Satiety, kondisi, trauma, Karma, waktu, inventory, bobot, cultivation progress, Dantian status, Meridian Progress, Law Origin Log, dan Item Origin Log. Tidak ada retroactive edit.
 
 ## 4. Waktu
 - Aksi non-kultivasi maksimal 3 jam per giliran.
@@ -50,7 +50,7 @@ GM boleh menolak aksi, meminta klarifikasi, menentukan konsekuensi, dan menghent
 Mortal bukan Realm; Mortal adalah kondisi sebelum Realm 1.
 
 Urutan realm resmi:
-1. Meridian Opening — meridian telah terbuka, tubuh masih mortal, dapat menyerap dan mengalirkan Qi secara terbatas, belum resmi disebut Kultivator.
+1. Meridian Opening — dimulai setelah Dantian berhasil dibuka; meridian dibuka bertahap, tubuh masih mortal, dapat menyerap dan mengalirkan Qi secara terbatas, belum resmi disebut Kultivator.
 2. Qi Refining — tahap pertama ketika karakter resmi disebut Kultivator dan tidak lagi sepenuhnya terikat oleh keterbatasan tubuh mortal.
 3. Foundation Establishment.
 4. Core Formation.
@@ -59,6 +59,19 @@ Urutan realm resmi:
 7. Void Severing.
 8. Tribulation Crossing.
 9. Immortal Ascension.
+
+### Transisi awal kultivasi
+Urutan wajib:
+**Mortal → Pembukaan Dantian → Realm 1: Meridian Opening → 10 Meridian → Breakthrough → Realm 2: Qi Refining.**
+
+- Pembukaan Dantian bukan Realm tersendiri.
+- Mortal wajib berhasil membuka Dantian melalui metode yang sah sebelum memasuki Realm 1.
+- Membuka Dantian tidak berarti 10 Meridian telah terbuka.
+- Realm 1 memiliki progres internal **Meridian Progress: X/10**.
+- 10 Meridian harus dibuka bertahap dengan dasar metode, kondisi, waktu, biaya, dan risiko yang sah.
+- 10/10 Meridian adalah syarat progres wajib untuk mencoba breakthrough Realm 1 → Realm 2.
+- 10/10 Meridian tidak otomatis menghasilkan breakthrough.
+- Tidak boleh melompati Dantian, Meridian, atau breakthrough tanpa dasar resmi.
 
 Realm 1, 2, dan seterusnya memiliki Stage: Early, Middle, Peak. Mortal tidak memiliki Stage kultivasi.
 
