@@ -68,6 +68,7 @@
 - `gm/RESPONSE_FORMAT.md`
 - `gm/CHECKLIST.md`
 - `gm/VALIDATION_RULES.md`
+- `gm/YELLOW_AUDIT.md`
 
 ## Load Order
 1. Core rules.
