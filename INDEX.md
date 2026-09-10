@@ -76,6 +76,11 @@
 - `gm/CHECKLIST.md`
 - `gm/VALIDATION_RULES.md`
 - `gm/YELLOW_AUDIT.md`
+- `gm/RUNTIME_ENGINE.md`
+- `gm/STATE_VALIDATOR.md`
+- `gm/ACTION_RESOLVER.md`
+- `gm/NPC_EVENT_RUNTIME.md`
+- `gm/SAVE_PIPELINE.md`
 
 ## Load Order
 1. Core rules.
