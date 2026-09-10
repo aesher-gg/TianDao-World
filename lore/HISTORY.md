@@ -1,19 +1,27 @@
-# Sejarah Resmi TianDao
+# SEJARAH RESMI TIANDAO-WORLD
 
 ## Era I — Zaman Kabut Purba
-Tidak ada catatan manusia yang utuh. Legenda menyebut langit dan bumi baru stabil setelah benturan energi primordial. Detail yang tidak didukung sumber resmi dianggap tidak diketahui.
+Periode tertua yang masih dibicarakan dalam tradisi lisan. Catatan manusia utuh tidak tersedia. Stabilitas langit, bumi, dan urat qi menjadi tema utama legenda.
 
 ## Era II — Zaman Seratus Klan
-Klan manusia, yao, dan kelompok spiritual berkembang. Perebutan urat qi dan wilayah membentuk batas awal banyak kekuatan modern.
+Klan manusia, yao, dan kelompok spiritual berkembang. Perebutan urat qi, sumber air, wilayah berburu, dan jalur migrasi membentuk batas awal banyak kekuatan.
 
 ## Era III — Zaman Pedang dan Segel
-Sekte-sekte besar membakukan hukum kultivasi, teknik, sistem guru-murid, serta metode pencatatan warisan. Banyak reruntuhan berasal dari era ini.
+Sekte dan perguruan membakukan sistem guru-murid, pencatatan warisan, teknik pedang, segel, dan metode pelatihan. Banyak reruntuhan dan dokumen tua berasal dari era ini.
 
 ## Era IV — Zaman Dinasti
-Pemerintahan manusia memperluas jaringan kota, jalan dan hukum. Hubungan antara negara dan sekte menjadi fondasi politik modern.
+Pemerintahan manusia membangun kota, jalan, pajak, hukum, dan struktur keamanan. Hubungan negara dengan sekte menjadi dasar politik modern.
 
 ## Era V — Zaman Arus TianDao
-Perubahan urat qi, kemunculan relik, monster, dan event berkala membuat dunia kembali tidak stabil. Tidak ada satu faction yang menguasai seluruh TianDao.
+Perubahan urat qi, kemunculan relik, monster, konflik faction, dan event berkala membuat dunia kembali dinamis. Tidak ada satu faction yang menguasai seluruh TianDao.
 
-## Prinsip Kronologi
-Setiap event yang mengubah dunia harus memiliki tanggal dan sumber. NPC tidak boleh mengetahui peristiwa yang belum terjadi dalam timeline mereka. Retcon dilarang.
+## Kronologi Kerja Canon
+- Tahun permainan berjalan dalam Era V.
+- Tahun 1 adalah epoch kalender permainan.
+- Setiap perubahan dunia besar harus memiliki tanggal dan sumber event/admin.
+- Peristiwa lokal dapat terjadi di antara event besar tanpa mengubah sejarah global.
+- NPC hanya mengetahui sejarah sesuai pendidikan, wilayah, akses arsip, dan pengalaman mereka.
+- Detail yang belum ditetapkan tetap `UNKNOWN`, bukan diisi dengan tebakan GM.
+
+## Prinsip Anti-Retcon
+Tidak boleh menghapus kejadian yang sudah tercatat, memindahkan asal-usul faction tanpa dasar, atau mengubah identitas sejarah secara retroaktif. Koreksi hanya dilakukan melalui pembaruan Canon Admin yang menjelaskan perubahan dan sumbernya.
