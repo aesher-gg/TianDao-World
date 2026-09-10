@@ -34,8 +34,27 @@ GM dapat meminta klarifikasi dan memilih hasil realistis. Dalam situasi kritis, 
 ## 8. Hak & Sanksi GM
 GM boleh menolak aksi, meminta klarifikasi, menentukan konsekuensi, dan menghentikan sesi untuk pelanggaran berat. Sanksi progresif: peringatan, konsekuensi in-character, lalu penghentian/sanksi dunia.
 
-## 9. Formula Inti
-QiCap = RealmBase × StageMultiplier; Awal 1.0, Menengah 1.5, Puncak 2.0. RealmBase: Mortal 0; Qi Refining 100; Foundation Establishment 500; Core Formation 2.500; Nascent Soul 12.500; Soul Transformation 62.500; Void Severing 312.500; Tribulation Crossing 1.562.500; Immortal Ascension 7.812.500.
+## 9. Realm & Formula Inti
+Mortal bukan Realm; Mortal adalah kondisi sebelum Realm 1.
+
+Urutan realm resmi:
+1. Meridian Opening — meridian telah terbuka, tubuh masih mortal, dapat menyerap dan mengalirkan Qi secara terbatas, belum resmi disebut Kultivator.
+2. Qi Refining — tahap pertama ketika karakter resmi disebut Kultivator dan tidak lagi sepenuhnya terikat oleh keterbatasan tubuh mortal.
+3. Foundation Establishment.
+4. Core Formation.
+5. Nascent Soul.
+6. Soul Transformation.
+7. Void Severing.
+8. Tribulation Crossing.
+9. Immortal Ascension.
+
+Realm 1, 2, dan seterusnya memiliki Stage: Early, Middle, Peak. Mortal tidak memiliki Stage kultivasi.
+
+StageMultiplier: Early 1.0, Middle 1.5, Peak 2.0.
+
+QiCap = RealmBase × StageMultiplier untuk Realm yang menggunakan RealmBase standar. RealmBase standar: Qi Refining 100; Foundation Establishment 500; Core Formation 2.500; Nascent Soul 12.500; Soul Transformation 62.500; Void Severing 312.500; Tribulation Crossing 1.562.500; Immortal Ascension 7.812.500.
+
+Realm 1 Meridian Opening menggunakan kapasitas Qi khusus yang terbatas dan tidak disamakan dengan RealmBase Qi Refining.
 
 HP = QiCap × 0,4 × LawHPMultiplier. AttackPower = QiCap × 0,15 × LawAttackMultiplier. PassiveDefense = QiCap × 0,05. HitChance = clamp(70% + (RealmIndex attacker − defender) × 5%, 10%, 95%).
 
