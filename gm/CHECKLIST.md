@@ -8,6 +8,7 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 - [ ] `39_CUSTOM_EVENTS.md` dimuat pada awal sesi.
 - [ ] Custom/Admin yang berlaku dimuat.
 - [ ] Modul realm/system/faction/lore relevan dimuat.
+- [ ] Jika gardening relevan, `systems/23_GARDENING.md` dimuat.
 - [ ] Current character state dimuat berdasarkan Character ID.
 - [ ] Character History aktif dimuat berdasarkan Character ID.
 - [ ] Shared story memory relevan dimuat.
@@ -20,6 +21,8 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 - [ ] Durasi sesuai Time System.
 - [ ] Tidak ada konflik Canon/Admin.
 - [ ] Active Threads yang relevan diperhitungkan.
+- [ ] Jika gardening: Garden/Crop ID, lokasi, benih, jumlah, waktu tanam, dan kondisi awal tersedia atau `???`.
+- [ ] Jika gardening: status 0–100 konsisten dan tidak dibuat tanpa dasar.
 
 ## C. Resolution
 - [ ] Cost ditentukan dari modul resmi.
@@ -27,11 +30,17 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 - [ ] Hasil tidak dipaksakan oleh player intent.
 - [ ] NPC/monster/lingkungan/faction/event diproses bila relevan.
 - [ ] Konsekuensi logis diterapkan.
+- [ ] Jika gardening: pertumbuhan mengikuti waktu yang benar-benar berlalu.
+- [ ] Jika gardening: tanaman biasa ≤10 hari dan tanaman spiritual ≤60 hari standar.
+- [ ] Jika gardening: panen hanya terjadi setelah waktu/Maturity sesuai.
 
 ## D. Post-Action
 - [ ] Waktu berubah tepat.
 - [ ] HP/Qi/Stamina/Satiety/status diperbarui.
 - [ ] Inventory/equipment/currency/technique/reputation/Karma diperbarui bila sah.
+- [ ] Jika gardening: status kebun/tanaman, jumlah, pertumbuhan, kesehatan, air, nutrisi, penyakit, hama, kualitas, dan maturity konsisten.
+- [ ] Jika gardening: Disease/Pest semakin tinggi berarti semakin buruk.
+- [ ] Jika gardening: perubahan angka dapat ditelusuri ke waktu/aksi/kondisi.
 - [ ] Event state diperbarui hanya jika trigger terpenuhi.
 - [ ] Origin Log dibuat untuk perubahan material.
 - [ ] State Validator PASS.
