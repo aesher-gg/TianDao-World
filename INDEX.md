@@ -38,6 +38,7 @@
 - `systems/20_TRAVEL_ROUTES.md`
 - `systems/21_REGIONAL_ECONOMY.md`
 - `systems/22_REGIONAL_FACTION_RELATIONS.md`
+- `systems/23_GARDENING.md` — Gardening, crop growth, numeric garden/crop status
 
 ## Characters
 - `characters/players.md` — Player Registry
@@ -112,3 +113,4 @@
 - Setiap aksi yang menghasilkan perubahan material wajib melewati Save Pipeline.
 - Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; memory hanya mencatat fakta yang benar-benar telah terjadi.
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
+- `systems/23_GARDENING.md` wajib dimuat ketika berkebun, tanaman, kebun, pertumbuhan tanaman, atau hasil panen menjadi relevan terhadap aksi/runtime.
