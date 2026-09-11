@@ -65,23 +65,21 @@ Data tidak diketahui = `???`.
 
 - **Tahun yang ditampilkan harus selalu Tahun Dunia TianDao-World, bukan tahun kalender dunia nyata, tahun sistem, atau tahun perangkat.**
 - Load `lore/CALENDAR.md` melalui INDEX untuk aturan kalender.
-- **Hierarki sumber World Time wajib:** `Current World Time Repository → Character State World Time → ??? jika keduanya tidak tersedia`.
-- `Current World Time Repository` adalah waktu dunia bersama yang ditetapkan/tervalidasi Admin di repository dan menjadi sumber utama untuk boot karakter baru maupun sinkronisasi dunia.
-- Jika Current World Time Repository tersedia, gunakan waktu tersebut dan jangan menggantinya dengan Epoch atau waktu dunia nyata.
-- Jika Current World Time Repository tidak tersedia tetapi Current Character State memiliki World Time terakhir yang valid, gunakan World Time dari Character State tersebut.
-- Jika keduanya tidak tersedia, tampilkan `???` untuk komponen waktu yang belum diketahui. **Jangan menggunakan Epoch Tahun 1 sebagai fallback.**
-- Untuk setting dunia saat ini, tahun dunia harus berasal dari sumber resmi repository; bila Admin menetapkan era saat ini sebagai **Era Kebangkitan**, gunakan era tersebut bersama tahun yang tercatat. Jangan menciptakan angka tahun sendiri.
+- **Tahun Dunia resmi saat ini = 1200 Era Kebangkitan**, sesuai keputusan Admin di `story/WORLD_STATE.md`.
+- Tahun 1200 adalah tahun dunia bersama untuk seluruh Character.
+- **Musim, tanggal, hari, cuaca, dan jam tidak ditetapkan secara global.** Untuk Character baru, AI GM menentukan komponen tersebut secara kontekstual dan dapat berbeda antar-Character, selama tetap valid menurut kalender dan tidak menggunakan waktu nyata.
+- Jangan menggunakan Epoch Tahun 1 sebagai waktu mulai otomatis.
 - Jangan pernah mengubah Tahun Dunia menjadi 2026 hanya karena tanggal sistem saat ini adalah 2026.
-- Jangan mengarang Jam atau Cuaca jika sumber tidak menetapkannya; gunakan `???` sampai ada dasar resmi.
-- Setelah waktu bergerak melalui aksi/event valid, waktu berikutnya dihitung dari World Time terakhir yang sah, bukan dari waktu nyata.
-- Tidak ada hidden time skip.
+- Jika GM menentukan musim/tanggal/hari/jam/cuaca untuk Character saat boot, nilai tersebut menjadi waktu mulai Character tersebut dan harus dicatat pada Current Character State bila sistem save mendukungnya.
+- Setelah waktu Character ditetapkan, waktu bergerak dari waktu tersebut melalui aksi/event valid. Tidak ada hidden time skip.
+- Jangan mengarang waktu dunia bersama baru yang bertentangan dengan Tahun 1200 Era Kebangkitan.
 
 ### OUTPUT BOOT — WAJIB
 
 **Balasan pertama harus langsung mengikuti format ini dan tidak boleh menggunakan format narasi bebas:**
 
 🕒 **Waktu TianDao-World**  
-Tahun: ... | Musim: ... | Tanggal: ... | Hari: ... | Cuaca: ... | Jam: ...
+Tahun: 1200 | Musim: [ditentukan GM] | Tanggal: [ditentukan GM] | Hari: [ditentukan GM] | Cuaca: [ditentukan GM] | Jam: [ditentukan GM]
 
 **Status Boot:** World Bible dimuat | Player terverifikasi | Character terverifikasi | Memory dimuat bila tersedia
 
