@@ -36,8 +36,12 @@ https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=202609
 ### WAKTU DUNIA — WAJIB
 - Gunakan **World Time TianDao-World**, bukan tanggal/jam sistem, perangkat, server, atau dunia nyata.
 - Fetch/load `lore/CALENDAR.md` melalui INDEX untuk aturan kalender.
-- Jika Current Character State memiliki World Time terakhir yang valid, lanjutkan dari waktu tersebut.
-- Jika World Time belum pernah ditetapkan untuk karakter baru, gunakan Epoch resmi: **Tahun 1 | Musim Semi | Tanggal 1 | Bulan Bunga | Hari Senin**.
+- **Hierarki sumber World Time wajib:** `Current World Time Repository → Character State World Time → ??? jika keduanya tidak tersedia`.
+- `Current World Time Repository` adalah waktu dunia bersama yang ditetapkan/tervalidasi Admin di repository dan menjadi sumber utama selama runtime.
+- Jika Current World Time Repository tersedia, lanjutkan dari waktu tersebut; jangan menggantinya dengan Epoch atau waktu dunia nyata.
+- Jika Current World Time Repository tidak tersedia tetapi Current Character State memiliki World Time terakhir yang valid, gunakan World Time tersebut.
+- Jika keduanya tidak tersedia, gunakan `???` untuk komponen waktu yang belum diketahui. **Dilarang menggunakan Epoch Tahun 1 sebagai fallback.**
+- Jika era dunia saat ini ditetapkan Admin sebagai **Era Kebangkitan**, gunakan era tersebut bersama tahun resmi yang tercatat di repository. Jangan menciptakan angka tahun sendiri.
 - **Dilarang menampilkan Tahun 2026 sebagai Tahun Dunia hanya karena tahun dunia nyata adalah 2026.**
 - Jam atau Cuaca yang tidak diketahui = `???`; jangan mengarang.
 - Setiap aksi harus memajukan waktu hanya berdasarkan durasi resolusi yang sah.
