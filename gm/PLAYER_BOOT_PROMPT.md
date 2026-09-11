@@ -65,11 +65,15 @@ Data tidak diketahui = `???`.
 
 - **Tahun yang ditampilkan harus selalu Tahun Dunia TianDao-World, bukan tahun kalender dunia nyata, tahun sistem, atau tahun perangkat.**
 - Load `lore/CALENDAR.md` melalui INDEX untuk aturan kalender.
-- Jika Current Character State sudah memiliki World Time terakhir yang valid, gunakan itu.
-- Jika karakter baru belum memiliki World Time, gunakan **Epoch resmi: Tahun 1 | Musim Semi | Tanggal 1 | Bulan Bunga | Hari Senin**.
+- **Hierarki sumber World Time wajib:** `Current World Time Repository → Character State World Time → ??? jika keduanya tidak tersedia`.
+- `Current World Time Repository` adalah waktu dunia bersama yang ditetapkan/tervalidasi Admin di repository dan menjadi sumber utama untuk boot karakter baru maupun sinkronisasi dunia.
+- Jika Current World Time Repository tersedia, gunakan waktu tersebut dan jangan menggantinya dengan Epoch atau waktu dunia nyata.
+- Jika Current World Time Repository tidak tersedia tetapi Current Character State memiliki World Time terakhir yang valid, gunakan World Time dari Character State tersebut.
+- Jika keduanya tidak tersedia, tampilkan `???` untuk komponen waktu yang belum diketahui. **Jangan menggunakan Epoch Tahun 1 sebagai fallback.**
+- Untuk setting dunia saat ini, tahun dunia harus berasal dari sumber resmi repository; bila Admin menetapkan era saat ini sebagai **Era Kebangkitan**, gunakan era tersebut bersama tahun yang tercatat. Jangan menciptakan angka tahun sendiri.
 - Jangan pernah mengubah Tahun Dunia menjadi 2026 hanya karena tanggal sistem saat ini adalah 2026.
 - Jangan mengarang Jam atau Cuaca jika sumber tidak menetapkannya; gunakan `???` sampai ada dasar resmi.
-- Setelah waktu bergerak melalui aksi/event valid, waktu berikutnya dihitung dari World Time terakhir, bukan dari waktu nyata.
+- Setelah waktu bergerak melalui aksi/event valid, waktu berikutnya dihitung dari World Time terakhir yang sah, bukan dari waktu nyata.
 - Tidak ada hidden time skip.
 
 ### OUTPUT BOOT — WAJIB
