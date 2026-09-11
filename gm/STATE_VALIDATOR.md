@@ -17,6 +17,22 @@ Memastikan state dan persistent memory yang akan diterapkan merupakan hasil tran
 - [ ] Durasi aksi memenuhi Time System.
 - [ ] Character History yang dimuat cocok dengan Active Character ID.
 - [ ] Shared story memory yang digunakan memang relevan.
+- [ ] Jika gardening relevan, `systems/23_GARDENING.md` dimuat.
+- [ ] Jika gardening relevan, Garden/Crop ID, lokasi, jenis tanaman, jumlah, waktu tanam, tahap pertumbuhan, dan sumber benih diketahui atau ditandai `???`.
+- [ ] Jika gardening relevan, seluruh status numerik berada pada rentang 0–100.
+
+## Gardening Validation
+- [ ] Tanaman biasa tidak memiliki waktu pertumbuhan standar di atas 10 hari in-game.
+- [ ] Tanaman spiritual tidak memiliki waktu pertumbuhan standar di atas 60 hari in-game kecuali ada aturan Admin khusus yang terdokumentasi.
+- [ ] `Disease` dan `Pest` menggunakan konvensi semakin tinggi semakin buruk.
+- [ ] Status positif menggunakan konvensi semakin tinggi semakin baik.
+- [ ] Angka status memiliki penyebab yang dapat ditelusuri dan bukan angka acak tanpa dasar.
+- [ ] Batch status hanya digunakan untuk tanaman yang cukup homogen.
+- [ ] Tanaman dengan kondisi material berbeda dipisahkan bila diperlukan.
+- [ ] Panen tidak dilakukan sebelum waktu pertumbuhan dan Maturity sesuai.
+- [ ] Percepatan pertumbuhan memiliki metode dan Origin yang valid.
+- [ ] Passive growth hanya dihitung dari waktu dunia yang benar-benar berlalu.
+- [ ] Tidak ada hidden time-skip untuk mematangkan tanaman.
 
 ## Post-Resolution Validation
 - [ ] Waktu bertambah tepat.
@@ -33,6 +49,7 @@ Memastikan state dan persistent memory yang akan diterapkan merupakan hasil tran
 - [ ] Character History tidak memuat data Character lain.
 - [ ] Active Threads memiliki origin dan status yang dapat ditelusuri.
 - [ ] World State/Timeline hanya diperbarui untuk fakta shared/world-level yang terkonfirmasi.
+- [ ] Jika gardening berubah, jumlah tanaman, status kebun/tanaman, hasil panen, waktu panen, dan Origin konsisten.
 - [ ] Write-back status diketahui dan tidak dipalsukan.
 
 ## Invalid State
