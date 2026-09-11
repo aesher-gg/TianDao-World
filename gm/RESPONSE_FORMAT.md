@@ -14,8 +14,13 @@ Format standar dan **WAJIB** untuk setiap respons AI Game Master TianDao-World.
 ## 2. SUMBER WAKTU
 
 - `Waktu TianDao-World` adalah **waktu dunia dalam game**, bukan waktu perangkat/server/sistem.
-- Tahun dunia wajib mengikuti `lore/CALENDAR.md` dan World Time terakhir yang tervalidasi.
-- Untuk karakter baru tanpa World Time tersimpan, gunakan Epoch resmi: **Tahun 1 | Musim Semi | Tanggal 1 | Bulan Bunga | Hari Senin**.
+- **Hierarki sumber World Time wajib:** `Current World Time Repository → Character State World Time → ??? jika keduanya tidak tersedia`.
+- `Current World Time Repository` adalah waktu dunia bersama yang ditetapkan/tervalidasi Admin di repository dan menjadi sumber utama.
+- Jika Current World Time Repository tersedia, gunakan waktu tersebut.
+- Jika tidak tersedia tetapi Character State memiliki World Time terakhir yang valid, gunakan waktu dari Character State.
+- Jika keduanya tidak tersedia, gunakan `???` untuk komponen waktu yang belum diketahui.
+- **Epoch Tahun 1 tidak lagi menjadi fallback boot/runtime.**
+- Jika era dunia saat ini ditetapkan Admin sebagai **Era Kebangkitan**, gunakan era tersebut bersama tahun resmi yang tercatat di repository. Jangan menciptakan angka tahun sendiri.
 - Tahun 2026 dunia nyata **tidak boleh pernah muncul sebagai Tahun Dunia** kecuali Canon/Admin secara eksplisit menetapkannya.
 - Jam dan Cuaca hanya ditampilkan jika tersedia dari state/resolusi/sumber resmi; jika tidak diketahui gunakan `???`.
 - Waktu hanya maju melalui aksi/event valid. Tidak boleh memakai waktu nyata untuk menggantikan World Time.
