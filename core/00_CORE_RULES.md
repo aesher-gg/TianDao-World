@@ -83,6 +83,38 @@ Realm 1 Meridian Opening menggunakan kapasitas Qi khusus yang terbatas dan tidak
 
 HP = QiCap × 0,4 × LawHPMultiplier. AttackPower = QiCap × 0,15 × LawAttackMultiplier. PassiveDefense = QiCap × 0,05. HitChance = clamp(70% + (RealmIndex attacker − defender) × 5%, 10%, 95%).
 
+### Stamina Hybrid Formula
+TianDao-World menggunakan **Konsep C — Hybrid** untuk kapasitas maksimum stamina.
+
+RealmStaminaBaseline standar:
+- Mortal: 100
+- Meridian Opening: 120
+- Qi Refining: 150
+- Foundation Establishment: 200
+- Core Formation: 300
+- Nascent Soul: 450
+- Soul Transformation: 650
+- Void Severing: 900
+- Tribulation Crossing: 1.200
+- Immortal Ascension: 1.600
+
+Untuk Realm yang memiliki Stage, gunakan StageStaminaMultiplier:
+- Early ×1,00
+- Middle ×1,10
+- Peak ×1,20
+
+**StageBaselineStamina = RealmStaminaBaseline × StageStaminaMultiplier**
+
+Kapasitas aktual dapat dimodifikasi oleh faktor yang benar-benar tercatat, seperti latihan fisik, kondisi/kualitas tubuh, Body-Refining atau law resmi yang memberi efek stamina, cedera permanen, serta item/buff/debuff/kondisi khusus yang sah.
+
+**StaminaMaxAktual = StageBaselineStamina + ModifierResmi**
+
+`ModifierResmi` wajib memiliki sumber atau catatan yang dapat divalidasi. GM dilarang memberikan bonus/penalti stamina secara arbitrer.
+
+Saat breakthrough ke Realm/Stage baru, baseline stamina mengikuti Realm/Stage baru. Breakthrough **tidak otomatis menghapus cedera, memberikan bonus latihan, atau menciptakan modifier khusus**. Current Stamina tidak otomatis menjadi penuh hanya karena breakthrough.
+
+Jika tidak ada modifier sah, StaminaMaxAktual = StageBaselineStamina.
+
 Currency: 1 Silver = 100 Copper; 1 Gold = 100 Silver; 1 Small Jade = 1.000 Gold; 1 Medium Jade = 100 Small Jade; 1 Ancient Jade = 100 Medium Jade.
 
 ## 10. Satuan Jarak Resmi
