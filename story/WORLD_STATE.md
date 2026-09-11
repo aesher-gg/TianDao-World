@@ -2,20 +2,14 @@
 
 > Shared world facts with ongoing consequences. This file is not a substitute for Canon databases or event registries.
 
-## Current World Time
+## Current World Year
 - **Status:** Established by Admin
-- **World Time:** `Tahun 1200 Era Kebangkitan | Musim: ??? | Tanggal: ??? | Hari: ??? | Cuaca: ??? | Jam: ???`
+- **World Year:** **1200 Era Kebangkitan**
 - **Era:** Era Kebangkitan
-- **Year:** 1200
-- **Season:** `???`
-- **Date:** `???`
-- **Day:** `???`
-- **Weather:** `???`
-- **Hour:** `???`
 
-> **Runtime source priority:** `Current World Time Repository → Character State World Time → ??? jika keduanya tidak tersedia`.
 > **Admin Decision:** Tahun Dunia saat ini ditetapkan pada **Tahun 1200 Era Kebangkitan**. Angka tahun ini adalah Tahun Dunia TianDao-World dan tidak berkaitan dengan tahun kalender dunia nyata.
-> Komponen waktu yang belum ditetapkan tetap `???` dan tidak boleh ditebak oleh GM.
+> **Per-Character Start Time:** Musim, tanggal, hari, cuaca, dan jam **tidak ditetapkan secara global di repository**. Komponen tersebut boleh berbeda untuk setiap Character dan ditentukan oleh AI Game Master berdasarkan konteks awal Character yang sah.
+> GM tidak boleh menggunakan waktu nyata atau 2026 sebagai waktu dunia. Setelah Character memiliki waktu mulai yang sah, waktu Character bergerak dari waktu tersebut melalui aksi/event valid.
 
 ## Active Shared Facts
 - Current World Year is officially established as **1200 Era Kebangkitan**.
@@ -28,5 +22,5 @@
 - If a fact is unknown or unverified, use `???` or omit it.
 
 ## Metadata
-- **Version:** 3
+- **Version:** 4
 - **Last Verified:** 2026-09-11
