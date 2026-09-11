@@ -85,5 +85,12 @@ HP = QiCap × 0,4 × LawHPMultiplier. AttackPower = QiCap × 0,15 × LawAttackMu
 
 Currency: 1 Silver = 100 Copper; 1 Gold = 100 Silver; 1 Small Jade = 1.000 Gold; 1 Medium Jade = 100 Small Jade; 1 Ancient Jade = 100 Medium Jade.
 
-## 10. Integrasi
+## 10. Satuan Jarak Resmi
+- Satuan jarak resmi TianDao-World adalah **Li (里)**.
+- **1 Li = 500 meter = 0,5 km; 2 Li = 1 km.**
+- Meter/kilometer hanya digunakan sebagai konversi penjelas jika diperlukan, bukan satuan runtime utama.
+- Semua jarak baru untuk perjalanan, lokasi, peta, NPC, encounter, combat range, event, dan sistem lain harus dinyatakan dalam Li kecuali Canon/Admin menetapkan satuan khusus.
+- `systems/20_TRAVEL_ROUTES.md` adalah baseline registry rute dan konversi jarak resmi.
+
+## 11. Integrasi
 Setiap resolusi: load Core → load modul relevan → load custom event → validasi → resolusi → reaksi dunia → update state/log → respons GM.
