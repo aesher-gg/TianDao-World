@@ -90,6 +90,7 @@
 - `gm/GM_PROMPT.md`
 - `gm/PLAYER_BOOT_PROMPT.md`
 - `gm/ACTION_RUNTIME_PROMPT.md`
+- `gm/PENDING_SYNC.md` — mandatory fallback/procedure when repository write-back is unavailable or fails
 - `gm/RESPONSE_FORMAT.md`
 - `gm/CHECKLIST.md`
 - `gm/VALIDATION_RULES.md`
@@ -115,8 +116,13 @@
 ## Runtime Prompt Contract
 - `gm/PLAYER_BOOT_PROMPT.md` digunakan sekali pada boot karakter/sesi baru untuk memuat World Bible, current state, dan memory yang relevan.
 - `gm/ACTION_RUNTIME_PROMPT.md` digunakan pada setiap aksi gameplay berikutnya.
+- **Setiap Player message adalah turn baru dan wajib memulai dengan fresh fetch/verification `INDEX.md` dari repository sebelum membaca/menilai state atau memproses intent. Tidak boleh memakai INDEX, state, atau hasil load dari turn sebelumnya sebagai pengganti fresh fetch.**
+- **Jika tool fetch tersedia, panggilan fetch `INDEX.md` harus menjadi operasi repository pertama pada setiap turn. AI GM dilarang menghasilkan resolusi gameplay sebelum hasil fetch tersebut berhasil dibaca.**
+- Setelah INDEX fresh berhasil dibaca, AI GM wajib mengikuti Load Order dan melakukan fetch ulang setiap sumber state yang diperlukan untuk turn tersebut.
+- Jika fresh fetch `INDEX.md` gagal, AI GM wajib menyatakan repository fetch failure dan tidak boleh berpura-pura telah melakukan fresh verification.
 - Setiap aksi yang menghasilkan perubahan material wajib melewati Save Pipeline.
 - Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; bila Spirit Beast terlibat, Current Beast State dan Beast History juga wajib diproses sesuai Module 24.
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
 - `systems/23_GARDENING.md` wajib dimuat ketika berkebun, tanaman, kebun, pertumbuhan tanaman, atau hasil panen menjadi relevan terhadap aksi/runtime.
 - `systems/24_SPIRIT_BEASTS.md` wajib dimuat ketika Spirit Beast, taming, ownership, contract, Beast combat, Beast growth/evolution, Beast state, atau Beast history menjadi relevan terhadap aksi/runtime.
+- `gm/PENDING_SYNC.md` wajib digunakan ketika write-back repository tidak tersedia atau gagal; pending changes bukan Canon tersinkron sampai diverifikasi dan ditulis oleh Admin.
