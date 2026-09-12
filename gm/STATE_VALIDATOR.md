@@ -1,7 +1,7 @@
 # Runtime State Validator
 
 ## Tujuan
-Memastikan state dan persistent memory yang akan diterapkan merupakan hasil transisi sah, bukan klaim, kebocoran antar-character, atau retcon.
+Memastikan state dan persistent memory yang akan diterapkan merupakan hasil transisi sah, bukan klaim, kebocoran antar-character/entity, atau retcon.
 
 ## Pre-Resolution Validation
 - [ ] Waktu dunia valid dan tidak mundur.
@@ -17,6 +17,12 @@ Memastikan state dan persistent memory yang akan diterapkan merupakan hasil tran
 - [ ] Durasi aksi memenuhi Time System.
 - [ ] Character History yang dimuat cocok dengan Active Character ID.
 - [ ] Shared story memory yang digunakan memang relevan.
+- [ ] Jika Spirit Beast terlibat, BEAST_ID valid, unik, dan cocok dengan Beast Registry.
+- [ ] Jika Spirit Beast terlibat, Current Beast State dan Beast History yang dimuat cocok dengan BEAST_ID.
+- [ ] Jika Spirit Beast terlibat, relationship/taming/ownership/contract memiliki status dan origin yang dapat dibuktikan.
+- [ ] Jika Spirit Beast terlibat, Tier dan Realm/Stage tidak dicampur dan masing-masing sesuai data spesies/sistem.
+- [ ] Jika Spirit Beast terlibat, HP/Qi/Stamina/Satiety dan kondisi Beast berada dalam batas sistem.
+- [ ] Jika Spirit Beast terlibat, lokasi Beast, habitat, lifecycle, missing/deceased status, abilities, dan techniques konsisten.
 - [ ] Jika gardening relevan, `systems/23_GARDENING.md` dimuat.
 - [ ] Jika gardening relevan, Garden/Crop ID, lokasi, jenis tanaman, jumlah, waktu tanam, tahap pertumbuhan, dan sumber benih diketahui atau ditandai `???`.
 - [ ] Jika gardening relevan, seluruh status numerik berada pada rentang 0–100.
@@ -46,9 +52,17 @@ Memastikan state dan persistent memory yang akan diterapkan merupakan hasil tran
 - [ ] Event hanya berubah jika trigger terpenuhi.
 - [ ] State baru dapat ditelusuri ke sumber.
 - [ ] Character History update hanya memuat fakta yang benar-benar terjadi.
+- [ ] Beast History update hanya memuat fakta Beast yang benar-benar terjadi.
 - [ ] Character History tidak memuat data Character lain.
+- [ ] Beast History tidak memuat data Beast lain.
 - [ ] Active Threads memiliki origin dan status yang dapat ditelusuri.
 - [ ] World State/Timeline hanya diperbarui untuk fakta shared/world-level yang terkonfirmasi.
+- [ ] Jika relationship/taming/ownership/contract Beast berubah, perubahan memiliki causality dan Origin.
+- [ ] Jika Beast growth/evolution terjadi, requirement, method, before → after, dan Origin valid.
+- [ ] Jika Beast transfer/release terjadi, owner lama/baru dan mekanisme perubahan dapat ditelusuri.
+- [ ] Missing Beast tidak diperlakukan sebagai deceased atau dipindahkan tanpa dasar.
+- [ ] Deceased Beast tidak kembali aktif tanpa mekanisme resmi.
+- [ ] Jika Character dan Beast berubah dalam transaksi yang sama, kedua state memiliki before → after dan cost yang konsisten.
 - [ ] Jika gardening berubah, jumlah tanaman, status kebun/tanaman, hasil panen, waktu panen, dan Origin konsisten.
 - [ ] Write-back status diketahui dan tidak dipalsukan.
 
