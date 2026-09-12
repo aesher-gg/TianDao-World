@@ -39,12 +39,16 @@
 - `systems/21_REGIONAL_ECONOMY.md`
 - `systems/22_REGIONAL_FACTION_RELATIONS.md`
 - `systems/23_GARDENING.md` — Gardening, crop growth, numeric garden/crop status
+- `systems/24_SPIRIT_BEASTS.md` — Spirit Beast identity, state, relationship, taming, ownership, contract, growth/evolution, combat, and persistence
 
 ## Characters
 - `characters/players.md` — Player Registry
 - `characters/character_registry.md` — Character Registry
+- `characters/beast_registry.md` — Spirit Beast Registry
 - `characters/players/` — Individual Current Character State files
+- `characters/beasts/` — Individual Current Spirit Beast State files
 - `character_history/` — Persistent private story memory per Character ID
+- `beast_history/` — Persistent private history per Beast ID
 
 ## Persistent Story Memory
 - `story/WORLD_STATE.md` — shared world facts with ongoing consequences
@@ -99,18 +103,20 @@
 ## Load Order
 1. Core rules.
 2. Custom content dan event resmi.
-3. Relevant realm/system modules.
+3. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan.
 4. Faction databases dan city/NPC databases bila relevan.
 5. Lore yang relevan.
 6. Shared persistent world state dan active story threads bila relevan.
 7. Current character state yang sesuai dengan Character ID aktif.
-8. Character History milik Character ID aktif bila tersedia.
-9. Player intent.
+8. Current Spirit Beast State dan Beast History yang relevan dengan action/encounter/relationship.
+9. Character History milik Character ID aktif bila tersedia.
+10. Player intent.
 
 ## Runtime Prompt Contract
 - `gm/PLAYER_BOOT_PROMPT.md` digunakan sekali pada boot karakter/sesi baru untuk memuat World Bible, current state, dan memory yang relevan.
 - `gm/ACTION_RUNTIME_PROMPT.md` digunakan pada setiap aksi gameplay berikutnya.
 - Setiap aksi yang menghasilkan perubahan material wajib melewati Save Pipeline.
-- Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; memory hanya mencatat fakta yang benar-benar telah terjadi.
+- Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; bila Spirit Beast terlibat, Current Beast State dan Beast History juga wajib diproses sesuai Module 24.
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
 - `systems/23_GARDENING.md` wajib dimuat ketika berkebun, tanaman, kebun, pertumbuhan tanaman, atau hasil panen menjadi relevan terhadap aksi/runtime.
+- `systems/24_SPIRIT_BEASTS.md` wajib dimuat ketika Spirit Beast, taming, ownership, contract, Beast combat, Beast growth/evolution, Beast state, atau Beast history menjadi relevan terhadap aksi/runtime.
