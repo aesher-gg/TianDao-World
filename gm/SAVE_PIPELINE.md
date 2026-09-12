@@ -6,38 +6,45 @@ Menjamin current state dan persistent story memory selalu merupakan hasil dari t
 ## Save Sequence
 1. Ambil current state terakhir yang terverifikasi.
 2. Muat Character History milik Character aktif bila tersedia.
-3. Muat shared World State/Active Threads/Timeline bila relevan.
-4. Terapkan hasil aksi/event yang sudah lolos resolusi.
-5. Hitung before → after untuk semua field material.
-6. Tambahkan Origin Log dengan waktu, penyebab, resolusi, dan sumber.
-7. Jalankan State Validator.
-8. Jika FAIL, jangan overwrite state terverifikasi dan jangan menulis memory sebagai fakta baru.
-9. Jika PASS, hasil menjadi current state berikutnya.
-10. Ekstrak hanya fakta cerita material yang benar-benar terkonfirmasi.
-11. Append/update Character History untuk fakta privat Character.
-12. Update Active Threads, World State, atau Timeline hanya bila dampaknya memenuhi scope masing-masing.
-13. Commit/write-back ke repository melalui integrasi resmi yang tersedia.
-14. Verifikasi hasil write-back sebelum menyatakan save tersinkron.
+3. Jika Spirit Beast terlibat, muat Current Beast State berdasarkan BEAST_ID dan Beast History yang sesuai.
+4. Muat shared World State/Active Threads/Timeline bila relevan.
+5. Terapkan hasil aksi/event yang sudah lolos resolusi pada entity yang relevan.
+6. Hitung before → after untuk semua field material Character dan Beast yang berubah.
+7. Tambahkan Origin Log dengan waktu, entity ID, penyebab, resolusi, dan sumber.
+8. Jalankan State Validator.
+9. Jika FAIL, jangan overwrite state terverifikasi dan jangan menulis memory sebagai fakta baru.
+10. Jika PASS, hasil menjadi current state berikutnya untuk Character dan/atau Beast.
+11. Ekstrak hanya fakta cerita material yang benar-benar terkonfirmasi.
+12. Append/update Character History untuk fakta privat Character.
+13. Append/update Beast History untuk fakta privat Beast.
+14. Update Active Threads, World State, atau Timeline hanya bila dampaknya memenuhi scope masing-masing.
+15. Commit/write-back ke repository melalui integrasi resmi yang tersedia.
+16. Verifikasi hasil write-back sebelum menyatakan save tersinkron.
 
 ## Material Fields
-HP, Qi, Stamina, Satiety, realm/stage, cultivation progress, status/condition, item, equipment, durability, currency, technique, Karma, Reputation, faction rank, contract, lokasi, dan waktu.
+Character: HP, Qi, Stamina, Satiety, realm/stage, cultivation progress, status/condition, item, equipment, durability, currency, technique, Karma, Reputation, faction rank, contract, lokasi, dan waktu.
+
+Spirit Beast: relationship, trust, bond, loyalty, taming status, ownership status/owner, contract status/type, tier, realm/stage bila berlaku, growth/evolution, HP, Qi, Stamina, Satiety, condition, abilities, techniques, lokasi, habitat, lifecycle status, dan waktu.
 
 ## Story Memory Criteria
 Simpan memory hanya jika peristiwa memiliki nilai kontinuitas, misalnya:
-- hubungan NPC/faction yang berubah signifikan;
-- teknik/item/teacher/sect yang diperoleh atau hilang;
+- hubungan NPC/faction/Beast yang berubah signifikan;
+- teknik/item/teacher/sect/Beast yang diperoleh atau hilang;
 - quest, kontrak, janji, hutang, konflik, atau kewajiban;
 - cedera/trauma atau konsekuensi permanen;
 - event dunia besar;
 - informasi penting yang karakter benar-benar ketahui;
-- keputusan atau kejadian yang akan memengaruhi masa depan.
+- keputusan atau kejadian yang akan memengaruhi masa depan;
+- transisi Beast berupa taming, ownership, contract, growth/evolution, missing, atau death.
 
 Aksi rutin tanpa konsekuensi jangka panjang tidak perlu masuk Story History.
 
-## Character Isolation
+## Character/Beast Isolation
 - Character History selalu dipilih berdasarkan Character ID aktif.
-- Jangan membaca atau menulis history Character lain kecuali ada alasan resmi dari event/interaksi.
+- Beast History selalu dipilih berdasarkan BEAST_ID.
+- Jangan membaca atau menulis history entity lain kecuali ada alasan resmi dari event/interaksi.
 - Shared memory tidak boleh digunakan untuk menyimpulkan detail privat yang tidak tercatat.
+- Ownership transfer mengubah owner mapping, bukan BEAST_ID.
 
 ## Recovery
 Jika data hilang atau konflik, gunakan snapshot/Origin Log/History terakhir yang dapat dibuktikan. Jangan mengisi celah dengan tebakan atau nilai yang diminta player.
