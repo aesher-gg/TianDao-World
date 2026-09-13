@@ -1,39 +1,57 @@
-# Character Story History — CHAR-0001
+# Character History — CHAR-0001
 
-> Persistent long-term story memory for one Character. This file is not a replacement for Current Character State and must not be used to invent missing facts.
-
-## Character
+## Identity
 - **Character ID:** CHAR-0001
 - **Player ID:** PLAYER-0001
 - **Character:** Ryxian
 
-## Confirmed Story Events
-- Initial creation: Ryxian begins in Desa Baihe as a Mortal with no teacher, sect, faction, weapon, techniques, or family, and 25 Tembaga.
-- **1200 Era Kebangkitan — 26 Bulan Bunga, Jumat, 17:00:** After returning from Distrik Perguruan to Distrik Selatan Yunjing, Ryxian secured a private room at Penginapan Akar Tua for 5 nights by paying 25 Tembaga in advance. The room provides a safe, lockable place to rest and prepare for the Ujian Pelayan Canglan. The event was facilitated by Paman Ma, who recommended the inn.
-- **1200 Era Kebangkitan — Tanggal 3 Bulan Naga, Jumat, 08:00:** Ryxian completed the Ujian Pelayan Canglan sequence, collapsed after severe physical overexertion, and was treated by Sekte Pedang Canglan. He recovered partially to HP 95/100, Stamina 60/100, and Satiety 70%.
-- **1200 Era Kebangkitan — Tanggal 3 Bulan Naga, Jumat, 08:00:** Ryxian was accepted as an official Pelayan Luar / Outer Servant of Sekte Pedang Canglan. He received a Jubah Abu-abu Kasar Pelayan Luar and a Token Kayu Pelayan Luar Canglan. The Herbal Berdarah and six wolf fangs obtained for the examination were confiscated as sect property/upeti. His recorded currency at this save point is 17 Tembaga.
+## Timeline
 
-## Important NPC Relationships
-- Paman Ma — Kontak Mortal Yunjing; Ryxian owes him a debt of gratitude for the assistance and recommendation that led to the Penginapan Akar Tua.
-- Pemilik Penginapan Akar Tua — Pemilik penginapan tempat Ryxian menyewa kamar pribadi selama 5 malam.
-- Tetua Shen — Penguji Ujian Canglan yang merekomendasikan Ryxian secara pribadi setelah melihat hasil ujiannya.
-- Pelayan medis Sekte Canglan — Menangani Ryxian setelah ia pingsan; identitas pribadi tidak ditetapkan.
+### Initial Creation
+Character created from the official Player Registry starting data.
 
-## Outstanding Threads
-- Kewajiban Pelayan Luar Sekte Pedang Canglan — Ryxian kini terikat pada kewajiban harian dan aturan sekte.
-- Ujian Pelayan Canglan — Selesai; Ryxian resmi diterima sebagai Pelayan Luar.
+### 1200 Era Kebangkitan — 26 Bulan Bunga, Jumat, 17:00
+Ryxian secured a private room at Penginapan Akar Tua for 5 nights by paying 25 Tembaga and established a temporary safe operating base in Distrik Selatan Yunjing.
 
-## Permanent Consequences
-- Ryxian menjadi Pelayan Luar Sekte Pedang Canglan.
-- Hasil buruan ujian (Herbal Berdarah dan enam taring serigala) menjadi properti/upeti sekte.
-- Ryxian memperoleh akses awal ke barak dan fasilitas dasar Pelayan Luar, termasuk tempat tidur dan jatah bubur sesuai narasi save point.
+### 1200 Era Kebangkitan — Tanggal 3 Bulan Naga, Jumat, 08:00
+Ryxian completed the Ujian Pelayan Canglan sequence, collapsed after physical overexertion, received treatment from Sekte Pedang Canglan, and recovered partially to HP 95/100, Stamina 60/100, and Satiety 70%.
 
-## Memory Integrity Rules
-- Add only events actually resolved and supported by Current State, Origin Log, Canon/Admin data, or valid runtime resolution.
-- Never invent dialogue, motives, relationships, rewards, locations, or events.
-- Do not delete or rewrite established history to benefit the Player.
-- If historical information cannot be proven, record `???` or omit it rather than guessing.
+Ryxian became an official Outer Servant of Sekte Pedang Canglan. He received 1x Jubah Abu-abu Kasar Pelayan Luar and 1x Token Kayu Pelayan Luar Canglan. Herbal Berdarah and six wolf fangs from the examination were confiscated as sect property/upeti. Currency at that save point: 17 Tembaga. Location: Barak Pelayan Luar — Kompleks Sekte Pedang Canglan.
 
-## History Metadata
-- **History Version:** 3
-- **Last Verified:** 1200 Era Kebangkitan — Musim Semi — Tanggal 3 Bulan Naga — Jumat, 08:00
+### 1200 Era Kebangkitan — Tanggal 4 Bulan Naga, Sabtu, 14:30
+Gameplay snapshot establishes Ryxian at Lapangan Latihan Pinggiran, Kompleks Sekte Pedang Canglan, Perbukitan Cangyuan after completing the midday rest and preparing for the afternoon shift.
+
+**Verified State Snapshot:**
+- HP: 98/100
+- Qi: 0/0
+- Stamina: 50/100
+- Satiety: 65%
+- Realm: Mortal
+- Cultivation Progress: 0%
+- Cultivation Law: Belum ada
+- Law Origin: ???
+- Karma: ???
+- Currency: 17 Tembaga
+- Sect Contribution: 3 Poin Kontribusi Sekte Canglan
+- Affiliation: Sekte Pedang Canglan — Pelayan Luar
+- Contract/Status: Kontrak Pelayan Luar Sekte Canglan; istirahat siang selesai; siap shift sore
+
+**Physical State:** Luka Gores Bahu (Mengering); Rusuk Sembuh Total (Fasia Mengeras); Betis Kanan (Membaik); Fasia Lengan Mengeras; Otot Hangat/Lelah (Pasca Latihan); Core Solid. Tidak ada trauma permanen.
+
+**Techniques:**
+- Napas Kura-kura Hitam — Progres Fondasi Hari ke-11; Technique Origin: Gulungan Bambu, ditemukan/dibeli di masa lalu.
+- Dasar Pedang Mortal "Tebasan Besi" — Tahap Fondasi Awal, dengan presisi dan kontrol kuda-kuda terintegrasi; Technique Origin: pembelian manual di Toko Barang Bekas Jalan Pedang, Yunjing.
+
+**Current Equipment:** Jubah Abu-abu Kasar Pelayan Luar (dipakai); Bebat Linen Dada (Penopang); Papan Tally Poin Kontribusi; 1x Pisau Belati Besi Tempa (disarungkan di pinggang).
+
+**Current Inventory:** Batu api usang; Gulungan Bambu "Napas Kura-kura Hitam"; Gulungan Dasar Pedang Mortal "Tebasan Besi"; Token Kayu Pelayan Luar Canglan (ID: Ryxian); Tali Rami sisa 8 meter; Bubuk Penghenti Darah (Mortal); Pil Penetral Racun (Mortal); Catatan Robek: Prinsip Kuda-kuda & Pinggang.
+
+**Insights:** Identifikasi Herbal Dasar Sekte — Rumput Embun Pagi vs Rumput Jarum Beracun.
+
+**Connections:** Tetua Shen, Steward Lin, Pelayan Kepala Chen, Paman Ma, Mandor Bengkel Persediaan, Pemilik Toko Barang Bekas Jalan Pedang, serta berbagai kontak mortal minor di Yunjing dan Desa Baihe.
+
+## Save Metadata
+- **Latest Save Version:** 4
+- **Latest State Status:** Verified Gameplay Save Point
+- **Latest Verified:** 1200 Era Kebangkitan — Musim Semi — Tanggal 4 Bulan Naga — Sabtu — 14:30
+- **Repository Sync:** Verified
