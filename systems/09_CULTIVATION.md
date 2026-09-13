@@ -60,8 +60,45 @@ Pembukaan Dantian dan pembukaan Meridian adalah proses berbeda. Keberhasilan mem
 
 Setiap progres Dantian/meridian harus dapat ditelusuri melalui Origin Log dan tidak boleh diubah secara retroaktif.
 
-## 3. Cultivation Law
-Setiap karakter memiliki cultivation law dan Law Origin. Law Origin harus berasal dari pembelajaran atau sumber yang tercatat. Law modifier hanya boleh digunakan jika didefinisikan oleh modul law resmi/kustom.
+## 3. Cultivation Law & Law Origin
+**Cultivation Law** adalah hukum/jalur kultivasi yang sedang digunakan karakter. Law bukan teknik individual dan tidak otomatis memberikan seluruh teknik yang berkaitan dengannya.
+
+**Law Origin** adalah provenance resmi yang menjelaskan bagaimana karakter memperoleh, mempelajari, mewarisi, mengembangkan, atau mengaktifkan Cultivation Law.
+
+Law Origin yang tervalidasi harus mencatat, sejauh relevan:
+- `Law` — hukum yang diperoleh/digunakan;
+- `Source Type` — misalnya Teacher, Manual, Faction, Event, Item, Inheritance, Self-Insight, Official/Custom;
+- `Source` — sumber spesifik;
+- `Acquisition Method` — cara memperoleh/mempelajari Law;
+- `Requirements` — syarat yang diperlukan;
+- `Training/Insight Process` — proses belajar/pemahaman bila relevan;
+- `World Time` — waktu resolusi;
+- `Resolution` — hasil proses;
+- `Status` — `VALIDATED & ACTIVE`, `VALIDATED & INACTIVE`, `PENDING VALIDATION`, `REJECTED`, atau `???`;
+- `Origin Reference` — rujukan ke Character History, Event, Item, Faction, atau sumber Canon/Admin.
+
+Format operasional:
+
+```text
+Law Origin:
+Law: <Cultivation Law>
+Source Type: <type>
+Source: <specific source>
+Acquisition Method: <method>
+Requirements: <requirements / ???>
+Training/Insight Process: <process / N/A>
+World Time: <time / ???>
+Resolution: <result>
+Status: <status>
+Origin Reference: <reference / ???>
+```
+
+Law dapat berasal dari guru, manual, faction, event, item, inheritance, self-insight, atau sumber Official/Custom **hanya jika mekanisme sumber tersebut benar-benar tersedia dan tervalidasi**. Mengetahui atau menemukan sebuah nama Law tidak sama dengan berhasil memperolehnya.
+
+Tidak boleh memberikan Law baru hanya karena player meminta, karena Realm cukup tinggi, atau tanpa proses/sumber yang sah.
+
+### Law Origin ≠ Technique Origin
+Law Origin menjawab **dari mana jalur/hukum kultivasi diperoleh**. Technique Origin menjawab **dari mana teknik tertentu diperoleh**. Memiliki Law tidak otomatis memberikan semua teknik yang berhubungan dengan Law tersebut.
 
 ## 4. Kultivasi
 Kultivasi mengonsumsi waktu dan dapat mengonsumsi resource sesuai teknik/law. Progress tidak otomatis menghasilkan breakthrough.
@@ -78,11 +115,35 @@ Untuk breakthrough Realm 1 → Realm 2, **10/10 Meridian terbuka adalah syarat p
 
 GM tidak memberikan breakthrough hanya karena player meminta.
 
+Jika breakthrough mengubah atau membuka Cultivation Law, Law baru tersebut wajib melalui Law Origin Resolution dan dicatat dalam Origin Log sebelum menjadi `ACTIVE`.
+
 ## 6. Retret
 Tunduk pada Core Rules dan Time System: maksimal 1 bulan per prompt, aman/stasioner, logistik jelas, aktivitas tunggal, dan checkpoint. Maksimal 3 bulan intensif berturut-turut sebelum jeda.
 
 ## 7. Origin Log
 Setiap perubahan cultivation law, technique, insight penting, pembukaan Dantian, pembukaan Meridian, realm, atau breakthrough dicatat dengan sumber dan waktu.
 
-## 8. Integrasi
+Untuk perubahan Law, Origin Log minimal mencatat:
+
+```text
+World Time
+Character ID
+Action/Event
+Cause
+Resolution
+Before: Cultivation Law + Law Origin
+After: Cultivation Law + Law Origin
+Source
+```
+
+## 8. Runtime Law Resolution
+Aksi yang memperoleh atau mengubah Law wajib mengikuti:
+
+**SOURCE → ACQUISITION METHOD → REQUIREMENTS → TRAINING/INSIGHT → RESOLUTION → LAW ORIGIN VALIDATION → CHARACTER STATE APPLY → ORIGIN LOG → HISTORY → SAVE → WRITE-BACK VERIFY**
+
+Tanpa Law Origin yang tervalidasi, Law baru tidak boleh dipasang sebagai `ACTIVE`.
+
+`???` berarti data mekanis memang belum diketahui/tersedia; jangan ditebak. Jika sumber Canon/Admin atau riwayat valid sudah menentukan asal Law, runtime wajib menggunakannya.
+
+## 9. Integrasi
 QiCap menjadi input untuk HP, AttackPower, PassiveDefense, resource combat, dan evaluasi kemampuan untuk Realm yang memiliki QiCap standar. Realm juga memengaruhi interaksi, encounter, dan hit chance.
