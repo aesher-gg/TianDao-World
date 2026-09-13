@@ -152,7 +152,13 @@ Scheduled Event tetap mengikuti `events/scheduled_events/00_SCHEDULED_EVENT_REGI
 
 ## 2.2 Local Event Pressure
 
-Gunakan input yang sudah ada dari Module 25 jika encounter/creature pressure relevan, lalu tambahkan Social Activity.
+Local Event tidak harus bergantung pada creature encounter. Gunakan **Social Activity** sebagai basis untuk event sosial/lokal. Jika event memiliki komponen creature/physical disturbance, Module 25 dapat menjadi input tambahan.
+
+Untuk social-only/local event:
+
+`Local Event Pressure = clamp(Social Activity + Σ Event Modifier, 0, 95)`
+
+Untuk event yang secara material bergantung pada creature/encounter pressure:
 
 `Local Event Pressure = clamp((Encounter Pressure + Social Activity) / 2 + Σ Event Modifier, 0, 95)`
 
@@ -174,6 +180,8 @@ Tidak boleh membuat modifier numerik tersembunyi.
 Local event muncul jika:
 
 `Roll ≤ Local Event Pressure`
+
+Jika faktor mekanis yang dibutuhkan tidak tersedia, gunakan formula yang tidak membutuhkan faktor tersebut bila memang tersedia; jangan memasukkan `???` ke perhitungan seolah-olah bernilai nol.
 
 ## 2.3 Event Scope
 
@@ -359,7 +367,7 @@ Contoh:
 - Event boleh tidak terjadi.
 - Quest boleh gagal.
 - Generated NPC/Event/Quest tidak boleh mengalahkan Canon/Admin.
-- Character Realm tidak otomatis menaikkan kualitas NPC, Event, Quest, atau reward.
+- Character Realm tidak otomatis menaikkan kualitas NPC, Event, Quest, difficulty, atau reward.
 - Tidak ada hidden time-skip untuk menyelesaikan quest.
 - Quest dan event yang berlangsung lama tunduk pada Time System dan checkpoint maksimal sesuai Action System.
 
