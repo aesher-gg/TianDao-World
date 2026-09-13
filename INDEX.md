@@ -15,12 +15,12 @@
 
 ## Realms
 - `realms/01_WORLD_MAP.md`
-- `realms/02_CENTRAL_PLAINS.md`
-- `realms/03_AZURE_MOUNTAIN.md`
-- `realms/04_SOUTHERN_DEMON_DOMAIN.md`
-- `realms/05_EASTERN_SEA.md`
-- `realms/06_NORTHERN_DESOLATE.md`
-- `realms/07_WESTERN_SACRED_DESERT.md`
+- `realms/02_CANGYUAN_PLAINS.md`
+- `realms/03_QINGLUAN_MOUNTAINS.md`
+- `realms/04_SOUTHERN_YAOHUANG_DOMAIN.md`
+- `realms/05_DONGMING_SEA.md`
+- `realms/06_BEIMING_SNOWLANDS.md`
+- `realms/07_JINYAN_DESERT.md`
 
 ## Systems
 - `systems/08_ORGANIZATIONS.md`
