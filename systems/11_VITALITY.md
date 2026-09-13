@@ -73,9 +73,46 @@ Naik Realm tidak berarti stamina current otomatis kembali penuh. Setelah breakth
 ## 4. Satiety
 Satiety dicatat sebagai persentase 0–100%. Makanan mengembalikan satiety sesuai item resmi. Kelaparan memengaruhi kondisi, stamina, fokus, dan pemulihan sesuai tabel/modifier resmi.
 
-Baseline durasi tanpa makanan:
+### 4.1 FastingMultiplier Resmi
+FastingMultiplier ditentukan berdasarkan Realm dan tidak boleh ditebak, diinterpolasi, atau diganti dengan fallback metabolisme buatan GM.
+
+| Realm | FastingMultiplier | JamSampaiKosong |
+|---|---:|---:|
+| Mortal | ×4 | 24 jam |
+| Meridian Opening | ×8 | 48 jam |
+| Qi Refining | ×16 | 96 jam |
+| Foundation Establishment | ×32 | 192 jam |
+| Core Formation | ×64 | 384 jam |
+| Nascent Soul | ×128 | 768 jam |
+| Soul Transformation | ×256 | 1.536 jam |
+| Void Severing | ×512 | 3.072 jam |
+| Tribulation Crossing | ×1.024 | 6.144 jam |
+| Immortal Ascension | ×2.048 | 12.288 jam |
+
 **JamSampaiKosong = 6 jam × FastingMultiplier(realm)**.
-FastingMultiplier harus berasal dari tabel resmi; tidak boleh ditebak bila tabel belum tersedia.
+
+Aturan:
+- FastingMultiplier ditentukan oleh Realm, bukan Stage, kecuali ada modifier resmi yang secara eksplisit mengubahnya.
+- GM dilarang membuat angka fallback, asumsi metabolisme, interpolasi, atau modifier tidak terdokumentasi.
+- Jika Realm tidak diketahui, gunakan `???` dan jangan menghitung pengurangan Satiety berdasarkan tebakan.
+- Modifier FastingMultiplier hanya boleh berasal dari law, Body-Refining, kondisi, item, teknik, penyakit, lingkungan, atau mekanisme resmi yang terdokumentasi dan tervalidasi.
+- Early/Middle/Peak tidak otomatis mengubah FastingMultiplier.
+- Satiety selalu dibatasi pada 0–100%.
+
+### 4.2 Perhitungan Satiety Berbasis Waktu
+Untuk interval waktu tanpa makanan:
+
+**SatietyDrainRate = 100% ÷ JamSampaiKosong**
+
+**SatietyAfter = clamp(SatietyBefore − (ElapsedHours × SatietyDrainRate) + FoodRecovery + OfficialModifiers, 0%, 100%)**
+
+Contoh Mortal:
+- FastingMultiplier = ×4
+- JamSampaiKosong = 6 × 4 = 24 jam
+- Drain rate = 100 ÷ 24 = 4,1667% per jam
+- Satiety 70% setelah 10 jam = 70 − (10 × 4,1667) = **28,33%** sebelum FoodRecovery/OfficialModifiers.
+
+Efek Hunger terhadap HP, Stamina, fokus, pemulihan, atau kondisi hanya boleh diterapkan jika ditentukan oleh tabel/modifier resmi yang tersedia. Tidak boleh dibuat sebagai asumsi GM.
 
 ## 5. Kondisi
 Status seperti Normal, Terluka, Keracunan, Kutukan, Trauma, atau kondisi khusus memiliki sumber, durasi bila ada, efek, dan metode pemulihan.
