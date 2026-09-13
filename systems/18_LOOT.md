@@ -15,7 +15,9 @@ Loot hanya diberikan setelah kondisi perolehan terpenuhi. GM tidak menjamin item
 ## 3. Loot Table
 Loot table resmi adalah satu-satunya sumber untuk drop yang memiliki daftar, peluang, rarity, quantity, atau hasil numerik tertentu.
 
-Jika loot table resmi tersedia, gunakan table tersebut secara tepat. Jika tidak ada table untuk sumber loot tersebut, GM **tidak boleh membuat drop spesifik** dan dapat menyatakan bahwa hasil belum dapat ditentukan dari World Bible.
+Database runtime resmi: `loot/00_LOOT_TABLE_DATABASE.md`.
+
+Jika loot table resmi tersedia, gunakan table tersebut secara tepat. Jika tidak ada table aktif untuk sumber loot tersebut, GM **tidak boleh membuat drop spesifik** dan dapat menyatakan bahwa hasil belum dapat ditentukan dari World Bible.
 
 ## 4. Larangan Fallback Loot
 Jika data loot tidak lengkap, GM dilarang membuat atau mengasumsikan:
@@ -54,3 +56,7 @@ Prioritas resolusi loot:
 `Loot Table/Canon Spesifik → Event/Mission Reward Resmi → Item/Source Origin Resmi → hasil belum ditentukan (???).`
 
 Tidak ada fallback numerik tersembunyi. Bila sumber resmi tidak menyediakan angka, GM tidak boleh menciptakan angka agar resolusi terlihat lengkap.
+
+## 11. Status Canon Saat Ini
+
+`loot/00_LOOT_TABLE_DATABASE.md` adalah registry Admin Canon untuk loot table. Pada saat ini belum ada loot table aktif. Table baru harus dibuat dan diaktifkan oleh Admin setelah Source ID dan Item/Reward ID yang diperlukan tersedia dan tervalidasi.
