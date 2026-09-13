@@ -40,9 +40,10 @@
 - `systems/22_REGIONAL_FACTION_RELATIONS.md`
 - `systems/23_GARDENING.md` — Gardening, crop growth, numeric garden/crop status
 - `systems/24_SPIRIT_BEASTS.md` — Spirit Beast identity, state, relationship, taming, ownership, contract, growth/evolution, combat, and persistence
+- `systems/25_DYNAMIC_GENERATION.md` — Admin formulas for dynamic encounter, Monster/Spirit Beast generation, Threat/Tier ceiling, and Loot generation
 
 ## Loot — Canon Database
-- `loot/00_LOOT_TABLE_DATABASE.md` — Admin Canon loot table registry and runtime schema
+- `loot/00_LOOT_TABLE_DATABASE.md` — Optional Admin Canon registry for fixed/exception loot tables; not a global loot catalog
 
 ## Characters
 - `characters/players.md` — Player Registry
@@ -107,7 +108,7 @@
 ## Load Order
 1. Core rules.
 2. Custom content dan event resmi.
-3. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan.
+3. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan dan `systems/25_DYNAMIC_GENERATION.md` bila encounter/creature/loot generation relevan.
 4. Faction databases dan city/NPC databases bila relevan.
 5. Lore yang relevan.
 6. Shared persistent world state dan active story threads bila relevan.
@@ -128,5 +129,6 @@
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
 - `systems/23_GARDENING.md` wajib dimuat ketika berkebun, tanaman, kebun, pertumbuhan tanaman, atau hasil panen menjadi relevan terhadap aksi/runtime.
 - `systems/24_SPIRIT_BEASTS.md` wajib dimuat ketika Spirit Beast, taming, ownership, contract, Beast combat, Beast growth/evolution, Beast state, atau Beast history menjadi relevan terhadap aksi/runtime.
-- `loot/00_LOOT_TABLE_DATABASE.md` wajib dimuat ketika loot, drop, chest, monster reward, Spirit Beast loot, event reward, atau mission reward menjadi relevan terhadap aksi/runtime.
+- `systems/25_DYNAMIC_GENERATION.md` wajib dimuat ketika dynamic encounter, Monster generation, Spirit Beast generation, Threat/Tier generation, loot generation, atau loot resolution tanpa fixed table menjadi relevan terhadap aksi/runtime.
+- `loot/00_LOOT_TABLE_DATABASE.md` dimuat bila fixed loot table, unique reward, atau content table tertentu perlu diperiksa; registry tersebut tidak membatasi dynamic loot.
 - `gm/PENDING_SYNC.md` wajib digunakan ketika write-back repository tidak tersedia atau gagal; pending changes bukan Canon tersinkron sampai diverifikasi dan ditulis oleh Admin.
