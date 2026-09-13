@@ -37,7 +37,7 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sifat: teliti dan tegas terhadap pasien
 - Agenda: memperoleh biaya perjalanan dan membantu pasien yang mampu membayar
 - Pengetahuan: pengobatan umum sesuai keahlian
-- Sumber Canon: `realms/02_CENTRAL_PLAINS.md` — Dataran Cangyuan; detail NPC ditetapkan di registry NPC.
+- Sumber Canon: `realms/02_CANGYUAN_PLAINS.md` — Dataran Cangyuan; detail NPC ditetapkan di registry NPC.
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
 ### Zhao Wenqi
@@ -69,7 +69,7 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sifat: pendiam, observatif
 - Agenda: mengumpulkan bahan herbal dengan aman
 - Pengetahuan: area yang benar-benar pernah dijelajahi
-- Sumber Canon: `realms/03_AZURE_MOUNTAIN.md` — Pegunungan Qingluan.
+- Sumber Canon: `realms/03_QINGLUAN_MOUNTAINS.md` — Pegunungan Qingluan.
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
 ### Wei Chang
@@ -85,7 +85,7 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sifat: tegas, memperhatikan cuaca
 - Agenda: menjaga kapal, awak, dan muatan
 - Pengetahuan: rute laut yang dikuasainya
-- Sumber Canon: `realms/05_EASTERN_SEA.md` — Laut Dongming.
+- Sumber Canon: `realms/05_DONGMING_SEA.md` — Laut Dongming.
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
 ### Bai Ruyan
@@ -101,7 +101,7 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sifat: tenang, keras pada prosedur keselamatan
 - Agenda: mencegah korban perjalanan salju
 - Pengetahuan: jalur lokal dan kondisi pos
-- Sumber Canon: `realms/06_NORTHERN_DESOLATE.md` — Tanah Salju Beiming.
+- Sumber Canon: `realms/06_BEIMING_SNOWLANDS.md` — Tanah Salju Beiming.
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
 ### Ji Han
