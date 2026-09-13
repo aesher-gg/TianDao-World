@@ -1,7 +1,7 @@
 # Runtime State Validator
 
 ## Tujuan
-Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dynamic NPC/Event/Quest dan Monster/Beast/Loot, tanpa retcon, entity leakage, atau reward tanpa provenance.
+Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dynamic NPC/Event/Quest, Monster/Beast/Loot, serta Cultivation Law dan Technique provenance, tanpa retcon, entity leakage, atau reward/ability tanpa provenance.
 
 ## Pre-Resolution Validation
 - [ ] World Time valid dan tidak mundur.
@@ -11,6 +11,26 @@ Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dy
 - [ ] Durasi aksi memenuhi Time System.
 - [ ] Character History cocok dengan Active Character ID.
 - [ ] Dynamic generation, bila dipakai, memenuhi Module 25/26 input dan formula gate.
+
+### Cultivation Law / Law Origin
+- [ ] Cultivation Law aktif memiliki Law Origin yang tervalidasi, kecuali memang `???` karena source data belum tersedia.
+- [ ] Law Origin memiliki source yang nyata dan sesuai Canon/Admin: source type, source, acquisition method, dan resolution tidak boleh ditebak.
+- [ ] Requirements/training/insight yang diwajibkan telah dipenuhi atau resolusi sah telah membuktikan pengecualian.
+- [ ] World Time dan Origin Reference tersedia untuk perubahan material bila data tersebut diwajibkan.
+- [ ] Law Origin berstatus `VALIDATED & ACTIVE` sebelum Law baru dipasang sebagai aktif.
+- [ ] Law Origin tidak diperlakukan sebagai stat bonus.
+- [ ] Perubahan Law memiliki before/after, cause, resolution, source, dan Origin Log.
+- [ ] Law baru tidak muncul hanya karena Player meminta, Realm cukup tinggi, atau karakter memiliki teknik terkait.
+- [ ] `???` tidak boleh dipertahankan jika source Canon/Admin/History yang valid sudah menentukan asal Law.
+
+### Technique / Technique Origin
+- [ ] Setiap teknik baru memiliki Technique Origin yang valid.
+- [ ] Source Type dan Source sesuai sumber nyata.
+- [ ] Jika teknik berbasis Law, Cultivation Law aktif dan Law Origin tervalidasi.
+- [ ] Memiliki Law tidak dianggap otomatis memberikan semua teknik terkait.
+- [ ] Requirements, training/insight, mastery, effect, dan cost tidak dilewati atau diimprovisasi tanpa definisi sumber.
+- [ ] Technique Origin memiliki resolution/timestamp dan Origin Reference bila material.
+- [ ] Klaim teknik tanpa asal ditolak.
 
 ### Dynamic NPC
 - [ ] NPC fixed/Canon berasal dari source Canon yang benar.
