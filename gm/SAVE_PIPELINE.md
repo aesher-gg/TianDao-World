@@ -1,60 +1,49 @@
 # Runtime Save Pipeline
 
 ## Tujuan
-Menjamin current state dan persistent story memory selalu merupakan hasil dari transisi yang sah, dapat diaudit, dan dapat digunakan untuk melanjutkan cerita tanpa bergantung pada memory chat AI.
+Menjamin current state dan persistent memory adalah hasil transisi sah, termasuk transaksi multi-entity NPC → Event → Quest → Reward dan dynamic Monster/Beast/Loot.
 
 ## Save Sequence
-1. Ambil current state terakhir yang terverifikasi.
-2. Muat Character History milik Character aktif bila tersedia.
-3. Jika Spirit Beast terlibat, muat Current Beast State berdasarkan BEAST_ID dan Beast History yang sesuai.
-4. Muat shared World State/Active Threads/Timeline bila relevan.
-5. Terapkan hasil aksi/event yang sudah lolos resolusi pada entity yang relevan.
-6. Hitung before → after untuk semua field material Character dan Beast yang berubah.
-7. Tambahkan Origin Log dengan waktu, entity ID, penyebab, resolusi, dan sumber.
-8. Jalankan State Validator.
-9. Jika FAIL, jangan overwrite state terverifikasi dan jangan menulis memory sebagai fakta baru.
-10. Jika PASS, hasil menjadi current state berikutnya untuk Character dan/atau Beast.
-11. Ekstrak hanya fakta cerita material yang benar-benar terkonfirmasi.
-12. Append/update Character History untuk fakta privat Character.
-13. Append/update Beast History untuk fakta privat Beast.
-14. Update Active Threads, World State, atau Timeline hanya bila dampaknya memenuhi scope masing-masing.
-15. Commit/write-back ke repository melalui integrasi resmi yang tersedia.
-16. Verifikasi hasil write-back sebelum menyatakan save tersinkron.
+1. Ambil current state terakhir yang terverifikasi untuk Character dan setiap entity yang terlibat.
+2. Muat relevant History, World State, Active Threads, Timeline, Event data, dan Quest State.
+3. Terapkan hanya hasil resolusi yang telah lolos validation.
+4. Hitung before → after untuk semua field material pada semua entity yang berubah.
+5. Tambahkan Origin Log: `World Time / Entity ID / Action/Event / Cause / Resolution / Before → After / Source`.
+6. Jalankan State Validator.
+7. Jika FAIL, jangan overwrite state terverifikasi dan jangan menulis memory sebagai fakta baru.
+8. Jika PASS, tetapkan Current State baru untuk setiap entity yang berubah.
+9. Update Character History untuk pengalaman Character.
+10. Update NPC State/History untuk perubahan NPC persistent.
+11. Update Quest State untuk quest lintas-turn dan Active Threads bila scope shared.
+12. Update Event state/log dan World State/Timeline/Active Threads hanya bila scope mengharuskannya.
+13. Update Beast State/History bila Beast terlibat.
+14. Simpan reward yang benar-benar diperoleh: item/currency/technique/contract harus berasal dari source yang valid dan dicatat provenance-nya.
+15. Commit/write-back seluruh file terkait melalui integrasi repository resmi.
+16. Verifikasi setiap write-back sebelum menyatakan save tersinkron.
 
-## Material Fields
-Character: HP, Qi, Stamina, Satiety, realm/stage, cultivation progress, status/condition, item, equipment, durability, currency, technique, Karma, Reputation, faction rank, contract, lokasi, dan waktu.
+## Entity Save Rules
+### NPC
+Generated NPC yang tidak material tidak perlu disimpan. NPC recurring/material memakai NPC_ID stabil, Current NPC State, dan History bila diperlukan. Generated NPC tidak otomatis menjadi Global Canon.
 
-Spirit Beast: relationship, trust, bond, loyalty, taming status, ownership status/owner, contract status/type, tier, realm/stage bila berlaku, growth/evolution, HP, Qi, Stamina, Satiety, condition, abilities, techniques, lokasi, habitat, lifecycle status, dan waktu.
+### Event
+One-turn local event dapat tetap runtime. Local event lintas-turn/material memakai EVT_ID dan state/log. World Event/Scheduled Event memakai ID dan trigger Canon resmi.
 
-## Story Memory Criteria
-Simpan memory hanya jika peristiwa memiliki nilai kontinuitas, misalnya:
-- hubungan NPC/faction/Beast yang berubah signifikan;
-- teknik/item/teacher/sect/Beast yang diperoleh atau hilang;
-- quest, kontrak, janji, hutang, konflik, atau kewajiban;
-- cedera/trauma atau konsekuensi permanen;
-- event dunia besar;
-- informasi penting yang karakter benar-benar ketahui;
-- keputusan atau kejadian yang akan memengaruhi masa depan;
-- transisi Beast berupa taming, ownership, contract, growth/evolution, missing, atau death.
+### Quest
+Quest lintas-turn memakai QST_ID dan `story/quests/<QUEST_ID>.md`. Status/progress/objective/failure/completion/reward/expiry harus dapat ditelusuri. Quest gagal tidak memberi reward otomatis.
 
-Aksi rutin tanpa konsekuensi jangka panjang tidak perlu masuk Story History.
+### Reward
+Prioritas provenance: `Fixed Canon/Event/Mission Reward → Valid Item/Economy/Technique/Contract Source → Dynamic Loot Formula → ???`. Tidak ada reward bebas, breakthrough gratis, atau reward scaling otomatis dari Realm Character.
 
-## Character/Beast Isolation
-- Character History selalu dipilih berdasarkan Character ID aktif.
-- Beast History selalu dipilih berdasarkan BEAST_ID.
-- Jangan membaca atau menulis history entity lain kecuali ada alasan resmi dari event/interaksi.
-- Shared memory tidak boleh digunakan untuk menyimpulkan detail privat yang tidak tercatat.
-- Ownership transfer mengubah owner mapping, bukan BEAST_ID.
+### Multi-Entity Transaction
+Jika satu aksi mengubah Character + NPC + Event + Quest + Reward, setiap entity mendapat before → after dan Origin yang sesuai. Jangan menyimpan perubahan Character saja lalu menganggap NPC/Quest/Event ikut tersimpan.
 
-## Recovery
-Jika data hilang atau konflik, gunakan snapshot/Origin Log/History terakhir yang dapat dibuktikan. Jangan mengisi celah dengan tebakan atau nilai yang diminta player.
+## Memory Scope
+- Character History = pengalaman Character.
+- NPC History = kejadian NPC.
+- Quest State/History = lifecycle quest.
+- Event/World State = fakta shared sesuai scope.
+- Beast History = kejadian Beast.
+Jangan menyalin seluruh state ke semua memory.
 
-## Anti-Retcon
-Tidak boleh menghapus konsekuensi masa lalu, memundurkan waktu, atau menambahkan aset/memory tanpa sumber. Update Canon/Admin baru harus dicatat sebagai perubahan dunia baru, bukan perubahan histori sesi secara diam-diam.
-
-## Write-Back Failure
-Jika AI GM tidak memiliki akses tulis repository atau commit gagal:
-- jangan mengklaim save berhasil;
-- pertahankan hasil sebagai uncommitted/pending state bila sistem mendukung;
-- tandai bahwa sinkronisasi repository belum selesai;
-- lanjutkan hanya sesuai kemampuan sistem tanpa menghilangkan fakta bahwa save belum tersimpan.
+## Anti-Retcon / Recovery
+Tidak boleh memundurkan waktu, menghapus konsekuensi, atau menciptakan aset/memory tanpa source. Jika konflik, gunakan snapshot/Origin/History terakhir yang dapat dibuktikan. Jika write-back gagal, tandai `PENDING SYNC` dan jangan klaim sinkronisasi.
