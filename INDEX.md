@@ -41,6 +41,9 @@
 - `systems/23_GARDENING.md` — Gardening, crop growth, numeric garden/crop status
 - `systems/24_SPIRIT_BEASTS.md` — Spirit Beast identity, state, relationship, taming, ownership, contract, growth/evolution, combat, and persistence
 
+## Loot — Canon Database
+- `loot/00_LOOT_TABLE_DATABASE.md` — Admin Canon loot table registry and runtime schema
+
 ## Characters
 - `characters/players.md` — Player Registry
 - `characters/character_registry.md` — Character Registry
@@ -125,4 +128,5 @@
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
 - `systems/23_GARDENING.md` wajib dimuat ketika berkebun, tanaman, kebun, pertumbuhan tanaman, atau hasil panen menjadi relevan terhadap aksi/runtime.
 - `systems/24_SPIRIT_BEASTS.md` wajib dimuat ketika Spirit Beast, taming, ownership, contract, Beast combat, Beast growth/evolution, Beast state, atau Beast history menjadi relevan terhadap aksi/runtime.
+- `loot/00_LOOT_TABLE_DATABASE.md` wajib dimuat ketika loot, drop, chest, monster reward, Spirit Beast loot, event reward, atau mission reward menjadi relevan terhadap aksi/runtime.
 - `gm/PENDING_SYNC.md` wajib digunakan ketika write-back repository tidak tersedia atau gagal; pending changes bukan Canon tersinkron sampai diverifikasi dan ditulis oleh Admin.
