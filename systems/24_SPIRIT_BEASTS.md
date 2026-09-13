@@ -1,7 +1,7 @@
 # 24 — SPIRIT BEAST SYSTEM
 
 > Module: 24 — Spirit Beast System  
-> Version: 1.0  
+> Version: 1.1  
 > Status: Canon System Specification
 
 ## 0. SYSTEM PRINCIPLE
@@ -10,12 +10,13 @@ Spirit Beast adalah makhluk hidup independen yang dapat memiliki hubungan dengan
 
 Spirit Beast bukan Item, Equipment, atau Inventory object. Spirit Beast memiliki state, identitas, kebutuhan, perilaku, lifecycle, dan konsekuensi sendiri.
 
-`13_MONSTERS.md` tetap menjadi sumber utama untuk ecology, encounter, species, habitat, behavior, dan creature classification. Module 24 mengatur lifecycle dan relationship mechanics Spirit Beast.
+`13_MONSTERS.md` dan `systems/25_DYNAMIC_GENERATION.md` menangani ecology, dynamic encounter, creature generation, habitat, behavior, dan creature classification. Module 24 mengatur lifecycle dan relationship mechanics Spirit Beast.
 
 ## 1. CORE RULES
 
-- Tidak ada free Beast. Setiap Beast harus memiliki sumber dan sebab yang valid.
-- Sumber dapat berupa official/custom database, encounter, event, breeding, gift, purchase, rescue, taming, contract, evolution, bloodline, atau mekanisme resmi lain.
+- Tidak ada free Beast. Setiap persistent Beast harus memiliki sumber dan sebab yang valid.
+- Beast dapat muncul melalui dynamic encounter maupun fixed Canon/Custom content.
+- Dynamic generation tidak membuat katalog species global. Species/individu generated adalah hasil runtime dan tidak otomatis menjadi Global Canon.
 - Data yang tidak diketahui tetap `???`; GM tidak boleh menebak.
 - Beast tetap independen dan dapat menolak, takut, melarikan diri, menyerang, terluka, sakit, kehilangan trust, berkembang, atau mati sesuai kondisi dan sistem.
 - Status companion/owned tidak memberikan plot armor.
@@ -216,13 +217,36 @@ Source:
 
 History bersifat append-oriented dan tidak boleh digunakan untuk retcon.
 
-## 10. GROWTH
+## 10. DYNAMIC SPIRIT BEAST GENERATION
+
+Spirit Beast dapat dihasilkan oleh Dynamic Generation Engine dan tidak membutuhkan katalog species global.
+
+Generator menggunakan:
+
+`Habitat + Spiritual Environment + Creature Archetype + Intelligence + Temperament + Growth Potential + Spiritual Affinity + Threat/Tier`
+
+Hasil generator harus tetap sesuai ecology, Canon, dan validation. Individu dapat memiliki species, traits, temperament, bloodline, dan growth potential yang berbeda.
+
+Generated candidate belum otomatis menjadi persistent Beast. Persistence terjadi hanya bila encounter/resolution benar-benar menghasilkan entity yang perlu dilacak. Pada saat itu dibuat `BEAST_ID`, State, History, dan Origin sesuai Save Pipeline.
+
+Dynamic generation tidak otomatis memberikan:
+- taming;
+- ownership;
+- contract;
+- loyalty/bond;
+- rare bloodline;
+- technique/ability khusus;
+- evolution.
+
+Semua perubahan tersebut memerlukan mekanisme masing-masing.
+
+## 11. GROWTH
 
 Growth adalah perkembangan normal yang dapat dipengaruhi age, nutrition, environment, species, cultivation, training, bloodline, condition, atau growth mechanics resmi.
 
 Growth tidak otomatis memberikan Realm, Tier, ability, atau technique baru.
 
-## 11. EVOLUTION
+## 12. EVOLUTION
 
 Evolution adalah major state transition.
 
@@ -232,7 +256,7 @@ Resolution dapat berupa Success, Failure, Partial Evolution, atau Evolution with
 
 Evolution wajib dicatat dengan before/after species, Tier, Realm, cause, method, requirement, resolution, World Time, dan Source. `BEAST_ID` tetap sama.
 
-## 12. COMBAT INTEGRATION
+## 13. COMBAT INTEGRATION
 
 Spirit Beast adalah combat entity independen jika valid untuk ikut combat.
 
@@ -244,7 +268,7 @@ Memiliki Beast tidak memberikan free action atau serangan gratis. Action economy
 
 HP 0 diproses sebagai critical/death sesuai combat/vitality rules. Permanent death hanya setelah resolution yang mengonfirmasi. Resurrection hanya melalui mekanisme resmi.
 
-## 13. FEEDING, CARE, DAN TRAINING
+## 14. FEEDING, CARE, DAN TRAINING
 
 Feeding, healing, grooming, training, dan care adalah actions terhadap Beast.
 
@@ -256,13 +280,13 @@ Tidak ada free healing.
 
 Training tidak otomatis memberikan technique. Technique baru harus mengikuti `15_TECHNIQUES.md` dan memiliki Origin yang valid.
 
-## 14. LOCATION & HABITAT
+## 15. LOCATION & HABITAT
 
 Beast memiliki `Current Location` dan `Habitat`. Keduanya dapat berbeda.
 
 Perpindahan mengikuti Geography, Travel, Time, terrain, mobility, dan action yang relevan. Tidak ada hidden teleport/time skip.
 
-## 15. CHARACTER ↔ BEAST TRANSACTION
+## 16. CHARACTER ↔ BEAST TRANSACTION
 
 Satu action dapat mengubah Character State dan Beast State sekaligus.
 
@@ -275,7 +299,7 @@ Beast Satiety: +X
 
 Setiap perubahan harus memiliki hubungan sebab-akibat dan traceability. Resolver mempertahankan hasil aktual bila salah satu perubahan berhasil dan perubahan lain gagal; tidak boleh membuat rollback fiktif.
 
-## 16. VALIDATION
+## 17. VALIDATION
 
 State Validator wajib memeriksa, bila Spirit Beast relevan:
 
@@ -297,7 +321,7 @@ State Validator wajib memeriksa, bila Spirit Beast relevan:
 
 Jika pemeriksaan material gagal, jangan menerapkan state. Gunakan last verified state atau minta klarifikasi.
 
-## 17. ORIGIN LOG
+## 18. ORIGIN LOG
 
 Setiap material Beast change wajib memiliki Origin Log minimal:
 
@@ -314,7 +338,7 @@ Source:
 
 Material change mencakup registration, taming, ownership, transfer, release, contract, injury/recovery yang material, Tier/Realm/Stage change, evolution, ability/technique acquisition, dan permanent death.
 
-## 18. SAVE PIPELINE
+## 19. SAVE PIPELINE
 
 Beast mengikuti Save Pipeline:
 
@@ -339,7 +363,7 @@ LOAD VERIFIED STATE
 
 Jika write-back gagal, GM tidak boleh menyatakan state sudah tersinkron.
 
-## 19. RUNTIME INTEGRATION
+## 20. RUNTIME INTEGRATION
 
 Saat action melibatkan Beast:
 
@@ -363,7 +387,7 @@ PLAYER INTENT
 
 Beast reaction mempertimbangkan species, intelligence, temperament, condition, needs, relationship, trust, bond, loyalty, history, dan environment.
 
-## 20. PRIORITY
+## 21. PRIORITY
 
 Jika terjadi konflik:
 
@@ -371,15 +395,18 @@ Jika terjadi konflik:
 
 Player intent tidak dapat mengoverride state atau requirement sistem.
 
-## 21. INTEGRATION
+## 22. INTEGRATION
 
 Module 24 terintegrasi dengan:
 
+- `systems/13_MONSTERS.md`
+- `systems/18_LOOT.md`
+- `systems/19_REGIONAL_MONSTER_ECOSYSTEM.md`
+- `systems/25_DYNAMIC_GENERATION.md`
 - `core/05_SAVE_INTEGRITY.md`
 - `core/06_ID_AND_SAVE_SYSTEM.md`
 - `systems/09_CULTIVATION.md`
 - `systems/12_COMBAT.md`
-- `systems/13_MONSTERS.md`
 - `systems/14_ITEMS.md`
 - `systems/15_TECHNIQUES.md`
 - `gm/GM_PROMPT.md`
@@ -389,15 +416,13 @@ Module 24 terintegrasi dengan:
 - `gm/SAVE_PIPELINE.md`
 - `gm/RESPONSE_FORMAT.md`
 
-Integration hanya berarti modul terkait harus memahami/merujuk Module 24 ketika relevan; tidak ada mekanisme baru yang dianggap tersedia tanpa definisi resmi.
-
-## 22. MISSING & PERMANENT DEATH
+## 23. MISSING & PERMANENT DEATH
 
 `Missing` tidak sama dengan `Deceased`. Beast yang hilang tidak boleh dianggap mati atau diteleport kembali.
 
 Permanent-dead Beast mempertahankan State/History sebagai historical record. `BEAST_ID` tidak boleh digunakan ulang.
 
-## 23. FINAL HARD RULES
+## 24. FINAL HARD RULES
 
 1. Spirit Beast bukan Item, Equipment, atau Inventory object.
 2. BEAST_ID unique, stable, permanent, dan tidak pernah reused setelah permanent death.
@@ -417,4 +442,5 @@ Permanent-dead Beast mempertahankan State/History sebagai historical record. `BE
 16. Ownership transfer mempertahankan BEAST_ID dan History.
 17. Permanent-dead BEAST_ID tidak boleh digunakan ulang.
 18. Write-back failure tidak boleh diklaim synchronized.
-19. Semua mekanisme baru tunduk pada Canon/Admin dan hierarchy sistem.
+19. Dynamic generation tidak membuat katalog species global.
+20. Semua mekanisme baru tunduk pada Canon/Admin dan hierarchy sistem.
