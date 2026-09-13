@@ -1,14 +1,19 @@
 # 19 — REGIONAL MONSTER ECOSYSTEM
 
 ## Status Canon
-Modul ini menetapkan kerangka ekosistem monster/spirit beast per kawasan berdasarkan medan dan ancaman yang sudah tercatat di World Bible. Nama spesies, tier, kemampuan, dan loot spesifik tetap tunduk pada `systems/13_MONSTERS.md` dan database monster resmi.
+Modul ini menetapkan **kerangka ekosistem dan tekanan encounter**, bukan katalog monster.
+
+Nama spesies, varian, Tier, kemampuan, dan loot konkret dapat dihasilkan dinamis oleh GM melalui `systems/25_DYNAMIC_GENERATION.md`, selama tidak bertentangan dengan World Bible/Custom Canon dan melewati validation.
+
+Fixed creature data tetap dapat berlaku bila secara eksplisit tersedia. Fixed data tidak membatasi kemungkinan species lain di dunia.
 
 ## Aturan Ekosistem
-- Habitat menentukan kelompok encounter yang mungkin; habitat tidak menjamin encounter terjadi.
+- Habitat menentukan kelompok/archetype encounter yang masuk akal; habitat tidak menjamin encounter terjadi.
 - Encounter dipengaruhi waktu, cuaca, musim, kepadatan manusia, aktivitas pemain, event, dan perilaku makhluk.
-- Tidak ada monster baru, boss, subspesies, kemampuan, atau loot baru hanya karena kategori habitat.
-- Jika database monster belum memberi spesies/tier untuk habitat tertentu, GM memakai kategori ancaman saja dan tidak mengarang detail mekanis.
-- Monster tidak otomatis agresif; perilaku mengikuti data resmi dan kondisi.
+- GM boleh menghasilkan species, subspesies, varian, atau Spirit Beast baru secara runtime bila hasilnya ekologis dan mekanis valid.
+- Tier ditentukan melalui Dynamic Threat Resolution, bukan otomatis dari nama habitat atau Realm Character.
+- Monster tidak otomatis agresif; perilaku mengikuti generated traits, habitat, kondisi, dan context.
+- Loot mengikuti Dynamic Loot Formula atau fixed table yang memang berlaku.
 
 ## Dataran Cangyuan
 | Zona | Ekosistem | Tekanan encounter |
@@ -40,7 +45,7 @@ Modul ini menetapkan kerangka ekosistem monster/spirit beast per kawasan berdasa
 | Pesisir/pelabuhan | makhluk laut tingkat rendah dan satwa pesisir | rendah |
 | Laut terbuka | makhluk laut sesuai database dan event | sedang–tinggi |
 | Kepulauan Lanyue | fauna pulau dan makhluk laut | sedang |
-| Jurang Laut Canglong | ekosistem laut dalam; spesies/tier belum boleh diasumsikan | tidak ditentukan |
+| Jurang Laut Canglong | ekosistem laut dalam; detail konkret dihasilkan oleh context/runtime | tidak ditentukan |
 
 ## Tanah Salju Beiming
 | Zona | Ekosistem | Tekanan encounter |
@@ -48,15 +53,15 @@ Modul ini menetapkan kerangka ekosistem monster/spirit beast per kawasan berdasa
 | Sekitar permukiman | satwa liar dan monster rendah | rendah |
 | Padang salju | monster/spirit beast yang sesuai habitat dingin | sedang |
 | Lembah Bingxin | fauna dingin dan ancaman lingkungan | tinggi |
-| Reruntuhan Tianhan | encounter hanya berdasarkan lore/event/database resmi | tidak ditentukan |
+| Reruntuhan Tianhan | encounter berdasarkan lore/event/context dan dynamic generation | tidak ditentukan |
 
 ## Gurun Jinyan
 | Zona | Ekosistem | Tekanan encounter |
 |---|---|---|
 | Oasis | fauna oasis dan makhluk gurun lokal | rendah–sedang |
 | Jalur kafilah | makhluk gurun yang beradaptasi terhadap aktivitas manusia | rendah–sedang |
-| Laut Pasir Wuheng | fauna/monster gurun sesuai database | sedang–tinggi |
-| Makam Tianri | encounter hanya berdasarkan lore/event/database resmi | tidak ditentukan |
+| Laut Pasir Wuheng | fauna/monster gurun melalui dynamic generation dan context | sedang–tinggi |
+| Makam Tianri | encounter berdasarkan lore/event/context dan dynamic generation | tidak ditentukan |
 
 ## Jantung Tianyuan
 | Zona | Ekosistem | Tekanan encounter |
@@ -66,11 +71,22 @@ Modul ini menetapkan kerangka ekosistem monster/spirit beast per kawasan berdasa
 | Desa Minghe | satwa liar lokal dan spirit beast rendah di luar permukiman | rendah |
 
 ## Skala Tekanan
-- **Sangat rendah:** encounter liar jarang dan habitat sangat terkontrol.
-- **Rendah:** encounter mungkin tetapi bukan ancaman dominan.
-- **Sedang:** encounter rutin mungkin terjadi dalam kondisi tertentu.
-- **Tinggi:** ekspedisi harus memperhitungkan encounter sebagai risiko utama.
-- **Tidak ditentukan:** Canon belum menyediakan data cukup; GM dilarang mengisi kekosongan.
+Label ini adalah input ekologis untuk Dynamic Generation Engine:
+
+- **Sangat rendah:** encounter liar jarang dan habitat sangat terkontrol → Base Pressure 5.
+- **Rendah:** encounter mungkin tetapi bukan ancaman dominan → Base Pressure 20.
+- **Sedang:** encounter rutin mungkin terjadi dalam kondisi tertentu → Base Pressure 40.
+- **Tinggi:** ekspedisi harus memperhitungkan encounter sebagai risiko utama → Base Pressure 65.
+- **Tidak ditentukan:** belum ada dasar untuk menetapkan base pressure; gunakan `???`, bukan asumsi angka.
+
+Threat Score dan Tier Ceiling dihitung terpisah menurut `systems/25_DYNAMIC_GENERATION.md`.
+
+## Dynamic World Rule
+Tabel wilayah di atas menjelaskan **ecological pressure dan kemungkinan archetype**, bukan daftar species yang diizinkan.
+
+Contoh: sungai tidak terbatas pada satu species; hutan tidak terbatas pada daftar monster tertentu; Spirit Beast tidak terbatas pada species yang pernah muncul sebelumnya.
+
+Generated creature tetap harus memiliki hubungan ekologis yang masuk akal dengan region/habitat dan tidak boleh melanggar Canon.
 
 ## Integrasi
-Monster ecosystem terhubung dengan World Map, Travel Routes, Time, Vitality, Combat, Loot, Economy, Events, Karma dan Reputation.
+Monster ecosystem terhubung dengan World Map, Travel Routes, Time, Vitality, Combat, Loot, Economy, Karma, Reputation, Events, Spirit Beast System, dan `systems/25_DYNAMIC_GENERATION.md`.
