@@ -9,8 +9,8 @@ Menetapkan sistem universal untuk membuat, membentuk, memproses, atau menempa it
 ## Boundary
 - Module 31 membuat **item baru** atau hasil material processing yang menjadi item.
 - Module 34 menangani perubahan pada **item yang sudah ada** melalui refinement/upgrade.
-- Module 29 khusus Alchemy/Pill.
-- Module 30 khusus Formation/Array.
+- Module 32 khusus Alchemy/Pill.
+- Module 33 khusus Formation/Array.
 - Module 14 tetap menjadi sumber state/identity item.
 
 ## Core Principle
@@ -96,4 +96,4 @@ Material yang dikonsumsi harus dapat ditelusuri ke Origin sebelumnya.
 Crafting lintas turn atau perubahan material/item yang material wajib melewati Save Pipeline. Current Item State, Character State, consumed materials, Origin, dan History yang terdampak harus diproses sebagai transaction yang konsisten.
 
 ## Runtime Contract
-`ROUTER → REQUIRED SOURCES → INPUT VALIDATION → COST → PROCESS → RESOLUTION → RESULT VALIDATION → ITEM ORIGIN → STATE/HISTORY → SAVE → VERIFY`
+`ROUTER → REQUIRED SOURCES → INPUT VALIDATION → COST → PROCESS → RESOLUTION → RESULT VALIDATION → ITEM ORIGIN → STATE/HISTORY → SAVE → WRITE-BACK VERIFY`
