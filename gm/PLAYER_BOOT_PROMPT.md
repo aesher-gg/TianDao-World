@@ -69,12 +69,6 @@ Jangan:
 
 Data tidak diketahui = `???`.
 
-### STEP COUNTER
-- Boot menggunakan `Step 0/100`.
-- Setiap Player Message setelah boot menaikkan step satu tingkat.
-- Step Counter hanya metadata dan tidak memengaruhi state.
-- `Step 100/100` adalah checkpoint/freeze gate, bukan game-over atau reset.
-
 ### WAKTU DUNIA — WAJIB
 
 - **Tahun yang ditampilkan harus selalu Tahun Dunia TianDao-World, bukan tahun kalender dunia nyata, tahun sistem, atau tahun perangkat.**
@@ -99,8 +93,6 @@ Data tidak diketahui = `???`.
 
 🕒 **Waktu TianDao-World**  
 Tahun: 1200 | Musim: [ditentukan GM] | Tanggal: [ditentukan GM] | Hari: [ditentukan GM] | Cuaca: [ditentukan GM] | Jam: [ditentukan GM]
-
-**Step:** 0/100
 
 **Status Boot:** World Bible dimuat | Player terverifikasi | Character terverifikasi | Memory dimuat bila tersedia
 
