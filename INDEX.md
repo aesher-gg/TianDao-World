@@ -70,6 +70,12 @@
 - `beast_history/` — Persistent private history per Beast ID
 - `npc_history/` — Persistent NPC history bila continuity material memerlukannya
 
+## Formation Persistence
+- `formations/formation_registry.md` — Persistent Formation/Array registry
+- `formations/` — Current persistent Formation State files
+- `formations/cores/` — Current persistent Array Core State files
+- `formation_history/` — Persistent Formation/Array Core history bila continuity material memerlukannya
+
 ## Persistent Story Memory
 - `story/WORLD_STATE.md` — shared world facts with ongoing consequences
 - `story/ACTIVE_THREADS.md` — unresolved quests, conflicts, promises, contracts, and other active threads
@@ -137,8 +143,9 @@
 10. Current Spirit Beast State dan Beast History yang relevan dengan action/encounter/relationship.
 11. Current NPC State dan NPC History bila NPC persisten terlibat.
 12. Character History milik Character ID aktif bila tersedia.
-13. Current Quest State bila quest lintas turn relevan.
-14. Player intent.
+13. Current Formation/Array State dan Formation History bila Formation/Array persisten terlibat.
+14. Current Quest State bila quest lintas turn relevan.
+15. Player intent.
 
 ## Modular Fetch / Trigger Contract
 - Setiap Player Message adalah turn baru dan wajib memulai dengan fresh fetch `INDEX.md` dari repository.
@@ -167,6 +174,7 @@
 - Setiap aksi yang menghasilkan perubahan material wajib melewati Save Pipeline.
 - Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; bila Spirit Beast terlibat, Current Beast State dan Beast History juga wajib diproses sesuai Module 24; bila NPC persisten atau Quest State berubah, entity state/history yang relevan juga wajib diproses sesuai Module 26 dan persistence modules.
 - Perubahan hasil produksi pada Module 31–34 wajib mempertahankan provenance material/item, before → after, Origin, dan integrity lintas entity sesuai `gm/STATE_VALIDATOR.md` dan `gm/SAVE_PIPELINE.md`.
+- Formation/Array persisten wajib mempertahankan `FORM-####`/`ARRAYCORE-####`, Current State, Registry, dan History sesuai Module 33.
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
 - `systems/23_GARDENING.md` wajib dimuat ketika berkebun, tanaman, kebun, pertumbuhan tanaman, atau hasil panen menjadi relevan terhadap aksi/runtime.
 - `systems/24_SPIRIT_BEASTS.md` wajib dimuat ketika Spirit Beast, taming, ownership, contract, Beast combat, Beast growth/evolution, Beast state, atau Beast history menjadi relevan terhadap aksi/runtime.
