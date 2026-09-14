@@ -1,7 +1,7 @@
 # 27 — DYNAMIC MODULE ROUTER
 
 ## Status
-Admin Canon v1.0
+Admin Canon v1.1
 
 ## Purpose
 Module Router menentukan modul World Bible mana yang **wajib** di-fetch untuk sebuah turn berdasarkan trigger yang benar-benar muncul. Tujuannya adalah mempertahankan Modular World Bible, mengurangi fetch yang tidak relevan, dan mencegah GM memproses aksi menggunakan aturan yang belum diverifikasi.
@@ -30,10 +30,10 @@ Bootstrap karakter baru/sesi baru juga mengikuti `gm/PLAYER_BOOT_PROMPT.md` dan 
 | World Time | `core/02_TIME_SYSTEM.md`, `lore/CALENDAR.md` | Event/Scheduled Event |
 | Action umum | `core/03_ACTION_SYSTEM.md`, `core/04_ANTI_CHEAT.md` | Sistem spesifik aksi |
 | HP/luka/pemulihan/satiety | `systems/11_VITALITY.md` | Combat/Item/Technique |
-| Combat | `systems/12_COMBAT.md` | Monster/Item/Technique/Travel |
+| Combat | `systems/12_COMBAT.md` | Monster/Item/Technique/Travel/Formation |
 | Cultivation/Qi/Realm/Breakthrough | `systems/09_CULTIVATION.md` | Techniques/Law/Items |
 | Technique/Jurus | `systems/15_TECHNIQUES.md` | Cultivation/Items/Law |
-| Item/Equipment/Inventory | `systems/14_ITEMS.md` | Economy/Loot/Technique |
+| Item/Equipment/Inventory | `systems/14_ITEMS.md` | Economy/Loot/Technique/Production |
 | Economy/transaksi | `systems/10_ECONOMY.md` | Regional Economy/Faction |
 | Travel/perjalanan | `systems/20_TRAVEL_ROUTES.md` | Region/World Map/Encounter |
 | Monster/encounter | `systems/13_MONSTERS.md`, `systems/25_DYNAMIC_GENERATION.md` | Regional Ecosystem/Combat/Loot |
@@ -48,15 +48,40 @@ Bootstrap karakter baru/sesi baru juga mengikuti `gm/PLAYER_BOOT_PROMPT.md` dan 
 | Gardening | `systems/23_GARDENING.md` | Economy/Items/Travel |
 | Faction/organization | Relevant faction database or individual organization file | Region/Reputation/Economy/Techniques |
 | Karma/Reputation consequence | `systems/16_KARMA.md`, `systems/17_REPUTATION.md` | Faction/Event |
+| Crafting/Forging/Smithing | `systems/31_CRAFTING_FORGING.md` | Items/Economy/Techniques/Material source |
+| Alchemy/Pill | `systems/32_ALCHEMY_PILLS.md` | Items/Techniques/Economy/Material source |
+| Formation/Array | `systems/33_FORMATION_ARRAYS.md` | Items/Cultivation/Combat/Region/Event |
+| Artifact/Weapon Refinement | `systems/34_ARTIFACT_WEAPON_REFINEMENT.md` | Items/Techniques/Economy/Crafting/Alchemy |
 
-## 4. Individual Organization Resolution
+## 4. Production Module Routing
+### Crafting / Forging
+Use Module 31 when the action creates a new item, performs material processing, or executes a valid crafting/forging procedure.
+
+### Alchemy / Pill
+Use Module 32 when the action refines herb/material into a Pill or other alchemical product.
+
+### Formation / Array
+Use Module 33 when the action constructs, activates, operates, disrupts, repairs, or destroys a Formation/Array.
+
+### Artifact / Weapon Refinement
+Use Module 34 when an **existing item** is modified through repair/refinement/temper/upgrade or another valid refinement process.
+
+### Boundary Rule
+`New Item Production → Module 31`
+`Alchemy Product → Module 32`
+`Formation/Array Structure → Module 33`
+`Existing Item Modification → Module 34`
+
+When an action crosses modules, all affected REQUIRED modules must be fetched. Example: refining an existing weapon with an alchemical material may require Modules 34 + 32 + 14, while a Formation using a newly crafted Array Core may require Modules 31 + 33 + 14.
+
+## 5. Individual Organization Resolution
 TianDao-World mendukung dua lapisan data faction:
 1. **Canon Database** untuk registry dan ringkasan global.
 2. **Individual Organization File** untuk detail organisasi yang membutuhkan granularitas tinggi.
 
 Jika individual file resmi tersedia untuk organisasi yang sedang disentuh aksi, file individual menjadi sumber detail utama setelah database registry. Jika belum tersedia, gunakan database resmi yang ada dan jangan mengarang detail yang tidak tercatat.
 
-## 5. Fixed Bestiary Boundary
+## 6. Fixed Bestiary Boundary
 `bestiary/00_BESTIARY_DATABASE.md` adalah **optional Admin Canon fixed bestiary**.
 - Entry di dalamnya adalah species/creature yang sengaja ditetapkan Admin sebagai fixed Canon.
 - Fixed entry tidak membatasi species/archetype dinamis dari Module 25.
@@ -64,7 +89,15 @@ Jika individual file resmi tersedia untuk organisasi yang sedang disentuh aksi, 
 - Jika tidak tercakup, gunakan Dynamic Generation.
 - Fixed Bestiary tidak boleh digunakan untuk mengubah Tier menjadi Realm.
 
-## 6. Failure Policy
+## 7. Production Boundary
+- Production modules tidak menggantikan Module 14 Items.
+- Material/item identity, ownership, condition, quality, equipment, inventory, dan provenance tetap mengikuti Module 14.
+- Production result tidak menjadi Global Canon hanya karena berhasil dibuat runtime.
+- Dynamic recipe/procedure/result bukan fixed Canon kecuali Admin menyimpannya sebagai Canon.
+- Tidak ada automatic Realm scaling.
+- Tidak ada hidden numeric modifier.
+
+## 8. Failure Policy
 Jika Required Module gagal:
 `REPOSITORY MODULE FETCH FAILURE`
 
@@ -76,10 +109,10 @@ GM wajib:
 
 Jika write-back gagal setelah resolusi valid, gunakan `gm/PENDING_SYNC.md`; state operasional tidak dianggap Repository Saved sampai write-back diverifikasi.
 
-## 7. Runtime Contract
+## 9. Runtime Contract
 `FRESH INDEX → IDENTIFY TRIGGERS → FETCH REQUIRED MODULES ONLY → VALIDATE → RESOLVE → UPDATE/ORIGIN → SAVE → WRITE-BACK VERIFY → RESPONSE`
 
-## 8. Anti-Catalog
-Dynamic result tetap runtime content. Ia tidak menjadi fixed Canon, Bestiary, faction database, NPC registry, event registry, atau global lore hanya karena pernah muncul dalam gameplay.
+## 10. Anti-Catalog
+Dynamic result tetap runtime content. Ia tidak menjadi fixed Canon, Bestiary, faction database, NPC registry, event registry, recipe/formula/formation registry, atau global lore hanya karena pernah muncul dalam gameplay.
 
 Fixed Canon hanya ditambahkan melalui perubahan Admin yang sah dan diverifikasi.
