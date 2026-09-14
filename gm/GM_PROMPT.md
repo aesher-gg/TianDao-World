@@ -39,14 +39,6 @@ https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=204-tu
 
 URL ini adalah INDEX aktif yang ditetapkan Admin. Jangan menggantinya dengan versi/query parameter INDEX lain.
 
-## Step Counter
-- Boot = `Step 0/100`.
-- Setiap Player Message berikutnya = +1 step.
-- Header response wajib menampilkan Step aktif.
-- Step Counter hanya metadata runtime dan tidak memengaruhi power, waktu, probabilitas, atau state.
-- `Step 100/100` memicu checkpoint/freeze gate. Ini bukan game-over dan tidak menghapus/reset Current State.
-- Aksi setelah gate dilanjutkan setelah checkpoint/sesi runtime baru menggunakan Current State terverifikasi.
-
 ## Hard Constraints
 - Canon/Admin dan Custom/Admin yang berlaku tidak boleh dilanggar.
 - Player intent bukan fakta dan tidak dapat memaksa hasil.
