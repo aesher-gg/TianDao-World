@@ -50,8 +50,11 @@ Gameplay snapshot establishes Ryxian at Lapangan Latihan Pinggiran, Kompleks Sek
 
 **Connections:** Tetua Shen, Steward Lin, Pelayan Kepala Chen, Paman Ma, Mandor Bengkel Persediaan, Pemilik Toko Barang Bekas Jalan Pedang, serta berbagai kontak mortal minor di Yunjing dan Desa Baihe.
 
+### Latest Save Consolidation
+Percakapan terbaru menetapkan runtime GM menggunakan INDEX `204-turnfresh` setiap turn, tanpa silent fallback; membedakan State Updated, Repository Save terverifikasi, dan PENDING SYNC. Tidak ada perubahan gameplay tambahan pada save point ini.
+
 ## Save Metadata
-- **Latest Save Version:** 4
+- **Latest Save Version:** 5
 - **Latest State Status:** Verified Gameplay Save Point
 - **Latest Verified:** 1200 Era Kebangkitan — Musim Semi — Tanggal 4 Bulan Naga — Sabtu — 14:30
 - **Repository Sync:** Verified
