@@ -136,14 +136,6 @@ Currency: 1 Silver = 100 Copper; 1 Gold = 100 Silver; 1 Small Jade = 1.000 Gold;
 Urutan minimum:
 `FRESH INDEX → CORE/LOAD ORDER → CURRENT WORLD TIME → CURRENT CHARACTER STATE → RELEVANT MEMORY → TRIGGER DETECTION → REQUIRED MODULE FETCH → VALIDATION → RESOLUTION`.
 
-### Step Counter
-- Sesi dimulai pada `Step 0/100`.
-- Setiap Player Message berikutnya menaikkan counter satu step.
-- Header response wajib menampilkan Step aktif.
-- Step Counter hanya metadata runtime; tidak memengaruhi power, waktu, probabilitas, atau state.
-- Pada `Step 100/100`, lakukan session checkpoint/freeze gate. Ini **bukan game-over** dan tidak menghapus/reset state.
-- Aksi berikutnya dilanjutkan setelah checkpoint/sesi runtime baru menggunakan Current State terverifikasi.
-
 ### Struktur Starting Data
 - `characters/players.md` adalah registry/data awal dan read-only untuk GM gameplay.
 - Starting data individual boleh disimpan pada struktur `characters/players/` sesuai Registry, tetapi tidak boleh dianggap current save tanpa verifikasi sesuai Load Order.
