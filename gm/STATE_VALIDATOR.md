@@ -1,81 +1,92 @@
 # Runtime State Validator
 
 ## Tujuan
-Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dynamic NPC/Event/Quest, Monster/Beast/Loot, serta Cultivation Law dan Technique provenance, tanpa retcon, entity leakage, atau reward/ability tanpa provenance.
+Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dynamic NPC/Event/Quest, Monster/Beast/Loot, Cultivation Law, Technique provenance, organization state, dan shared-world scope.
+
+## Validation Order
+1. Repository/INDEX freshness.
+2. Module Router REQUIRED modules tersedia.
+3. Current State/History/World Time sesuai entity ID.
+4. Pre-resolution checks.
+5. Resolution-specific checks.
+6. Post-resolution before → after.
+7. Persistence/Origin/ID checks.
+8. Write-back status.
 
 ## Pre-Resolution Validation
 - [ ] World Time valid dan tidak mundur.
 - [ ] Active Character ID, lokasi, target, jarak, resource, Realm/Stage, teknik, equipment, inventory, dan kondisi valid.
 - [ ] Informasi yang digunakan memang diketahui Character.
-- [ ] Relevant event/faction/NPC/quest/thread/source telah dimuat.
+- [ ] Relevant event/faction/NPC/quest/thread/source telah dimuat melalui Module Router.
 - [ ] Durasi aksi memenuhi Time System.
 - [ ] Character History cocok dengan Active Character ID.
-- [ ] Dynamic generation, bila dipakai, memenuhi Module 25/26 input dan formula gate.
+- [ ] Dynamic generation memenuhi Module 25/26 input dan formula gate bila dipakai.
 
-### Cultivation Law / Law Origin
-- [ ] Cultivation Law aktif memiliki Law Origin yang tervalidasi, kecuali memang `???` karena source data belum tersedia.
-- [ ] Law Origin memiliki source yang nyata dan sesuai Canon/Admin: source type, source, acquisition method, dan resolution tidak boleh ditebak.
-- [ ] Requirements/training/insight yang diwajibkan telah dipenuhi atau resolusi sah telah membuktikan pengecualian.
-- [ ] World Time dan Origin Reference tersedia untuk perubahan material bila data tersebut diwajibkan.
-- [ ] Law Origin berstatus `VALIDATED & ACTIVE` sebelum Law baru dipasang sebagai aktif.
-- [ ] Law Origin tidak diperlakukan sebagai stat bonus.
-- [ ] Perubahan Law memiliki before/after, cause, resolution, source, dan Origin Log.
-- [ ] Law baru tidak muncul hanya karena Player meminta, Realm cukup tinggi, atau karakter memiliki teknik terkait.
-- [ ] `???` tidak boleh dipertahankan jika source Canon/Admin/History yang valid sudah menentukan asal Law.
+## Entity Isolation
+- [ ] Setiap perubahan memiliki Entity ID yang tepat.
+- [ ] Character State tidak menerima fakta milik NPC/Beast/Quest/Event.
+- [ ] NPC/Beast/Quest/Event tidak menerima perubahan hanya karena Character menginginkannya.
+- [ ] Shared World State hanya menerima fakta yang benar-benar berscope shared.
+- [ ] Generated entity tidak menjadi Global Canon tanpa dasar Admin/Canon.
 
-### Technique / Technique Origin
-- [ ] Setiap teknik baru memiliki Technique Origin yang valid.
-- [ ] Source Type dan Source sesuai sumber nyata.
-- [ ] Jika teknik berbasis Law, Cultivation Law aktif dan Law Origin tervalidasi.
-- [ ] Memiliki Law tidak dianggap otomatis memberikan semua teknik terkait.
-- [ ] Requirements, training/insight, mastery, effect, dan cost tidak dilewati atau diimprovisasi tanpa definisi sumber.
-- [ ] Technique Origin memiliki resolution/timestamp dan Origin Reference bila material.
-- [ ] Klaim teknik tanpa asal ditolak.
+## Cultivation Law / Technique
+- [ ] Law aktif memiliki Law Origin tervalidasi.
+- [ ] Source type, source, acquisition method, requirements, training/insight, resolution tidak ditebak.
+- [ ] Law Origin berstatus `VALIDATED & ACTIVE` sebelum Law dipasang aktif.
+- [ ] Setiap teknik memiliki Technique Origin valid.
+- [ ] Law tidak otomatis memberikan teknik.
+- [ ] Technique requirements/mastery/effect/cost tidak diimprovisasi.
+- [ ] Before/After + Origin tercatat untuk perubahan material.
 
-### Dynamic NPC
-- [ ] NPC fixed/Canon berasal dari source Canon yang benar.
-- [ ] NPC generated memiliki konteks lokasi/role/agenda/knowledge boundary yang valid.
-- [ ] Generated NPC tidak diam-diam menjadi tokoh Canon besar, pemimpin faction, grandmaster, bloodline/teknik rahasia, atau lore unik tingkat tinggi.
-- [ ] NPC_ID unik/stabil bila persistence diperlukan.
-- [ ] NPC State/History memiliki before → after dan Origin bila material.
-- [ ] Realm/Stage NPC tidak ditebak.
+## Dynamic NPC
+- [ ] Context lokasi/role/agenda/knowledge valid.
+- [ ] NPC tidak diberi lore/teknik/bloodline/realm tinggi tanpa dasar.
+- [ ] NPC_ID unik/stabil bila persistent.
+- [ ] State/History memiliki before → after dan Origin bila material.
+- [ ] Knowledge sesuai pengalaman dan akses NPC.
 
-### Dynamic Event
-- [ ] Local Event memiliki pressure source dan modifier yang sah.
-- [ ] Local Event tidak dinaikkan menjadi Regional/Global tanpa Canon/Admin trigger.
-- [ ] World Event memakai registry dan trigger Canon resmi.
-- [ ] Scheduled Event memakai jadwal/access yang benar.
-- [ ] EVT_ID unik/stabil bila local event persisten.
-- [ ] Event state/log sesuai scope dan Origin bila material.
+## Dynamic Event
+- [ ] Pressure source dan modifier sah.
+- [ ] Scope Personal/Local/Regional/Global valid.
+- [ ] Local tidak naik Regional/Global tanpa trigger Canon/Admin.
+- [ ] World/Scheduled Event memakai registry dan trigger resmi.
+- [ ] EVT_ID unik/stabil bila persistent.
+- [ ] Event state sesuai scope dan Origin.
 
-### Dynamic Quest
-- [ ] Quest memiliki source/need yang valid.
+## Dynamic Quest
+- [ ] Source/need valid.
 - [ ] Objective, target, method, risk/cost, success/failure condition valid.
-- [ ] Quest tidak dianggap tersedia hanya karena Player meminta.
 - [ ] QST_ID unik/stabil bila lintas-turn.
-- [ ] Quest State dan Active Threads sesuai scope.
-- [ ] Deadline hanya ada jika memiliki dasar waktu yang sah.
-- [ ] Reward memiliki provenance: fixed Canon/Event/Mission → valid Item/Economy/Technique/Contract source → Dynamic Loot → `???`.
-- [ ] Tidak ada item/uang/teknik/breakthrough gratis atau scaling reward berdasarkan Realm Character.
+- [ ] Lifecycle sesuai Module 26.
+- [ ] Deadline memiliki dasar waktu.
+- [ ] Reward provenance valid: Fixed Canon/Event/Mission → valid source → Dynamic Loot → `???`.
+- [ ] Tidak ada reward, breakthrough, item, uang, teknik gratis atau automatic Realm scaling.
 
-### Dynamic Creature / Loot
+## Dynamic Creature / Loot
 - [ ] Encounter Pressure dan Threat Score berasal dari Module 25.
 - [ ] Tier ceiling dipatuhi; Tier ≠ Realm.
-- [ ] Spirit Beast mengikuti Module 24, termasuk BEAST_ID/relationship/taming/ownership/contract.
-- [ ] Loot hanya muncul setelah valid acquisition/resolution.
-- [ ] Quantity/quality mengikuti formula Module 25/18 atau fixed table yang memang berlaku.
-- [ ] Item ownership/provenance memiliki Origin.
+- [ ] Spirit Beast mengikuti Module 24.
+- [ ] Loot hanya setelah valid acquisition/resolution.
+- [ ] Quantity/quality mengikuti formula/fixed table yang berlaku.
+- [ ] Ownership/provenance memiliki Origin.
 
-## Post-Resolution Validation
-- [ ] Waktu, cost, HP/Qi/Stamina/Satiety, lokasi, inventory, equipment, currency, Karma/Reputation dan status berubah tepat.
-- [ ] NPC reaction sesuai knowledge, agenda, condition, dan autonomy.
-- [ ] Event berubah hanya melalui trigger/resolution yang sah.
-- [ ] Quest status/progress/reward sesuai resolusi; failure tidak memberi reward otomatis.
-- [ ] Semua generated material memiliki entity ID, Origin, dan persistence sesuai scope.
-- [ ] Character History hanya fakta Character; NPC/Quest/Event/Beast history hanya fakta entity masing-masing.
-- [ ] Shared World State/Timeline/Active Threads hanya memuat fakta shared yang terkonfirmasi.
-- [ ] No hidden time-skip, no retcon, no cross-entity overwrite.
-- [ ] Write-back status diketahui dan tidak dipalsukan.
+## Organization / Faction
+- [ ] Gunakan database Canon dan individual organization file bila tersedia.
+- [ ] Individual file tidak boleh bertentangan dengan registry.
+- [ ] Struktur/jabatan/relasi hanya dianggap Canon bila tersimpan sebagai Admin Canon.
+- [ ] Faction membership, rank, contract, promotion, expulsion, dan akses tidak berubah tanpa sebab/resolusi sah.
+- [ ] `???` tetap unknown bila tidak ada sumber.
+
+## Post-Resolution
+- [ ] Time, cost, HP/Qi/Stamina/Satiety, lokasi, inventory, equipment, currency, Karma/Reputation tepat.
+- [ ] NPC reaction sesuai knowledge/agenda/autonomy.
+- [ ] Event berubah hanya melalui trigger/resolution sah.
+- [ ] Quest progress/reward sesuai resolusi.
+- [ ] Generated material memiliki ID/Origin/persistence sesuai scope.
+- [ ] History tiap entity hanya mencatat fakta entity tersebut.
+- [ ] Shared State/Timeline/Active Threads hanya fakta shared terkonfirmasi.
+- [ ] No hidden time-skip, retcon, cross-entity overwrite.
+- [ ] Write-back status tidak dipalsukan.
 
 ## Invalid State
-Jika pemeriksaan material gagal, jangan menerapkan state. Kembali ke nilai terakhir yang terverifikasi atau tahan resolusi/minta klarifikasi. Jangan menulis memory yang bergantung pada state gagal.
+Jika pemeriksaan material gagal, jangan menerapkan state. Kembali ke nilai terakhir terverifikasi atau tahan resolusi. Jangan menulis memory yang bergantung pada state gagal.
