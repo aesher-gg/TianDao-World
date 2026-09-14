@@ -64,18 +64,7 @@ Jika individual file resmi tersedia untuk organisasi yang sedang disentuh aksi, 
 - Jika tidak tercakup, gunakan Dynamic Generation.
 - Fixed Bestiary tidak boleh digunakan untuk mengubah Tier menjadi Realm.
 
-## 6. Step Counter
-Step Counter adalah metadata runtime per sesi:
-- pembukaan sesi = `Step 0/100`;
-- setiap Player Message berikutnya menaikkan counter satu step;
-- header response menampilkan step aktif;
-- counter **tidak mengubah waktu dunia, kekuatan karakter, probabilitas, atau state**;
-- mencapai `Step 100/100` memicu session checkpoint/freeze gate, bukan game-over permanen;
-- aksi baru setelah gate harus memulai checkpoint/sesi runtime berikutnya setelah Current State tervalidasi.
-
-Tidak boleh menggunakan Step Counter sebagai alasan untuk menghapus atau mereset Current State.
-
-## 7. Failure Policy
+## 6. Failure Policy
 Jika Required Module gagal:
 `REPOSITORY MODULE FETCH FAILURE`
 
@@ -87,10 +76,10 @@ GM wajib:
 
 Jika write-back gagal setelah resolusi valid, gunakan `gm/PENDING_SYNC.md`; state operasional tidak dianggap Repository Saved sampai write-back diverifikasi.
 
-## 8. Runtime Contract
+## 7. Runtime Contract
 `FRESH INDEX → IDENTIFY TRIGGERS → FETCH REQUIRED MODULES ONLY → VALIDATE → RESOLVE → UPDATE/ORIGIN → SAVE → WRITE-BACK VERIFY → RESPONSE`
 
-## 9. Anti-Catalog
+## 8. Anti-Catalog
 Dynamic result tetap runtime content. Ia tidak menjadi fixed Canon, Bestiary, faction database, NPC registry, event registry, atau global lore hanya karena pernah muncul dalam gameplay.
 
 Fixed Canon hanya ditambahkan melalui perubahan Admin yang sah dan diverifikasi.
