@@ -124,5 +124,39 @@ Currency: 1 Silver = 100 Copper; 1 Gold = 100 Silver; 1 Small Jade = 1.000 Gold;
 - Semua jarak baru untuk perjalanan, lokasi, peta, NPC, encounter, combat range, event, dan sistem lain harus dinyatakan dalam Li kecuali Canon/Admin menetapkan satuan khusus.
 - `systems/20_TRAVEL_ROUTES.md` adalah baseline registry rute dan konversi jarak resmi.
 
-## 11. Integrasi
+## 11. Modular World Bible & Module Routing
+- `INDEX.md` adalah router utama World Bible dan wajib di-fetch ulang pada setiap Player Message sebelum resolusi.
+- Setelah INDEX fresh berhasil, GM hanya memuat modul yang diwajibkan atau relevan terhadap turn; jangan fetch seluruh World Bible tanpa kebutuhan.
+- Trigger → Module mengikuti `systems/27_MODULE_ROUTER.md`.
+- Modul **REQUIRED** wajib berhasil di-fetch sebelum validasi/resolusi yang bergantung padanya.
+- Modul **OPTIONAL** hanya dimuat jika hasil resolusi memerlukannya.
+- Jika modul wajib gagal di-fetch, resolusi ditahan dan GM menyatakan `REPOSITORY MODULE FETCH FAILURE`; tidak boleh fallback diam-diam ke cache atau mengarang isi.
+
+### Bootstrap
+Urutan minimum:
+`FRESH INDEX → CORE/LOAD ORDER → CURRENT WORLD TIME → CURRENT CHARACTER STATE → RELEVANT MEMORY → TRIGGER DETECTION → REQUIRED MODULE FETCH → VALIDATION → RESOLUTION`.
+
+### Step Counter
+- Sesi dimulai pada `Step 0/100`.
+- Setiap Player Message berikutnya menaikkan counter satu step.
+- Header response wajib menampilkan Step aktif.
+- Step Counter hanya metadata runtime; tidak memengaruhi power, waktu, probabilitas, atau state.
+- Pada `Step 100/100`, lakukan session checkpoint/freeze gate. Ini **bukan game-over** dan tidak menghapus/reset state.
+- Aksi berikutnya dilanjutkan setelah checkpoint/sesi runtime baru menggunakan Current State terverifikasi.
+
+### Struktur Starting Data
+- `characters/players.md` adalah registry/data awal dan read-only untuk GM gameplay.
+- Starting data individual boleh disimpan pada struktur `characters/players/` sesuai Registry, tetapi tidak boleh dianggap current save tanpa verifikasi sesuai Load Order.
+
+### Fixed Bestiary
+- `bestiary/00_BESTIARY_DATABASE.md` adalah optional Admin Canon fixed bestiary.
+- Fixed Bestiary diprioritaskan hanya bila encounter/source secara eksplisit tercakup.
+- Fixed Bestiary bukan batas species dunia; Dynamic Generation tetap berlaku di luar fixed entry.
+
+### Individual Organization Files
+- Organisasi dapat memiliki database registry dan file individual detail.
+- Jika file individual resmi tersedia, gunakan setelah registry untuk detail organisasi tersebut.
+- Jika belum tersedia, gunakan database resmi dan jangan mengarang detail yang belum ditetapkan.
+
+## 12. Integrasi
 Setiap resolusi: load Core → load modul relevan → load custom event → validasi → resolusi → reaksi dunia → update state/log → respons GM.
