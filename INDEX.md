@@ -44,6 +44,9 @@
 - `systems/25_DYNAMIC_GENERATION.md` — Admin formulas for dynamic encounter, Monster/Spirit Beast generation, Threat/Tier ceiling, and Loot generation
 - `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` — Admin formulas for dynamic NPC, local Event, and Quest generation, persistence, validation, and anti-railing
 - `systems/27_MODULE_ROUTER.md` — Trigger → Module routing, modular fetch, bootstrap, fixed Bestiary boundary, and individual organization-file resolution
+- `systems/28_ORGANIZATION_PERSISTENCE.md` — Persistent organization identity/state, membership, rank, contract, access, and cross-entity save rules
+- `systems/29_NPC_PERSISTENCE.md` — Persistent NPC identity/state, knowledge, autonomy, history, and NPC lifecycle validation
+- `systems/30_EVENT_QUEST_PERSISTENCE.md` — Persistent Event/Quest identity, lifecycle, scope, reward provenance, and cross-turn state
 
 ## Bestiary
 - `bestiary/00_BESTIARY_DATABASE.md` — Optional Admin Canon fixed Bestiary; does not limit dynamic creature generation
@@ -80,6 +83,7 @@
 - `factions/organizations/00_ORGANIZATION_DATABASE.md`
 - `factions/regional/00_REGIONAL_FACTION_DATABASE.md`
 - Individual organization files may be added under the relevant faction directory; when present, they provide granular detail after the registry database.
+- `systems/28_ORGANIZATION_PERSISTENCE.md` governs stable organization identity/state and persistence; individual files are not automatically Global Canon beyond their stored content.
 
 ## Events
 - `events/39_CUSTOM_EVENTS.md`
@@ -121,7 +125,7 @@
 2. Core rules.
 3. Custom content dan event resmi yang relevan.
 4. Current World Time sesuai hierarchy resmi.
-5. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan, `systems/25_DYNAMIC_GENERATION.md` bila encounter/creature/loot generation relevan, `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` bila NPC/event/quest generation atau resolution relevan, dan `systems/27_MODULE_ROUTER.md` untuk trigger routing.
+5. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan, `systems/25_DYNAMIC_GENERATION.md` bila encounter/creature/loot generation relevan, `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` bila NPC/event/quest generation atau resolution relevan, `systems/27_MODULE_ROUTER.md` untuk trigger routing, dan `systems/28_ORGANIZATION_PERSISTENCE.md`, `systems/29_NPC_PERSISTENCE.md`, atau `systems/30_EVENT_QUEST_PERSISTENCE.md` bila persistence masing-masing entity relevan.
 6. Faction databases dan individual organization files bila relevan.
 7. City/NPC/lore yang relevan.
 8. Shared persistent world state dan active story threads bila relevan.
@@ -146,11 +150,14 @@
 - **Setiap Player message adalah turn baru dan wajib memulai dengan fresh fetch/verification `INDEX.md` dari repository sebelum membaca/menilai state atau memproses intent. Tidak boleh memakai INDEX, state, atau hasil load dari turn sebelumnya sebagai pengganti fresh fetch.**
 - **Jika tool fetch tersedia, panggilan fetch `INDEX.md` harus menjadi operasi repository pertama pada setiap turn. AI GM dilarang menghasilkan resolusi gameplay sebelum hasil fetch tersebut berhasil dibaca.**
 - Setelah INDEX fresh berhasil dibaca, AI GM wajib mengikuti Load Order dan melakukan fetch ulang setiap sumber state yang diperlukan untuk turn tersebut.
-- `systems/27_MODULE_ROUTER.md` menentukan trigger dan modul REQUIRED/OPTIONAL.
+- `systems/27_MODULE_ROUTER.md` menentukan trigger dan modul REQUIRED/OPTIONAL setelah INDEX fresh berhasil.
+- `systems/28_ORGANIZATION_PERSISTENCE.md` wajib diproses bila organisasi, membership, rank, contract, access, atau perubahan state organisasi persisten terlibat.
+- `systems/29_NPC_PERSISTENCE.md` wajib diproses bila NPC menjadi persisten/recurring atau terjadi perubahan NPC yang memerlukan continuity lintas turn.
+- `systems/30_EVENT_QUEST_PERSISTENCE.md` wajib diproses bila Event/Quest menjadi persisten, lintas turn, material, atau reward/state-nya berubah.
 - `bestiary/00_BESTIARY_DATABASE.md` adalah fixed Bestiary opsional; fixed entry diprioritaskan hanya bila source secara eksplisit tercakup dan tidak membatasi Dynamic Generation.
 - Organisasi dapat menggunakan database registry + individual organization file; individual file menjadi detail utama bila tersedia.
 - Setiap aksi yang menghasilkan perubahan material wajib melewati Save Pipeline.
-- Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; bila Spirit Beast terlibat, Current Beast State dan Beast History juga wajib diproses sesuai Module 24; bila NPC persisten atau Quest State berubah, entity state/history yang relevan juga wajib diproses sesuai Module 26.
+- Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; bila Spirit Beast terlibat, Current Beast State dan Beast History juga wajib diproses sesuai Module 24; bila NPC persisten atau Quest State berubah, entity state/history yang relevan juga wajib diproses sesuai Module 26 dan persistence modules.
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
 - `systems/23_GARDENING.md` wajib dimuat ketika berkebun, tanaman, kebun, pertumbuhan tanaman, atau hasil panen menjadi relevan terhadap aksi/runtime.
 - `systems/24_SPIRIT_BEASTS.md` wajib dimuat ketika Spirit Beast, taming, ownership, contract, Beast combat, Beast growth/evolution, Beast state, atau Beast history menjadi relevan terhadap aksi/runtime.
