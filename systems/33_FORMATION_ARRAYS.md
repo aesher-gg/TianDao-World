@@ -32,6 +32,15 @@ Blueprint dapat berasal dari Canon, manual, teacher, faction, item, event, disco
 - Blueprint tidak otomatis memberikan mastery.
 - Effect, range, cost, stability, requirements, dan disruption rules hanya digunakan jika source mendefinisikannya.
 
+## Formation Identity & Persistence
+Formation persisten menggunakan `FORM-####` sebagai identity unik dan stabil. Array Core persisten menggunakan `ARRAYCORE-####` sebagai identity unik dan stabil. ID tidak berubah karena nama, lokasi, owner, status, atau kondisi berubah.
+- Current Formation State: `formations/FORM-####.md`
+- Current Array Core State: `formations/cores/ARRAYCORE-####.md`
+- Registry: `formations/formation_registry.md`
+- History: `formation_history/FORM-####_HISTORY.md` dan `formation_history/ARRAYCORE-####_HISTORY.md` bila continuity material memerlukannya.
+- Formation/Array Core yang hanya one-turn dan non-material boleh tetap runtime tanpa persistence.
+- Persistent identity tidak menjadikan Formation atau Array Core Global Canon di luar state yang benar-benar tersimpan.
+
 ## Formation State
 `Blueprint Only → Unconstructed → Constructing → Constructed/Inactive → Active → Damaged/Disrupted → Collapsed/Destroyed`
 State harus mencerminkan resolusi aktual, bukan intent Player.
@@ -47,6 +56,7 @@ Array Core adalah komponen terpisah jika formation membutuhkannya.
 - Core memiliki state/condition yang dapat berubah.
 - Core tidak muncul gratis.
 - Memiliki Core tidak otomatis berarti memiliki Formation.
+- Core yang persisten mengikuti identity/state/history rules di atas.
 
 ## Activation
 Activation membutuhkan semua requirement yang berlaku. Activation dapat membutuhkan operator, Qi, fuel, item, timing, location, atau trigger resmi.
