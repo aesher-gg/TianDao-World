@@ -3,6 +3,7 @@
 ## World Bible Index
 
 > Struktur resmi repository TianDao-World. Semua modul dunia dan sistem dirujuk melalui indeks ini.
+> `INDEX.md` adalah router utama. Setiap Player Message wajib memulai dengan fresh fetch INDEX sebelum state/intent diproses.
 
 ## Core
 - `core/00_CORE_RULES.md`
@@ -42,12 +43,16 @@
 - `systems/24_SPIRIT_BEASTS.md` — Spirit Beast identity, state, relationship, taming, ownership, contract, growth/evolution, combat, and persistence
 - `systems/25_DYNAMIC_GENERATION.md` — Admin formulas for dynamic encounter, Monster/Spirit Beast generation, Threat/Tier ceiling, and Loot generation
 - `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` — Admin formulas for dynamic NPC, local Event, and Quest generation, persistence, validation, and anti-railing
+- `systems/27_MODULE_ROUTER.md` — Trigger → Module routing, modular fetch, bootstrap, Step Counter, fixed Bestiary boundary, and individual organization-file resolution
+
+## Bestiary
+- `bestiary/00_BESTIARY_DATABASE.md` — Optional Admin Canon fixed Bestiary; does not limit dynamic creature generation
 
 ## Loot — Canon Database
 - `loot/00_LOOT_TABLE_DATABASE.md` — Optional Admin Canon registry for fixed/exception loot tables; not a global loot catalog
 
 ## Characters
-- `characters/players.md` — Player Registry
+- `characters/players.md` — Player Registry / starting-data registry
 - `characters/character_registry.md` — Character Registry
 - `characters/beast_registry.md` — Spirit Beast Registry
 - `characters/npc_registry.md` — Persistent NPC Registry; dynamic runtime NPC tetap tidak dibatasi oleh registry
@@ -74,6 +79,7 @@
 - `factions/criminal/00_CRIMINAL_DATABASE.md`
 - `factions/organizations/00_ORGANIZATION_DATABASE.md`
 - `factions/regional/00_REGIONAL_FACTION_DATABASE.md`
+- Individual organization files may be added under the relevant faction directory; when present, they provide granular detail after the registry database.
 
 ## Events
 - `events/39_CUSTOM_EVENTS.md`
@@ -111,18 +117,28 @@
 - `gm/SAVE_PIPELINE.md`
 
 ## Load Order
-1. Core rules.
-2. Custom content dan event resmi.
-3. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan, `systems/25_DYNAMIC_GENERATION.md` bila encounter/creature/loot generation relevan, dan `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` bila NPC/event/quest generation atau resolution relevan.
-4. Faction databases dan city/NPC databases bila relevan.
-5. Lore yang relevan.
-6. Shared persistent world state dan active story threads bila relevan.
-7. Current character state yang sesuai dengan Character ID aktif.
-8. Current Spirit Beast State dan Beast History yang relevan dengan action/encounter/relationship.
-9. Current NPC State dan NPC History bila NPC persisten terlibat.
-10. Character History milik Character ID aktif bila tersedia.
-11. Current Quest State bila quest lintas turn relevan.
-12. Player intent.
+1. **Fresh `INDEX.md`** — router dan source load-order untuk turn tersebut.
+2. Core rules.
+3. Custom content dan event resmi yang relevan.
+4. Current World Time sesuai hierarchy resmi.
+5. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan, `systems/25_DYNAMIC_GENERATION.md` bila encounter/creature/loot generation relevan, `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` bila NPC/event/quest generation atau resolution relevan, dan `systems/27_MODULE_ROUTER.md` untuk trigger routing.
+6. Faction databases dan individual organization files bila relevan.
+7. City/NPC/lore yang relevan.
+8. Shared persistent world state dan active story threads bila relevan.
+9. Current character state yang sesuai dengan Character ID aktif.
+10. Current Spirit Beast State dan Beast History yang relevan dengan action/encounter/relationship.
+11. Current NPC State dan NPC History bila NPC persisten terlibat.
+12. Character History milik Character ID aktif bila tersedia.
+13. Current Quest State bila quest lintas turn relevan.
+14. Player intent.
+
+## Modular Fetch / Trigger Contract
+- Setiap Player Message adalah turn baru dan wajib memulai dengan fresh fetch `INDEX.md` dari repository.
+- Setelah INDEX berhasil, GM mendeteksi trigger dan fetch **REQUIRED modules only** sebelum validasi/resolusi. Optional modules hanya dimuat bila diperlukan.
+- Trigger → Module registry berada di `systems/27_MODULE_ROUTER.md`.
+- Jika `INDEX.md` gagal: `REPOSITORY FETCH FAILURE` dan hentikan resolusi.
+- Jika modul REQUIRED gagal: `REPOSITORY MODULE FETCH FAILURE` dan tahan resolusi yang bergantung pada modul tersebut.
+- Tidak boleh silent fallback ke INDEX/cache lama.
 
 ## Runtime Prompt Contract
 - `gm/PLAYER_BOOT_PROMPT.md` digunakan sekali pada boot karakter/sesi baru untuk memuat World Bible, current state, dan memory yang relevan.
@@ -130,7 +146,10 @@
 - **Setiap Player message adalah turn baru dan wajib memulai dengan fresh fetch/verification `INDEX.md` dari repository sebelum membaca/menilai state atau memproses intent. Tidak boleh memakai INDEX, state, atau hasil load dari turn sebelumnya sebagai pengganti fresh fetch.**
 - **Jika tool fetch tersedia, panggilan fetch `INDEX.md` harus menjadi operasi repository pertama pada setiap turn. AI GM dilarang menghasilkan resolusi gameplay sebelum hasil fetch tersebut berhasil dibaca.**
 - Setelah INDEX fresh berhasil dibaca, AI GM wajib mengikuti Load Order dan melakukan fetch ulang setiap sumber state yang diperlukan untuk turn tersebut.
-- Jika fresh fetch `INDEX.md` gagal, AI GM wajib menyatakan repository fetch failure dan tidak boleh berpura-pura telah melakukan fresh verification.
+- `systems/27_MODULE_ROUTER.md` menentukan trigger dan modul REQUIRED/OPTIONAL.
+- `bestiary/00_BESTIARY_DATABASE.md` adalah fixed Bestiary opsional; fixed entry diprioritaskan hanya bila source secara eksplisit tercakup dan tidak membatasi Dynamic Generation.
+- Organisasi dapat menggunakan database registry + individual organization file; individual file menjadi detail utama bila tersedia.
+- Step Counter adalah metadata runtime: Step 0/100 saat boot, naik satu per Player Message, dan Step 100/100 memicu checkpoint/freeze gate, bukan game-over atau reset state.
 - Setiap aksi yang menghasilkan perubahan material wajib melewati Save Pipeline.
 - Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; bila Spirit Beast terlibat, Current Beast State dan Beast History juga wajib diproses sesuai Module 24; bila NPC persisten atau Quest State berubah, entity state/history yang relevan juga wajib diproses sesuai Module 26.
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
@@ -138,5 +157,6 @@
 - `systems/24_SPIRIT_BEASTS.md` wajib dimuat ketika Spirit Beast, taming, ownership, contract, Beast combat, Beast growth/evolution, Beast state, atau Beast history menjadi relevan terhadap aksi/runtime.
 - `systems/25_DYNAMIC_GENERATION.md` wajib dimuat ketika dynamic encounter, Monster generation, Spirit Beast generation, Threat/Tier generation, loot generation, atau loot resolution tanpa fixed table menjadi relevan terhadap aksi/runtime.
 - `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` wajib dimuat ketika dynamic NPC generation, local event generation/resolution, quest generation/resolution, persistent NPC, persistent quest, atau NPC/Event/Quest relationship menjadi relevan terhadap aksi/runtime.
+- `systems/27_MODULE_ROUTER.md` wajib digunakan untuk menentukan modul REQUIRED/OPTIONAL setelah INDEX fresh berhasil.
 - `loot/00_LOOT_TABLE_DATABASE.md` dimuat bila fixed loot table, unique reward, atau content table tertentu perlu diperiksa; registry tersebut tidak membatasi dynamic loot.
 - `gm/PENDING_SYNC.md` wajib digunakan ketika write-back repository tidak tersedia atau gagal; pending changes bukan Canon tersinkron sampai diverifikasi dan ditulis oleh Admin.
