@@ -1,7 +1,7 @@
 # Runtime State Validator
 
 ## Tujuan
-Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dynamic NPC/Event/Quest, Monster/Beast/Loot, Cultivation Law, Technique provenance, organization state, dan shared-world scope.
+Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dynamic NPC/Event/Quest, Monster/Beast/Loot, Cultivation Law, Technique provenance, organization state, shared-world scope, dan seluruh production process Crafting/Alchemy/Formation/Refinement.
 
 ## Validation Order
 1. Repository/INDEX freshness.
@@ -21,13 +21,15 @@ Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dy
 - [ ] Durasi aksi memenuhi Time System.
 - [ ] Character History cocok dengan Active Character ID.
 - [ ] Dynamic generation memenuhi Module 25/26 input dan formula gate bila dipakai.
+- [ ] Jika production process relevan, Module 31/32/33/34 yang REQUIRED telah dimuat.
 
 ## Entity Isolation
 - [ ] Setiap perubahan memiliki Entity ID yang tepat.
-- [ ] Character State tidak menerima fakta milik NPC/Beast/Quest/Event.
+- [ ] Character State tidak menerima fakta milik NPC/Beast/Quest/Event/Production Entity secara keliru.
 - [ ] NPC/Beast/Quest/Event tidak menerima perubahan hanya karena Character menginginkannya.
 - [ ] Shared World State hanya menerima fakta yang benar-benar berscope shared.
 - [ ] Generated entity tidak menjadi Global Canon tanpa dasar Admin/Canon.
+- [ ] Production result tidak menjadi Global Canon hanya karena berhasil runtime.
 
 ## Cultivation Law / Technique
 - [ ] Law aktif memiliki Law Origin tervalidasi.
@@ -76,6 +78,62 @@ Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dy
 - [ ] Struktur/jabatan/relasi hanya dianggap Canon bila tersimpan sebagai Admin Canon.
 - [ ] Faction membership, rank, contract, promotion, expulsion, dan akses tidak berubah tanpa sebab/resolusi sah.
 - [ ] `???` tetap unknown bila tidak ada sumber.
+
+## Crafting / Forging — Module 31
+- [ ] Material yang digunakan benar-benar tersedia dan memiliki valid Origin.
+- [ ] Recipe/blueprint/procedure memiliki source yang sah.
+- [ ] Crafter memiliki qualification/knowledge yang valid bila diwajibkan.
+- [ ] Tool/workspace tersedia dan sesuai proses bila diwajibkan.
+- [ ] Resource cost dan waktu memiliki source mekanis yang valid.
+- [ ] Process mengikuti recipe/source dan tidak memakai hidden modifier.
+- [ ] Resolution dapat success, partial, failure, atau defective result; tidak ada automatic success.
+- [ ] Quality/result tidak melebihi source/Canon ceiling.
+- [ ] Item baru mendapat Item State dan Item Origin sesuai Module 14.
+- [ ] Material yang dikonsumsi tercermin pada before → after dan Origin.
+
+## Alchemy / Pills — Module 32
+- [ ] Herb/material tersedia dan memiliki valid Origin.
+- [ ] Formula/procedure memiliki source yang sah.
+- [ ] Alchemist qualification/knowledge valid.
+- [ ] Furnace/tool dan proses sesuai requirement.
+- [ ] Cost dan waktu valid.
+- [ ] Failure/deviation mungkin terjadi bila proses mendukungnya; tidak ada automatic success.
+- [ ] Pill quality/quantity mengikuti formula/fixed source; tidak ditebak untuk memberi reward.
+- [ ] Effect/potency/side effect/defect hanya berasal dari source yang valid; unknown tetap `???`.
+- [ ] Hasil Pill/Product mendapat Item State dan Item Origin sesuai Module 14.
+
+## Formation / Array — Module 33
+- [ ] Blueprint/procedure memiliki source sah.
+- [ ] Builder/operator memiliki knowledge/qualification yang valid.
+- [ ] Array materials dan Array Core tersedia serta memiliki Origin bila diwajibkan.
+- [ ] Location/environment sesuai requirement.
+- [ ] Construction dan activation dipisahkan dari blueprint ownership/knowledge.
+- [ ] State formation mencerminkan resolusi aktual.
+- [ ] Range/effect/cost/stability hanya berasal dari source/Admin Canon.
+- [ ] Combat interaction mengikuti Module 12 dan tidak memberi automatic hit/kill/dodge/counter.
+- [ ] Disruption, repair, collapse, atau destruction memiliki sebab/resolusi sah.
+- [ ] Formation dan Array Core yang persisten memiliki identity/state/history yang dapat ditelusuri.
+
+## Artifact / Weapon Refinement — Module 34
+- [ ] Existing Item benar-benar ada dan state-nya terbaru.
+- [ ] Refinement method memiliki source yang sah.
+- [ ] Refiner qualification valid bila diwajibkan.
+- [ ] Material/tool/workspace/cost tersedia dan valid.
+- [ ] Refinement tidak diperlakukan sebagai pembuatan item baru tanpa dasar.
+- [ ] Quality/property/condition hanya berubah jika method mendukungnya.
+- [ ] Category/grade/tier tidak naik otomatis.
+- [ ] Failure dapat mempertahankan, merusak, atau menghancurkan item hanya jika mekanisme mengizinkannya.
+- [ ] Ownership tidak berubah otomatis karena refinement.
+- [ ] Existing Item Origin dipertahankan dan refinement menambahkan Origin/History baru.
+
+## Production Cross-Module Integrity
+- [ ] Batas Module 31 → item baru, Module 32 → alchemical product, Module 33 → formation/array, Module 34 → existing item modification dipatuhi.
+- [ ] Jika satu aksi melintasi beberapa production module, seluruh REQUIRED module diproses.
+- [ ] Tidak ada double-consumption material.
+- [ ] Tidak ada duplicate item/result akibat multi-step resolution.
+- [ ] Before → after konsisten pada Character, Item, Material, Formation, Array Core, dan entity lain yang terdampak.
+- [ ] Provenance chain dapat ditelusuri dari input → process → result.
+- [ ] Production result tidak memberikan ability/effect/quality/tier yang tidak memiliki source.
 
 ## Post-Resolution
 - [ ] Time, cost, HP/Qi/Stamina/Satiety, lokasi, inventory, equipment, currency, Karma/Reputation tepat.
