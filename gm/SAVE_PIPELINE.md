@@ -1,41 +1,51 @@
 # Runtime Save Pipeline
 
 ## Tujuan
-Menjamin current state dan persistent memory adalah hasil transisi sah, termasuk transaksi multi-entity NPC → Event → Quest → Reward dan dynamic Monster/Beast/Loot.
+Menjamin current state dan persistent memory adalah hasil transisi sah, termasuk transaksi multi-entity NPC → Event → Quest → Reward dan dynamic Monster/Beast/Loot, serta perubahan faction/organization.
+
+## Save Gate
+`Fresh INDEX → Required Modules → Current State → Resolve → Validate → Before/After → Origin → Entity Save → Cross-Entity Integrity → Write-Back → Fetch Verify`
+
+Tidak ada status `Repository Saved` sebelum write-back berhasil dan setiap file yang berubah telah diverifikasi.
 
 ## Save Sequence
-1. Ambil current state terakhir yang terverifikasi untuk Character dan setiap entity yang terlibat.
-2. Muat relevant History, World State, Active Threads, Timeline, Event data, dan Quest State.
-3. Terapkan hanya hasil resolusi yang telah lolos validation.
-4. Hitung before → after untuk semua field material pada semua entity yang berubah.
+1. Ambil current state terakhir yang terverifikasi untuk Character dan setiap entity.
+2. Muat relevant History, World State, Active Threads, Timeline, Event data, Quest State, dan organization state bila relevan.
+3. Terapkan hanya hasil resolusi yang lolos validation.
+4. Hitung before → after untuk semua field material pada semua entity.
 5. Tambahkan Origin Log: `World Time / Entity ID / Action/Event / Cause / Resolution / Before → After / Source`.
 6. Jalankan State Validator.
-7. Jika FAIL, jangan overwrite state terverifikasi dan jangan menulis memory sebagai fakta baru.
-8. Jika PASS, tetapkan Current State baru untuk setiap entity yang berubah.
+7. Jika FAIL, jangan overwrite state terverifikasi.
+8. Jika PASS, tetapkan Current State baru untuk setiap entity.
 9. Update Character History untuk pengalaman Character.
-10. Update NPC State/History untuk perubahan NPC persistent.
-11. Update Quest State untuk quest lintas-turn dan Active Threads bila scope shared.
-12. Update Event state/log dan World State/Timeline/Active Threads hanya bila scope mengharuskannya.
+10. Update NPC State/History untuk NPC persistent.
+11. Update Quest State dan Active Threads bila lintas-turn/shared.
+12. Update Event state/log dan World State/Timeline/Active Threads sesuai scope.
 13. Update Beast State/History bila Beast terlibat.
-14. Simpan reward yang benar-benar diperoleh: item/currency/technique/contract harus berasal dari source yang valid dan dicatat provenance-nya.
-15. Commit/write-back seluruh file terkait melalui integrasi repository resmi.
-16. Verifikasi setiap write-back sebelum menyatakan save tersinkron.
+14. Update organization/faction state hanya jika ada perubahan Canon/state yang sah dan file individual/database yang relevan memang terdampak.
+15. Simpan reward yang benar-benar diperoleh dengan provenance valid.
+16. Commit/write-back seluruh file terkait melalui integrasi repository resmi.
+17. Fetch ulang setiap file yang ditulis dan cocokkan content/state setelah commit.
+18. Hanya setelah verifikasi sukses, tandai Repository Saved.
 
 ## Entity Save Rules
 ### NPC
-Generated NPC yang tidak material tidak perlu disimpan. NPC recurring/material memakai NPC_ID stabil, Current NPC State, dan History bila diperlukan. Generated NPC tidak otomatis menjadi Global Canon.
+Generated NPC yang tidak material tidak perlu disimpan. NPC recurring/material memakai NPC_ID stabil, Current NPC State, dan History bila diperlukan.
 
 ### Event
-One-turn local event dapat tetap runtime. Local event lintas-turn/material memakai EVT_ID dan state/log. World Event/Scheduled Event memakai ID dan trigger Canon resmi.
+One-turn local event dapat tetap runtime. Local event lintas-turn/material memakai EVT_ID dan state/log. World/Scheduled Event memakai ID dan trigger Canon resmi.
 
 ### Quest
-Quest lintas-turn memakai QST_ID dan `story/quests/<QUEST_ID>.md`. Status/progress/objective/failure/completion/reward/expiry harus dapat ditelusuri. Quest gagal tidak memberi reward otomatis.
+Quest lintas-turn memakai QST_ID dan `story/quests/<QUEST_ID>.md`. Status/progress/objective/failure/completion/reward/expiry harus dapat ditelusuri.
+
+### Organization
+Organization membership, rank, contract, access, internal state, atau material relationship hanya disimpan jika resolusi sah menghasilkan perubahan. Individual organization file tidak menggantikan registry.
 
 ### Reward
-Prioritas provenance: `Fixed Canon/Event/Mission Reward → Valid Item/Economy/Technique/Contract Source → Dynamic Loot Formula → ???`. Tidak ada reward bebas, breakthrough gratis, atau reward scaling otomatis dari Realm Character.
+Prioritas provenance: `Fixed Canon/Event/Mission Reward → Valid Item/Economy/Technique/Contract Source → Dynamic Loot Formula → ???`. Tidak ada reward bebas, breakthrough gratis, atau Realm scaling otomatis.
 
-### Multi-Entity Transaction
-Jika satu aksi mengubah Character + NPC + Event + Quest + Reward, setiap entity mendapat before → after dan Origin yang sesuai. Jangan menyimpan perubahan Character saja lalu menganggap NPC/Quest/Event ikut tersimpan.
+## Multi-Entity Transaction
+Jika satu aksi mengubah Character + NPC + Event + Quest + Reward, setiap entity mendapat before → after dan Origin. Jangan menyimpan Character saja lalu menganggap entity lain ikut tersimpan.
 
 ## Memory Scope
 - Character History = pengalaman Character.
@@ -43,7 +53,7 @@ Jika satu aksi mengubah Character + NPC + Event + Quest + Reward, setiap entity 
 - Quest State/History = lifecycle quest.
 - Event/World State = fakta shared sesuai scope.
 - Beast History = kejadian Beast.
-Jangan menyalin seluruh state ke semua memory.
+- Organization file/database = fakta organisasi yang memang Canon/state dan tidak tercampur dengan memory Character.
 
-## Anti-Retcon / Recovery
-Tidak boleh memundurkan waktu, menghapus konsekuensi, atau menciptakan aset/memory tanpa source. Jika konflik, gunakan snapshot/Origin/History terakhir yang dapat dibuktikan. Jika write-back gagal, tandai `PENDING SYNC` dan jangan klaim sinkronisasi.
+## Recovery
+Tidak boleh memundurkan waktu, menghapus konsekuensi, atau menciptakan aset/memory tanpa source. Jika write-back gagal atau verifikasi gagal, tandai `PENDING SYNC`; perubahan belum menjadi Repository Saved.
