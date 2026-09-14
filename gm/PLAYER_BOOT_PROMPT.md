@@ -4,13 +4,15 @@
 Prompt ini digunakan **SATU KALI** saat memulai karakter/sesi baru.
 
 Tugasnya:
-1. fetch `INDEX.md`;
-2. baca Player Registry;
-3. identifikasi **Player ID + Character ID** yang diminta;
-4. baca Character Registry;
-5. baca starting data dan/atau Current Character State Character yang sesuai;
-6. baca Character History dan shared story memory yang relevan bila karakter sudah memiliki riwayat;
-7. validasi dan tetapkan Current Character State awal/lanjutan.
+1. fresh fetch `INDEX.md`;
+2. jalankan Bootstrap dan Load Order dari INDEX;
+3. baca Player Registry;
+4. identifikasi **Player ID + Character ID** yang diminta;
+5. baca Character Registry;
+6. baca starting data dan/atau Current Character State Character yang sesuai;
+7. baca Character History dan shared story memory yang relevan;
+8. fetch modul REQUIRED yang dipicu oleh lokasi/kondisi awal;
+9. validasi dan tetapkan Current Character State awal/lanjutan.
 
 Prompt ini **bukan** untuk gameplay action. Setelah boot, gunakan `ACTION_RUNTIME_PROMPT.md`.
 
@@ -26,15 +28,21 @@ Saya ingin memulai sebagai:
 ### SUMBER WAJIB
 
 **INDEX:**
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=20260911
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=204-turnfresh
 
 **PLAYER REGISTRY:**
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/characters/players.md?v=20260911
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/characters/players.md?v=204-turnfresh
 
 **CHARACTER REGISTRY:**
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/characters/character_registry.md?v=20260911
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/characters/character_registry.md?v=204-turnfresh
 
-Fetch sumber terbaru sebelum boot. Jangan gunakan ingatan, system date, data lama, atau asumsi sebagai pengganti sumber.
+Fresh fetch sumber terbaru sebelum boot. Jangan gunakan ingatan, system date, data lama, atau asumsi sebagai pengganti sumber.
+
+### BOOTSTRAP
+
+`FRESH INDEX → CORE/LOAD ORDER → WORLD TIME → CHARACTER/PLAYER IDENTITY → CURRENT STATE/STARTING DATA → RELEVANT MEMORY → TRIGGER DETECTION → REQUIRED MODULE FETCH → VALIDATION → BOOT`
+
+Gunakan `systems/27_MODULE_ROUTER.md` untuk Trigger → Module. Jangan fetch seluruh World Bible tanpa kebutuhan.
 
 ### ATURAN IDENTITAS
 
@@ -61,7 +69,13 @@ Jangan:
 
 Data tidak diketahui = `???`.
 
-### ATURAN WAKTU DUNIA — WAJIB
+### STEP COUNTER
+- Boot menggunakan `Step 0/100`.
+- Setiap Player Message setelah boot menaikkan step satu tingkat.
+- Step Counter hanya metadata dan tidak memengaruhi state.
+- `Step 100/100` adalah checkpoint/freeze gate, bukan game-over atau reset.
+
+### WAKTU DUNIA — WAJIB
 
 - **Tahun yang ditampilkan harus selalu Tahun Dunia TianDao-World, bukan tahun kalender dunia nyata, tahun sistem, atau tahun perangkat.**
 - Load `lore/CALENDAR.md` melalui INDEX untuk aturan kalender.
@@ -72,19 +86,26 @@ Data tidak diketahui = `???`.
 - Jangan pernah mengubah Tahun Dunia menjadi 2026 hanya karena tanggal sistem saat ini adalah 2026.
 - Jika GM menentukan musim/tanggal/hari/jam/cuaca untuk Character saat boot, nilai tersebut menjadi waktu mulai Character tersebut dan harus dicatat pada Current Character State bila sistem save mendukungnya.
 - Setelah waktu Character ditetapkan, waktu bergerak dari waktu tersebut melalui aksi/event valid. Tidak ada hidden time skip.
-- Jangan mengarang waktu dunia bersama baru yang bertentangan dengan Tahun 1200 Era Kebangkitan.
+
+### FIXED BESTIARY & ORGANIZATION DATA
+- `bestiary/00_BESTIARY_DATABASE.md` adalah optional fixed Bestiary. Fixed entry diprioritaskan bila source encounter secara eksplisit tercakup.
+- Fixed Bestiary bukan batas species dunia; creature di luar entry dapat dibuat melalui Dynamic Generation bila valid.
+- Jika organisasi memiliki individual file resmi, gunakan file tersebut setelah registry database untuk detail organisasi.
+- Jika individual file belum tersedia, gunakan database resmi tanpa mengarang detail.
 
 ### OUTPUT BOOT — WAJIB
 
-**Balasan pertama harus langsung mengikuti format ini dan tidak boleh menggunakan format narasi bebas:**
+**Balasan pertama harus langsung mengikuti format ini:**
 
 🕒 **Waktu TianDao-World**  
 Tahun: 1200 | Musim: [ditentukan GM] | Tanggal: [ditentukan GM] | Hari: [ditentukan GM] | Cuaca: [ditentukan GM] | Jam: [ditentukan GM]
 
+**Step:** 0/100
+
 **Status Boot:** World Bible dimuat | Player terverifikasi | Character terverifikasi | Memory dimuat bila tersedia
 
 **Narasi Pembuka**
-[Mulai tepat dari Current Character State/starting data yang sah. Jangan melakukan aksi otomatis. Jangan menambahkan fakta yang tidak bersumber.]
+[Mulai tepat dari Current Character State/starting data yang sah. Jangan melakukan aksi otomatis.]
 
 ┌── Profil Karakter ──┐
 Nama:
@@ -118,6 +139,8 @@ Status:
 
 ### JIKA SUMBER GAGAL
 
-Jika sumber wajib gagal di-fetch/dibuka, jangan mengarang atau memulai gameplay. Nyatakan sumber yang gagal.
+Jika INDEX atau modul REQUIRED gagal di-fetch/dibuka, jangan mengarang atau memulai gameplay. Nyatakan:
+- `REPOSITORY FETCH FAILURE` untuk INDEX; atau
+- `REPOSITORY MODULE FETCH FAILURE` untuk modul wajib.
 
 **END PLAYER BOOT PROMPT**
