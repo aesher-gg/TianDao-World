@@ -43,7 +43,7 @@
 - `systems/24_SPIRIT_BEASTS.md` — Spirit Beast identity, state, relationship, taming, ownership, contract, growth/evolution, combat, and persistence
 - `systems/25_DYNAMIC_GENERATION.md` — Admin formulas for dynamic encounter, Monster/Spirit Beast generation, Threat/Tier ceiling, and Loot generation
 - `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` — Admin formulas for dynamic NPC, local Event, and Quest generation, persistence, validation, and anti-railing
-- `systems/27_MODULE_ROUTER.md` — Trigger → Module routing, modular fetch, bootstrap, Step Counter, fixed Bestiary boundary, and individual organization-file resolution
+- `systems/27_MODULE_ROUTER.md` — Trigger → Module routing, modular fetch, bootstrap, fixed Bestiary boundary, and individual organization-file resolution
 
 ## Bestiary
 - `bestiary/00_BESTIARY_DATABASE.md` — Optional Admin Canon fixed Bestiary; does not limit dynamic creature generation
@@ -149,7 +149,6 @@
 - `systems/27_MODULE_ROUTER.md` menentukan trigger dan modul REQUIRED/OPTIONAL.
 - `bestiary/00_BESTIARY_DATABASE.md` adalah fixed Bestiary opsional; fixed entry diprioritaskan hanya bila source secara eksplisit tercakup dan tidak membatasi Dynamic Generation.
 - Organisasi dapat menggunakan database registry + individual organization file; individual file menjadi detail utama bila tersedia.
-- Step Counter adalah metadata runtime: Step 0/100 saat boot, naik satu per Player Message, dan Step 100/100 memicu checkpoint/freeze gate, bukan game-over atau reset state.
 - Setiap aksi yang menghasilkan perubahan material wajib melewati Save Pipeline.
 - Setelah resolusi tervalidasi, AI GM wajib memperbarui Current Character State dan memory persisten yang relevan melalui integrasi repository yang tersedia; bila Spirit Beast terlibat, Current Beast State dan Beast History juga wajib diproses sesuai Module 24; bila NPC persisten atau Quest State berubah, entity state/history yang relevan juga wajib diproses sesuai Module 26.
 - Kedua prompt wajib mengikuti Runtime Engine, Core Rules, Save Integrity, ID/Save System, dan seluruh sumber yang ditunjuk INDEX.
