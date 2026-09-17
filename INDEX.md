@@ -13,6 +13,7 @@
 - `core/04_ANTI_CHEAT.md`
 - `core/05_SAVE_INTEGRITY.md`
 - `core/06_ID_AND_SAVE_SYSTEM.md`
+- `core/07_DATA_COMPLETENESS.md` — status data, unresolved state, placeholder, dan audit completeness
 
 ## Realms
 - `realms/01_WORLD_MAP.md`
@@ -132,7 +133,7 @@
 
 ## Load Order
 1. **Fresh `INDEX.md`** — router dan source load-order untuk turn tersebut.
-2. Core rules.
+2. Core rules, termasuk `core/07_DATA_COMPLETENESS.md` untuk status data.
 3. Custom content dan event resmi yang relevan.
 4. Current World Time sesuai hierarchy resmi.
 5. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan, `systems/25_DYNAMIC_GENERATION.md` bila encounter/creature/loot generation relevan, `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` bila NPC/event/quest generation atau resolution relevan, `systems/27_MODULE_ROUTER.md` untuk trigger routing, persistence modules bila entity persistence relevan, serta `systems/31_CRAFTING_FORGING.md`, `systems/32_ALCHEMY_PILLS.md`, `systems/33_FORMATION_ARRAYS.md`, atau `systems/34_ARTIFACT_WEAPON_REFINEMENT.md` sesuai trigger.
@@ -183,3 +184,4 @@
 - `systems/27_MODULE_ROUTER.md` wajib digunakan untuk menentukan modul REQUIRED/OPTIONAL setelah INDEX fresh berhasil.
 - `loot/00_LOOT_TABLE_DATABASE.md` dimuat bila fixed loot table, unique reward, atau content table tertentu perlu diperiksa; registry tersebut tidak membatasi dynamic loot.
 - `gm/PENDING_SYNC.md` wajib digunakan ketika write-back repository tidak tersedia atau gagal; pending changes bukan Canon tersinkron sampai diverifikasi dan ditulis oleh Admin.
+- `core/07_DATA_COMPLETENESS.md` wajib digunakan ketika field data belum lengkap, placeholder muncul, atau audit menemukan status unresolved. Runtime memakai status `NOT-INSTANTIATED`, `NOT-ESTABLISHED`, atau `RESOLUTION-BLOCKED` sesuai konteks; tanda tanya bukan placeholder repository.
