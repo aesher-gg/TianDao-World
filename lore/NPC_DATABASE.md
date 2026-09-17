@@ -7,6 +7,25 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 
 **Format provenance:** setiap NPC terdaftar memiliki `Sumber Canon` berdasarkan faction/lokasi yang menjadi dasar perannya. `Status data` menjelaskan bahwa entri tersebut merupakan Canon registry; status in-world yang belum ditetapkan tetap tidak boleh ditebak.
 
+## Organization Canon Identity Registry
+Jabatan organisasi berikut telah ditetapkan Admin Canon dan wajib menggunakan identitas NPC yang sama:
+- `ORG-001` Paviliun Seribu Daun → **Mo Qingzhu** (`NPC-ORG-001`).
+- `ORG-002` Aliansi Sanxiu Yuheng → **Fang Zhen** (`NPC-ORG-002`).
+- `ORG-003` Serikat Penjaga Jalur → **Qiao Ren** (`NPC-ORG-003`).
+- `ORG-004` Persekutuan Pengrajin Tianhe → **Wei Chang** (`NPC-ORG-004`).
+- `ORG-005` Rumah Lelang Qianmu → **Qian Mu** (`NPC-ORG-005`).
+- `ORG-006` Perhimpunan Pelaut Dongming → **Luo Shun** (`NPC-ORG-006`).
+
+### Qian Mu
+- ID: NPC-ORG-005
+- Peran: Ketua/representatif Rumah Lelang Qianmu
+- Faction/Organisasi: `ORG-005`
+- Sifat: teliti, formal, menjaga reputasi pasar
+- Agenda: menjaga keuntungan dan kepercayaan pasar melalui lelang legal serta pemeriksaan asal-usul
+- Pengetahuan: barang lelang, prosedur pemeriksaan, dan kontrak dalam kewenangan rumah lelang
+- Sumber Canon: `factions/organizations/00_ORGANIZATION_DATABASE.md` — Rumah Lelang Qianmu.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
 ## NPC Terdaftar
 ### Shen Ruolan
 - Peran: Pengelola penginapan Kota Yunjing
@@ -95,12 +114,14 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Mo Qingzhu
-- Peran: Pedagang keliling Paviliun Seribu Daun
+- ID: NPC-ORG-001
+- Peran: Pemimpin/representatif Paviliun Seribu Daun
+- Faction/Organisasi: `ORG-001`
 - Sifat: tenang, oportunis, menghitung risiko
-- Agenda: keuntungan dan jaringan dagang
-- Pengetahuan: perdagangan dan rumor yang diperoleh sah
+- Agenda: menjaga jaringan perdagangan, kontrak, dan arus informasi yang menguntungkan organisasi
+- Pengetahuan: perdagangan, kontrak, dan informasi dalam kewenangan organisasi
 - Sumber Canon: `factions/organizations/00_ORGANIZATION_DATABASE.md` — Paviliun Seribu Daun.
-- Status data: Canon; status in-world tambahan tidak ditetapkan.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Lin Zhaoyan
 - ID: NPC-DOJ-002
@@ -137,12 +158,14 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
 ### Qiao Ren
-- Peran: Pengawal karavan, Serikat Penjaga Jalur
+- ID: NPC-ORG-003
+- Peran: Pemimpin/representatif Serikat Penjaga Jalur
+- Faction/Organisasi: `ORG-003`
 - Sifat: praktis, tidak suka risiko tidak dibayar
-- Agenda: menyelesaikan kontrak dan pulang hidup-hidup
-- Pengetahuan: rute yang pernah dilalui
+- Agenda: menjaga reputasi keamanan dan memperoleh kontrak pengawalan yang layak
+- Pengetahuan: rute dan kontrak pengawalan dalam kewenangan serikat
 - Sumber Canon: `factions/organizations/00_ORGANIZATION_DATABASE.md` — Serikat Penjaga Jalur.
-- Status data: Canon; status in-world tambahan tidak ditetapkan.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Su Yao
 - Peran: Pengumpul herbal Pegunungan Qingluan
@@ -153,20 +176,24 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
 ### Wei Chang
-- Peran: Pengrajin logam, Persekutuan Pengrajin Tianhe
+- ID: NPC-ORG-004
+- Peran: Ketua Persekutuan Pengrajin Tianhe
+- Faction/Organisasi: `ORG-004`
 - Sifat: perfeksionis
-- Agenda: mempertahankan reputasi hasil kerja
-- Pengetahuan: pengerjaan logam sesuai spesialisasi
+- Agenda: menjaga standar hasil kerja dan reputasi persekutuan
+- Pengetahuan: pengerjaan logam, alat, dan perlengkapan dalam kewenangan persekutuan
 - Sumber Canon: `factions/organizations/00_ORGANIZATION_DATABASE.md` — Persekutuan Pengrajin Tianhe.
-- Status data: Canon; status in-world tambahan tidak ditetapkan.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Luo Shun
-- Peran: Kapten kapal dagang Dongming
+- ID: NPC-ORG-006
+- Peran: Ketua/representatif Perhimpunan Pelaut Dongming
+- Faction/Organisasi: `ORG-006`
 - Sifat: tegas, memperhatikan cuaca
-- Agenda: menjaga kapal, awak, dan muatan
-- Pengetahuan: rute laut yang dikuasainya
-- Sumber Canon: `realms/05_DONGMING_SEA.md` — Laut Dongming.
-- Status data: Canon; status in-world tambahan tidak ditetapkan.
+- Agenda: menjaga jalur pelayaran aman dan keberlangsungan perdagangan laut
+- Pengetahuan: navigasi, kontrak kapal, dan keselamatan laut dalam kewenangan perhimpunan
+- Sumber Canon: `factions/organizations/00_ORGANIZATION_DATABASE.md` — Perhimpunan Pelaut Dongming.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Bai Ruyan
 - Peran: Penjaga oasis Shazhen, Gurun Jinyan
@@ -251,12 +278,14 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Fang Zhen
-- Peran: Koordinator lapangan Aliansi Sanxiu Yuheng
+- ID: NPC-ORG-002
+- Peran: Koordinator Utama Aliansi Sanxiu Yuheng
+- Faction/Organisasi: `ORG-002`
 - Sifat: diplomatis, berhitung
-- Agenda: menyelesaikan kontrak dan menjaga anggota aman
-- Pengetahuan: misi dan jaringan organisasinya
+- Agenda: mengoordinasikan perlindungan, misi, akses sumber daya, dan kepentingan anggota sesuai mandat aliansi
+- Pengetahuan: misi dan jaringan organisasi dalam kewenangan koordinator
 - Sumber Canon: `factions/organizations/00_ORGANIZATION_DATABASE.md` — Aliansi Sanxiu Yuheng.
-- Status data: Canon; status in-world tambahan tidak ditetapkan.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Shen Kuang
 - Peran: Pemimpin Perkumpulan Tangan Abu (CRI-005); koordinator jaringan dan pengendali kontrak bernilai tinggi
@@ -266,6 +295,7 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sumber Canon: `factions/criminal/00_CRIMINAL_DATABASE.md` — Perkumpulan Tangan Abu.
 - Status data: Canon; detail state in-world tambahan tidak ditetapkan.
 
+## NPC Regional
 ### Qing Yanshan
 - ID: NPC-REG-001
 - Peran: Kepala Sekte Gunung Qingluan
