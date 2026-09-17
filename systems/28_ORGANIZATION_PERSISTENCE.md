@@ -1,7 +1,7 @@
 # Module 28 — Organization Persistence
 
 ## Status
-Admin Canon v1.0
+Admin Canon v1.1
 
 ## Purpose
 Mengatur detail organisasi individual tanpa mengubah registry menjadi katalog naratif bebas.
@@ -26,7 +26,7 @@ Individual file memberi granular detail, tetapi tidak boleh bertentangan dengan 
 - Known techniques/assets hanya jika sourced.
 - Current state bila material.
 - Origin/change log bila material.
-- Data yang belum tersedia menggunakan status `UNRESOLVED`, `NOT-ESTABLISHED`, atau `NOT-INSTANTIATED` sesuai keadaan.
+- Data yang belum tersedia menggunakan status `UNRESOLVED` atau `NOT-INSTANTIATED` sesuai keadaan.
 
 ## Relations
 Relasi antar-organisasi adalah contextual state. Jangan mengubah cooperative/competitive/transactional menjadi alliance/war tanpa trigger dan resolusi yang sah.
@@ -35,4 +35,6 @@ Relasi antar-organisasi adalah contextual state. Jangan mengubah cooperative/com
 Jika organisasi relevan, Router memuat registry + individual file bila tersedia. Jika individual file tidak ada, gunakan registry dan jangan mengarang detail.
 
 ## Persistence
-Perubahan material organisasi harus memiliki before → after, cause, resolution, source, Origin, dan write-back verification. Character membership tidak otomatis mengubah seluruh organisasi.
+Perubahan material organisasi harus memiliki before → after, cause, resolution, source, Origin, dan write-back verification.
+
+Character membership tidak otomatis mengubah seluruh organisasi.
