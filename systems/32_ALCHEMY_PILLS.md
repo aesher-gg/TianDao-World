@@ -106,3 +106,7 @@ Perubahan bahan, furnace/tool state, Pill/Item State, Character State, Origin, d
 
 ## Runtime Contract
 `ROUTER → REQUIRED SOURCES → INPUT VALIDATION → COST → PROCESS → RESOLUTION → RESULT VALIDATION → ITEM ORIGIN → STATE/HISTORY → SAVE → VERIFY`
+
+
+## DATA COMPLETENESS ALCHEMY GATE
+Formula, material, qualification, tool, cost, quality, quantity, effect, potency, side effect, dan defect wajib bersumber dari formula/procedure/state yang sah. Jangan menciptakan effect atau angka untuk melengkapi hasil. Missing required source/input → RESOLUTION-BLOCKED; unknown field → status resmi.
