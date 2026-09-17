@@ -13,7 +13,7 @@ Admin Canon v1.1 — individual organization detail.
 - Akses: perdagangan, pengawalan, kapal, dan harga khusus bergantung pada hubungan dan kontrak.
 - Teknik spesifik: Tidak ada teknik kultivasi unik yang dikunci.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
-- NPC utama: Tidak ada pengurus bernama yang dikunci; broker/merchant recurring menggunakan Module 26.
+- NPC utama: Xu Haoran (`NPC-REG-008`) — Ketua Aliansi.
 
 ## Relasi
 - Istana Naga Dongming: perdagangan.
