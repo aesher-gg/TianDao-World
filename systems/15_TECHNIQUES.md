@@ -86,3 +86,7 @@ Validator wajib memastikan:
 
 ## 10. Integrasi
 Techniques terhubung dengan Cultivation Law, Law Origin, Combat, Vitality, Items, Organizations, dan Save Integrity.
+
+
+## DATA COMPLETENESS TECHNIQUE GATE
+Technique identity, source, acquisition, requirements, training, mastery, effect, cost, dan status wajib dapat ditelusuri ke source/Origin yang sah. UNRESOLVED berarti tidak aktif dan tidak boleh ditebak. Missing required provenance/acquisition → tahan aktivasi atau gunakan RESOLUTION-BLOCKED sesuai konteks.
