@@ -163,6 +163,8 @@ Source authority:
 - Persistence/transaction → Save Pipeline.
 
 ### 12.2 Required Inputs
+Material properties used by this pipeline must conform to **Module 14 §4A — Material Refinement Property Schema**. Module 25 may select a concrete runtime result only after those properties and their sources have passed Module 34 validation.
+
 Dynamic Refinement hanya boleh berjalan bila input material berikut tersedia dan tervalidasi:
 1. Existing Item ID dan Current Item State.
 2. Material ID, quantity, dan valid Origin.
