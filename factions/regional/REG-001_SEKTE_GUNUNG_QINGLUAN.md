@@ -13,7 +13,7 @@ Admin Canon v1.1 — individual organization detail.
 - Akses: area publik melalui aturan wilayah; area internal memerlukan status/membership yang sah.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini; teknik harus berasal dari database teknik, guru, manual, event, atau sumber valid lain.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis; Realm dan kemampuan mengikuti state individu serta sistem kultivasi.
-- NPC utama: Tidak ada NPC pemimpin bernama yang dikunci pada file ini; NPC recurring dapat dibuat melalui Module 26 dan diberi NPC_ID bila menjadi persisten.
+- NPC utama: Qing Yanshan (`NPC-REG-001`) — Kepala Sekte.
 
 ## Relasi
 - Istana Bambu Giok: kooperatif.
