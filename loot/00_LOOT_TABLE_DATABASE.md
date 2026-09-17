@@ -4,103 +4,74 @@
 > Modul `systems/18_LOOT.md` menetapkan aturan; file ini menyimpan table yang benar-benar dapat dipakai runtime.
 
 ## 1. Status
-
 - Status: **ADMIN CANON**
-- Scope: seluruh loot yang membutuhkan daftar drop, peluang, rarity, quantity, atau hasil numerik.
-- Source of truth: file ini + loot table spesifik yang secara eksplisit dirujuk di sini.
-- GM/Qwen tidak boleh membuat atau mengubah table runtime.
-- Perubahan table dilakukan oleh Admin dan harus dapat ditelusuri melalui commit/history.
+- Scope: fixed loot yang secara eksplisit memiliki Source ID dan Item ID.
+- Dynamic loot tetap mengikuti `systems/25_DYNAMIC_GENERATION.md`.
 
 ## 2. ID Loot Table
-
-Format ID:
-`LT-<SOURCE>-<NNN>`
-
-Contoh:
-- `LT-MON-001` — loot monster tertentu
-- `LT-BEAST-001` — loot Spirit Beast tertentu
-- `LT-CHEST-001` — loot peti/lokasi tertentu
-- `LT-EVENT-001` — loot/reward event tertentu
-- `LT-MISSION-001` — reward misi tertentu
-
-ID bersifat unik dan tidak boleh digunakan ulang untuk table yang berbeda.
+Format: `LT-<SOURCE>-<NNN>`.
 
 ## 3. Schema Wajib
+Setiap table aktif memiliki Source ID, condition, entry, quantity/weight bila digunakan, Item/Reward ID, Origin Rule, dan Notes.
 
-Setiap table aktif harus memiliki:
+## 4. Baseline Fixed Tables
+Table berikut adalah baseline Canon untuk source yang sudah mempunyai identitas resmi. Table tidak membatasi dynamic loot di luar source yang tercantum.
 
-| Field | Wajib | Keterangan |
-|---|---|---|
-| Loot Table ID | Ya | ID unik permanen |
-| Status | Ya | Active / Suspended / Retired |
-| Source Type | Ya | Monster / Spirit Beast / Chest / Location / Enemy / Event / Mission / Other |
-| Source ID | Ya | ID entitas/sumber resmi |
-| Source Condition | Ya | Kondisi agar table dapat dipakai |
-| Entry | Ya | Daftar hasil loot |
-| Chance/Weight | Bila digunakan | Hanya angka yang ditetapkan Admin |
-| Quantity | Bila digunakan | Rentang/angka yang ditetapkan Admin |
-| Rarity | Bila digunakan | Nilai rarity yang ditetapkan Admin |
-| Quality | Bila digunakan | Hanya bila item/system mendukung |
-| Modifier | Tidak wajib | Hanya bila Admin Canon menetapkannya |
-| Item/Reward ID | Ya untuk item | Harus menunjuk item/reward Canon |
-| Origin Rule | Ya | Cara Origin Log dibuat |
-| Notes | Ya | Batasan dan kondisi khusus |
+### LT-MON-001 — Binatang Liar Umum
+- Status: Active
+- Source Type: Monster
+- Source ID: MON-GENERIC-BEAST
+- Source Condition: hasil panen/loot sah dari binatang liar umum; tidak berlaku otomatis untuk semua monster.
+- Entries:
+  - `ITEM-MAT-003` Kulit Binatang Biasa — Quantity 1–2
+  - `ITEM-MAT-004` Taring Binatang Biasa — Quantity 1–2
+- Origin Rule: Item Origin mencatat source entity, metode perolehan, World Time, dan perubahan kepemilikan.
 
-## 4. Aturan Entry
+### LT-MON-002 — Predator Besar Biasa
+- Status: Active
+- Source Type: Monster
+- Source ID: MON-GENERIC-PREDATOR
+- Source Condition: predator besar biasa telah dikalahkan atau dipanen secara sah.
+- Entries:
+  - `ITEM-MAT-003` Kulit Binatang Biasa — Quantity 1–3
+  - `ITEM-MAT-004` Taring Binatang Biasa — Quantity 1–4
+- Origin Rule: source, acquisition method, World Time, before/after ownership.
 
-- Setiap item/reward yang disebut harus memiliki identitas Canon yang dapat diverifikasi.
-- Currency hanya boleh muncul jika table secara eksplisit menetapkan jenis dan jumlahnya.
-- Item yang belum memiliki Canon Item/Reward ID tidak boleh dimasukkan ke table aktif.
-- Tidak ada entry loot aktif untuk source yang belum memiliki data yang cukup. Status data yang digunakan adalah `UNRESOLVED` dan table ditahan dari aktivasi sampai input valid tersedia.
-- Tidak boleh ada table generik yang otomatis mengubah Tier, Realm, habitat, lokasi, atau tingkat kesulitan menjadi loot.
+### LT-BEAST-001 — Spirit Beast Umum
+- Status: Active
+- Source Type: Spirit Beast
+- Source ID: BEAST-GENERIC-COMMON
+- Source Condition: hanya berlaku bila source secara eksplisit diklasifikasikan sebagai Spirit Beast umum dan loot acquisition sah.
+- Entries:
+  - `ITEM-MAT-003` Kulit Binatang Biasa — Quantity 1–2
+  - `ITEM-MAT-004` Taring Binatang Biasa — Quantity 1–2
+- Origin Rule: source BEAST_ID wajib dicatat; Beast tidak menjadi item.
 
-## 5. Status Database Saat Ini
+### LT-CHEST-001 — Peti Perbekalan Dasar
+- Status: Active
+- Source Type: Chest
+- Source ID: CHEST-SUPPLY-BASIC
+- Source Condition: peti perbekalan resmi dibuka dengan cara yang sah.
+- Entries:
+  - `ITEM-MAT-006` Batu Api — Quantity 1
+  - `ITEM-MAT-005` Serat Rami — Quantity 1–3
+- Origin Rule: peti/source, lokasi, World Time, acquisition method.
 
-**Belum ada loot table aktif yang ditetapkan.**
+### LT-MISSION-001 — Paket Material Dasar
+- Status: Active
+- Source Type: Mission
+- Source ID: REWARD-MATERIAL-BASIC
+- Source Condition: mission/quest yang secara eksplisit menunjuk table ini berhasil dan reward berhak diterima.
+- Entries:
+  - `ITEM-MAT-001` Bijih Besi Kasar — Quantity 1–3
+  - `ITEM-MAT-005` Serat Rami — Quantity 1–3
+- Origin Rule: Quest/Event ID, resolution, claimant, World Time.
 
-Alasan: repository saat ini telah memiliki sistem Loot dan sumber ekonomi/currency, tetapi belum memiliki pasangan Source ID + Item/Reward ID yang cukup untuk membentuk drop spesifik tanpa menciptakan Canon baru secara diam-diam.
+## 5. Dynamic Boundary
+Tidak adanya fixed table untuk source tertentu bukan berarti loot tidak dapat dihasilkan. Source valid yang tidak tercakup fixed table menggunakan Dynamic Loot Formula. Fixed table hanya mengoverride formula pada Source ID yang tercantum di sini.
 
-Ini bukan fallback runtime. Ini adalah status database yang eksplisit dan dapat diaudit.
+## 6. Anti-Duplikasi
+Loot yang berhasil diberikan menghasilkan Item Origin Log/reward record. Reload atau claim ulang tidak membuat instance kedua tanpa acquisition yang sah.
 
-Sampai table aktif ditambahkan:
-- GM tidak boleh mengarang drop monster/Spirit Beast;
-- GM tidak boleh mengarang isi peti;
-- GM tidak boleh mengubah Tier/Realm/habitat menjadi drop;
-- reward event/misi tetap hanya berasal dari registry/event/misi yang menetapkannya secara eksplisit.
-
-## 6. Prosedur Penambahan Table oleh Admin
-
-Sebelum table baru menjadi `Active`, Admin wajib memastikan:
-
-1. Source ID resmi sudah ada.
-2. Item/Reward ID yang dipakai sudah ada.
-3. Kondisi perolehan sudah jelas.
-4. Chance/Weight/Quantity/Rarity/Quality hanya ditetapkan bila memang diperlukan.
-5. Tidak ada konflik dengan Economy, Items, Monsters, Spirit Beasts, Events, atau Save Integrity.
-6. Origin Rule dapat dilaksanakan.
-7. Perubahan dicatat melalui commit dan dapat diverifikasi ulang.
-
-## 7. Runtime Resolution
-
-Urutan runtime:
-
-`Source-specific Loot Table → Event/Mission Reward Canon → Item/Source Origin Canon → RESOLUTION-BLOCKED`
-
-Jika Source ID tidak memiliki table aktif, runtime **tidak membuat table sementara**.
-
-## 8. Anti-Duplikasi
-
-Loot yang berhasil diberikan harus menghasilkan Item Origin Log/reward record yang valid. Table tidak memberikan item dua kali hanya karena state di-reload, turn diulang, atau player mengklaim ulang hasil yang sama.
-
-## 9. Integrasi
-
-Database ini terhubung dengan:
-- `systems/18_LOOT.md`
-- `systems/13_MONSTERS.md`
-- `systems/14_ITEMS.md`
-- `systems/24_SPIRIT_BEASTS.md`
-- event dan mission registry
-- Economy
-- Save Integrity
-- Origin Log
-- Character/Beast State
+## 7. Integrasi
+Terhubung dengan `systems/18_LOOT.md`, `systems/13_MONSTERS.md`, `systems/14_ITEMS.md`, `systems/24_SPIRIT_BEASTS.md`, event/mission registry, Economy, dan Save Integrity.
