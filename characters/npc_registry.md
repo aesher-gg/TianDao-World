@@ -6,7 +6,7 @@
 Registry ini hanya mencatat NPC yang sudah membutuhkan identity/persistence stabil. NPC lokal sementara yang tidak mengalami perubahan material tidak wajib masuk registry.
 
 ## ID Rules
-- Format: `NPC-0001`.
+- Format NPC dapat berupa `NPC-0001` untuk ID generik atau `NPC-<NAMESPACE>-####` untuk namespace Canon/faction seperti `NPC-IMP-001` atau `NPC-REG-001`.
 - NPC_ID unik, stabil, dan tidak boleh dipakai ulang.
 - Nama bukan primary identifier.
 - Perubahan nama, lokasi, faction, hubungan, atau status tidak mengubah NPC_ID.
