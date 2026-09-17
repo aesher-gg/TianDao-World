@@ -9,7 +9,7 @@ Admin Canon v1.1 — individual organization detail.
 - Fokus/Canon: Pemburu monster dan pengumpul material; kontrak dan reputasi menentukan tingkat kepercayaan.
 - Agenda: Memperoleh material melalui perburuan/pengumpulan dan menjaga akses kerja melalui kontrak serta reputasi.
 - Struktur internal: Koordinator Kontrak → Pemburu Senior → Pemburu/Anggota Kontrak.
-- Rekrutmen: penerimaan berdasarkan kemampuan, kesiapan menjalankan kontrak, dan penilaian risiko.
+- Rekrutmen: tidak ditetapkan secara rinci pada Canon ini.
 - Akses: kontrak menentukan area, target, pembagian hasil, dan hak kerja.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci; kemampuan mengikuti sumber pelatihan/teknik resmi.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
