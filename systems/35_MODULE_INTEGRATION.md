@@ -68,7 +68,7 @@ Modul ini adalah penghubung resmi antar-modul. Ia tidak menambah mekanik baru. I
 - New item / material processing → 31 + 14.
 - Alchemy product → 32 + 14.
 - Formation construction/operation → 33 + 14; add 31/09/12 when actually affected.
-- Existing item refinement → 34 + 14; add 25 when the result is dynamically resolved; add 31/32/15 only when the actual process uses them.
+- Existing item refinement → 34 + 14; add 25 when the result is dynamically resolved; add 31/32/15 only when the actual process uses them. Module 34 method schema is authoritative for refinement method inputs, compatibility, qualification, process, allowed dimensions, bounds, outcome, and consumption/failure rules.
 - Dynamic refinement → 34 + 25 + 14; material-source modules (31/32) become REQUIRED when they supply the actual refinement material/process.
 - Cross-module production must preserve input → process → result provenance and before → after for every changed entity.
 
