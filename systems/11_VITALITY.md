@@ -94,7 +94,7 @@ FastingMultiplier ditentukan berdasarkan Realm dan tidak boleh ditebak, diinterp
 Aturan:
 - FastingMultiplier ditentukan oleh Realm, bukan Stage, kecuali ada modifier resmi yang secara eksplisit mengubahnya.
 - GM dilarang membuat angka fallback, asumsi metabolisme, interpolasi, atau modifier tidak terdokumentasi.
-- Jika Realm tidak diketahui, gunakan `???` dan jangan menghitung pengurangan Satiety berdasarkan tebakan.
+- Jika Realm tidak diketahui, gunakan `UNRESOLVED` atau `RESOLUTION-BLOCKED` bila nilai tersebut wajib untuk perhitungan, dan jangan menghitung pengurangan Satiety berdasarkan tebakan.
 - Modifier FastingMultiplier hanya boleh berasal dari law, Body-Refining, kondisi, item, teknik, penyakit, lingkungan, atau mekanisme resmi yang terdokumentasi dan tervalidasi.
 - Early/Middle/Peak tidak otomatis mengubah FastingMultiplier.
 - Satiety selalu dibatasi pada 0–100%.
