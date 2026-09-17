@@ -307,33 +307,41 @@ Jika status kebun relevan dalam gameplay, GM dapat menggunakan format:
 
 ```text
 ┌── Garden Status ──┐
-Garden ID: GARDEN-XXXX
-Location: ???
-Area: ???
-Soil Quality: XX/100
-Moisture: XX/100
-Nutrition: XX/100
-Cleanliness: XX/100
-Pest Control: XX/100
-Environment: XX/100
-Irrigation: XX/100
-Overall Condition: XX/100
+Garden ID: <GARDEN_ID>
+Location: <LOCATION>
+Area: <AREA>
+Soil Quality: <VALUE_0_100>/100
+Moisture: <VALUE_0_100>/100
+Nutrition: <VALUE_0_100>/100
+Cleanliness: <VALUE_0_100>/100
+Pest Control: <VALUE_0_100>/100
+Environment: <VALUE_0_100>/100
+Irrigation: <VALUE_0_100>/100
+Overall Condition: <VALUE_0_100>/100
 
-Crop Batch: ???
-Quantity: XX
-Growth: XX/100
-Health: XX/100
-Water: XX/100
-Nutrition: XX/100
-Disease: XX/100
-Pest: XX/100
-Quality Potential: XX/100
-Maturity: XX/100
-Estimated Harvest: ???
+Crop Batch: <CROP_BATCH>
+Quantity: <QUANTITY>
+Growth: <VALUE_0_100>/100
+Health: <VALUE_0_100>/100
+Water: <VALUE_0_100>/100
+Nutrition: <VALUE_0_100>/100
+Disease: <VALUE_0_100>/100
+Pest: <VALUE_0_100>/100
+Quality Potential: <VALUE_0_100>/100
+Maturity: <VALUE_0_100>/100
+Estimated Harvest: <DATE_OR_UNRESOLVED>
 └────────────────────┘
 ```
 
-Gunakan `???` jika data belum diketahui. Jangan mengisi angka yang tidak memiliki dasar.
+Gunakan `UNRESOLVED` jika data belum diketahui. Jangan mengisi angka yang tidak memiliki dasar.
+
+### Template Status
+- `<GARDEN_ID>` adalah field identitas yang harus diganti dengan Garden ID nyata saat kebun dipersistenkan.
+- `<LOCATION>` dan `<AREA>` harus diisi dari state/lokasi yang sah.
+- `<VALUE_0_100>` adalah placeholder schema, bukan nilai runtime.
+- `<QUANTITY>` harus berupa jumlah yang benar-benar diketahui setelah validasi.
+- `<DATE_OR_UNRESOLVED>` harus berupa waktu panen yang dapat dihitung dari data sah, atau `UNRESOLVED` bila belum dapat dihitung.
+- Template tidak boleh disimpan sebagai Current State aktif tanpa mengganti placeholder schema dengan data valid atau status yang sesuai.
 
 ---
 
@@ -352,9 +360,7 @@ Gunakan `???` jika data belum diketahui. Jangan mengisi angka yang tidak memilik
 11. Tanaman spiritual membutuhkan Origin yang valid.
 12. Material change wajib masuk Save Pipeline dan State Validator.
 13. Gunakan Current Character State sebagai state aktif, bukan Player Registry.
-14. Jika data tidak diketahui, gunakan `???`.
-
----
+14. Jika data tidak diketahui, gunakan `UNRESOLVED`.
 
 ## 22. Prinsip Akhir
 
