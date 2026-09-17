@@ -346,3 +346,56 @@ The three affected modules were fetched again from `main` after write and confir
 Status: **🟢 Material Refinement Property Schema — ESTABLISHED.**
 
 Next mechanics-design dependency remains **🟡 Refinement Method Schema**, because the material schema defines what source data may exist, while the method schema must define how those properties are legally consumed, bounded, and resolved.
+
+
+## 🟡 MECHANICS DESIGN — REFINEMENT METHOD SCHEMA
+
+### Finding
+Material Refinement Property Schema telah menyediakan sumber data material, tetapi belum ada record contract yang menetapkan **bagaimana property tersebut boleh digunakan untuk existing-item refinement**.
+
+### Admin Resolution
+Established **Module 34 §11A — REFINEMENT METHOD SCHEMA**.
+
+Method Record sekarang mencakup:
+- `METHOD_ID` dan `METHOD_SOURCE`;
+- `TARGET_ITEM_CATEGORY` dan target constraints;
+- material requirements;
+- compatibility rule;
+- refiner qualification;
+- tool/workspace;
+- process steps;
+- process time;
+- resource cost;
+- allowed property dimensions;
+- change bounds;
+- outcome model;
+- material consumption;
+- failure consequence;
+- method status.
+
+Setiap allowed property dimension harus memiliki:
+`DIMENSION_ID / TARGET_PROPERTY / DIRECTION_OR_ALLOWED_CHANGE / BOUND_SOURCE / SOURCE / STATUS`
+
+### Hard Resolution Gates
+- Dimension yang tidak tercantum tidak boleh berubah.
+- Bound tanpa source tidak boleh ditebak.
+- Compatibility wajib menghasilkan `COMPATIBLE`, `INCOMPATIBLE`, atau status resmi.
+- Outcome mechanism harus berasal dari source; tidak boleh ada hidden probability/roll/multiplier.
+- Missing required method source/constraint/compatibility/dimension/bound/outcome → `RESOLUTION-BLOCKED`.
+- Module 25 hanya memilih hasil di dalam method bounds; tidak melengkapi method yang kosong.
+
+### Integration
+- Module 34 menjadi authority untuk refinement method contract.
+- Module 25 dynamic refinement sekarang mensyaratkan Method Record yang lolos Module 34 §11A.
+- Module 35 mencatat Method Schema sebagai bagian dari refinement method dependency.
+- Module 14 tetap menjadi authority untuk Item State dan Material Refinement Property Schema.
+
+### Verification
+Affected files were written and must be refetched after each write. Latest verified source SHAs:
+- `systems/34_ARTIFACT_WEAPON_REFINEMENT.md` — `e4a3fa5a9b82d3c48a52d495b00ab5f28fe3c629`
+- `systems/35_MODULE_INTEGRATION.md` — `98045fb3597fe09eb8b8b348fb86981e234e03fc`
+- `systems/25_DYNAMIC_GENERATION.md` — `958e47eb27219f03c75f821d3088c17ea84ead65`
+
+Status: **🟢 Refinement Method Schema — ESTABLISHED.**
+
+Next dependency: **🟡 Bounded Resolution Formula**, which combines validated Item State + Material Properties + Method Contract + Compatibility + Qualification + Process Conditions into a result that cannot exceed the method-defined bounds.
