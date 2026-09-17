@@ -1,23 +1,30 @@
 # REG-002 — Istana Bambu Giok
 
 ## Status
-Admin Canon — individual organization detail derived only from the regional registry.
+Admin Canon v1.1 — individual organization detail.
 
 - ID: REG-002
 - Kategori: Perguruan spiritual
 - Wilayah: Pegunungan Qingluan
 - Fokus/Canon: Pengobatan, teknik spiritual, dan pengetahuan bahan.
 - Agenda: Mengembangkan pengobatan, pengetahuan bahan, dan praktik teknik spiritual sesuai fokus perguruan.
-- NPC utama: ???
-- Struktur internal: ???
-- Rank tambahan: ???
-- Teknik spesifik: ???
-- Realm/Stat/Bonus: ???
+- Struktur internal: Kepala Perguruan → Tabib/Pengajar Senior → Pengajar → Murid Senior → Murid.
+- Rekrutmen: penilaian karakter, dasar pengobatan/bahan, kemampuan belajar, dan keputusan pengajar.
+- Akses: klinik/pelayanan yang dibuka untuk umum mengikuti aturan setempat; area belajar internal memerlukan izin.
+- Teknik spesifik: Tidak ada teknik unik yang dikunci; gunakan sumber teknik resmi.
+- Realm/Stat/Bonus: Tidak ada bonus stat otomatis; kemampuan berasal dari state individu dan teknik valid.
+- NPC utama: Tidak ada NPC pemimpin bernama yang dikunci; NPC recurring menggunakan Module 26.
 
 ## Relasi
 - Sekte Gunung Qingluan: kooperatif.
-- Kepentingan material dapat tetap kompetitif.
-- Relasi lain: ???
+- Paviliun Pemburu Roh: transaksional untuk bahan yang sah.
+- Kepentingan material dapat tetap kompetitif tanpa otomatis menjadi konflik.
+- Relasi lain: dinilai berdasarkan kontrak dan event resmi.
+
+## Operasional
+- Fokus material meliputi identifikasi, pengobatan, penyimpanan, dan pemrosesan sesuai sumber teknik/skill.
+- Membership tidak otomatis memberi pill, technique, Realm, atau item.
+- Pelayanan pengobatan dapat memerlukan biaya, kontrak, reputasi, atau syarat lokal.
 
 ## Aturan
-Detail yang tidak tertulis tetap `???`; tidak ada automatic membership atau pemberian teknik/ability.
+Detail material harus mempunyai source, Origin, dan persistence bila berdampak lintas turn.
