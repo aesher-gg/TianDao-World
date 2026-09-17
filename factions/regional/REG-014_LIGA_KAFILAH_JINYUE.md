@@ -8,12 +8,12 @@ Admin Canon v1.2 — individual organization detail.
 - Wilayah: Gurun Jinyan
 - Canon: Jaringan perdagangan dan transportasi gurun; kontrak, reputasi dan keamanan menentukan akses.
 - Agenda: Menjalankan perdagangan dan transportasi gurun dengan mengandalkan kontrak, reputasi, dan keamanan jalur.
-- Struktur internal: Dewan/Pengurus Liga → Koordinator Rute → Kepala Karavan → Pengawal/Operator → Anggota Kontrak.
+- Struktur internal: Ketua Liga → Koordinator Rute → Kepala Karavan → Pengawal/Operator → Anggota Kontrak.
 - Rekrutmen: reputasi, kemampuan kerja/transportasi, modal atau aset yang sah, serta penerimaan kontrak.
 - Akses: karavan, gudang, rute, perlindungan, dan kontrak khusus mengikuti izin serta hubungan dagang yang sah.
 - Teknik spesifik: Tidak memiliki teknik kultivasi unik yang dikunci; kemampuan personel mengikuti sumber teknik dan pelatihan masing-masing.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis; Realm dan kemampuan mengikuti state individu.
-- NPC utama: Tidak ada NPC pemimpin bernama yang dikunci; NPC merchant, koordinator, dan kepala karavan dapat dibuat melalui Module 26 bila diperlukan.
+- NPC utama: Jin Yuechang (`NPC-REG-014`) — Ketua Liga.
 
 ## Relasi
 - Kota Shajing dan Kota Jinyue: terhubung secara ekonomi/logistik.
