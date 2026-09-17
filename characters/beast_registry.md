@@ -3,7 +3,6 @@
 Registry global untuk pemetaan `BEAST_ID` ke Current Beast State dan lifecycle status.
 
 ## Rules
-
 - Setiap persistent Spirit Beast wajib memiliki `BEAST_ID` unik.
 - Format standar: `BEAST-0001`.
 - BEAST_ID stabil dan permanen sepanjang lifecycle data.
@@ -16,7 +15,6 @@ Registry global untuk pemetaan `BEAST_ID` ke Current Beast State dan lifecycle s
 - Registry hanya mencatat mapping dan status administratif minimum yang diperlukan untuk discovery/integrity.
 
 ## Record Format
-
 ```text
 BEAST_ID:
 Name:
@@ -27,4 +25,4 @@ Ownership Status:
 Lifecycle Status:
 ```
 
-Unknown tetap `???`; jangan mengarang record Beast yang belum resmi dibuat.
+Tidak ada persistent Beast record aktif yang dapat diisi pada registry ini tanpa BEAST_ID dan Origin yang sah. Jangan mengarang record Beast baru. Status registry kosong menggunakan `NOT-INSTANTIATED` sampai record dibuat melalui persistence yang valid.
