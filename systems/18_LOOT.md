@@ -91,3 +91,7 @@ Loot terhubung dengan Combat, Monsters, Events, Items, Economy, Organizations, K
 Tidak ada fallback numerik tersembunyi.
 
 Namun, ketiadaan fixed loot table **bukan lagi larangan menghasilkan loot**. Source yang valid dapat menggunakan Dynamic Loot Formula. Fixed table hanya dipakai ketika memang tersedia dan berlaku.
+
+
+## DATA COMPLETENESS LOOT GATE
+Loot field (item, quantity, quality, tier, ownership/provenance) hanya boleh dihasilkan dari fixed table atau Dynamic Loot Formula dengan input sah. Ketiadaan fixed table bukan izin menebak. Jika source/input wajib tidak tersedia, jangan menciptakan drop; gunakan status resmi dan/atau RESOLUTION-BLOCKED.
