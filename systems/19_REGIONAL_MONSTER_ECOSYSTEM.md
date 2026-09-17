@@ -77,7 +77,7 @@ Label ini adalah input ekologis untuk Dynamic Generation Engine:
 - **Rendah:** encounter mungkin tetapi bukan ancaman dominan → Base Pressure 20.
 - **Sedang:** encounter rutin mungkin terjadi dalam kondisi tertentu → Base Pressure 40.
 - **Tinggi:** ekspedisi harus memperhitungkan encounter sebagai risiko utama → Base Pressure 65.
-- **Tidak ditentukan:** belum ada dasar untuk menetapkan base pressure; gunakan `???`, bukan asumsi angka.
+- **Tidak ditentukan:** belum ada dasar untuk menetapkan base pressure; gunakan `UNRESOLVED`, bukan asumsi angka.
 
 Threat Score dan Tier Ceiling dihitung terpisah menurut `systems/25_DYNAMIC_GENERATION.md`.
 
