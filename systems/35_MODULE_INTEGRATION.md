@@ -72,6 +72,12 @@ Modul ini adalah penghubung resmi antar-modul. Ia tidak menambah mekanik baru. I
 - Dynamic refinement → 34 + 25 + 14; material-source modules (31/32) become REQUIRED when they supply the actual refinement material/process.
 - Cross-module production must preserve input → process → result provenance and before → after for every changed entity.
 
+### Bounded Resolution Formula Dependency
+Untuk dynamic refinement, dependency contract harus dipahami sebagai satu resolusi berurutan:
+ITEM STATE (14) + MATERIAL PROPERTIES (14/source) + METHOD (34) + COMPATIBILITY/QUALIFICATION/PROCESS (34) → BOUNDED RESOLUTION (25) → STATE VALIDATION → SAVE.
+
+Module 25 tidak menjadi source untuk missing bounds, effects, probabilities, atau bonuses. Module 34 tetap menjadi authority atas legal refinement space; Module 14 tetap menjadi authority atas Item/Material State. Jika required dependency tidak tersedia, gunakan RESOLUTION-BLOCKED.
+
 ## 5. Dynamic Entity Contract
 - Monster/encounter: 25 + 13, then 19/12/18/24 as triggered.
 - Spirit Beast: 25 + 24, then 13/19/12/18/14/15/09 as actually affected.
