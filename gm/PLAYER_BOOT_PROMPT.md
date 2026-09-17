@@ -67,7 +67,7 @@ Jangan:
 - menggabungkan state atau history Character lain;
 - menggunakan save/history lama yang tidak cocok dengan Character ID.
 
-Data tidak diketahui = `???`.
+Data tidak diketahui = `UNRESOLVED` atau status Data Completeness yang lebih spesifik.
 
 ### WAKTU DUNIA — WAJIB
 
