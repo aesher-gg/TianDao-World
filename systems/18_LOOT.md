@@ -31,7 +31,7 @@ Registry fixed table:
 
 Prioritas:
 
-`Fixed Canon/Event/Mission Table → Dynamic Loot Formula → hasil belum ditentukan (???)`
+`Fixed Canon/Event/Mission Table → Dynamic Loot Formula → RESOLUTION-BLOCKED bila source tidak valid atau input wajib tidak tersedia`
 
 Fixed table hanya berlaku pada source yang secara eksplisit dicakup. Ia tidak menjadi batas bagi species, monster, Spirit Beast, atau loot lain di dunia.
 
@@ -76,16 +76,18 @@ Item unik/terbatas tidak dapat diduplikasi melalui klaim player, reload state, a
 
 Generated loot yang belum menjadi gameplay fact tidak boleh dianggap tersimpan di dunia.
 
-## 11. Missing Data
-Jika input yang diperlukan oleh formula tidak tersedia dan tidak ada rule fallback, GM menggunakan `???` untuk field tersebut atau menahan hasil mekanis yang tidak dapat divalidasi.
+## 11. Data Completeness
+Gunakan `core/07_DATA_COMPLETENESS.md` untuk data yang belum tersedia.
+- `NOT-ESTABLISHED` = field relevan tetapi belum memiliki nilai sah.
+- `NOT-INSTANTIATED` = entity/record belum dibuat.
+- `RESOLUTION-BLOCKED` = hasil mekanis tidak boleh ditetapkan karena input wajib belum tersedia.
 
-`???` bukan izin untuk mengarang angka.
+Jangan menebak angka atau hasil untuk menutup kekosongan data.
 
 ## 12. Integration
 Loot terhubung dengan Combat, Monsters, Events, Items, Economy, Organizations, Karma, Reputation, Save Integrity, dan Dynamic Generation Engine.
 
 ## 13. Prinsip Runtime
-
 Tidak ada fallback numerik tersembunyi.
 
 Namun, ketiadaan fixed loot table **bukan lagi larangan menghasilkan loot**. Source yang valid dapat menggunakan Dynamic Loot Formula. Fixed table hanya dipakai ketika memang tersedia dan berlaku.
