@@ -36,7 +36,7 @@ Metode khusus tanpa nilai resmi tidak memiliki fallback numerik. Perjalanan lebi
 `systems/25_DYNAMIC_GENERATION.md` menggunakan status `UNRESOLVED` ketika input formula belum tersedia tanpa fallback resmi. Tier tetap berbeda dari Realm dan generated content tidak menjadi katalog global.
 
 ## 9. NPC / EVENT / QUEST
-`systems/26_DYNAMIC_NPC_EVENT_QUEST.md` menggunakan `UNRESOLVED`, `NOT-ESTABLISHED`, dan `RESOLUTION-BLOCKED` sesuai keadaan data. NPC_ID, EVT_ID, dan QST_ID persisten harus stabil dan tidak digunakan ulang.
+`systems/26_DYNAMIC_NPC_EVENT_QUEST.md` menggunakan `UNRESOLVED` dan `RESOLUTION-BLOCKED` sesuai keadaan data. NPC_ID, EVT_ID, dan QST_ID persisten harus stabil dan tidak digunakan ulang.
 
 ## 10. GARDENING
 `systems/23_GARDENING.md` telah dimigrasikan ke schema-safe placeholders:
@@ -64,7 +64,6 @@ Status resmi:
 - `CANON-ESTABLISHED`
 - `STATE-ESTABLISHED`
 - `RUNTIME-GENERATED`
-- `NOT-ESTABLISHED`
 - `NOT-INSTANTIATED`
 - `UNRESOLVED`
 - `RESOLUTION-BLOCKED`
