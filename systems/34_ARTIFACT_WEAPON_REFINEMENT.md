@@ -96,3 +96,7 @@ Karena refinement mengubah existing Item State, setiap hasil material wajib mela
 
 ## Runtime Contract
 `ROUTER → REQUIRED SOURCES → EXISTING ITEM VALIDATION → METHOD/QUALIFICATION → COST → PROCESS → RESOLUTION → ITEM STATE VALIDATION → ORIGIN/HISTORY → SAVE → VERIFY`
+
+
+## DATA COMPLETENESS REFINEMENT GATE
+Existing Item, refinement method, qualification, material, tool, cost, quality/property change, dan failure result wajib memiliki source sah. Jangan mengarang peningkatan property/grade/tier. Missing required method/input → RESOLUTION-BLOCKED; unknown non-required field → status resmi.
