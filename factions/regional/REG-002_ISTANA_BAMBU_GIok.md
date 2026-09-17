@@ -13,7 +13,7 @@ Admin Canon v1.1 — individual organization detail.
 - Akses: klinik/pelayanan yang dibuka untuk umum mengikuti aturan setempat; area belajar internal memerlukan izin.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci; gunakan sumber teknik resmi.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis; kemampuan berasal dari state individu dan teknik valid.
-- NPC utama: Tidak ada NPC pemimpin bernama yang dikunci; NPC recurring menggunakan Module 26.
+- NPC utama: Yu Lanxin (`NPC-REG-002`) — Kepala Istana.
 
 ## Relasi
 - Sekte Gunung Qingluan: kooperatif.
