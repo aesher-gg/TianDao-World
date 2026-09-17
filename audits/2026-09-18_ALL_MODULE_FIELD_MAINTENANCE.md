@@ -188,3 +188,69 @@ Module 35 tidak menggantikan aturan Module 08–34, tidak membuat Canon baru, ti
 `INDEX → Module 27 Trigger Router → Module 35 Dependency Contract → Required Source Modules → Validation/Resolution`.
 
 Semua perubahan ditulis ke `main` dengan SHA terbaru dan harus lulus Structural Reference Lint serta Canon Placeholder Lint.
+
+
+## 2026-09-18 Artifact/Weapon Refinement ↔ Dynamic Generation Audit
+
+### Scope
+Deep audit terhadap jalur upgrade/refinement existing equipment yang melibatkan:
+- `systems/25_DYNAMIC_GENERATION.md`
+- `systems/34_ARTIFACT_WEAPON_REFINEMENT.md`
+- `systems/31_CRAFTING_FORGING.md`
+- `systems/14_ITEMS.md`
+- `systems/35_MODULE_INTEGRATION.md`
+- `systems/27_MODULE_ROUTER.md`
+- `gm/ACTION_RESOLVER.md`
+- `gm/RUNTIME_ENGINE.md`
+- `gm/STATE_VALIDATOR.md`
+- `gm/SAVE_PIPELINE.md`
+
+### Finding — 🟡 Dynamic Refinement Bridge belum eksplisit
+Module 34 sudah secara sah menangani modifikasi existing Item State dan memiliki pipeline refinement lengkap sampai Origin/History/Save. Module 25 sudah menjadi engine Dynamic Generation, tetapi formula yang secara eksplisit mendefinisikan **dynamic refinement result untuk existing weapon/equipment** belum ditemukan.
+
+Module 25 saat ini mendefinisikan dynamic encounter, creature, Spirit Beast, Threat/Tier, dan Loot generation. Tidak ada formula/section khusus yang menetapkan input seperti:
+- existing item quality/condition;
+- material refinement property;
+- material ↔ item compatibility;
+- refiner qualification;
+- process/tool/workspace;
+- bounded property change;
+- success/partial/failure resolution khusus refinement.
+
+Module 34 juga tidak memberikan izin untuk mengisi kekosongan tersebut dengan improvisasi. Ia menyatakan bahwa quality/property change hanya sah bila refinement method mendukungnya, dan required method/input yang tidak tersedia menghasilkan `RESOLUTION-BLOCKED`.
+
+### Integration Finding
+Module 35 saat ini mencatat:
+- existing item refinement → `34 + 14`;
+- tambah `31/32/15` hanya bila proses benar-benar melintasi domain tersebut.
+
+Namun Module 25 belum menjadi dependency langsung untuk refinement. Module 27 juga merutekan Artifact/Weapon Refinement ke Module 34, sementara Dynamic Generation dirutekan untuk encounter/creature/loot dan bukan refinement.
+
+Dengan demikian, arsitektur saat ini **tidak salah**, tetapi belum menyediakan jalur Canon eksplisit untuk kasus desain: `existing weapon + material upgrade → dynamic bounded refinement result`.
+
+### Runtime Consequence
+Contoh seperti Player membawa pedang existing + material biologis/Spirit Beast untuk upgrade:
+1. Module 14 memvalidasi Item/Material State dan Origin.
+2. Module 34 memvalidasi refinement method, qualification, process, cost, dan perubahan yang diizinkan.
+3. Jika refinement method/source tidak mendefinisikan property material dan mekanisme hasilnya, Dynamic Generation tidak boleh mengarang property tersebut.
+4. Tanpa fallback/method resmi, bagian resolusi yang membutuhkan input tersebut menjadi `RESOLUTION-BLOCKED` sesuai `core/07_DATA_COMPLETENESS.md`.
+5. Tidak ada automatic quality/grade/tier/effect increase hanya karena material terlihat langka atau kuat.
+
+### Audit Decision
+**Status: 🟡 OPEN — membutuhkan keputusan desain Admin sebelum perubahan mekanik.**
+
+Audit ini **belum mengubah Module 25/34** dan belum menciptakan formula upgrade baru. Alasannya: membuat formula sekarang tanpa menetapkan sumber properti material, compatibility, bounds, process, cost, failure model, dan provenance akan menjadi improvisasi Canon.
+
+### Recommended Admin Resolution
+Jika desain yang diinginkan adalah dynamic bounded refinement, perubahan berikut perlu dibuat secara eksplisit dan sinkron:
+1. tetapkan contract/formula Dynamic Refinement pada Module 25 atau modul refinement khusus;
+2. definisikan source property material dan compatibility;
+3. definisikan input, bounds/caps, quality/property dimensions, failure/partial result;
+4. definisikan requirement refiner, tool/workspace, cost, time, dan material consumption;
+5. hubungkan Module 25 ↔ 34 melalui Module 27 + Module 35;
+6. tambahkan validation gate pada GM runtime;
+7. pastikan Item State + consumed material + Origin/History + Save menjadi satu transaction;
+8. pertahankan `RUNTIME-GENERATED` sebagai hasil runtime, bukan Global Canon.
+
+### Verification
+Direct-fetch terhadap seluruh file scope selesai pada `main`. Tidak ditemukan formula Dynamic Refinement existing-equipment yang sudah dapat dipakai sebagai source Canon. Temuan ini merupakan **integration/design gap**, bukan bukti bahwa Module 34 rusak.
