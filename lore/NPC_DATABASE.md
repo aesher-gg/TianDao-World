@@ -266,6 +266,146 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sumber Canon: `factions/criminal/00_CRIMINAL_DATABASE.md` — Perkumpulan Tangan Abu.
 - Status data: Canon; detail state in-world tambahan tidak ditetapkan.
 
+### Qing Yanshan
+- ID: NPC-REG-001
+- Peran: Kepala Sekte Gunung Qingluan
+- Faction/Organisasi: `REG-001`
+- Sifat: tenang, konservatif, mengutamakan kesinambungan wilayah
+- Agenda: menjaga wilayah pegunungan dan jalur kultivasi lokal
+- Pengetahuan: urusan sekte dan jalur lokal sesuai kewenangan jabatannya
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Sekte Gunung Qingluan.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Yu Lanxin
+- ID: NPC-REG-002
+- Peran: Kepala Istana Bambu Giok
+- Faction/Organisasi: `REG-002`
+- Sifat: teliti, hati-hati, mengutamakan pengobatan dan kualitas bahan
+- Agenda: mengembangkan pengobatan, pengetahuan bahan, dan praktik teknik spiritual
+- Pengetahuan: urusan perguruan dan bahan dalam kewenangan jabatannya
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Istana Bambu Giok.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Han Lie
+- ID: NPC-REG-003
+- Peran: Koordinator Kontrak Paviliun Pemburu Roh
+- Faction/Organisasi: `REG-003`
+- Sifat: praktis, waspada, menghitung risiko kontrak
+- Agenda: menjaga akses kerja melalui kontrak dan reputasi
+- Pengetahuan: kontrak dan operasi pemburu dalam lingkup kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Paviliun Pemburu Roh.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Yao Mingzhu
+- ID: NPC-REG-004
+- Peran: Perwakilan Konfederasi Istana Yaohuang
+- Faction/Organisasi: `REG-004`
+- Sifat: diplomatis, berhati-hati terhadap kepentingan antar-klan
+- Agenda: menjaga kepentingan konfederasi sambil menyeimbangkan kepentingan internal
+- Pengetahuan: urusan konfederasi sesuai kewenangan sebagai perwakilan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Istana Yaohuang.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Huo Zheng
+- ID: NPC-REG-005
+- Peran: Kepala Sekte Api Merah
+- Faction/Organisasi: `REG-005`
+- Sifat: tegas, berorientasi sumber daya
+- Agenda: mengembangkan kultivasi dan mempertahankan akses sumber daya panas bumi
+- Pengetahuan: urusan sekte dan sumber daya dalam kewenangan jabatannya
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Sekte Api Merah.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Long Jinhai
+- ID: NPC-REG-006
+- Peran: Penjaga Jalur Laut Istana Naga Dongming
+- Faction/Organisasi: `REG-006`
+- Sifat: disiplin, waspada, menghormati batas wilayah
+- Agenda: menjaga kepentingan wilayah dan jalur laut dalam cakupan istana
+- Pengetahuan: jalur laut dan keamanan wilayah sesuai kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Istana Naga Dongming.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Hai Qingfeng
+- ID: NPC-REG-007
+- Peran: Kepala Sekte Pedang Ombak
+- Faction/Organisasi: `REG-007`
+- Sifat: tegas, adaptif terhadap medan laut
+- Agenda: mempertahankan latihan pedang dan mobilitas medan laut
+- Pengetahuan: urusan sekte dan latihan laut sesuai kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Sekte Pedang Ombak.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Xu Haoran
+- ID: NPC-REG-008
+- Peran: Ketua Aliansi Pedagang Haixu
+- Faction/Organisasi: `REG-008`
+- Sifat: kalkulatif, menjaga reputasi kontrak
+- Agenda: menjalankan perdagangan antarpulau dan menjaga keamanan jalur
+- Pengetahuan: kontrak perdagangan dan pengelolaan aliansi dalam kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Aliansi Pedagang Haixu.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Xuan Yifei
+- ID: NPC-REG-009
+- Peran: Kepala Sekte Salju Xuanyin
+- Faction/Organisasi: `REG-009`
+- Sifat: tertutup, disiplin, ketat pada tradisi
+- Agenda: mempertahankan tradisi kultivasi dan sumber daya spiritual wilayah dingin
+- Pengetahuan: urusan sekte dan sumber daya dingin sesuai kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Sekte Salju Xuanyin.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Bei Rong
+- ID: NPC-REG-010
+- Peran: Komandan Benteng Besi Beichen
+- Faction/Organisasi: `REG-010`
+- Sifat: keras, prosedural, berorientasi keselamatan jalur
+- Agenda: menjaga jalur utara serta pertahanan dan keamanan wilayah
+- Pengetahuan: pertahanan benteng, jalur utara, dan keamanan gerbang dalam kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Benteng Besi Beichen.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Bai Xueqin
+- ID: NPC-REG-011
+- Peran: Kepala Logistik Paviliun Salju Putih
+- Faction/Organisasi: `REG-011`
+- Sifat: teliti, efisien, berhati-hati terhadap risiko logistik
+- Agenda: menjalankan perdagangan dan pengangkutan wilayah dingin melalui jaringan serta kontrak
+- Pengetahuan: logistik, kontrak, dan jaringan pengangkutan dalam kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Paviliun Salju Putih.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Lian Shou
+- ID: NPC-REG-012
+- Peran: Penjaga Kuil Sembilan Teratai
+- Faction/Organisasi: `REG-012`
+- Sifat: tenang, hemat sumber daya, menjaga tata tertib persinggahan
+- Agenda: menjalankan fungsi pusat spiritual dan persinggahan pengembara suci
+- Pengetahuan: urusan kuil dan persinggahan sesuai kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Kuil Sembilan Teratai.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Jin Shatuo
+- ID: NPC-REG-013
+- Peran: Kepala Sekte Pasir Emas
+- Faction/Organisasi: `REG-013`
+- Sifat: keras, hemat sumber daya, berorientasi wilayah
+- Agenda: mengembangkan kultivasi dan mempertahankan akses terhadap sumber daya gurun
+- Pengetahuan: urusan sekte dan sumber daya gurun sesuai kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Sekte Pasir Emas.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Jin Yuechang
+- ID: NPC-REG-014
+- Peran: Ketua Liga Kafilah Jinyue
+- Faction/Organisasi: `REG-014`
+- Sifat: pragmatis, menghitung risiko perjalanan
+- Agenda: menjalankan perdagangan dan transportasi gurun melalui kontrak, reputasi, dan keamanan jalur
+- Pengetahuan: rute, kontrak, dan pengelolaan jaringan dalam kewenangan
+- Sumber Canon: `factions/regional/00_REGIONAL_FACTION_DATABASE.md` — Liga Kafilah Jinyue.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
 ## NPC Kriminal
 ### Identitas Kriminal Belum Terungkap
 - Status: `UNRESOLVED`
