@@ -52,6 +52,7 @@
 - `systems/32_ALCHEMY_PILLS.md` — Alchemy/Pill formula, alchemist qualification, furnace/process, failure, quality, effect provenance, and persistence
 - `systems/33_FORMATION_ARRAYS.md` — Formation/Array blueprint, construction, activation, operation, disruption, repair, combat interaction, and persistence
 - `systems/34_ARTIFACT_WEAPON_REFINEMENT.md` — Refinement of existing items/artifacts/weapons, quality/property/condition changes, failure, provenance, and persistence
+- `systems/35_MODULE_INTEGRATION.md` — canonical cross-module dependency/integration contract
 
 ## Bestiary
 - `bestiary/00_BESTIARY_DATABASE.md` — Optional Admin Canon fixed Bestiary; does not limit dynamic creature generation
@@ -168,6 +169,7 @@
 - **Jika tool fetch tersedia, panggilan fetch `INDEX.md` harus menjadi operasi repository pertama pada setiap turn. AI GM dilarang menghasilkan resolusi gameplay sebelum hasil fetch tersebut berhasil dibaca.**
 - Setelah INDEX fresh berhasil dibaca, AI GM wajib mengikuti Load Order dan melakukan fetch ulang setiap sumber state yang diperlukan untuk turn tersebut.
 - `systems/27_MODULE_ROUTER.md` menentukan trigger dan modul REQUIRED/OPTIONAL setelah INDEX fresh berhasil.
+- `systems/35_MODULE_INTEGRATION.md` adalah dependency authority; bila aksi melintasi domain, dependency source/consumer harus diverifikasi sebelum resolusi.
 - `systems/28_ORGANIZATION_PERSISTENCE.md` wajib diproses bila organisasi, membership, rank, contract, access, atau perubahan state organisasi persisten terlibat.
 - `systems/29_NPC_PERSISTENCE.md` wajib diproses bila NPC menjadi persisten/recurring atau terjadi perubahan NPC yang memerlukan continuity lintas turn.
 - `systems/30_EVENT_QUEST_PERSISTENCE.md` wajib diproses bila Event/Quest menjadi persisten, lintas turn, material, atau reward/state-nya berubah.
