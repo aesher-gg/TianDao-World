@@ -122,3 +122,7 @@ Damage mengurangi HP. Jika HP mencapai 0, karakter berada pada kondisi kritis/de
 
 ## 7. Integrasi
 Vitality menjadi input Combat, Cultivation, Action, Time, Hunger, dan Character Save. Semua perubahan HP, Qi, Stamina, dan Satiety dicatat pada current state dan perubahan material harus memiliki sumber/log yang sah.
+
+
+## DATA COMPLETENESS VITALITY GATE
+HP, Qi, Stamina, Satiety, recovery, damage modifier, dan efek kondisi tidak boleh diisi atau diubah dengan angka tersembunyi. Gunakan tabel/modifier resmi dan Current State terverifikasi. Jika efek atau modifier belum memiliki source sah, jangan membuat nilai pengganti; pertahankan status kelengkapan resmi.
