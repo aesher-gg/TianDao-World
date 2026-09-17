@@ -38,7 +38,7 @@ Modifier relevan bernilai -10 sampai +10 dan hanya digunakan bila kondisi benar-
 ## 1.4 NPC Composition
 Jika encounter terjadi, tentukan jumlah, role, identitas/nama bila layak, faction/organization bila ada dasar, lokasi/aktivitas, temperament, agenda, knowledge, sikap awal, Realm/Stage bila memiliki dasar, dan persistence.
 
-Identity/Realm yang belum ditetapkan menggunakan status data yang sesuai, terutama `UNRESOLVED` atau `NOT-ESTABLISHED`.
+Identity/Realm yang belum ditetapkan menggunakan status data `UNRESOLVED`.
 
 ## 1.5 NPC Identity & Persistence
 NPC recurring/material diberi `NPC_ID` stabil, misalnya `NPC-0001`, dengan state `characters/npcs/<NPC_ID>.md`, history `npc_history/<NPC_ID>_HISTORY.md` bila perlu, dan registry `characters/npc_registry.md`. NPC_ID tidak berubah dan tidak digunakan ulang setelah permanent death.
@@ -86,7 +86,7 @@ Quest adalah tujuan/pekerjaan yang dapat dilakukan Character, bukan hadiah grati
 ## 3.2 Quest Generation Gate
 Quest hanya valid jika tersedia: source need, objective, target/location, method, risk/cost, success/failure condition, reward provenance, deadline bila ada dasar, issuer bila ada, dan ID/persistence bila lintas-turn.
 
-Jika komponen wajib tidak dapat ditentukan secara sah, jangan memaksakan quest. Gunakan `RESOLUTION-BLOCKED` bila input wajib menghalangi validasi atau `NOT-ESTABLISHED` bila field belum ditetapkan tetapi tidak menghalangi candidate generation.
+Jika komponen wajib tidak dapat ditentukan secara sah, jangan memaksakan quest. Gunakan `RESOLUTION-BLOCKED` bila input wajib menghalangi validasi atau `UNRESOLVED` bila field belum dapat ditentukan tetapi tidak menghalangi candidate generation.
 
 ## 3.3 Quest Types
 Delivery/Transport, Escort, Gathering, Hunting, Investigation, Rescue, Protection, Negotiation, Retrieval, Repair/Work, Exploration, Faction/Contract, Personal request.
