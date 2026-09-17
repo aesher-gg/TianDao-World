@@ -46,7 +46,7 @@ Persistent memory hanya menyimpan fakta yang telah benar-benar terjadi dan relev
 - Jangan menyimpan spekulasi sebagai fakta.
 - Jangan menggunakan memory untuk menggantikan Canon/Admin.
 - Jangan membocorkan private history antar-entity.
-- Jika fakta tidak dapat dibuktikan, gunakan `???` atau jangan simpan.
+- Jika fakta tidak dapat dibuktikan, gunakan `UNRESOLVED` atau jangan simpan.
 
 ## Aturan Snapshot
 - Current State adalah snapshot operasional terbaru, bukan izin untuk menghapus sejarah.
