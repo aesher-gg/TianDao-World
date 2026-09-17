@@ -17,7 +17,7 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 - Kewajiban: latihan, kontribusi sumber daya, mematuhi hukum sekte.
 - Agenda: menjaga reputasi dan jalur latihan pedang.
 - Relasi: Dinasti Tianyuan kooperatif terbatas; Perguruan Tombak Feiyun kompetitif; Paviliun Seribu Daun transaksional.
-- NPC utama: `NOT-ESTABLISHED` (identitas tidak dibuka dalam data publik).
+- NPC utama: jabatan Kepala Sekte dan tetua yang sedang bertugas; tidak ada nama pribadi yang dikunci sebagai Canon tetap.
 - Hook sah: ujian murid, sengketa kehormatan, pengawalan, pertukaran teknik.
 
 ## 2. Paviliun Teratai Qinglan
@@ -73,3 +73,4 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 3. Rank faction tidak mengubah QiCap/HP/AttackPower tanpa modifier resmi.
 4. Konflik antar-sekte tidak otomatis menjadi perang besar; event skala besar harus Canon/Admin.
 5. NPC sekte memiliki agenda sendiri dan dapat menolak player.
+6. Jabatan tanpa nama pribadi tetap merupakan titik kontak organisasi yang sah; NPC bernama baru menjadi Canon setelah dibuat dan disimpan sebagai source Admin/persistence yang valid.
