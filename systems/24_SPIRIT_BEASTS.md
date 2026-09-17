@@ -355,3 +355,7 @@ Permanent-dead Beast mempertahankan State/History sebagai historical record. `BE
 18. Write-back failure tidak boleh diklaim synchronized.
 19. Dynamic generation tidak membuat katalog species global.
 20. Semua mekanisme baru tunduk pada Canon/Admin dan hierarchy sistem.
+
+
+## DATA COMPLETENESS BEAST GATE
+BEAST_ID, species, traits, ability, relationship, taming, ownership, contract, growth/evolution, loot, dan condition wajib mengikuti source fixed atau dynamic yang sah. Dynamic encounter tidak boleh mengisi field dengan tebakan. UNRESOLVED tetap unresolved; NOT-INSTANTIATED bukan entity aktif; perubahan material memerlukan Origin/State/History sesuai pipeline.
