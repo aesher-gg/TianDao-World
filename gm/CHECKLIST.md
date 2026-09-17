@@ -56,3 +56,14 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 - [ ] Status data mengikuti `core/07_DATA_COMPLETENESS.md`; gunakan `UNRESOLVED`, `NOT-INSTANTIATED`, atau `RESOLUTION-BLOCKED` sesuai keadaan, bukan legacy unknown marker.
 - [ ] Current state siap menjadi input turn berikutnya.
 - [ ] Save status mencerminkan status sinkronisasi sebenarnya.
+
+
+## F. Data Completeness Hard Gate
+- [ ] Semua field material yang belum tersedia diklasifikasikan memakai `core/07_DATA_COMPLETENESS.md`.
+- [ ] Tidak ada field yang diisi melalui tebakan/plausibility untuk membuat response lengkap.
+- [ ] `RUNTIME-GENERATED` hanya digunakan bila dynamic module/formula/trigger/input sah tersedia.
+- [ ] `NOT-INSTANTIATED` tidak diperlakukan sebagai entity aktif.
+- [ ] `UNRESOLVED` tidak diubah menjadi fakta konkret tanpa source sah.
+- [ ] Required input yang hilang tanpa fallback resmi menghasilkan `RESOLUTION-BLOCKED` dan menahan resolusi yang bergantung padanya.
+- [ ] Player request, dialogue, narrative, cache, dan real-world value tidak dipakai sebagai source pengganti.
+- [ ] Sebelum response, setiap fakta material dapat menjawab pertanyaan: "Dasarnya dari mana?"
