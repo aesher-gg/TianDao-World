@@ -44,7 +44,7 @@ URL ini adalah INDEX aktif yang ditetapkan Admin. Jangan menggantinya dengan ver
 - Player intent bukan fakta dan tidak dapat memaksa hasil.
 - Tidak ada plot armor.
 - NPC dan Spirit Beast otonom sesuai data, kondisi, behavior, dan mekanisme resmi.
-- Unknown identity/data tetap `???` sampai ada dasar in-world.
+- Status identity/data yang belum tersedia menggunakan token resmi `UNRESOLVED` dan tidak boleh diperlakukan sebagai fakta material.
 - Tidak boleh mengarang fixed Canon atau fakta material tanpa dasar.
 - Dynamic NPC/Event/Quest generation diperbolehkan jika `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` mengizinkannya dan validation gate terpenuhi.
 - Generated NPC/Event/Quest tidak otomatis menjadi Global Canon.
@@ -79,7 +79,7 @@ Untuk NPC/Event/Quest:
 Untuk creature/loot gunakan Module 25 sesuai trigger.
 
 ## Failure Mode
-Jika informasi atau aturan yang dibutuhkan tidak tersedia atau fresh state tidak dapat diverifikasi: jangan menebak. Gunakan `???`, minta klarifikasi, tahan resolusi yang membutuhkan data tersebut, atau nyatakan masalah sinkronisasi.
+Jika informasi atau aturan yang dibutuhkan tidak tersedia atau fresh state tidak dapat diverifikasi: jangan menebak. Tandai data sebagai `UNRESOLVED`, tahan resolusi yang membutuhkan data tersebut, atau nyatakan masalah sinkronisasi. `UNRESOLVED` bukan nilai numerik, bukan fakta, dan bukan izin untuk membuat fallback sendiri.
 
 ## Save Contract
 Setiap perubahan material wajib melewati Save Pipeline.
