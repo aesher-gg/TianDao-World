@@ -59,7 +59,7 @@ Module 34 memodifikasi existing Item State. Save wajib mempertahankan identity d
 Jika satu aksi mengubah Character + Item + Material + Formation/Array Core + tool/workspace atau entity lain, setiap entity mendapat before → after dan Origin. Jangan menyimpan Character saja lalu menganggap entity lain ikut tersimpan.
 
 ### Reward
-Prioritas provenance: `Fixed Canon/Event/Mission Reward → Valid Item/Economy/Technique/Contract Source → Dynamic Loot Formula → ???`. Tidak ada reward bebas, breakthrough gratis, atau Realm scaling otomatis.
+Prioritas provenance: `Fixed Canon/Event/Mission Reward → Valid Item/Economy/Technique/Contract Source → Dynamic Loot Formula → RESOLUTION-BLOCKED`. Tidak ada reward bebas, breakthrough gratis, atau Realm scaling otomatis.
 
 ## Multi-Entity Transaction
 Jika satu aksi mengubah Character + NPC + Event + Quest + Reward, setiap entity mendapat before → after dan Origin. Jangan menyimpan Character saja lalu menganggap entity lain ikut tersimpan.
