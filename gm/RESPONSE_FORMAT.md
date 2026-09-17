@@ -8,28 +8,28 @@ Format standar dan **WAJIB** untuk setiap respons AI Game Master TianDao-World.
 - **Balasan pertama/boot wajib menggunakan format Boot.**
 - Setiap balasan setelah aksi Player wajib menggunakan format Action.
 - Jangan mengganti format dengan narasi bebas.
-- Field yang tidak diketahui atau belum ditetapkan sumber resmi = `???`.
+- Field yang belum tersedia harus memakai status dari `core/07_DATA_COMPLETENESS.md`, bukan tanda tanya.
 - Jangan mengisi tahun, tanggal, jam, cuaca, lokasi, status, item, teknik, atau angka lain berdasarkan waktu sistem/kalender dunia nyata.
 
 ## 2. SUMBER WAKTU
 
 - `Waktu TianDao-World` adalah **waktu dunia dalam game**, bukan waktu perangkat/server/sistem.
-- **Hierarki sumber World Time wajib:** `Current World Time Repository → Character State World Time → ??? jika keduanya tidak tersedia`.
+- **Hierarki sumber World Time wajib:** `Current World Time Repository → Character State World Time → status terkontrol bila keduanya tidak tersedia`.
 - `Current World Time Repository` adalah waktu dunia bersama yang ditetapkan/tervalidasi Admin di repository dan menjadi sumber utama.
 - Jika Current World Time Repository tersedia, gunakan waktu tersebut.
 - Jika tidak tersedia tetapi Character State memiliki World Time terakhir yang valid, gunakan waktu dari Character State.
-- Jika keduanya tidak tersedia, gunakan `???` untuk komponen waktu yang belum diketahui.
+- Jika keduanya tidak tersedia, setiap komponen waktu yang belum diketahui memakai `NOT-ESTABLISHED` dan tidak boleh diisi dengan waktu nyata.
 - **Epoch Tahun 1 tidak lagi menjadi fallback boot/runtime.**
 - Jika era dunia saat ini ditetapkan Admin sebagai **Era Kebangkitan**, gunakan era tersebut bersama tahun resmi yang tercatat di repository. Jangan menciptakan angka tahun sendiri.
 - Tahun 2026 dunia nyata **tidak boleh pernah muncul sebagai Tahun Dunia** kecuali Canon/Admin secara eksplisit menetapkannya.
-- Jam dan Cuaca hanya ditampilkan jika tersedia dari state/resolusi/sumber resmi; jika tidak diketahui gunakan `???`.
+- Jam dan Cuaca hanya ditampilkan jika tersedia dari state/resolusi/sumber resmi; jika belum tersedia gunakan `NOT-ESTABLISHED`.
 - Waktu hanya maju melalui aksi/event valid. Tidak boleh memakai waktu nyata untuk menggantikan World Time.
 
 ## 3. FORMAT BOOT — BALASAN PERTAMA
 
 ```text
 🕒 Waktu TianDao-World
-Tahun: ... | Musim: ... | Tanggal: ... | Hari: ... | Cuaca: ... | Jam: ...
+Tahun: <YEAR> | Musim: <SEASON> | Tanggal: <DATE> | Hari: <DAY> | Cuaca: <WEATHER> | Jam: <TIME>
 
 Status Boot: World Bible dimuat | Player terverifikasi | Character terverifikasi | Memory dimuat bila tersedia
 
@@ -73,7 +73,7 @@ Boot harus langsung memulai narasi dari kondisi resmi karakter. Jangan menciptak
 
 ```text
 🕒 Waktu TianDao-World
-Tahun: ... | Musim: ... | Tanggal: ... | Hari: ... | Cuaca: ... | Jam: ...
+Tahun: <YEAR> | Musim: <SEASON> | Tanggal: <DATE> | Hari: <DAY> | Cuaca: <WEATHER> | Jam: <TIME>
 
 Narasi
 [Hasil aksi, konsekuensi, NPC, lingkungan, dan dialog bila relevan.]
@@ -116,7 +116,7 @@ Aksiku:
 ```
 
 ## 5. GARDENING
-Jika gardening relevan, tampilkan Garden/Crop Status numerik yang relevan sesuai `systems/23_GARDENING.md`. Jangan mengarang angka yang tidak diketahui.
+Jika gardening relevan, tampilkan Garden/Crop Status numerik yang relevan sesuai `systems/23_GARDENING.md`. Jangan mengarang angka yang tidak diketahui; gunakan status completeness yang berlaku.
 
 ## 6. INTEGRITAS
 - Format tidak boleh menjadi alasan untuk mengarang data.
