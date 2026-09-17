@@ -399,3 +399,58 @@ Affected files were written and must be refetched after each write. Latest verif
 Status: **🟢 Refinement Method Schema — ESTABLISHED.**
 
 Next dependency: **🟡 Bounded Resolution Formula**, which combines validated Item State + Material Properties + Method Contract + Compatibility + Qualification + Process Conditions into a result that cannot exceed the method-defined bounds.
+
+
+## 🟡 MECHANICS DESIGN — BOUNDED RESOLUTION FORMULA
+
+### Finding
+Material Refinement Property Schema dan Refinement Method Schema telah menetapkan **data yang boleh masuk** dan **ruang perubahan yang sah**, tetapi belum ada resolver contract eksplisit yang menentukan bagaimana Qwen memilih satu hasil runtime tanpa memperluas bounds atau menciptakan angka baru.
+
+### Admin Resolution
+Established **Bounded Resolution Formula** dengan canonical chain:
+
+ITEM STATE + MATERIAL PROPERTIES + REFINEMENT METHOD + COMPATIBILITY + QUALIFICATION + PROCESS CONDITIONS → BOUNDED RESOLUTION → BEFORE/AFTER
+
+Resolver stages:
+1. Input Completeness;
+2. Existing Item;
+3. Material;
+4. Method;
+5. Compatibility;
+6. Qualification;
+7. Process/Cost;
+8. Allowed Dimensions;
+9. Bound Intersection;
+10. Source-defined Outcome Model;
+11. Runtime Selection;
+12. Before/After transaction.
+
+### Bound Rule
+Untuk setiap property dimension yang diizinkan:
+
+LEGAL_RESULT = ItemConstraint ∩ MaterialBound ∩ MethodBound
+
+Qwen hanya boleh memilih hasil di dalam irisan constraint/bound yang benar-benar memiliki source. Dimension di luar Method Record tidak boleh berubah. Missing bound atau outcome mechanism yang required → RESOLUTION-BLOCKED.
+
+### Outcome Rule
+- Deterministic/process validation digunakan bila itu yang didefinisikan source.
+- Source-defined check digunakan hanya dengan parameter source.
+- Source-defined Success/Partial/Failure digunakan sesuai mekanismenya.
+- Hidden roll, probability, multiplier, bonus, modifier, atau numeric increment tidak boleh dibuat bila source tidak menyediakannya.
+- RESOLUTION-BLOCKED tidak boleh diam-diam diubah menjadi success/failure.
+
+### Integration
+- Module 34: legal refinement space, compatibility, qualification, process, bounds, outcome mechanism.
+- Module 25: concrete runtime selection only within legal bounds.
+- Module 14: authoritative Item/Material State and Material Refinement Property Schema.
+- State Validator: verifies bounded result and atomic Before/After.
+- Runtime Engine: enforces resolver order and blocks unsupported resolution.
+- Module 35: dependency chain.
+
+### Explicit Non-Goals
+Tahap ini tidak menetapkan bonus, probability, multiplier, quality increment, durability increment, tier increment, atau material-to-effect table baru.
+
+### Status
+**🟢 Bounded Resolution Formula — ESTABLISHED.**
+
+Next mechanics-design dependency: **🟡 Outcome/Bound Source Catalog**, yaitu pengisian source Canon konkret untuk property dimension, bounds, compatibility, dan outcome mechanism yang memang ingin tersedia. Tanpa source konkret, formula tetap memblokir resolusi yang membutuhkan nilai tersebut.
