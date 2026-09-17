@@ -53,6 +53,6 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 ## E. Response
 - [ ] Format `RESPONSE_FORMAT.md` dipatuhi.
 - [ ] Tidak ada fakta unsupported.
-- [ ] Status data mengikuti `core/07_DATA_COMPLETENESS.md`; gunakan `UNRESOLVED`, `NOT-ESTABLISHED`, `NOT-INSTANTIATED`, atau `RESOLUTION-BLOCKED` sesuai keadaan, bukan legacy unknown marker.
+- [ ] Status data mengikuti `core/07_DATA_COMPLETENESS.md`; gunakan `UNRESOLVED`, `NOT-INSTANTIATED`, atau `RESOLUTION-BLOCKED` sesuai keadaan, bukan legacy unknown marker.
 - [ ] Current state siap menjadi input turn berikutnya.
 - [ ] Save status mencerminkan status sinkronisasi sebenarnya.
