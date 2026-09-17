@@ -67,3 +67,19 @@ State chat sebelumnya bukan current repository state jika repository dapat diver
 
 ## Priority
 `Core/Admin/Custom → Dynamic System Rules → System Resolution → Realm/Lore/Faction → Current State → Persistent Memory → Player Intent`
+
+
+## DATA COMPLETENESS GATE — HARD RUNTIME BARRIER
+Sebelum langkah Generation, Validate, Cost, Resolve, State Apply, Memory, Save, atau Response, engine wajib mengevaluasi field material yang belum tersedia memakai `core/07_DATA_COMPLETENESS.md`.
+
+### Resolution Matrix
+- `CANON-ESTABLISHED` → pakai nilai Canon yang terverifikasi; jangan override dengan improvisasi.
+- `STATE-ESTABLISHED` → pakai Current State yang terverifikasi; perubahan harus melalui resolusi sah.
+- `RUNTIME-GENERATED` → hanya dari Dynamic Generation yang relevan dengan formula/trigger/input sah; generated ≠ Canon.
+- `NOT-APPLICABLE` → jangan memaksa field berlaku.
+- `NOT-INSTANTIATED` → entity/record belum ada; jangan menganggapnya ada atau membuatnya hanya untuk menutup field.
+- `UNRESOLVED` → jangan menetapkan nilai; jika field tidak wajib, pertahankan status. Jika wajib untuk resolusi dan tanpa fallback resmi, menjadi `RESOLUTION-BLOCKED`.
+- `RESOLUTION-BLOCKED` → jangan melakukan state-changing resolution yang bergantung pada field tersebut.
+
+### Anti-Speculation Barrier
+Player intent, dialogue, narrative plausibility, memory lama, cache, real-world data, atau kebutuhan agar cerita terus berjalan tidak dapat menjadi source untuk menutup field unresolved. Jika source tidak cukup, engine harus menahan/menolak bagian resolusi yang bergantung padanya.
