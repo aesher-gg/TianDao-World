@@ -12,7 +12,7 @@
 - Era adalah penanda sejarah besar dunia dan dapat berubah sesuai Canon/Admin.
 - **Era Kebangkitan** adalah era aktif yang dapat digunakan ketika ditetapkan oleh Current World Time Repository.
 - Tahun dalam Era Kebangkitan harus menggunakan tahun resmi yang tercatat di repository; GM dilarang menciptakan angka tahun sendiri.
-- Jika tahun/era aktif tidak tersedia dari sumber resmi, gunakan `???`.
+- Jika tahun/era aktif tidak tersedia dari sumber resmi, status waktu adalah `UNRESOLVED` dan resolusi yang memerlukan nilai tersebut harus ditahan.
 
 ## Musim
 1. Semi
@@ -43,7 +43,7 @@ Tahun 1, Musim Semi, Tanggal 1, Bulan Bunga, Hari Senin tetap merupakan **titik 
 ## World Time Saat Ini
 World Time aktif adalah state dunia bersama dan harus ditetapkan/tervalidasi melalui sumber repository yang sah. Hierarki runtime:
 
-**Current World Time Repository → Character State World Time → ??? jika keduanya tidak tersedia**
+**Current World Time Repository → Character State World Time → UNRESOLVED jika keduanya tidak tersedia**
 
 Untuk setting dunia modern saat ini, Admin dapat menetapkan tahun di atas 1000 dalam **Era Kebangkitan** melalui Current World Time Repository. Setelah ditetapkan, nilai tersebut menjadi acuan utama seluruh Character dan runtime sampai diperbarui melalui event/perubahan dunia yang sah.
 
