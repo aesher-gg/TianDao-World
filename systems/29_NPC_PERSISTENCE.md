@@ -35,3 +35,7 @@ NPC hanya mengetahui pengalaman dan informasi yang secara logis dapat diaksesnya
 
 ## Validation
 Persistent NPC wajib melewati Module 26, State Validator, entity isolation, Origin, dan Save Pipeline. Generated NPC tidak otomatis menjadi Global Canon.
+
+
+## DATA COMPLETENESS NPC GATE
+NPC identity, role, knowledge, agenda, relationship, realm, ability, history, dan state tidak boleh ditebak. Generated NPC hanya boleh memakai input/formula Module 26 yang sah. Field yang belum diketahui atau belum terinstansiasi tetap memakai status resmi dan tidak dinaikkan menjadi Canon.
