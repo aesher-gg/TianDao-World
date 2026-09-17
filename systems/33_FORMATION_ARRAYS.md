@@ -113,3 +113,7 @@ Formation material atau lintas turn harus mempunyai identity/state yang dapat di
 
 ## Runtime Contract
 `ROUTER → REQUIRED SOURCES → COMPONENT VALIDATION → CONSTRUCTION/ACTIVATION CHECK → COST → RESOLUTION → EFFECT/DAMAGE → ORIGIN → STATE/HISTORY → SAVE → VERIFY`
+
+
+## DATA COMPLETENESS FORMATION GATE
+Blueprint, material, core, operator qualification, range, effect, cost, stability, dan activation state wajib memiliki source sah. Jangan mengarang parameter untuk membuat formasi aktif. Jika required parameter tidak tersedia, tahan resolusi sebagai RESOLUTION-BLOCKED.
