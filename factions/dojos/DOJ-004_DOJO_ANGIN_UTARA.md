@@ -11,7 +11,7 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Sikap: keras dan praktis.
 - Agenda: menjaga murid mampu bertahan di lingkungan ekstrem.
 - Relasi: bekerja terutama dengan kebutuhan pelatihan dan keselamatan lokal; hubungan eksternal ditentukan melalui kontrak, bantuan, atau tindakan nyata.
-- Kepala: jabatan Kepala Dojo aktif; tidak ada NPC bernama yang menjadi Canon tetap.
+- Kepala: Bei Yucheng (`NPC-DOJ-004`); Kepala Dojo aktif.
 - Teknik spesifik: tidak ada teknik eksklusif yang dikunci sebagai Canon; pengajaran menggunakan teknik gerak dan senjata ringan yang sah dari database teknik.
 - Realm/Bonus: tidak ada bonus atau kenaikan Realm otomatis dari keanggotaan; survival skill diperoleh melalui latihan dan resolusi.
 - Aset: aula latihan tahan dingin, lintasan salju, area sparring, senjata ringan latihan, dan perlengkapan perjalanan salju.
