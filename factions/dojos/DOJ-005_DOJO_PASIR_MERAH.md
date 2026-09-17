@@ -10,7 +10,7 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Rekrutmen: daya tahan perjalanan, dasar tombak pendek, orientasi gurun, disiplin.
 - Agenda: melindungi jalur permukiman dan karavan lokal.
 - Relasi: operasional dengan jaringan perdagangan/transportasi gurun sesuai kebutuhan perjalanan.
-- Kepala/NPC/Teknik/Realm/Bonus/Aset: ???
+- Kepala/NPC/Teknik/Realm/Bonus/Aset: `NOT-ESTABLISHED`
 
 ## Rule
 Kerja sama dengan karavan atau organisasi lain memerlukan konteks/kontrak sah.
