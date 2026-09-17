@@ -158,3 +158,33 @@ PLAYER_BOOT_PROMPT sebelumnya menggunakan placeholder [ditentukan GM] untuk komp
 
 ### Verification
 Core Data Completeness authority telah di-fetch ulang dan dikonfirmasi memuat vocabulary resmi: CANON-ESTABLISHED, STATE-ESTABLISHED, RUNTIME-GENERATED, NOT-APPLICABLE, NOT-INSTANTIATED, UNRESOLVED, RESOLUTION-BLOCKED. File-file modul yang disentuh menggunakan status tersebut sesuai konteks dan tidak menjadikan UNRESOLVED sebagai izin improvisasi.
+
+
+## 2026-09-18 Cross-Module Integration Audit
+
+### Finding
+Audit repository-wide menemukan bahwa banyak module sudah menyebut dependency/integration di dalam file masing-masing, tetapi dependency tersebut belum memiliki satu **authoritative cross-module contract** yang memformalkan hubungan source → consumer. Module 27 sudah menjadi trigger router, tetapi sebelumnya belum memisahkan dengan tegas fungsi routing dari dependency graph.
+
+Contoh gap yang diverifikasi:
+- Module 10 menyatakan hubungan Items/Loot/Organizations/Reputation/Time/Character State.
+- Module 21 menyatakan hubungan Items/Loot/Organizations/Factions/Travel/Time/Reputation/Karma/Events.
+- Module 22 menyatakan hubungan access/contracts/prices/encounter/Reputation/Karma/Event.
+- Module 23 memiliki integrasi Action/Time/Items/Economy dan dapat melintasi Alchemy bila proses benar-benar relevan.
+- Module 31–34 memiliki dependency produksi lintas module yang sudah disebutkan, tetapi sebelumnya tidak ada satu contract repository-level yang mengikat dependency tersebut.
+
+### Admin Fix
+Admin membuat:
+- `systems/35_MODULE_INTEGRATION.md` — **Cross-Module Dependency Authority**.
+- Module 35 memformalkan source/consumer relationship tanpa menambah mekanik baru.
+- Module 27 sekarang wajib melakukan Module 35 dependency check setelah trigger detection.
+- INDEX sekarang mendaftarkan Module 35 dan menetapkannya sebagai dependency authority.
+- Dependency gate mewajibkan source module yang terdampak berhasil di-fetch sebelum validation/resolution.
+
+### Boundary
+Module 35 tidak menggantikan aturan Module 08–34, tidak membuat Canon baru, tidak memaksa fetch modul yang tidak relevan, dan tidak mengubah dynamic content menjadi Canon.
+
+### Verification Target
+`Module A membutuhkan Module B` sekarang memiliki jalur:
+`INDEX → Module 27 Trigger Router → Module 35 Dependency Contract → Required Source Modules → Validation/Resolution`.
+
+Semua perubahan ditulis ke `main` dengan SHA terbaru dan harus lulus Structural Reference Lint serta Canon Placeholder Lint.
