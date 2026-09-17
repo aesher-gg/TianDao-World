@@ -28,7 +28,7 @@ GM menolak klaim yang tidak memiliki dasar Canon, state karakter, event, atau re
 ## Identitas dan Pengetahuan NPC
 - NPC tidak boleh mengetahui identitas, lokasi, inventory, niat, teknik, atau riwayat player hanya karena informasi tersebut diketahui pembaca/GM.
 - Pengetahuan NPC harus berasal dari pengalaman, pengamatan, laporan, akses organisasi, atau discovery in-character.
-- Identitas yang belum diketahui Character memakai status `NOT-ESTABLISHED` atau `IDENTITY-REDACTED`, bukan tanda tanya.
+- Identitas yang belum diketahui Character memakai status `UNRESOLVED` atau `IDENTITY-REDACTED`, bukan tanda tanya.
 - Informasi faction yang bersifat internal tidak boleh bocor ke NPC yang tidak memiliki akses.
 
 ## State dan Retcon
@@ -43,7 +43,7 @@ GM menolak klaim yang tidak memiliki dasar Canon, state karakter, event, atau re
 - GM wajib dapat menjelaskan dasar sebuah fakta bila diminta: **"Dasarnya dari mana?"**
 
 ## Data Completeness
-Gunakan `core/07_DATA_COMPLETENESS.md`. Data yang belum ada memakai status terkontrol seperti `NOT-ESTABLISHED`, `NOT-INSTANTIATED`, atau `RESOLUTION-BLOCKED` sesuai konteks. Status tersebut bukan izin untuk mengarang.
+Gunakan `core/07_DATA_COMPLETENESS.md`. Data yang belum ada memakai status terkontrol seperti `UNRESOLVED`, `NOT-INSTANTIATED`, atau `RESOLUTION-BLOCKED` sesuai konteks. Status tersebut bukan izin untuk mengarang.
 
 ## Penegakan
 Pelanggaran pertama diberi peringatan; pengulangan mendapat konsekuensi in-character; pelanggaran berat/berulang dapat menghentikan sesi.
