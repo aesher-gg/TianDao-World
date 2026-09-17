@@ -26,7 +26,7 @@ Individual file memberi granular detail, tetapi tidak boleh bertentangan dengan 
 - Known techniques/assets hanya jika sourced.
 - Current state bila material.
 - Origin/change log bila material.
-- Unknown tetap `???`.
+- Data yang belum tersedia menggunakan status `UNRESOLVED`, `NOT-ESTABLISHED`, atau `NOT-INSTANTIATED` sesuai keadaan.
 
 ## Relations
 Relasi antar-organisasi adalah contextual state. Jangan mengubah cooperative/competitive/transactional menjadi alliance/war tanpa trigger dan resolusi yang sah.
