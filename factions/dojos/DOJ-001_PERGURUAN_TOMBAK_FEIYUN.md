@@ -9,7 +9,7 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Struktur: Kepala Perguruan → Instruktur Senior → Instruktur → Murid Senior → Murid.
 - Rekrutmen: ujian fisik, dasar senjata, disiplin.
 - Agenda: mempertahankan standar teknik dan kehormatan perguruan.
-- Kepala: jabatan Kepala Perguruan aktif; tidak ada NPC bernama yang menjadi Canon tetap.
+- Kepala: Gu Han (`NPC-DOJ-001`); Kepala Perguruan aktif.
 - Teknik spesifik: tidak memiliki teknik eksklusif yang dikunci sebagai Canon; pengajaran menggunakan teknik yang sah dari database teknik.
 - Realm/Bonus: tidak ada bonus atau kenaikan Realm otomatis dari keanggotaan; kemajuan mengikuti sistem kultivasi dan hasil latihan.
 - Aset: aula latihan, halaman sparring, rak tombak latihan, dan perlengkapan latihan dasar.
