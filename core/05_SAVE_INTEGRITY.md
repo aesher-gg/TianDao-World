@@ -9,7 +9,7 @@ Menjaga agar state karakter, state Spirit Beast, memory cerita, dan dunia dapat 
 - `characters/beast_registry.md`: Spirit Beast Registry dan pemetaan BEAST_ID → Current Beast State/History; bukan current state.
 - `characters/players/<CHARACTER_ID>.md`: current character state operasional untuk satu Character.
 - `characters/beasts/<BEAST_ID>.md`: current beast state operasional untuk satu Spirit Beast.
-- `character_history/CHAR-<CHARACTER_ID>_HISTORY.md`: persistent private story memory untuk satu Character.
+- `character_history/<CHARACTER_ID>_HISTORY.md`: persistent private story memory untuk satu Character.
 - `beast_history/<BEAST_ID>_HISTORY.md`: persistent history untuk satu Spirit Beast.
 - `story/WORLD_STATE.md`: shared world facts dengan konsekuensi berkelanjutan.
 - `story/ACTIVE_THREADS.md`: unresolved shared/character-relevant threads.
