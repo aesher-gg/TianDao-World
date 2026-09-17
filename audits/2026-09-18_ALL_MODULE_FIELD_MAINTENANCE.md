@@ -112,3 +112,36 @@ Tidak ada data lore/NPC/faction/item/technique/location baru yang dibuat pada au
 Audit maintenance kali ini dilakukan **repository-wide, bukan NPC-only**. Tidak ada static Canon gap baru yang dapat ditetapkan secara sah tanpa menambah lore yang tidak didukung. Kandidat yang masih kosong telah ditelusuri ke sumbernya dan dipertahankan sebagai runtime/discovery, rule/template, atau completeness state sesuai desain.
 
 Jika static Canon baru muncul dari source resmi pada maintenance berikutnya, prosedur wajib tetap: tetapkan concrete value → buat/sinkronkan authoritative record → sinkronkan seluruh cross-reference → direct-fetch verify.
+
+
+## 2026-09-18 GM/Runtime Data Completeness Hardening
+Setelah maintenance field repository-wide, Admin melakukan audit khusus terhadap implementasi `core/07_DATA_COMPLETENESS.md` pada seluruh GM/runtime chain.
+
+### Scope
+- `gm/GM_PROMPT.md`
+- `gm/ACTION_RUNTIME_PROMPT.md`
+- `gm/ACTION_RUNTIME.md`
+- `gm/RUNTIME_ENGINE.md`
+- `gm/STATE_VALIDATOR.md`
+- `gm/ACTION_RESOLVER.md`
+- `gm/NPC_EVENT_RUNTIME.md`
+- `gm/CHECKLIST.md`
+- `gm/VALIDATION_RULES.md`
+
+### Finding
+Aturan anti-mengarang sudah tersebar di chain, tetapi sebelumnya belum dinyatakan sebagai satu **hard gate eksplisit** yang mewajibkan klasifikasi semua field material sebelum generation/validation/resolution/state apply/save/response. Risiko utamanya adalah `RUNTIME-GENERATED` dapat disalahpahami sebagai izin improvisasi dan field `UNRESOLVED` dapat diperlakukan sebagai kekosongan yang harus ditutup agar aksi berjalan.
+
+### Admin Fix
+Seluruh file scope di atas sekarang memiliki enforcement yang merujuk langsung ke `core/07_DATA_COMPLETENESS.md` dengan aturan:
+- `CANON-ESTABLISHED` dan `STATE-ESTABLISHED` wajib bersumber dari data terverifikasi.
+- `RUNTIME-GENERATED` hanya sah melalui dynamic module/formula/trigger/input yang valid; generated ≠ Canon.
+- `NOT-INSTANTIATED` bukan entity/record aktif dan tidak boleh dibuat hanya untuk melengkapi schema.
+- `UNRESOLVED` bukan nilai, fakta, atau izin improvisasi.
+- Required input yang hilang tanpa fallback resmi menghasilkan `RESOLUTION-BLOCKED` dan menahan resolusi yang bergantung padanya.
+- Player request/claim, dialogue, narrative plausibility, cache, real-world value, dan kebutuhan agar cerita terus berjalan bukan source pengganti.
+- Fakta material wajib dapat menjawab pertanyaan `Dasarnya dari mana?` sebelum diterapkan.
+
+### Verification
+Semua 9 file GM/runtime yang diubah di-fetch ulang dari `main` dan diverifikasi memiliki Data Completeness Gate/enforcement. Tidak ada perubahan Canon dunia baru yang dibuat oleh hardening ini.
+
+Admin hardening commit chain terakhir: `725c0b16196bb3f77b33d59c57facf6318c6b21e`.
