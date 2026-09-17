@@ -213,6 +213,87 @@ Resolution dapat menghasilkan:
 
 Damage/destruction hanya valid bila method/source mengizinkannya. Result tidak boleh melampaui Admin/source ceiling.
 
+### 12.5A. BOUNDED RESOLUTION FORMULA
+
+Bounded Resolution adalah proses pemilihan hasil konkret runtime dari input yang **sudah tervalidasi**, bukan generator mekanik baru.
+
+#### 12.5A.1 Canonical Resolution Function
+
+`Existing Item State + Material Properties + Refinement Method + Compatibility + Qualification + Process Conditions → Bounded Resolution → Before/After`
+
+Input resolver wajib dinormalisasi sebagai satu resolution context:
+- `ITEM_STATE` — identity, category, condition, quality/property yang terverifikasi;
+- `MATERIAL_PROPERTY_RECORDS` — material identity, quantity, origin, dan property yang tervalidasi;
+- `METHOD_RECORD` — method source, requirements, allowed dimensions, bounds, outcome model, consumption/failure rules;
+- `COMPATIBILITY_RESULT` — hasil Module 34;
+- `QUALIFICATION_RESULT` — hasil pemeriksaan refiner terhadap requirement method;
+- `PROCESS_CONDITIONS` — tool/workspace, cost, time, process steps, dan kondisi lain yang memang diwajibkan source.
+
+Resolver tidak boleh menambahkan input mekanis baru hanya agar formula dapat menghasilkan output.
+
+#### 12.5A.2 Resolution Gates
+
+Urutan wajib:
+
+`INPUT COMPLETENESS → ITEM GATE → MATERIAL GATE → METHOD GATE → COMPATIBILITY GATE → QUALIFICATION GATE → PROCESS/COST GATE → ALLOWED DIMENSION GATE → BOUND INTERSECTION → OUTCOME MODEL → RUNTIME SELECTION → BEFORE/AFTER`
+
+1. **Input Completeness Gate** — semua required input memiliki source dan status yang sah.
+2. **Item Gate** — existing item memenuhi target category/constraints.
+3. **Material Gate** — material quantity, origin, properties, dan consumption rule yang diperlukan tervalidasi.
+4. **Method Gate** — Method Record Module 34 §11A lengkap untuk resolution yang diminta.
+5. **Compatibility Gate** — hanya `COMPATIBLE` yang boleh melanjutkan refinement.
+6. **Qualification Gate** — refiner memenuhi qualification yang diwajibkan source.
+7. **Process/Cost Gate** — tool/workspace, time, dan resource cost yang diwajibkan tersedia dan dapat diterapkan.
+8. **Allowed Dimension Gate** — hanya dimension yang tercantum dalam method yang masuk ruang perubahan.
+9. **Bound Intersection** — hasil kandidat wajib berada dalam irisan seluruh batas yang berlaku dari item/current state, material property source, dan method. Jika source tidak memberi bound yang diperlukan, resolusi diblokir; jangan menciptakan bound.
+10. **Outcome Model** — gunakan mekanisme outcome yang dinyatakan source.
+11. **Runtime Selection** — pilih satu hasil konkret hanya dari ruang hasil yang legal.
+12. **Before/After** — hitung dan validasi state sebelum dan sesudah sebagai satu transaction.
+
+#### 12.5A.3 Bound Intersection Rule
+
+Untuk setiap dimension yang diizinkan:
+
+`LEGAL_RESULT(d) = ItemConstraint(d) ∩ MaterialBound(d) ∩ MethodBound(d)`
+
+Hanya constraint/bound yang benar-benar tersedia dari source yang boleh digunakan. Jika suatu dimension tidak memiliki bound yang diperlukan untuk menjaga hasil tetap sah, statusnya `UNRESOLVED` dan resolusi yang bergantung padanya menjadi `RESOLUTION-BLOCKED`.
+
+Jika irisan menghasilkan ruang kosong, hasil bukan partial success yang dipaksakan. Gunakan status yang sesuai source; bila tidak ada mekanisme resmi untuk menyelesaikan konflik tersebut, gunakan `RESOLUTION-BLOCKED`.
+
+#### 12.5A.4 Outcome Selection
+
+Outcome selection mengikuti `OUTCOME_MODEL` dari Method Record:
+- deterministic requirement/process validation → hasil ditentukan oleh kondisi yang terpenuhi;
+- source-defined check → jalankan check persis sesuai source;
+- source-defined Success/Partial/Failure → gunakan mekanisme dan batas source.
+
+Jika source mendefinisikan roll/probability, hanya mekanisme dan parameter source tersebut yang boleh dipakai. Jika source tidak mendefinisikannya, **jangan membuat d100, persentase, multiplier, bonus, atau modifier baru**.
+
+Module 25 tidak boleh:
+- mengubah current property menjadi bonus numerik tanpa bound/source;
+- memilih angka dari rentang yang tidak memiliki source;
+- menggunakan rarity, harga, nama, visual, Character Realm, atau narrative plausibility sebagai modifier;
+- menganggap `SUCCESS` berarti semua dimension berubah;
+- mengubah dimension yang tidak diizinkan method;
+- mengubah category/grade/tier/ability/affinity/ownership tanpa mechanism source.
+
+#### 12.5A.5 Resolution State Semantics
+
+- `SUCCESS` — seluruh perubahan yang dipilih berada dalam bounds dan outcome source mengizinkannya.
+- `PARTIAL` — hanya bila source mendefinisikan partial outcome; perubahan tetap berada dalam bounds.
+- `FAILURE_UNCHANGED` — source mengizinkan failure tanpa state change.
+- `FAILURE_DAMAGED` — hanya bila source mendefinisikan damage/defect.
+- `FAILURE_DESTROYED` — hanya bila source secara eksplisit mengizinkan destruction.
+- `RESOLUTION-BLOCKED` — required input/mechanism/bound tidak tersedia atau legal resolution tidak dapat dibuktikan.
+
+Tidak ada implicit fallback dari `RESOLUTION-BLOCKED` menjadi failure atau success.
+
+#### 12.5A.6 No Unsupported Numeric Resolution
+
+Formula ini **tidak** menetapkan angka bonus, multiplier, probability, quality increment, durability increment, tier increment, atau material-to-effect mapping baru.
+
+Jika source hanya memberi arah perubahan tanpa nilai/range/bound yang dapat dipakai, Qwen tidak boleh memilih angka sendiri. Result tetap `UNRESOLVED` / `RESOLUTION-BLOCKED` sesuai kebutuhan field.
+
 ### 12.6 Before/After Transaction Contract
 Setiap successful/partial/allowed failure refinement harus dapat ditelusuri:
 - BEFORE: Item State, material state, relevant resources.
