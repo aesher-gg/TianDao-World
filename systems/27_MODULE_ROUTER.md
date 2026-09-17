@@ -116,3 +116,7 @@ Jika write-back gagal setelah resolusi valid, gunakan `gm/PENDING_SYNC.md`; stat
 Dynamic result tetap runtime content. Ia tidak menjadi fixed Canon, Bestiary, faction database, NPC registry, event registry, recipe/formula/formation registry, atau global lore hanya karena pernah muncul dalam gameplay.
 
 Fixed Canon hanya ditambahkan melalui perubahan Admin yang sah dan diverifikasi.
+
+
+## DATA COMPLETENESS ROUTER GATE
+Router wajib memastikan modul yang menyediakan source untuk setiap field material telah di-fetch sebelum field tersebut di-resolve. Jika source required tidak tersedia, jangan fallback ke memory/cache atau plausibility. Tandai UNRESOLVED atau tahan sebagai RESOLUTION-BLOCKED sesuai core/07_DATA_COMPLETENESS.md.
