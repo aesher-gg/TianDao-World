@@ -247,4 +247,4 @@ Jika repository write-back tidak tersedia, GM wajib menyatakan bahwa save/memory
 - Simpan fakta ringkas, bukan narasi yang tidak diperlukan.
 - Jangan mengubah memory lama untuk membuat kejadian baru tampak pernah terjadi.
 - Koreksi Admin harus dapat dibedakan dari event gameplay.
-- Jika fakta tidak dapat dibuktikan, gunakan `???` atau jangan simpan.
+- Jika fakta tidak dapat dibuktikan, gunakan `UNRESOLVED` atau jangan simpan.
