@@ -1,19 +1,30 @@
 # REG-011 — Paviliun Salju Putih
 
 ## Status
-Admin Canon — individual organization detail derived only from the regional registry.
+Admin Canon v1.1 — individual organization detail.
 
 - ID: REG-011
 - Kategori: Jaringan pedagang/pengangkut
 - Wilayah: Tanah Salju Beiming
 - Canon: Jaringan perdagangan dan pengangkutan wilayah dingin.
 - Agenda: Menjalankan perdagangan dan pengangkutan wilayah dingin melalui jaringan serta kontrak yang sah.
-- NPC utama: ???
-- Struktur internal: ???
-- Teknik spesifik: ???
-- Realm/Stat/Bonus: ???
+- Struktur internal: Kepala Paviliun → Pengelola Rute → Pemimpin Karavan → Pengangkut/Agen.
+- Rekrutmen: pengalaman perjalanan, reputasi, kemampuan logistik, dan kontrak.
+- Akses: rute, kontrak, kendaraan, dan gudang mengikuti izin serta hubungan dagang.
+- Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini.
+- Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
+- NPC utama: Tidak ada pemimpin bernama yang dikunci; NPC merchant/route manager dibuat melalui Module 26.
 
 ## Relasi
 - Benteng Besi Beichen: kerja sama logistik dan keamanan.
 - Sekte Salju Xuanyin: pertukaran sumber daya melalui kontrak.
-- Relasi lain: ???
+- Dojo Angin Utara: dapat memakai layanan pelatihan/survival melalui kontrak.
+- Relasi lain: ditentukan oleh kebutuhan dagang dan event.
+
+## Operasional
+- Perdagangan dan pengangkutan bergantung pada cuaca, rute, keamanan, dan kontrak.
+- Harga dan jadwal tidak otomatis tetap.
+- Kegagalan pengiriman dapat memengaruhi reputasi atau kontrak.
+
+## Aturan
+Akses rute, kontrak, barang, atau perlindungan tidak otomatis tersedia bagi Character.
