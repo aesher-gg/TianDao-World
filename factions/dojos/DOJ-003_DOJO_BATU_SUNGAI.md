@@ -9,9 +9,9 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Struktur: Kepala Dojo → Pengajar → Murid Senior → Murid.
 - Rekrutmen: biaya latihan, tes dasar, kepatuhan aturan.
 - Agenda: mempertahankan dojo sebagai tempat latihan terbuka bagi praktisi tingkat rendah.
-- Relasi: ???
-- Kepala/NPC spesifik: ???
-- Teknik/Realm/Bonus/Aset: ???
+- Relasi: `NOT-ESTABLISHED`
+- Kepala/NPC spesifik: `NOT-ESTABLISHED`
+- Teknik/Realm/Bonus/Aset: `NOT-ESTABLISHED`
 
 ## Rule
-Detail yang belum ditetapkan tetap `???`; latihan tidak menjamin keberhasilan.
+Detail yang belum ditetapkan menggunakan status Data Completeness resmi; latihan tidak menjamin keberhasilan.
