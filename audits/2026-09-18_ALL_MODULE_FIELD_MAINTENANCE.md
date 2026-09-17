@@ -145,3 +145,16 @@ Seluruh file scope di atas sekarang memiliki enforcement yang merujuk langsung k
 Semua 9 file GM/runtime yang diubah di-fetch ulang dari `main` dan diverifikasi memiliki Data Completeness Gate/enforcement. Tidak ada perubahan Canon dunia baru yang dibuat oleh hardening ini.
 
 Admin hardening commit chain terakhir: `725c0b16196bb3f77b33d59c57facf6318c6b21e`.
+
+
+## Continued Cross-Module Maintenance — GM Data Completeness
+Admin melanjutkan maintenance dari GM/runtime chain ke modul gameplay yang menjadi sumber dan konsumen resolusi: Player Boot, Dynamic Generation, Dynamic NPC/Event/Quest, Module Router, Travel, Vitality, Loot, Spirit Beast, Crafting, Alchemy, Formation, Cultivation, Techniques, Ecology, Gardening, Organization Persistence, NPC Persistence, Event/Quest Persistence, Artifact/Weapon Refinement, dan Action System.
+
+### Maintenance Rule
+Setiap modul tersebut kini diarahkan secara eksplisit ke core/07_DATA_COMPLETENESS.md untuk field material yang belum tersedia. Dynamic generation tidak boleh dipakai sebagai pengisi field kosong; production tidak boleh mengarang parameter; persistence tidak mengubah data unresolved menjadi fakta; dan required input tanpa fallback resmi harus ditahan sebagai RESOLUTION-BLOCKED.
+
+### Boot-Time Clarification
+PLAYER_BOOT_PROMPT sebelumnya menggunakan placeholder [ditentukan GM] untuk komponen waktu per-Character. Aturan ini dipertahankan karena WORLD_STATE memang menetapkan waktu per-Character dapat ditentukan GM, tetapi sekarang ditegaskan bahwa penentuan tersebut harus berasal dari kalender dan konteks awal yang sah, bukan system date, tebakan, atau nilai arbitrer.
+
+### Verification
+Core Data Completeness authority telah di-fetch ulang dan dikonfirmasi memuat vocabulary resmi: CANON-ESTABLISHED, STATE-ESTABLISHED, RUNTIME-GENERATED, NOT-APPLICABLE, NOT-INSTANTIATED, UNRESOLVED, RESOLUTION-BLOCKED. File-file modul yang disentuh menggunakan status tersebut sesuai konteks dan tidak menjadikan UNRESOLVED sebagai izin improvisasi.
