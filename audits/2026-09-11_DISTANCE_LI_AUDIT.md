@@ -33,7 +33,7 @@ Repository search for `km` after conversion returned no current main-branch matc
 - Travel duration formula remains `distance / effective speed + obstacles`; only the canonical distance unit changed.
 - Existing gameplay logic using numeric distance remains structurally compatible because route baselines were converted by the fixed 1 Li = 0.5 km convention.
 - Meter/kilometer may appear only as explanatory conversions, not as the primary runtime distance unit.
-- Unknown/unregistered distances remain `???`; GM must not invent route distances.
+- Unknown/unregistered distances use `UNRESOLVED`; GM must not invent route distances.
 
 ## Final Verdict
 **PASS.** Li is now the official distance unit. The known distance-bearing travel registry has been normalized, core rules have been hardened, and a repository-wide search found no remaining known kilometer-based runtime distance entries requiring conversion. Future modules must use Li by default.
