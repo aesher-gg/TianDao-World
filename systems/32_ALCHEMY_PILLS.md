@@ -66,7 +66,7 @@ Quantity mengikuti formula/fixed source bila tersedia. Jika tidak tersedia, quan
 
 ## Effect & Defect
 Efek, potency, duration, side effect, toxicity, atau defect harus memiliki source mekanis yang valid.
-Jika tidak diketahui: `???`.
+Jika field tersebut belum memiliki source valid, gunakan `NOT-ESTABLISHED` dan jangan menerapkan efek mekanis yang tidak tersumber.
 Tidak boleh mengubah Pill menjadi obat universal atau breakthrough item tanpa Canon/source.
 
 ## Failure
