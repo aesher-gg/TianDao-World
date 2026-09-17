@@ -115,5 +115,5 @@ Permukiman agrikultur di luar zona metropolitan pusat.
 - Nama di atas adalah Canon dan menjadi referensi sinkronisasi lokasi.
 - Modul regional boleh menyebut lokasi tambahan hanya bila statusnya jelas sebagai lokasi, bukan permukiman baru yang diam-diam ditambahkan.
 - Populasi, NPC minor, toko, harga, dan insiden lokal dapat berubah melalui event atau GM bila konsisten.
-- Pemimpin kota/desa yang belum ditetapkan menggunakan status `NOT-ESTABLISHED`.
+- Setiap kota/desa memiliki administrasi atau pengurus lokal; nama individu tidak dikunci sebagai Canon tetap. Bila seorang pemimpin menjadi material atau recurring, ia dibuat sebagai NPC persisten dengan ID dan history yang sah.
 - GM tidak boleh menciptakan jalan pintas antarkawasan atau teleportasi tanpa mekanisme resmi.
