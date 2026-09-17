@@ -10,7 +10,7 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Rekrutmen: daya tahan perjalanan, dasar tombak pendek, orientasi gurun, disiplin.
 - Agenda: melindungi jalur permukiman dan karavan lokal.
 - Relasi: operasional dengan jaringan perdagangan/transportasi gurun sesuai kebutuhan perjalanan; tidak ada aliansi permanen yang otomatis.
-- Kepala: jabatan Kepala Dojo aktif; tidak ada NPC bernama yang menjadi Canon tetap.
+- Kepala: Luo Shayan (`NPC-DOJ-005`); Kepala Dojo aktif.
 - Teknik spesifik: tidak ada teknik eksklusif yang dikunci sebagai Canon; pengajaran memakai teknik tombak pendek dan survival yang sah dari database teknik.
 - Realm/Bonus: tidak ada bonus atau kenaikan Realm otomatis; kemampuan perjalanan dan tempur mengikuti latihan, kondisi, dan resolusi.
 - Aset: aula latihan, halaman pasir, gudang perlengkapan perjalanan, senjata latihan, dan perlengkapan navigasi gurun.
