@@ -96,4 +96,4 @@ If Pending Sync conflicts with newer verified repository data, do not blindly ov
 - Never erase a newer repository state with an older gameplay package.
 - Never claim write-back success without verification.
 - Never use a pending package to justify retroactive changes.
-- Missing information remains `???`.
+- Missing information uses `UNRESOLVED`.
