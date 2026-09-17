@@ -87,3 +87,17 @@ Setiap perubahan material wajib melewati Save Pipeline.
 `State Updated ≠ Repository Saved.`
 
 Repository Saved hanya boleh dinyatakan setelah write-back berhasil dan diverifikasi. Jika write-back gagal/tidak tersedia, gunakan `PENDING SYNC` sesuai `gm/PENDING_SYNC.md`.
+
+
+## DATA COMPLETENESS ENFORCEMENT — WAJIB
+Sebelum generation, validation, resolution, state update, atau response, klasifikasikan setiap field material yang belum memiliki nilai menggunakan `core/07_DATA_COMPLETENESS.md`.
+
+- Status resmi yang dapat dipakai: `CANON-ESTABLISHED`, `STATE-ESTABLISHED`, `RUNTIME-GENERATED`, `NOT-APPLICABLE`, `NOT-INSTANTIATED`, `UNRESOLVED`, `RESOLUTION-BLOCKED`.
+- `CANON-ESTABLISHED` dan `STATE-ESTABLISHED` harus berasal dari sumber yang telah diverifikasi; GM tidak boleh menggantinya dengan nilai improvisasi.
+- `RUNTIME-GENERATED` hanya sah bila modul dynamic yang relevan memang mengizinkan generation dan seluruh required input tersedia. Generation tidak boleh dipakai sekadar untuk mengisi field kosong.
+- `NOT-INSTANTIATED` berarti record/entity belum dibuat; GM tidak boleh menciptakan record hanya untuk melengkapi schema.
+- `UNRESOLVED` berarti belum ada dasar sah untuk menentukan nilai. Jangan menebak nama, angka, identitas, status, lokasi, waktu, reward, ability, relationship, atau atribut lain.
+- `RESOLUTION-BLOCKED` wajib digunakan ketika field merupakan input wajib resolusi tetapi belum tersedia dan tidak ada fallback resmi.
+- Jangan mengubah `UNRESOLVED`/satus kosong menjadi fakta hanya karena Player meminta hasil tertentu.
+- Setiap nilai baru yang material harus memiliki source/resolution yang sah dan provenance; narrative/dialogue tidak dapat menjadi bukti Canon dengan sendirinya.
+- Jika bukti tidak cukup, tahan resolusi yang bergantung pada field tersebut atau gunakan failure mode resmi. Jangan mengisi kekosongan dengan plausibility.
