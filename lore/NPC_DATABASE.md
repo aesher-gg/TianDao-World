@@ -16,6 +16,75 @@ Jabatan organisasi berikut telah ditetapkan Admin Canon dan wajib menggunakan id
 - `ORG-005` Rumah Lelang Qianmu → **Qian Mu** (`NPC-ORG-005`).
 - `ORG-006` Perhimpunan Pelaut Dongming → **Luo Shun** (`NPC-ORG-006`).
 
+## Imperial Canon Identity Registry
+Jabatan pemerintahan pusat berikut telah ditetapkan Admin Canon dan wajib menggunakan identitas NPC yang sama:
+- Dinasti Tianyuan — Kaisar → **Zhao Tiancheng** (`NPC-IMP-001`).
+- Dewan Administratif — Ketua → **Wen Shouyi** (`NPC-IMP-002`).
+- Biro Hukum — Kepala → **Han Zheng** (`NPC-IMP-003`).
+- Biro Pajak — Kepala → **Qiu Mingde** (`NPC-IMP-004`).
+- Pengawal Kekaisaran — Komandan → **Guo Zhen** (`NPC-IMP-005`).
+- Vanguard Kekaisaran — Komandan → **Yan Beichuan** (`NPC-IMP-006`).
+
+### Zhao Tiancheng
+- ID: NPC-IMP-001
+- Peran: Kaisar Dinasti Tianyuan
+- Faction/Organisasi: Pemerintahan Dinasti Tianyuan
+- Sifat: formal, berhati-hati terhadap kesinambungan negara
+- Agenda: menjaga stabilitas pemerintahan, keamanan wilayah, dan keberlangsungan administrasi
+- Pengetahuan: urusan negara pada tingkat kewenangan Kaisar; detail operasi lokal tidak otomatis diketahui
+- Sumber Canon: `factions/imperial/00_IMPERIAL_DATABASE.md` — Dinasti Tianyuan.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Wen Shouyi
+- ID: NPC-IMP-002
+- Peran: Ketua Dewan Administratif Dinasti Tianyuan
+- Faction/Organisasi: Pemerintahan Dinasti Tianyuan
+- Sifat: sistematis, prosedural, mengutamakan kesinambungan administrasi
+- Agenda: mengoordinasikan kebijakan dan pelaksanaan administratif pusat
+- Pengetahuan: kebijakan dan administrasi dalam kewenangan Dewan; urusan lokal yang tidak dilaporkan tidak otomatis diketahui
+- Sumber Canon: `factions/imperial/00_IMPERIAL_DATABASE.md` — Dewan Administratif.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Han Zheng
+- ID: NPC-IMP-003
+- Peran: Kepala Biro Hukum Dinasti Tianyuan
+- Faction/Organisasi: Pemerintahan Dinasti Tianyuan
+- Sifat: tegas, formal, berorientasi prosedur
+- Agenda: menjaga pelaksanaan hukum pidana dan penyelesaian sengketa resmi
+- Pengetahuan: hukum dan perkara dalam kewenangan biro; tidak otomatis mengetahui seluruh perkara lokal
+- Sumber Canon: `factions/imperial/00_IMPERIAL_DATABASE.md` — Biro Hukum.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Qiu Mingde
+- ID: NPC-IMP-004
+- Peran: Kepala Biro Pajak Dinasti Tianyuan
+- Faction/Organisasi: Pemerintahan Dinasti Tianyuan
+- Sifat: teliti, konservatif terhadap pencatatan
+- Agenda: menjaga pendataan dan pungutan pajak negara berjalan sesuai kewenangan
+- Pengetahuan: administrasi pajak dan pendataan dalam kewenangan biro; data lokal bergantung pada laporan resmi
+- Sumber Canon: `factions/imperial/00_IMPERIAL_DATABASE.md` — Biro Pajak.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Guo Zhen
+- ID: NPC-IMP-005
+- Peran: Komandan Pengawal Kekaisaran
+- Faction/Organisasi: Pemerintahan Dinasti Tianyuan
+- Sifat: disiplin, waspada, berorientasi keamanan
+- Agenda: melindungi aset negara dan menjaga keamanan yang berada dalam mandat Pengawal Kekaisaran
+- Pengetahuan: keamanan dan personel dalam kewenangan komandonya; tidak otomatis mengetahui seluruh aparat lokal
+- Sumber Canon: `factions/imperial/00_IMPERIAL_DATABASE.md` — Pengawal Kekaisaran.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Yan Beichuan
+- ID: NPC-IMP-006
+- Peran: Komandan Vanguard Kekaisaran
+- Faction/Organisasi: Pemerintahan Dinasti Tianyuan
+- Sifat: praktis, tegas, berorientasi misi
+- Agenda: menjalankan tugas lapangan dan delegasi khusus yang sah sesuai mandat negara
+- Pengetahuan: operasi dan mandat dalam kewenangan Vanguard; detail lokal bergantung pada laporan dan penugasan
+- Sumber Canon: `factions/imperial/00_IMPERIAL_DATABASE.md` — Vanguard Kekaisaran.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
 ### Qian Mu
 - ID: NPC-ORG-005
 - Peran: Ketua/representatif Rumah Lelang Qianmu
