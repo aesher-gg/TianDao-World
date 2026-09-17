@@ -14,12 +14,12 @@ Jika NPC, event, atau quest relevan, setelah fresh `INDEX.md` berhasil:
 ## 2. NPC Resolution
 
 - NPC Canon yang sudah terdaftar tetap bersumber dari `lore/NPC_DATABASE.md`.
-- NPC yang belum dikenal Character ditampilkan sebagai `???` sampai identitas diketahui in-character, sesuai aturan Canon.
+- NPC yang belum dikenal Character memiliki identity status `UNRESOLVED` sampai identitas diketahui in-character, sesuai aturan Canon.
 - Untuk social encounter baru, gunakan Social Activity dan NPC generation pada Module 26.
 - Tentukan role, aktivitas, agenda, temperament, pengetahuan, faction/organization bila ada dasar, dan sikap terhadap Character.
 - NPC tidak boleh mengetahui fakta di luar pengalaman/aksesnya.
 - NPC boleh menolak, berbohong, salah memahami, meminta bayaran, takut, berubah sikap, membantu, gagal, pergi, atau bertindak sendiri bila konsisten.
-- Realm/Stage NPC tidak boleh ditebak. Jika tidak memiliki dasar yang sah → `???`.
+- Realm/Stage NPC tidak boleh ditebak. Jika tidak memiliki dasar yang sah → `NOT-ESTABLISHED`.
 - NPC persistent harus memiliki NPC_ID stabil (`NPC-####`) dan state/history sesuai Module 26.
 
 ## 3. Event Resolution
@@ -67,7 +67,7 @@ Untuk setiap NPC reaction, event, quest, atau perubahan material, GM harus dapat
 
 Jika tidak ada dasar yang cukup:
 - jangan menerapkan perubahan material;
-- gunakan `???` bila memang unknown;
+- gunakan `UNRESOLVED` atau status kelengkapan data yang sesuai;
 - atau jangan generate content tersebut.
 
 ## 7. Save / Origin
