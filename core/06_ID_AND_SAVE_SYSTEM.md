@@ -114,7 +114,7 @@ GM tidak boleh membuat Beast State dari nama Beast saja. BEAST_ID dan sumber Bea
 
 Setiap Character aktif dapat memiliki history privat:
 
-`character_history/CHAR-<CHARACTER_ID>_HISTORY.md`
+`character_history/<CHARACTER_ID>_HISTORY.md`
 
 Setiap Spirit Beast dapat memiliki history tersendiri:
 
