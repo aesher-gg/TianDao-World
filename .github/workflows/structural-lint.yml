@@ -27,22 +27,12 @@ jobs:
           errors = []
           path_re = re.compile(r'`([^`]+)`')
           resolution_roots = [
-              pathlib.Path('.'),
-              pathlib.Path('core'),
-              pathlib.Path('systems'),
-              pathlib.Path('realms'),
-              pathlib.Path('factions'),
-              pathlib.Path('events'),
-              pathlib.Path('custom'),
-              pathlib.Path('lore'),
-              pathlib.Path('gm'),
-              pathlib.Path('characters'),
-              pathlib.Path('story'),
-              pathlib.Path('audits'),
+              pathlib.Path('.'), pathlib.Path('core'), pathlib.Path('systems'),
+              pathlib.Path('realms'), pathlib.Path('factions'), pathlib.Path('events'),
+              pathlib.Path('custom'), pathlib.Path('lore'), pathlib.Path('gm'),
+              pathlib.Path('characters'), pathlib.Path('story'), pathlib.Path('audits'),
           ]
 
-          # Only concrete repository file/directory references are checked.
-          # Template/schema references remain documentation and are skipped.
           refs = []
           for md in root.rglob('*.md'):
               if '.git' in md.parts:
@@ -64,24 +54,18 @@ jobs:
 
           for source, ref in refs:
               clean_ref = ref.rstrip('/')
-              candidates = []
-              # Prefer source-relative references, then canonical repository roots.
-              candidates.append(source.parent / clean_ref)
-              for base in resolution_roots:
-                  candidate = base / clean_ref
-                  if candidate not in candidates:
-                      candidates.append(candidate)
+              candidates = [source.parent / clean_ref]
+              candidates.extend(base / clean_ref for base in resolution_roots)
               if not any(target.exists() for target in candidates):
                   errors.append(f'MISSING_REFERENCE: {source.as_posix()} -> {ref}')
 
-          # Canonical Character identity/path consistency.
           registry = root / 'characters/character_registry.md'
           if not registry.exists():
               errors.append('MISSING_REGISTRY: characters/character_registry.md')
           else:
               text = registry.read_text(encoding='utf-8')
               ids = re.findall(r'^### (CHAR-\d+)$', text, re.M)
-              states = re.findall(r'Current State:\s*`characters/players/(CHAR-\d+)\.md`', text)
+              states = re.findall(r'Current State:\s*`characters/players/(CHAR-\d+)[.]md`', text)
               if sorted(ids) != sorted(states):
                   errors.append(f'CHARACTER_REGISTRY_MISMATCH: ids={ids} states={states}')
               for cid in ids:
@@ -89,7 +73,6 @@ jobs:
                   if not state.exists():
                       errors.append(f'MISSING_CHARACTER_STATE: {cid} -> {state.as_posix()}')
 
-          # Player -> Character references must resolve to registered Character IDs.
           player_registry = root / 'characters/players.md'
           if player_registry.exists() and registry.exists():
               ptext = player_registry.read_text(encoding='utf-8')
