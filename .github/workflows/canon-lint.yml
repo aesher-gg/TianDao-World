@@ -1,0 +1,34 @@
+name: Canon Placeholder Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  placeholder-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Reject legacy unknown markers and ambiguous runtime placeholders
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE --exclude-dir=.git --include='*.md' '\?\?\?|GARDEN-XXXX|XX/100' .; then
+            echo 'Legacy unknown marker or ambiguous runtime placeholder detected.'
+            echo 'Use the canonical Data Completeness statuses or descriptive schema placeholders.'
+            exit 1
+          fi
+
+      - name: Verify canonical status vocabulary exists
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f core/07_DATA_COMPLETENESS.md
+          grep -Fq '`UNRESOLVED`' core/07_DATA_COMPLETENESS.md
+          grep -Fq '`NOT-ESTABLISHED`' core/07_DATA_COMPLETENESS.md
+          grep -Fq '`NOT-INSTANTIATED`' core/07_DATA_COMPLETENESS.md
+          grep -Fq '`RESOLUTION-BLOCKED`' core/07_DATA_COMPLETENESS.md
