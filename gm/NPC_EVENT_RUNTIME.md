@@ -86,3 +86,13 @@ Minimal:
 ## 8. Runtime Pipeline
 
 `FRESH INDEX → RELEVANT CANON → STATE/TIME → SOCIAL/ENCOUNTER CONTEXT → NPC RESOLUTION → EVENT CHECK → QUEST CANDIDATE → PLAYER DECISION → ACTION RESOLUTION → CONSEQUENCE → VALIDATION → ORIGIN/HISTORY → SAVE → WRITE-BACK VERIFY`
+
+
+## Data Completeness Gate
+Sebelum NPC/Event/Quest generation atau perubahan state:
+- Klasifikasikan field yang belum tersedia dengan `core/07_DATA_COMPLETENESS.md`.
+- NPC identity/realm/knowledge/faction/role tidak boleh ditebak untuk membuat encounter lebih lengkap.
+- Dynamic generation hanya boleh mengisi field yang memang dihasilkan oleh Module 26 dengan input dan formula sah; hasilnya `RUNTIME-GENERATED`, bukan Canon.
+- Entity/record yang belum dibuat tetap `NOT-INSTANTIATED`; jangan menciptakan persistent NPC/Quest/Event hanya untuk mengisi schema.
+- Bila required source/input tidak tersedia, gunakan `UNRESOLVED` atau `RESOLUTION-BLOCKED` sesuai konteks dan tahan perubahan material.
+- Dialogue, NPC assertion, Player claim, dan narrative convenience bukan bukti Canon.
