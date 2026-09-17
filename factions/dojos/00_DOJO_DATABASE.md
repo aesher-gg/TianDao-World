@@ -1,13 +1,13 @@
 # DATABASE DOJO CANON — TIANDAO-WORLD
 
 ## Status
-Canon Admin v1.1. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari sekte dalam struktur serta jalur latihan.
+Canon Admin v1.2. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari sekte dalam struktur serta jalur latihan.
 
 ## 1. Perguruan Tombak Feiyun
 - ID: DOJ-001
 - Wilayah: Dataran Cangyuan.
 - Fokus: tombak, footwork, disiplin tempur, latihan berpasangan.
-- Kepala: pejabat yang memegang jabatan Kepala Perguruan; nama pribadi tidak dikunci sebagai Canon tetap.
+- Kepala: Gu Han (NPC-DOJ-001); Kepala Perguruan aktif.
 - Struktur: Kepala Perguruan → Instruktur Senior → Instruktur → Murid Senior → Murid.
 - Rekrutmen: ujian fisik, dasar senjata, disiplin.
 - Agenda: mempertahankan standar teknik dan kehormatan perguruan.
@@ -17,7 +17,7 @@ Canon Admin v1.1. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari
 - ID: DOJ-002
 - Wilayah: Dataran Cangyuan; memiliki hubungan pelatihan dengan Desa Xingcun dan Desa Tiedao.
 - Fokus: pedang, dasar Dao, latihan nyata, pembentukan fondasi melalui pengajaran guru.
-- Kepala: pejabat yang memegang jabatan Kepala Dojo; nama pribadi tidak dikunci sebagai Canon tetap.
+- Kepala: Lin Zhaoyan (NPC-DOJ-002); Kepala Dojo aktif.
 - Struktur: Kepala Dojo → Pengajar → Murid Inti → Murid Dalam → Murid.
 - Rekrutmen: pengamatan kemampuan dan karakter; status murid harus diperoleh melalui peristiwa sah.
 - Agenda: mendidik murid dan menjaga kesinambungan ajaran.
@@ -28,7 +28,7 @@ Canon Admin v1.1. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari
 - ID: DOJ-003
 - Wilayah: jalur pedalaman Cangyuan.
 - Fokus: dasar senjata berat, penguatan tubuh, latihan ketahanan.
-- Kepala: pejabat yang memegang jabatan Kepala Dojo; nama pribadi tidak dikunci sebagai Canon tetap.
+- Kepala: He Tieshan (NPC-DOJ-003); Kepala Dojo aktif.
 - Struktur: Kepala Dojo → Pengajar → Murid Senior → Murid.
 - Rekrutmen: biaya latihan, tes dasar, dan kepatuhan aturan.
 - Agenda: mempertahankan dojo sebagai tempat latihan terbuka bagi praktisi tingkat rendah.
@@ -38,7 +38,7 @@ Canon Admin v1.1. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari
 - ID: DOJ-004
 - Wilayah: Tanah Salju Beiming.
 - Fokus: footwork, bertahan di medan salju, senjata ringan.
-- Kepala: pejabat yang memegang jabatan Kepala Dojo; nama pribadi tidak dikunci sebagai Canon tetap.
+- Kepala: Bei Yucheng (NPC-DOJ-004); Kepala Dojo aktif.
 - Struktur: Kepala Dojo → Instruktur Lapangan → Murid Senior → Murid.
 - Rekrutmen: uji ketahanan, kemampuan bergerak di salju, dasar senjata ringan, dan disiplin.
 - Sikap: keras dan praktis.
@@ -49,7 +49,7 @@ Canon Admin v1.1. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari
 - ID: DOJ-005
 - Wilayah: Gurun Jinyan.
 - Fokus: perjalanan, tombak pendek, pertahanan terhadap perampok dan satwa gurun.
-- Kepala: pejabat yang memegang jabatan Kepala Dojo; nama pribadi tidak dikunci sebagai Canon tetap.
+- Kepala: Luo Shayan (NPC-DOJ-005); Kepala Dojo aktif.
 - Struktur: Kepala Dojo → Instruktur Karavan → Murid Senior → Murid.
 - Rekrutmen: tes daya tahan perjalanan, dasar tombak pendek, orientasi gurun, dan disiplin.
 - Agenda: melindungi jalur permukiman dan karavan lokal.
@@ -59,7 +59,7 @@ Canon Admin v1.1. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari
 - ID: DOJ-006
 - Wilayah: Laut Dongming.
 - Fokus: pertarungan di dek kapal, keseimbangan, dan teknik senjata yang cocok untuk medan basah.
-- Kepala: pejabat yang memegang jabatan Kepala Dojo; nama pribadi tidak dikunci sebagai Canon tetap.
+- Kepala: Hai Longwei (NPC-DOJ-006); Kepala Dojo aktif.
 - Struktur: Kepala Dojo → Instruktur Laut → Murid Senior → Murid.
 - Rekrutmen: uji keseimbangan, renang/ketahanan air, dasar senjata, dan disiplin keselamatan kapal.
 - Agenda: keselamatan pelaut dan murid.
@@ -69,13 +69,13 @@ Canon Admin v1.1. Dojo berfokus pada pendidikan bela diri dan dapat berbeda dari
 - ID: DOJ-007
 - Wilayah: Dataran Cangyuan, Desa Tiedao.
 - Fasilitas Canon: memiliki lapangan uji di Desa Tiedao.
-- Kepala: pejabat yang memegang jabatan Kepala Dojo; nama pribadi tidak dikunci sebagai Canon tetap.
+- Kepala: Qian Tiecheng (NPC-DOJ-007); Kepala Dojo aktif.
 - Struktur: Kepala Dojo → Pengajar → Murid Senior → Murid.
 - Fokus teknik: dasar senjata berat, penguatan tubuh, dan latihan ketahanan fisik.
 - Rekrutmen: ujian fisik, penguasaan dasar senjata berat, dan kepatuhan aturan dojo.
 - Agenda: membina praktisi tingkat rendah melalui latihan fisik dan senjata yang disiplin.
 - Relasi faction: dapat berinteraksi dengan institusi lokal dan faction lain melalui kegiatan latihan atau kontrak yang sah; tidak otomatis menjadi bagian dari faction mana pun.
-- Catatan: NPC bernama, teknik spesifik, realm, bonus, rank, aset, dan modifier hanya menjadi Canon tetap setelah ditetapkan melalui sumber Admin atau database resmi.
+- Catatan: NPC kepala dojo kini ditetapkan sebagai Canon Admin dan disinkronkan ke `lore/NPC_DATABASE.md`.
 
 ## Aturan Operasional
 - Pelajaran bukan jaminan keberhasilan; hasil latihan mengikuti kemampuan, waktu, kondisi, dan risiko.
