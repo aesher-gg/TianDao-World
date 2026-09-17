@@ -9,12 +9,12 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Struktur: Kepala Perguruan → Instruktur Senior → Instruktur → Murid Senior → Murid.
 - Rekrutmen: ujian fisik, dasar senjata, disiplin.
 - Agenda: mempertahankan standar teknik dan kehormatan perguruan.
-- Kepala/NPC spesifik: ???
-- Teknik spesifik: ???
-- Realm/Bonus/Aset: ???
+- Kepala/NPC spesifik: `NOT-ESTABLISHED`
+- Teknik spesifik: `NOT-ESTABLISHED`
+- Realm/Bonus/Aset: `NOT-ESTABLISHED`
 
 ## Relasi
-Keamanan Dinasti: kooperatif. Sekte Pedang Canglan: kompetitif sehat. Relasi lain: ???
+Keamanan Dinasti: kooperatif. Sekte Pedang Canglan: kompetitif sehat. Relasi lain: `NOT-ESTABLISHED`.
 
 ## Rule
 Keanggotaan, promosi, teknik, dan reward memerlukan resolusi sah.
