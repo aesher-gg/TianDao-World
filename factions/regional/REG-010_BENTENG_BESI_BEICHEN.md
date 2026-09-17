@@ -13,7 +13,7 @@ Admin Canon v1.1 — individual organization detail.
 - Akses: gerbang, pos, gudang, dan jalur strategis mengikuti izin keamanan.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
-- NPC utama: Tidak ada komandan bernama yang dikunci; NPC recurring dibuat melalui Module 26.
+- NPC utama: Bei Rong (`NPC-REG-010`) — Komandan Benteng.
 
 ## Relasi
 - Paviliun Salju Putih: kerja sama logistik dan keamanan.
