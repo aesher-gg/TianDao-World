@@ -97,3 +97,7 @@ Crafting lintas turn atau perubahan material/item yang material wajib melewati S
 
 ## Runtime Contract
 `ROUTER → REQUIRED SOURCES → INPUT VALIDATION → COST → PROCESS → RESOLUTION → RESULT VALIDATION → ITEM ORIGIN → STATE/HISTORY → SAVE → WRITE-BACK VERIFY`
+
+
+## DATA COMPLETENESS PRODUCTION GATE
+Recipe, blueprint, procedure, skill, qualification, tool, workspace, cost, quality, dan result hanya boleh berasal dari source yang sah atau mekanisme improvisasi yang secara eksplisit didukung source. Improvisasi yang sekadar membuat crafting berhasil dilarang. Missing required input → RESOLUTION-BLOCKED; unknown non-required field → status resmi.
