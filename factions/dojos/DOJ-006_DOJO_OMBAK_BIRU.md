@@ -10,4 +10,4 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Rekrutmen: keseimbangan, renang/ketahanan air, dasar senjata, keselamatan kapal.
 - Agenda: keselamatan pelaut dan murid.
 - Relasi: jaringan perdagangan/pengawalan laut sesuai kontrak; tidak otomatis berafiliasi.
-- Kepala/NPC/Teknik/Realm/Bonus/Aset: ???
+- Kepala/NPC/Teknik/Realm/Bonus/Aset: `NOT-ESTABLISHED`
