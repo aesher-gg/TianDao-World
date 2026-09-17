@@ -45,11 +45,15 @@ Minimum state:
 - Origin
 
 ## Reward Gate
-`Fixed Canon/Event/Mission → Valid Item/Economy/Technique/Contract → Dynamic Loot → ???`
-Tidak ada reward bebas atau scaling otomatis berdasarkan Realm Character.
+`Fixed Canon/Event/Mission → Valid Item/Economy/Technique/Contract → Dynamic Loot → RESOLUTION-BLOCKED`
+
+`RESOLUTION-BLOCKED` berarti reward belum dapat ditetapkan karena tidak ada source reward yang sah. Tidak ada reward bebas atau scaling otomatis berdasarkan Realm Character.
 
 ## Shared Scope
 Quest/event hanya masuk `ACTIVE_THREADS`, `WORLD_STATE`, atau `STORY_TIMELINE` bila scope memang shared dan fakta sudah terkonfirmasi.
 
 ## Validation & Save
 Setiap perubahan lintas-turn harus melewati Module 26, State Validator, before → after, Origin, Save Pipeline, dan write-back verification. Generated Event/Quest tetap generated meskipun dipersistenkan.
+
+## Data Completeness
+Gunakan `core/07_DATA_COMPLETENESS.md` untuk field yang belum tersedia. Jangan membuat issuer, reward, deadline, target, atau scope baru hanya untuk mengisi schema.
