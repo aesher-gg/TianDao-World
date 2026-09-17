@@ -1,7 +1,7 @@
 # Module 32 — ALCHEMY & PILL REFINEMENT
 
 ## Status
-Admin Canon v1.0
+Admin Canon v1.1
 
 ## Purpose
 Menetapkan pipeline khusus untuk memproses herb/material menjadi Pill atau produk alkimia melalui formula, alchemist qualification, furnace, preparation, refinement, dan validated resolution.
@@ -66,7 +66,7 @@ Quantity mengikuti formula/fixed source bila tersedia. Jika tidak tersedia, quan
 
 ## Effect & Defect
 Efek, potency, duration, side effect, toxicity, atau defect harus memiliki source mekanis yang valid.
-Jika field tersebut belum memiliki source valid, gunakan `NOT-ESTABLISHED` dan jangan menerapkan efek mekanis yang tidak tersumber.
+Jika field tersebut belum memiliki source valid, gunakan `UNRESOLVED` dan jangan menerapkan efek mekanis yang tidak tersumber.
 Tidak boleh mengubah Pill menjadi obat universal atau breakthrough item tanpa Canon/source.
 
 ## Failure
