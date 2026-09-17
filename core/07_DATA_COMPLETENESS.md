@@ -1,10 +1,10 @@
 # 07 — DATA COMPLETENESS & UNRESOLVED STATE
 
 ## Status
-Admin Canon v1.2
+Admin Canon v1.3
 
 ## Purpose
-Menetapkan satu cara resmi untuk merepresentasikan data yang belum diinstansiasi tanpa memakai tanda tanya dan tanpa mengizinkan GM mengarang nilai.
+Menetapkan satu cara resmi untuk merepresentasikan data yang belum diinstansiasi atau belum dapat ditentukan secara sah tanpa memakai tanda tanya dan tanpa mengizinkan GM mengarang nilai.
 
 ## Canonical Status Vocabulary
 Gunakan salah satu status berikut:
@@ -14,20 +14,19 @@ Gunakan salah satu status berikut:
 - `RUNTIME-GENERATED` — nilai dibuat oleh Dynamic Generation yang valid untuk turn tersebut.
 - `NOT-APPLICABLE` — field memang tidak berlaku untuk entity/action tersebut.
 - `NOT-INSTANTIATED` — entity/field belum dibuat atau belum memiliki record runtime.
-- `NOT-ESTABLISHED` — field relevan tetapi belum ditetapkan oleh Canon, State, atau resolusi valid.
-- `UNRESOLVED` — data belum dapat ditentukan secara sah pada saat evaluasi dan belum memenuhi kondisi untuk menjadi fakta.
+- `UNRESOLVED` — data belum dapat ditentukan secara sah pada saat evaluasi atau belum memiliki sumber yang cukup.
 - `RESOLUTION-BLOCKED` — hasil mekanis belum boleh ditetapkan karena input/validasi wajib belum terpenuhi.
 
 ## Hard Rule
 - Legacy unknown marker tidak digunakan lagi di repository Canon/runtime.
 - `UNRESOLVED` adalah status umum untuk data yang belum dapat ditentukan secara sah; gunakan status yang lebih spesifik bila kondisinya jelas.
-- Menggunakan `UNRESOLVED` atau `NOT-ESTABLISHED` tidak berarti GM boleh mengarang nilai.
-- Jika nilai diperlukan untuk resolusi dan statusnya `NOT-ESTABLISHED` atau `UNRESOLVED`, gunakan rule fallback resmi bila tersedia; jika tidak tersedia, status resolusi menjadi `RESOLUTION-BLOCKED`.
-- `NOT-INSTANTIATED` berbeda dari `NOT-ESTABLISHED`: yang pertama berarti record/entity belum dibuat; yang kedua berarti field pada entity yang sudah ada belum memiliki nilai Canon/state.
+- Menggunakan `UNRESOLVED` tidak berarti GM boleh mengarang nilai.
+- Jika nilai diperlukan untuk resolusi dan statusnya `UNRESOLVED`, gunakan rule fallback resmi bila tersedia; jika tidak tersedia, status resolusi menjadi `RESOLUTION-BLOCKED`.
+- `NOT-INSTANTIATED` berbeda dari `UNRESOLVED`: yang pertama berarti record/entity belum dibuat; yang kedua berarti data belum dapat ditentukan secara sah.
 
 ## Runtime Resolution
 Prioritas:
-`Canon/Admin → Fixed Source → Verified Current State → Valid Runtime Generation → NOT-ESTABLISHED/UNRESOLVED`
+`Canon/Admin → Fixed Source → Verified Current State → Valid Runtime Generation → UNRESOLVED`
 
 Jika sebuah field wajib untuk formula tetapi belum tersedia:
 `Required Input Missing → RESOLUTION-BLOCKED`
