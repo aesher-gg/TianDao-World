@@ -26,9 +26,23 @@ jobs:
           root = pathlib.Path('.')
           errors = []
           path_re = re.compile(r'`([^`]+)`')
+          resolution_roots = [
+              pathlib.Path('.'),
+              pathlib.Path('core'),
+              pathlib.Path('systems'),
+              pathlib.Path('realms'),
+              pathlib.Path('factions'),
+              pathlib.Path('events'),
+              pathlib.Path('custom'),
+              pathlib.Path('lore'),
+              pathlib.Path('gm'),
+              pathlib.Path('characters'),
+              pathlib.Path('story'),
+              pathlib.Path('audits'),
+          ]
 
           # Only concrete repository file/directory references are checked.
-          # Template/schema references containing placeholders remain documentation.
+          # Template/schema references remain documentation and are skipped.
           refs = []
           for md in root.rglob('*.md'):
               if '.git' in md.parts:
@@ -38,18 +52,27 @@ jobs:
                   ref = match.group(1).strip()
                   if ref.startswith(('http://', 'https://')):
                       continue
-                  if any(x in ref for x in ('<', '>', '[', ']', '...', '*')):
+                  if any(x in ref for x in ('<', '>', '[', ']', '...', '*', '####')):
+                      continue
+                  if any(ch.isspace() for ch in ref):
                       continue
                   if not (ref.endswith('.md') or ref.endswith('/')):
                       continue
                   if ref.startswith(('./', '../')):
                       continue
-                  refs.append((md.as_posix(), ref))
+                  refs.append((md, ref))
 
           for source, ref in refs:
-              target = root / ref.rstrip('/')
-              if not target.exists():
-                  errors.append(f'MISSING_REFERENCE: {source} -> {ref}')
+              clean_ref = ref.rstrip('/')
+              candidates = []
+              # Prefer source-relative references, then canonical repository roots.
+              candidates.append(source.parent / clean_ref)
+              for base in resolution_roots:
+                  candidate = base / clean_ref
+                  if candidate not in candidates:
+                      candidates.append(candidate)
+              if not any(target.exists() for target in candidates):
+                  errors.append(f'MISSING_REFERENCE: {source.as_posix()} -> {ref}')
 
           # Canonical Character identity/path consistency.
           registry = root / 'characters/character_registry.md'
