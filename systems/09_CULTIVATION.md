@@ -85,12 +85,12 @@ Law: <Cultivation Law>
 Source Type: <type>
 Source: <specific source>
 Acquisition Method: <method>
-Requirements: <requirements / NOT-ESTABLISHED>
+Requirements: <requirements / UNRESOLVED>
 Training/Insight Process: <process / NOT-APPLICABLE>
-World Time: <time / NOT-ESTABLISHED>
+World Time: <time / UNRESOLVED>
 Resolution: <result>
 Status: <status>
-Origin Reference: <reference / NOT-ESTABLISHED>
+Origin Reference: <reference / UNRESOLVED>
 ```
 
 Law dapat berasal dari guru, manual, faction, event, item, inheritance, self-insight, atau sumber Official/Custom **hanya jika mekanisme sumber tersebut benar-benar tersedia dan tervalidasi**. Mengetahui atau menemukan sebuah nama Law tidak sama dengan berhasil memperolehnya.
@@ -143,7 +143,7 @@ Aksi yang memperoleh atau mengubah Law wajib mengikuti:
 
 Tanpa Law Origin yang tervalidasi, Law baru tidak boleh dipasang sebagai `ACTIVE`.
 
-Gunakan `core/07_DATA_COMPLETENESS.md` untuk field Law Origin yang belum tersedia. `NOT-ESTABLISHED` berarti belum ada sumber sah; `RESOLUTION-BLOCKED` berarti proses tidak boleh dilanjutkan karena field wajib belum tersedia.
+Gunakan `core/07_DATA_COMPLETENESS.md` untuk field Law Origin yang belum tersedia. `UNRESOLVED` berarti belum ada sumber sah; `RESOLUTION-BLOCKED` berarti proses tidak boleh dilanjutkan karena field wajib belum tersedia.
 
 ## 9. Integrasi
 QiCap menjadi input untuk HP, AttackPower, PassiveDefense, resource combat, dan evaluasi kemampuan untuk Realm yang memiliki QiCap standar. Realm juga memengaruhi interaksi, encounter, dan hit chance.
