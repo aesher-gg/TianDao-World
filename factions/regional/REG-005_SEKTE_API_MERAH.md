@@ -13,7 +13,7 @@ Admin Canon v1.1 — individual organization detail.
 - Akses: sumber panas bumi dikendalikan melalui izin, pekerjaan, kontrak, atau membership yang sah.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
-- NPC utama: Tidak ada NPC pemimpin bernama yang dikunci; NPC recurring mengikuti Module 26.
+- NPC utama: Huo Zheng (`NPC-REG-005`) — Kepala Sekte.
 
 ## Relasi
 - Istana Yaohuang: pragmatis.
