@@ -74,7 +74,7 @@ Law Origin yang tervalidasi harus mencatat, sejauh relevan:
 - `Training/Insight Process` — proses belajar/pemahaman bila relevan;
 - `World Time` — waktu resolusi;
 - `Resolution` — hasil proses;
-- `Status` — `VALIDATED & ACTIVE`, `VALIDATED & INACTIVE`, `PENDING VALIDATION`, `REJECTED`, atau `???`;
+- `Status` — `VALIDATED & ACTIVE`, `VALIDATED & INACTIVE`, `PENDING VALIDATION`, atau `REJECTED`;
 - `Origin Reference` — rujukan ke Character History, Event, Item, Faction, atau sumber Canon/Admin.
 
 Format operasional:
@@ -85,12 +85,12 @@ Law: <Cultivation Law>
 Source Type: <type>
 Source: <specific source>
 Acquisition Method: <method>
-Requirements: <requirements / ???>
-Training/Insight Process: <process / N/A>
-World Time: <time / ???>
+Requirements: <requirements / NOT-ESTABLISHED>
+Training/Insight Process: <process / NOT-APPLICABLE>
+World Time: <time / NOT-ESTABLISHED>
 Resolution: <result>
 Status: <status>
-Origin Reference: <reference / ???>
+Origin Reference: <reference / NOT-ESTABLISHED>
 ```
 
 Law dapat berasal dari guru, manual, faction, event, item, inheritance, self-insight, atau sumber Official/Custom **hanya jika mekanisme sumber tersebut benar-benar tersedia dan tervalidasi**. Mengetahui atau menemukan sebuah nama Law tidak sama dengan berhasil memperolehnya.
@@ -143,7 +143,7 @@ Aksi yang memperoleh atau mengubah Law wajib mengikuti:
 
 Tanpa Law Origin yang tervalidasi, Law baru tidak boleh dipasang sebagai `ACTIVE`.
 
-`???` berarti data mekanis memang belum diketahui/tersedia; jangan ditebak. Jika sumber Canon/Admin atau riwayat valid sudah menentukan asal Law, runtime wajib menggunakannya.
+Gunakan `core/07_DATA_COMPLETENESS.md` untuk field Law Origin yang belum tersedia. `NOT-ESTABLISHED` berarti belum ada sumber sah; `RESOLUTION-BLOCKED` berarti proses tidak boleh dilanjutkan karena field wajib belum tersedia.
 
 ## 9. Integrasi
 QiCap menjadi input untuk HP, AttackPower, PassiveDefense, resource combat, dan evaluasi kemampuan untuk Realm yang memiliki QiCap standar. Realm juga memengaruhi interaksi, encounter, dan hit chance.
