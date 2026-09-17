@@ -92,7 +92,7 @@ Current state, history, ownership, membership, quest lifecycle, event lifecycle,
 **Keputusan:** `NOT-INSTANTIATED`, `UNRESOLVED`, atau status persistence lain yang sesuai.
 
 ### C. Placeholder / completeness audit
-- Legacy `???` tidak ditemukan sebagai data aktif pada repository search.
+- Marker unknown legacy tidak ditemukan sebagai data aktif pada repository search.
 - `XXXX` yang ditemukan berada pada format/template kalender, bukan Current World State aktif.
 - `UNRESOLVED` yang ditemukan pada module/rule/template tetap memiliki fungsi completeness/fallback yang sah.
 - Tidak ditemukan kandidat baru yang jelas memenuhi seluruh kriteria **STATIC CANON GAP** setelah source tracing pada audit ini.
