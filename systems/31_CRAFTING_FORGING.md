@@ -20,7 +20,7 @@ Memiliki salah satu tidak otomatis memberikan yang lain. Player intent bukan buk
 ## Source Priority
 `Canon/Admin → Fixed Recipe/Technique/Item Source → Current State → Valid Material Origin → Valid Crafter Skill/Knowledge → Tool/Workspace → Runtime Resolution`
 
-Jika input wajib tidak diketahui dan tidak memiliki fallback resmi, gunakan `???` atau tahan proses.
+Jika input wajib tidak diketahui dan tidak memiliki fallback resmi, gunakan `UNRESOLVED` atau tahan proses. Jika input tersebut wajib untuk resolusi, status hasil menjadi `RESOLUTION-BLOCKED`.
 
 ## Required Inputs
 1. Material yang sah dan cukup.
