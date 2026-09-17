@@ -289,3 +289,60 @@ Belum ditetapkan angka bonus, probabilitas, stat multiplier, material-to-effect 
 All six modified files were fetched again from `main` after write and confirmed to contain the Dynamic Refinement contract/gates. Latest repository HEAD after this integration: `01d2df797b7a8d5954beea2dbfad05f685752e2d`.
 
 Previous finding **🟡 Dynamic Refinement Bridge belum eksplisit** is therefore **CLOSED as an integration gap**. The remaining work is a separate mechanics-design phase only if Admin wants concrete material properties, compatibility matrices, bounds, and outcome formulas.
+
+
+## 🟡 MECHANICS DESIGN — MATERIAL REFINEMENT PROPERTY SCHEMA
+
+### Finding
+Dynamic Refinement now has an explicit integration bridge, but the material-side contract still lacked a formal schema defining **which material data may legitimately participate in refinement**.
+
+### Admin Resolution
+Established **Module 14 §4A — MATERIAL REFINEMENT PROPERTY SCHEMA** as the data contract for refinement-relevant material properties.
+
+Canonical data boundary:
+`Material Identity → Refinement Property Schema → Module 34 Compatibility/Method → Module 25 Bounded Runtime Resolution`
+
+### Schema Established
+The schema now requires/recognizes:
+- `MATERIAL_ID`
+- `MATERIAL_ORIGIN`
+- `MATERIAL_QUANTITY`
+- `REFINEMENT_PROPERTIES`
+- `APPLICABLE_DIMENSIONS`
+- `COMPATIBILITY_TAGS`
+- `QUALITY_OR_GRADE` when explicitly sourced
+- `BOUND_SOURCE` when required
+- `CONSUMPTION_RULE` when required
+- `PROPERTY_STATUS`
+- `PROPERTY_SOURCE`
+
+Each refinement property record uses:
+`PROPERTY_ID / PROPERTY_NAME / VALUE_OR_RANGE / UNIT_IF_APPLICABLE / APPLICABLE_ITEM_CATEGORY / SOURCE / STATUS`
+
+### Anti-Inference Boundary
+The schema does **not** infer refinement effects from material name, rarity, price, grade, appearance, origin location, Character Realm, narrative plausibility, or prior refinement history.
+
+No material automatically grants attack/defense bonus, durability increase, quality/grade/tier increase, affinity, ability/effect, bloodline, breakthrough, or success probability.
+
+### Missing-Source Gate
+If a required refinement property is absent from the material source:
+- property status → `UNRESOLVED`;
+- mechanical resolution → `RESOLUTION-BLOCKED` when that property is required.
+
+Qwen must not fill the missing property through memory, Player request, or plausibility.
+
+### Integration
+- Module 14 now owns the material property schema and item/material identity boundary.
+- Module 34 explicitly consumes the schema for compatibility/method validation.
+- Module 25 explicitly requires conformity to Module 14 §4A before dynamic bounded resolution.
+- No concrete material effect table, compatibility matrix, bonus, multiplier, probability, or numeric refinement result was added.
+
+### Verification
+The three affected modules were fetched again from `main` after write and confirmed:
+- `systems/14_ITEMS.md` — blob SHA `40a51f540c7d7300e9b9c4f48619d38725817256`
+- `systems/34_ARTIFACT_WEAPON_REFINEMENT.md` — blob SHA `6f9fb5acfdf6d5ef98d26c99f364faf95d2b8142`
+- `systems/25_DYNAMIC_GENERATION.md` — blob SHA `a41e7c5dafba53f7f5e4c990a3b5db36eae2ee54`
+
+Status: **🟢 Material Refinement Property Schema — ESTABLISHED.**
+
+Next mechanics-design dependency remains **🟡 Refinement Method Schema**, because the material schema defines what source data may exist, while the method schema must define how those properties are legally consumed, bounded, and resolved.
