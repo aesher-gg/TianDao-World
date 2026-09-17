@@ -80,8 +80,8 @@ Status ini **bukan klaim bahwa setiap byte di seluruh repository telah melalui l
 ## FINAL TARGET
 Target Admin Canon:
 1. Tidak ada legacy unknown marker di active Canon/runtime.
-2. Tidak ada `XXXX`, `XX/100`, atau placeholder ambigu yang dapat disalahartikan sebagai nilai runtime.
+2. Tidak ada pola placeholder generik yang dapat disalahartikan sebagai nilai runtime.
 3. Semua unknown menggunakan status data resmi.
 4. Semua persistent entity memiliki ID/state/history/origin yang konsisten.
 5. Pipeline runtime dan save tidak memiliki silent fallback.
-6. CI lint direkomendasikan untuk menolak legacy unknown marker dan placeholder ambigu pada active Canon/runtime.
+6. CI lint menolak legacy unknown marker dan pola placeholder generik pada active Canon/runtime.
