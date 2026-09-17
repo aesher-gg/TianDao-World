@@ -8,12 +8,12 @@ Admin Canon v1.1 — individual organization detail.
 - Wilayah: Tanah Salju Beiming
 - Canon: Memiliki kepentingan atas tradisi dan sumber daya spiritual wilayah dingin.
 - Agenda: Mempertahankan tradisi kultivasi dan kepentingan atas sumber daya spiritual wilayah dingin.
-- Struktur internal: Pemimpin Sekte → Tetua Salju → Pengelola Jalur/Sumber Daya → Murid Senior → Murid.
+- Struktur internal: Kepala Sekte → Tetua Salju → Pengelola Jalur/Sumber Daya → Murid Senior → Murid.
 - Rekrutmen: ketahanan dingin, disiplin, kemampuan kultivasi, dan penerimaan sekte.
 - Akses: fasilitas internal dan sumber daya spiritual memerlukan status/izin.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
-- NPC utama: Tidak ada pemimpin bernama yang dikunci; NPC recurring dibuat melalui Module 26.
+- NPC utama: Xuan Yifei (`NPC-REG-009`) — Kepala Sekte.
 
 ## Relasi
 - Benteng Besi Beichen: keamanan wilayah.
