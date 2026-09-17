@@ -19,7 +19,7 @@ Jika NPC, event, atau quest relevan, setelah fresh `INDEX.md` berhasil:
 - Tentukan role, aktivitas, agenda, temperament, pengetahuan, faction/organization bila ada dasar, dan sikap terhadap Character.
 - NPC tidak boleh mengetahui fakta di luar pengalaman/aksesnya.
 - NPC boleh menolak, berbohong, salah memahami, meminta bayaran, takut, berubah sikap, membantu, gagal, pergi, atau bertindak sendiri bila konsisten.
-- Realm/Stage NPC tidak boleh ditebak. Jika tidak memiliki dasar yang sah → `NOT-ESTABLISHED`.
+- Realm/Stage NPC tidak boleh ditebak. Jika tidak memiliki dasar yang sah → `UNRESOLVED`.
 - NPC persistent harus memiliki NPC_ID stabil (`NPC-####`) dan state/history sesuai Module 26.
 
 ## 3. Event Resolution
