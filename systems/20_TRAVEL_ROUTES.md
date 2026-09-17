@@ -41,8 +41,8 @@ Baseline berikut adalah **kecepatan perjalanan standar** pada kondisi normal, sa
 - Baseline di atas bukan jaminan durasi rute; hambatan yang benar-benar terjadi tetap dihitung.
 - Jangan membuat multiplier, bonus persen, penalti persen, atau kecepatan baru untuk medan/cuaca/beban/cedera tanpa sumber Canon/Admin yang menetapkannya.
 - Jika sarana khusus, tunggangan khusus, teknik kultivasi, artefak transportasi, atau efek lain memiliki kecepatan resmi, gunakan nilai resmi tersebut dan jangan memakai baseline generik di atas.
-- Metode kultivasi/gerakan khusus **tidak memiliki baseline generik**. Jika tidak ada nilai kecepatan resmi, status kecepatan adalah `UNRESOLVED` dan durasi tidak boleh dihitung dengan angka tebakan.
-- Jika jenis sarana tidak diketahui, jangan mengasumsikan jalan kaki; gunakan `UNRESOLVED` sampai sarana ditentukan.
+- Metode kultivasi/gerakan khusus tidak memiliki baseline generik. Jika belum memiliki nilai resmi, durasi harus ditahan sampai metode/sarana dengan kecepatan resmi tersedia.
+- Jika jenis sarana tidak diketahui, jangan mengasumsikan jalan kaki; sarana harus ditentukan sebelum durasi numerik dihitung.
 - Jika suatu modifier disebutkan tetapi tidak memiliki nilai numerik resmi, modifier tersebut tidak boleh dikonversi menjadi angka oleh GM.
 
 ## Kategori Jarak
@@ -102,15 +102,32 @@ Baseline berikut adalah **kecepatan perjalanan standar** pada kondisi normal, sa
 | Laut Pasir Wuheng ↔ Makam Tianri | 236 Li | gurun/ekspedisi |
 
 ## Rute — Jantung Tianyuan
-Kota Tianjing, Kota Baiyu dan Desa Minghe tercatat sebagai pusat dunia, tetapi jarak antarlokasi belum diberi baseline rute dalam modul Canon. GM wajib memperlakukan jaraknya sebagai **UNRESOLVED**, bukan mengarang angka.
+| Rute | Jarak baseline | Medan |
+|---|---:|---|
+| Kota Tianjing ↔ Kota Baiyu | 84 Li | jalan administrasi/akademi |
+| Kota Baiyu ↔ Desa Minghe | 66 Li | jalan agrikultur |
+| Kota Tianjing ↔ Desa Minghe | 120 Li | jalan administrasi/agrikultur |
 
-## Rute Antarkawasan
-Hubungan antarkawasan diakui oleh World Map, tetapi baseline jarak dan koridor lengkap belum ditetapkan dalam registry ini. Sampai Admin menetapkannya, GM tidak boleh membuat angka jarak atau shortcut antarkawasan. Status data adalah `UNRESOLVED`.
+Jarak di atas adalah baseline rute Canon untuk perjalanan normal. Rute cabang tetap mengikuti kondisi aktual dan tidak boleh dianggap sebagai garis lurus.
+
+## Koridor Antarkawasan — Baseline Canon
+Koridor berikut menetapkan **rute utama**, bukan jarak garis lurus. Setiap koridor harus memakai titik jangkar yang disebut dan sarana yang sesuai.
+
+| Koridor utama | Jarak baseline | Sarana/medan utama |
+|---|---:|---|
+| Kota Yunjing ↔ Kota Tianjing | 1.180 Li | jalan dagang/administrasi |
+| Kota Yunjing ↔ Kota Lingshan | 420 Li | jalan darat/kaki gunung |
+| Kota Yunjing ↔ Kota Nanyao | 1.860 Li | jalan dagang/perbatasan |
+| Kota Yunjing ↔ Kota Haicheng | 1.740 Li | jalan dagang + pelabuhan |
+| Kota Yunjing ↔ Kota Beixue | 2.420 Li | jalan dagang/benteng |
+| Kota Yunjing ↔ Kota Jinyang | 2.060 Li | jalur dagang/kafilah |
+
+Koridor di atas menjadi anchor rute dunia. Cabang atau rute alternatif tetap membutuhkan pencatatan Admin sebelum menjadi baseline baru.
 
 ## Perhitungan Waktu
 `Waktu perjalanan = jarak rute / kecepatan efektif + hambatan.`
 
-Kecepatan efektif harus berasal dari baseline resmi di atas atau sumber sarana/metode yang sah. Hambatan hanya boleh diberi nilai numerik bila sumber Canon/Admin menetapkan nilainya. Hambatan yang belum memiliki nilai numerik tidak boleh diubah menjadi angka oleh GM; resolusi harus tetap kualitatif atau menggunakan `UNRESOLVED` sampai ada data sah.
+Kecepatan efektif harus berasal dari baseline resmi di atas atau sumber sarana/metode yang sah. Hambatan hanya boleh diberi nilai numerik bila sumber Canon/Admin menetapkan nilainya. Hambatan kualitatif tetap diterapkan sebagai konsekuensi tanpa dikonversi menjadi angka tersembunyi.
 
 ## Checkpoint
 Setiap perjalanan yang melewati 3 jam aksi harus memiliki checkpoint state: waktu, lokasi, jarak tersisa, kondisi, stamina, suplai, cuaca dan kejadian. Tidak boleh ada time skip tersembunyi.
