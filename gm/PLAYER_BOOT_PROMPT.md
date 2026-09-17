@@ -143,3 +143,7 @@ Jika INDEX atau modul REQUIRED gagal di-fetch/dibuka, jangan mengarang atau memu
 - Placeholder waktu [ditentukan GM] berarti resolusi runtime yang wajib mengikuti lore/CALENDAR.md dan konteks awal yang sah, bukan izin memilih nilai arbitrer.
 - Jika komponen waktu wajib tidak dapat ditentukan secara sah, gunakan status kelengkapan resmi; jangan memakai system date atau tebakan.
 - Field Character yang belum memiliki source tidak boleh diisi hanya agar template terlihat lengkap.
+
+
+## DATA COMPLETENESS BOOT GATE
+Boot hanya boleh menetapkan data yang bersumber dari Canon, Character State, atau aturan runtime yang sah. Placeholder waktu [ditentukan GM] berarti resolusi runtime yang wajib mengikuti lore/CALENDAR.md dan konteks awal yang sah, bukan izin memilih nilai arbitrer. Jika komponen wajib tidak dapat ditentukan secara sah, gunakan status kelengkapan resmi; jangan memakai system date atau tebakan.
