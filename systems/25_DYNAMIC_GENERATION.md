@@ -169,7 +169,7 @@ Dynamic Refinement hanya boleh berjalan bila input material berikut tersedia dan
 1. Existing Item ID dan Current Item State.
 2. Material ID, quantity, dan valid Origin.
 3. Material properties yang **secara eksplisit** relevan terhadap refinement.
-4. Refinement Method/Procedure dengan source.
+4. Refinement Method/Procedure dengan source dan Method Record yang lolos Module 34 §11A Refinement Method Schema.
 5. Compatibility rule atau method-defined compatibility.
 6. Refiner qualification bila diwajibkan.
 7. Tool/workspace bila diwajibkan.
