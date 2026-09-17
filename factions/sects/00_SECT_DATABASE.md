@@ -17,7 +17,7 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 - Kewajiban: latihan, kontribusi sumber daya, mematuhi hukum sekte.
 - Agenda: menjaga reputasi dan jalur latihan pedang.
 - Relasi: Dinasti Tianyuan kooperatif terbatas; Perguruan Tombak Feiyun kompetitif; Paviliun Seribu Daun transaksional.
-- NPC utama: ??? (identitas tidak dibuka dalam data publik).
+- NPC utama: `NOT-ESTABLISHED` (identitas tidak dibuka dalam data publik).
 - Hook sah: ujian murid, sengketa kehormatan, pengawalan, pertukaran teknik.
 
 ## 2. Paviliun Teratai Qinglan
