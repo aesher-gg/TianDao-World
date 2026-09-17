@@ -51,7 +51,7 @@ Bootstrap karakter baru/sesi baru juga mengikuti `gm/PLAYER_BOOT_PROMPT.md` dan 
 | Crafting/Forging/Smithing | `systems/31_CRAFTING_FORGING.md` | Items/Economy/Techniques/Material source |
 | Alchemy/Pill | `systems/32_ALCHEMY_PILLS.md` | Items/Techniques/Economy/Material source |
 | Formation/Array | `systems/33_FORMATION_ARRAYS.md` | Items/Cultivation/Combat/Region/Event |
-| Artifact/Weapon Refinement | `systems/34_ARTIFACT_WEAPON_REFINEMENT.md` | Items/Techniques/Economy/Crafting/Alchemy |
+| Artifact/Weapon Refinement | `systems/34_ARTIFACT_WEAPON_REFINEMENT.md`, `systems/25_DYNAMIC_GENERATION.md` | Items/Techniques/Economy/Crafting/Alchemy; Module 25 wajib bila hasil refinement ditentukan secara dynamic |
 
 ## 4. Production Module Routing
 ### Crafting / Forging
@@ -71,8 +71,9 @@ Use Module 34 when an **existing item** is modified through repair/refinement/te
 `Alchemy Product → Module 32`
 `Formation/Array Structure → Module 33`
 `Existing Item Modification → Module 34`
+`Dynamic Refinement Result → Module 25, only after Module 34 establishes the allowed process/bounds`
 
-When an action crosses modules, all affected REQUIRED modules must be fetched. Example: refining an existing weapon with an alchemical material may require Modules 34 + 32 + 14, while a Formation using a newly crafted Array Core may require Modules 31 + 33 + 14.
+When an action crosses modules, all affected REQUIRED modules must be fetched. Example: refining an existing weapon with an alchemical material may require Modules 34 + 25 + 32 + 14; fixed-result refinement may remain 34 + 14 if no dynamic resolution is required. A Formation using a newly crafted Array Core may require Modules 31 + 33 + 14.
 
 ## 5. Individual Organization Resolution
 TianDao-World mendukung dua lapisan data faction:
