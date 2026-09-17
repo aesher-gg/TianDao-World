@@ -100,3 +100,30 @@ Karena refinement mengubah existing Item State, setiap hasil material wajib mela
 
 ## DATA COMPLETENESS REFINEMENT GATE
 Existing Item, refinement method, qualification, material, tool, cost, quality/property change, dan failure result wajib memiliki source sah. Jangan mengarang peningkatan property/grade/tier. Missing required method/input → RESOLUTION-BLOCKED; unknown non-required field → status resmi.
+
+
+## 11. DYNAMIC REFINEMENT INTERFACE
+Untuk refinement yang hasil konkretnya tidak fixed tetapi tetap dibatasi Canon, Module 34 menyediakan process contract kepada Module 25.
+
+### Source Contract
+Method wajib mendefinisikan, atau merujuk secara eksplisit ke source yang mendefinisikan:
+- property dimension yang boleh berubah;
+- compatibility dengan material/item;
+- bound/ceiling perubahan;
+- qualification;
+- tool/workspace;
+- cost/time;
+- material consumption;
+- success/partial/failure mechanism.
+
+Jika contract tersebut tidak lengkap untuk required resolution, status menjadi `RESOLUTION-BLOCKED`. Module 34 tidak boleh meminta Module 25 untuk mengarang nilai yang hilang.
+
+### Resolver Boundary
+- Module 34: validasi existing item + method + qualification + process permission.
+- Module 25: memilih concrete runtime result di dalam bounds yang sah.
+- Module 14: authoritative Item State.
+- State Validator: validates before/after and provenance.
+- Save Pipeline: persists the complete transaction.
+
+### Explicit Prohibition
+Material rarity, nama, market value, Character Realm, atau narrative plausibility tidak boleh dipakai sebagai implicit refinement effect.
