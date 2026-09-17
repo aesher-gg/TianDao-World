@@ -16,8 +16,8 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 - Rekrutmen: bakat diuji; rekomendasi dan ujian tetap diperlukan.
 - Kewajiban: latihan, kontribusi sumber daya, mematuhi hukum sekte.
 - Agenda: menjaga reputasi dan jalur latihan pedang.
+- Kepala Sekte: **Shen Yue** (`NPC-SEC-001`).
 - Relasi: Dinasti Tianyuan kooperatif terbatas; Perguruan Tombak Feiyun kompetitif; Paviliun Seribu Daun transaksional.
-- NPC utama: jabatan Kepala Sekte dan tetua yang sedang bertugas; tidak ada nama pribadi yang dikunci sebagai Canon tetap.
 - Hook sah: ujian murid, sengketa kehormatan, pengawalan, pertukaran teknik.
 
 ## 2. Paviliun Teratai Qinglan
@@ -28,6 +28,7 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 - Hierarki: Master Paviliun → Tetua → Pengajar → Murid Inti → Murid Luar.
 - Rekrutmen: menilai karakter, kemampuan dasar, dan kecocokan jalur kultivasi.
 - Agenda: menjaga sumber herbal dan tradisi pengobatan.
+- Master Paviliun: **Qing Lan** (`NPC-SEC-002`).
 - Relasi: netral terhadap Dinasti; selektif terhadap organisasi dagang.
 - Hook sah: pencarian herbal, ujian disiplin, sengketa sumber air pegunungan.
 
@@ -39,6 +40,7 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 - Hierarki: Kepala Aula → Pengawas → Master Segel → Murid/Asisten.
 - Rekrutmen: kemampuan teknis dan kepatuhan prosedural.
 - Agenda: mencegah penyalahgunaan teknik segel.
+- Kepala Aula: **Tian Hezhang** (`NPC-SEC-003`).
 - Relasi: dekat dengan institusi imperial, tetapi tetap memiliki aturan internal.
 - Hook sah: verifikasi segel, perbaikan formasi, audit artefak.
 
@@ -49,6 +51,7 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 - Sikap: disiplin dan mandiri.
 - Hierarki: Kepala Sekte → Tetua → Penjaga Kuil → Murid.
 - Agenda: menjaga sumber air dan jalur ziarah gurun.
+- Kepala Sekte: **Jin Ruyang** (`NPC-SEC-004`).
 - Relasi: organisasi dagang diterima bila mematuhi aturan air; kelompok kriminal ditolak.
 
 ## 5. Istana Ombak Timur
@@ -57,6 +60,7 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 - Spesialisasi: teknik air, navigasi spiritual, dan pertahanan pelabuhan.
 - Sikap: protektif terhadap wilayah laut.
 - Agenda: mengamankan rute kapal dan sumber daya laut.
+- Kepala Istana: **Dong Haoran** (`NPC-SEC-005`).
 - Relasi: pedagang diterima melalui kontrak; perompak dan kriminal menjadi target hukum lokal.
 
 ## 6. Istana Salju Beiming
@@ -65,6 +69,7 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 - Spesialisasi: ketahanan dingin, pedang salju, meditasi sunyi.
 - Sikap: tertutup.
 - Agenda: menjaga wilayah inti dari eksploitasi eksternal.
+- Kepala Istana: **Bei Xuelan** (`NPC-SEC-006`).
 - Rekrutmen: sangat selektif; tamu tidak otomatis menjadi murid.
 
 ## Aturan Sekte
@@ -73,4 +78,4 @@ Setiap sekte memiliki wilayah pengaruh, tujuan, hierarki, syarat masuk, kewajiba
 3. Rank faction tidak mengubah QiCap/HP/AttackPower tanpa modifier resmi.
 4. Konflik antar-sekte tidak otomatis menjadi perang besar; event skala besar harus Canon/Admin.
 5. NPC sekte memiliki agenda sendiri dan dapat menolak player.
-6. Jabatan tanpa nama pribadi tetap merupakan titik kontak organisasi yang sah; NPC bernama baru menjadi Canon setelah dibuat dan disimpan sebagai source Admin/persistence yang valid.
+6. Jabatan yang sudah memiliki identitas di registry ini harus merujuk ke NPC Canon yang sama di `lore/NPC_DATABASE.md`; nama baru tidak boleh dibuat untuk menggantikan identitas tersebut tanpa perubahan Canon resmi.
