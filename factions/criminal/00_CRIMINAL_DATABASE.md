@@ -35,7 +35,13 @@ Canon Admin. Kelompok kriminal beroperasi berdasarkan kepentingan, sumber daya, 
 - ID: CRI-005
 - Wilayah: jaringan kota, lokasi inti tidak diumumkan.
 - Aktivitas: pencurian terorganisir dan pekerjaan kriminal berbayar.
-- Status pimpinan: `UNRESOLVED`
+- Pemimpin: **Shen Kuang**
+- Peran pemimpin: Koordinator jaringan dan pengendali kontrak bernilai tinggi.
+- Sifat: dingin, kalkulatif, menghindari konflik terbuka yang tidak menguntungkan.
+- Agenda: mempertahankan jaringan, keuntungan, dan kerahasiaan struktur internal.
+- Pengetahuan: mengetahui operasi dan handler dalam lingkup kewenangannya; tidak otomatis mengetahui identitas setiap operator lokal.
+- Status: `CANON-ESTABLISHED`
+- Sumber Canon: Admin Canon, ditetapkan pada 1200 Era Kebangkitan.
 - Aturan: loyalitas dibayar, tetapi pengkhianatan memiliki konsekuensi.
 
 ## Aturan GM
@@ -44,4 +50,4 @@ Canon Admin. Kelompok kriminal beroperasi berdasarkan kepentingan, sumber daya, 
 - Kejahatan memiliki konsekuensi hukum, reputasi, dan relasi.
 - Tidak semua kriminal memiliki kemampuan tempur tinggi.
 - Perang antar jaringan kriminal adalah event besar dan membutuhkan dasar Canon/Admin.
-- Identitas pimpinan yang berstatus `UNRESOLVED` tidak boleh ditebak atau diperlakukan sebagai fakta.
+- Identitas kriminal yang belum ditetapkan tetap mengikuti status Data Completeness dan discovery in-character.
