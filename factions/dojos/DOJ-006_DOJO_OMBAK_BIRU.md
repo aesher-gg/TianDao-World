@@ -10,7 +10,7 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Rekrutmen: keseimbangan, renang/ketahanan air, dasar senjata, keselamatan kapal.
 - Agenda: keselamatan pelaut dan murid.
 - Relasi: jaringan perdagangan/pengawalan laut sesuai kontrak; tidak otomatis berafiliasi. Tidak ada aliansi permanen lain yang dikunci.
-- Kepala: jabatan Kepala Dojo aktif; tidak ada NPC bernama yang menjadi Canon tetap.
+- Kepala: Hai Longwei (`NPC-DOJ-006`); Kepala Dojo aktif.
 - Teknik spesifik: tidak ada teknik eksklusif yang dikunci sebagai Canon; pengajaran memakai teknik keseimbangan, senjata, dan pertempuran laut yang sah dari database teknik.
 - Realm/Bonus: tidak ada bonus atau kenaikan Realm otomatis dari keanggotaan; kemampuan laut diperoleh melalui latihan dan resolusi.
 - Aset: dek latihan, kolam latihan air, perahu latihan, senjata latihan tahan air, dan perlengkapan keselamatan kapal.
