@@ -118,6 +118,23 @@ Method wajib mendefinisikan, atau merujuk secara eksplisit ke source yang mendef
 
 Jika contract tersebut tidak lengkap untuk required resolution, status menjadi `RESOLUTION-BLOCKED`. Module 34 tidak boleh meminta Module 25 untuk mengarang nilai yang hilang.
 
+
+### Material Property Source Contract
+Module 34 consumes the Material Refinement Property Schema defined by Module 14 §4A.
+
+For refinement resolution, Module 34 must verify:
+- `MATERIAL_ID`, quantity, and `MATERIAL_ORIGIN`;
+- required `REFINEMENT_PROPERTIES`;
+- `APPLICABLE_DIMENSIONS`;
+- `COMPATIBILITY_TAGS` when present;
+- `QUALITY_OR_GRADE` only when explicitly sourced;
+- `BOUND_SOURCE` and `CONSUMPTION_RULE` when required;
+- `PROPERTY_STATUS` and `PROPERTY_SOURCE`.
+
+The existence of a schema field does not mean the field has a value. Missing required material property remains `UNRESOLVED` and blocks mechanical resolution as `RESOLUTION-BLOCKED` when required.
+
+Material properties describe source capabilities/constraints; the refinement method still decides whether those properties are usable for the target item. Module 34 must not infer an effect from material name, rarity, price, grade, or narrative plausibility.
+
 ### Resolver Boundary
 - Module 34: validasi existing item + method + qualification + process permission.
 - Module 25: memilih concrete runtime result di dalam bounds yang sah.
