@@ -65,7 +65,7 @@ jobs:
           else:
               text = registry.read_text(encoding='utf-8')
               ids = re.findall(r'^### (CHAR-\d+)$', text, re.M)
-              states = re.findall(r'Current State:\s*`characters/players/(CHAR-\d+)[.]md`', text)
+              states = re.findall(r'\*\*Current State:\*\*\s*`characters/players/(CHAR-\d+)[.]md`', text)
               if sorted(ids) != sorted(states):
                   errors.append(f'CHARACTER_REGISTRY_MISMATCH: ids={ids} states={states}')
               for cid in ids:
