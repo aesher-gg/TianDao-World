@@ -1,7 +1,7 @@
 # Module 32 — ALCHEMY & PILL REFINEMENT
 
 ## Status
-Admin Canon v1.1
+Admin Canon v1.2
 
 ## Purpose
 Menetapkan pipeline khusus untuk memproses herb/material menjadi Pill atau produk alkimia melalui formula, alchemist qualification, furnace, preparation, refinement, dan validated resolution.
@@ -17,18 +17,42 @@ Menetapkan pipeline khusus untuk memproses herb/material menjadi Pill atau produ
 
 ## Required Inputs
 1. Herb/material yang valid.
-2. Formula/recipe/prosedur yang valid, kecuali improvisasi alchemy memang didukung source.
-3. Alchemist dengan knowledge/qualification yang sah.
+2. Formula/recipe/prosedur yang valid.
+3. Alchemist dengan qualification yang sah.
 4. Furnace/tool yang dibutuhkan.
 5. Resource cost.
 6. Waktu/proses.
 7. Kondisi bahan yang relevan.
 
-## Formula
-Formula dapat berasal dari Canon, manual, teacher, faction, laboratory/workshop, event, discovery yang benar-benar terjadi, atau Admin Canon.
-- Formula tidak otomatis diketahui Character.
-- Formula menentukan bahan, proses, requirement, output, dan batas kualitas hanya bila sumber mendefinisikannya.
-- Nama Pill tidak cukup untuk mengarang efek.
+## Canon Formula Registry
+Formula dasar berikut adalah formula Admin Canon dan dapat diajarkan/disalin hanya melalui Origin yang sah.
+
+### FORMULA-ALC-001 — Bubuk Penjernih Dasar
+- Input: `ITEM-HERB-001` Rumput Embun Pagi ×2.
+- Tool: mortar/penggiling bersih; furnace tidak wajib.
+- Process: keringkan → tumbuk → ayak.
+- Output: 1 unit bubuk herbal dasar.
+- Effect: tidak menetapkan efek combat/medis baru; digunakan sebagai bahan proses.
+- Cost: bahan input dikonsumsi; waktu proses minimal 30 menit.
+
+### FORMULA-ALC-002 — Pil Penetral Racun Dasar
+- Input: `ITEM-HERB-001` Rumput Embun Pagi ×2 + `ITEM-HERB-002` Rumput Jarum Beracun ×1.
+- Tool: furnace alkimia sederhana.
+- Process: ekstraksi → pemurnian → kondensasi → pendinginan.
+- Output: 1 `ITEM-CONS-002` Pil Penetral Racun Dasar.
+- Effect: hanya menangani racun dasar; tidak menetapkan efektivitas terhadap racun tingkat tinggi.
+- Failure: bahan dapat hilang atau produk menjadi cacat bila proses gagal.
+- Cost: seluruh input dikonsumsi pada resolusi.
+
+### FORMULA-ALC-003 — Salep Penghenti Darah Dasar
+- Input: `ITEM-HERB-001` Rumput Embun Pagi ×2 + `ITEM-MAT-005` Serat Rami ×1.
+- Tool: wadah pemrosesan bersih; pemanasan ringan.
+- Process: ekstraksi → pencampuran → pemanasan → pendinginan.
+- Output: 1 `ITEM-CONS-001` Bubuk/produk penghenti darah dasar sesuai Item State.
+- Effect: hanya fungsi penghentian perdarahan ringan yang sudah ditetapkan Item Canon.
+- Cost: seluruh input dikonsumsi pada resolusi.
+
+Formula di atas tidak otomatis memberi Character mastery. Knowledge formula dan qualification tetap membutuhkan Origin.
 
 ## Alchemist Qualification
 Qualification harus memiliki Origin melalui training, teacher, manual, faction, experience, event, atau source resmi lain.
@@ -38,45 +62,33 @@ Qualification harus memiliki Origin melalui training, teacher, manual, faction, 
 
 ## Furnace & Process
 Furnace adalah tool produksi. Preparation, heating, extraction, mixing, condensation, refinement, cooling, dan tahap lain hanya berlaku jika formula/proses mendukungnya.
-Kondisi furnace/tool/environment hanya menjadi modifier bila ada aturan yang sah; tidak boleh membuat angka tersembunyi.
 
 ## Resource & Cost
-Cost dapat berupa herb, material, fuel, waktu, stamina, Qi, currency, furnace durability, atau biaya workshop/laboratory bila memang ditentukan.
-Tidak ada bahan atau resource gratis.
+Cost dapat berupa herb, material, fuel, waktu, stamina, Qi, currency, furnace durability, atau biaya workshop/laboratory bila ditentukan. Tidak ada bahan atau resource gratis.
 
 ## Alchemy Pipeline
 `Herb/Material → Formula → Alchemist Qualification → Furnace/Tool → Preparation → Refinement Process → Validation → Resolution → Failure/Deviation/Success → Pill Quality → Quantity → Effect → Defect/Side Effect → Item Origin → History → Save → Write-Back Verify`
 
 ## Resolution
-Hasil yang sah:
-- Success
-- Partial Success
-- Failure
-- Defective Pill/Product
-- Material Loss/Damage
+Hasil yang sah: Success, Partial Success, Failure, Defective Pill/Product, atau Material Loss/Damage.
 
 Jika formula atau sistem menyediakan check, gunakan check tersebut. Jika tidak, gunakan requirement dan process validity yang tersedia; jangan mengarang probabilitas numerik tersembunyi.
 
 ## Pill Quality
-Quality dapat berupa label yang sudah didefinisikan source. Jika source tidak menetapkan skala quality, GM tidak boleh menciptakan tier mekanis baru hanya untuk memperkuat hasil.
-Quality tidak otomatis mengikuti Realm Alchemist.
+Untuk formula Canon di atas, kualitas default adalah **Basic** bila seluruh requirement terpenuhi dan tidak ada failure. Kualitas lebih tinggi tidak diberikan tanpa source/qualification/proses yang menetapkannya.
 
 ## Quantity
-Quantity mengikuti formula/fixed source bila tersedia. Jika tidak tersedia, quantity tidak boleh ditebak untuk menjamin reward.
+Quantity mengikuti formula: setiap formula di atas menghasilkan 1 unit output per successful batch. Batch tambahan membutuhkan input tambahan dan resolusi tambahan.
 
 ## Effect & Defect
-Efek, potency, duration, side effect, toxicity, atau defect harus memiliki source mekanis yang valid.
-Jika field tersebut belum memiliki source valid, gunakan `UNRESOLVED` dan jangan menerapkan efek mekanis yang tidak tersumber.
-Tidak boleh mengubah Pill menjadi obat universal atau breakthrough item tanpa Canon/source.
+Efek, potency, duration, side effect, toxicity, atau defect harus memiliki source mekanis yang valid. Formula baseline di atas hanya memakai efek yang secara eksplisit tercantum; tidak ada efek tersembunyi.
 
 ## Failure
-Failure dapat merusak/meniadakan bahan, menghabiskan resource, atau menghasilkan produk cacat bila proses mendukungnya.
-Kegagalan tidak boleh diam-diam menjadi Pill sukses.
+Failure dapat merusak/meniadakan bahan, menghabiskan resource, atau menghasilkan produk cacat bila proses mendukungnya. Kegagalan tidak boleh diam-diam menjadi Pill sukses.
 
 ## Item Origin
 Pill/product yang berhasil dibuat menjadi Item State menurut Module 14 dan wajib memiliki provenance:
 `World Time / Entity ID / Action / Cause / Resolution / Before → After / Source`
-Semua bahan yang dikonsumsi harus mempunyai Origin sebelumnya.
 
 ## Anti-Cheat
 - Tidak ada herb/material gratis.
