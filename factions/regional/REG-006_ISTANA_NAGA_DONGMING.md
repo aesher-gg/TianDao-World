@@ -1,1 +1,11 @@
-# placeholder
+- ID: REG-006
+- Nama: Istana Naga Dongming
+- Status: Canon regional faction.
+- Wilayah: Laut Dongming.
+- Struktur: Istana → pengurus/penjaga jalur laut → anggota/kontrak.
+- NPC utama: **Long Jinhai** (`NPC-REG-006`) — pemegang jabatan pimpinan Istana Naga Dongming.
+- Catatan: tidak ada bonus stat otomatis; kemampuan mengikuti state individu.
+- Akses: wilayah laut yang dikuasai atau diawasi tidak otomatis terbuka bagi Character.
+- Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini.
+- Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
+- Canon boundary: Long Jinhai adalah identitas pemegang jabatan Canon; personel lain tetap runtime/state.
