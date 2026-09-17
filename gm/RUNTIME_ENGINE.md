@@ -83,3 +83,14 @@ Sebelum langkah Generation, Validate, Cost, Resolve, State Apply, Memory, Save, 
 
 ### Anti-Speculation Barrier
 Player intent, dialogue, narrative plausibility, memory lama, cache, real-world data, atau kebutuhan agar cerita terus berjalan tidak dapat menjadi source untuk menutup field unresolved. Jika source tidak cukup, engine harus menahan/menolak bagian resolusi yang bergantung padanya.
+
+
+## Dynamic Refinement Runtime Gate
+When an existing item refinement produces a dynamic result:
+1. Load Module 34 and establish the legal refinement process and bounds.
+2. Load Module 25 and resolve only within those bounds.
+3. Load Module 14 for authoritative Item State.
+4. Load any material-source module required by the actual input (for example Module 31 or 32).
+5. If any required property, compatibility rule, bound, or outcome mechanism is unavailable, return `RESOLUTION-BLOCKED`.
+6. Apply one atomic before → resolution → after transaction through Save Pipeline.
+7. Never promote the runtime result to Global Canon.
