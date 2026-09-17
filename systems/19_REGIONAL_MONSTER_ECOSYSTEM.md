@@ -90,3 +90,7 @@ Generated creature tetap harus memiliki hubungan ekologis yang masuk akal dengan
 
 ## Integrasi
 Monster ecosystem terhubung dengan World Map, Travel Routes, Time, Vitality, Combat, Loot, Economy, Karma, Reputation, Events, Spirit Beast System, dan `systems/25_DYNAMIC_GENERATION.md`.
+
+
+## DATA COMPLETENESS ECOLOGY GATE
+Habitat memberi input, bukan izin mengarang species, pressure, threat, ability, atau loot. Generated creature hanya sah bila Module 25 dan data ekologis yang diwajibkan tersedia. Field yang tidak dapat ditentukan tetap mengikuti core/07_DATA_COMPLETENESS.md.
