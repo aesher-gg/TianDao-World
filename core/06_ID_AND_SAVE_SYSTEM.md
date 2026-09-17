@@ -38,7 +38,7 @@ NPC adalah entitas dunia yang dapat bersifat Canon/fixed atau generated.
 
 - NPC Canon dapat berasal dari `lore/NPC_DATABASE.md`.
 - NPC generated yang membutuhkan continuity material mendapat **NPC_ID** unik, stabil, dan permanen.
-- Format standar: `NPC-0001`.
+- Format NPC dapat berupa `NPC-0001` untuk ID generik atau `NPC-<NAMESPACE>-####` untuk namespace Canon/faction seperti `NPC-IMP-001` atau `NPC-REG-001`.
 - Nama NPC bukan primary identifier.
 - NPC_ID tidak berubah karena rename, perpindahan lokasi, perubahan faction, hubungan, atau status.
 - NPC yang mati permanen mempertahankan NPC_ID untuk histori dan ID tidak boleh dipakai ulang.
@@ -148,7 +148,7 @@ Format standar:
 - `PLAYER-0001`
 - `CHAR-0001`
 - `BEAST-0001`
-- `NPC-0001`
+- `NPC-0001` untuk ID generik, atau `NPC-<NAMESPACE>-####` untuk ID Canon/namespaced.
 - `QST-0001`
 - `EVT-0001`
 
