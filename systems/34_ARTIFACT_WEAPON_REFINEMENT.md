@@ -135,6 +135,70 @@ The existence of a schema field does not mean the field has a value. Missing req
 
 Material properties describe source capabilities/constraints; the refinement method still decides whether those properties are usable for the target item. Module 34 must not infer an effect from material name, rarity, price, grade, or narrative plausibility.
 
+
+### 11A. REFINEMENT METHOD SCHEMA
+
+Refinement Method adalah **source mekanis** yang menjelaskan bagaimana material properties yang tervalidasi boleh digunakan pada existing item. Method tidak boleh dipersingkat menjadi "material + item = upgrade".
+
+#### 11A.1 Method Record
+Setiap method yang dipakai runtime harus dapat direpresentasikan dengan:
+
+| Field | Required | Fungsi |
+|---|---|---|
+| `METHOD_ID` | Yes | Identity stabil method/procedure. |
+| `METHOD_SOURCE` | Yes | Canon/manual/teacher/faction/workshop/event/discovery/Admin source yang membuktikan method. |
+| `TARGET_ITEM_CATEGORY` | Yes | Kategori existing item yang boleh diproses. |
+| `TARGET_ITEM_CONSTRAINTS` | Conditional | Constraint tambahan terhadap identity/state item. |
+| `MATERIAL_REQUIREMENTS` | Conditional | Material ID/category/property/quantity yang diwajibkan. |
+| `COMPATIBILITY_RULE` | Yes | Rule yang menentukan apakah material dan target item dapat diproses bersama. |
+| `REQUIRED_REFINER_QUALIFICATION` | Conditional | Qualification/knowledge/skill yang wajib dimiliki refiner. |
+| `REQUIRED_TOOL_WORKSPACE` | Conditional | Tool, furnace, workshop, atau workspace yang wajib tersedia. |
+| `PROCESS_STEPS` | Yes | Urutan proses yang sah. |
+| `PROCESS_TIME` | Yes/Conditional | Waktu proses bila ditetapkan source. |
+| `RESOURCE_COST` | Conditional | Resource/currency/stamina/Qi/fuel/tool durability yang benar-benar dibutuhkan bila ditetapkan source. |
+| `ALLOWED_PROPERTY_DIMENSIONS` | Yes | Dimensi state/property existing item yang boleh berubah. |
+| `CHANGE_BOUNDS` | Yes | Ceiling/range/batas perubahan untuk setiap dimension yang diizinkan. |
+| `OUTCOME_MODEL` | Yes | Mekanisme Success/Partial/Failure yang sah. |
+| `MATERIAL_CONSUMPTION_RULE` | Conditional | Jumlah/aturan konsumsi material pada outcome yang diizinkan. |
+| `FAILURE_CONSEQUENCE` | Conditional | Damage/defect/destruction/material loss bila source mengizinkan. |
+| `METHOD_STATUS` | Yes | Status menurut Module 07. |
+
+#### 11A.2 Method Property Contract
+Setiap `ALLOWED_PROPERTY_DIMENSIONS` harus dapat ditelusuri ke:
+`DIMENSION_ID / TARGET_PROPERTY / DIRECTION_OR_ALLOWED_CHANGE / BOUND_SOURCE / SOURCE / STATUS`
+
+Aturan:
+1. Dimension yang tidak tercantum tidak boleh berubah melalui method tersebut.
+2. Bound yang tidak memiliki source tidak boleh diisi dengan angka tebakan.
+3. Method tidak boleh memperluas property material menjadi effect baru.
+4. Method tidak boleh mengubah item category, grade, tier, ability, affinity, atau ownership kecuali mekanismenya secara eksplisit disediakan source.
+5. Character Realm bukan substitute untuk qualification atau method bound.
+
+#### 11A.3 Compatibility Contract
+Compatibility minimal dievaluasi terhadap:
+`Existing Item State + Material Refinement Properties + Method Requirements`
+
+Hasil valid:
+- `COMPATIBLE`
+- `INCOMPATIBLE`
+- `UNRESOLVED`
+- `RESOLUTION-BLOCKED`
+
+`UNRESOLVED` compatibility menjadi `RESOLUTION-BLOCKED` bila compatibility wajib untuk menjalankan method.
+
+#### 11A.4 Outcome Contract
+`OUTCOME_MODEL` wajib menyatakan mekanisme hasil yang digunakan. Bentuk yang sah dapat berupa:
+- deterministic requirement/process validation;
+- source-defined check;
+- source-defined Success/Partial/Failure mechanism.
+
+Tidak boleh membuat probabilitas, roll, multiplier, atau modifier tersembunyi bila source tidak menyediakannya.
+
+#### 11A.5 Missing-Method Gate
+Jika method tidak memiliki required source, target constraint, compatibility rule, allowed dimension, bound, atau outcome mechanism yang diperlukan untuk resolusi, hasilnya `RESOLUTION-BLOCKED`.
+
+Module 25 hanya menerima method yang telah lolos gate ini; Module 25 tidak melengkapi field method yang hilang.
+
 ### Resolver Boundary
 - Module 34: validasi existing item + method + qualification + process permission.
 - Module 25: memilih concrete runtime result di dalam bounds yang sah.
