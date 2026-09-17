@@ -140,3 +140,7 @@ Untuk persistent Spirit Beast, load existing Beast State/History terlebih dahulu
 `Quantity = 1 + floor(LootPotential / 25)` untuk creature normal.
 
 Semua formula adalah Admin Canon v1.0 dan hanya dapat diubah melalui perubahan Canon terdokumentasi.
+
+
+## DATA COMPLETENESS GATE
+Dynamic generation tidak boleh digunakan untuk menutup field yang kosong. Setiap generated field wajib memiliki input, formula, trigger, dan batas yang ditetapkan Admin. Jika input wajib tidak tersedia, gunakan UNRESOLVED atau RESOLUTION-BLOCKED sesuai core/07_DATA_COMPLETENESS.md. Generated result tetap RUNTIME-GENERATED dan tidak menjadi Canon hanya karena muncul atau dipersistenkan.
