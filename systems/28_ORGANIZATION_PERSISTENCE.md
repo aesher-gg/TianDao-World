@@ -38,3 +38,7 @@ Jika organisasi relevan, Router memuat registry + individual file bila tersedia.
 Perubahan material organisasi harus memiliki before → after, cause, resolution, source, Origin, dan write-back verification.
 
 Character membership tidak otomatis mengubah seluruh organisasi.
+
+
+## DATA COMPLETENESS ORGANIZATION GATE
+Identity, structure, office, membership, rank, contract, access, relationship, dan status organisasi hanya boleh memakai registry/file Canon atau resolusi state yang sah. Jangan mengarang jabatan/NPC/otoritas untuk melengkapi organisasi. Data yang belum tersedia mengikuti core/07_DATA_COMPLETENESS.md.
