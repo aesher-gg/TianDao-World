@@ -134,3 +134,6 @@ Setiap perjalanan yang melewati 3 jam aksi harus memiliki checkpoint state: wakt
 
 ## Integrasi
 Registry ini menjadi sumber rute dan konvensi jarak untuk World Map, Time, Action, Vitality, Economy, Monsters, Factions dan Events.
+
+## DATA COMPLETENESS TRAVEL GATE
+Jarak, rute, sarana, kecepatan, modifier, dan durasi numerik hanya boleh berasal dari source resmi yang tersedia. Jika field required tidak memiliki baseline sah, jangan mengarang angka atau mengasumsikan sarana; gunakan UNRESOLVED/RESOLUTION-BLOCKED sesuai Data Completeness.
