@@ -51,14 +51,14 @@ Setiap table aktif harus memiliki:
 - Setiap item/reward yang disebut harus memiliki identitas Canon yang dapat diverifikasi.
 - Currency hanya boleh muncul jika table secara eksplisit menetapkan jenis dan jumlahnya.
 - Item yang belum memiliki Canon Item/Reward ID tidak boleh dimasukkan ke table aktif.
-- Tidak ada entry loot aktif untuk source yang belum memiliki data yang cukup. Gunakan status `NOT-ESTABLISHED` pada data yang relevan dan tahan aktivasi table.
+- Tidak ada entry loot aktif untuk source yang belum memiliki data yang cukup. Status data yang digunakan adalah `UNRESOLVED` dan table ditahan dari aktivasi sampai input valid tersedia.
 - Tidak boleh ada table generik yang otomatis mengubah Tier, Realm, habitat, lokasi, atau tingkat kesulitan menjadi loot.
 
 ## 5. Status Database Saat Ini
 
 **Belum ada loot table aktif yang ditetapkan.**
 
-Alasan: repository saat ini telah memiliki sistem Loot dan sumber ekonomi/currency, tetapi belum memiliki database monster dengan Source ID yang dapat dipasangkan ke loot table dan belum memiliki katalog Item/Reward yang cukup untuk membentuk drop spesifik tanpa menciptakan Canon baru secara diam-diam.
+Alasan: repository saat ini telah memiliki sistem Loot dan sumber ekonomi/currency, tetapi belum memiliki pasangan Source ID + Item/Reward ID yang cukup untuk membentuk drop spesifik tanpa menciptakan Canon baru secara diam-diam.
 
 Ini bukan fallback runtime. Ini adalah status database yang eksplisit dan dapat diaudit.
 
