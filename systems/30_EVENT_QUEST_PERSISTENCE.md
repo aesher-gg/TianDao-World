@@ -57,3 +57,7 @@ Setiap perubahan lintas-turn harus melewati Module 26, State Validator, before â
 
 ## Data Completeness
 Gunakan `core/07_DATA_COMPLETENESS.md` untuk field yang belum tersedia. Jangan membuat issuer, reward, deadline, target, atau scope baru hanya untuk mengisi schema.
+
+
+## DATA COMPLETENESS PERSISTENCE GATE
+Persistensi tidak mengubah data yang belum terbukti menjadi fakta. Issuer, target, reward, deadline, scope, state, dan outcome wajib memiliki source/resolution. UNRESOLVED tidak boleh dipersistenkan sebagai nilai konkret; RESOLUTION-BLOCKED menahan perubahan yang bergantung padanya.
