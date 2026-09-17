@@ -172,3 +172,16 @@ Jika pemeriksaan material gagal, jangan menerapkan state. Kembali ke nilai terak
 - [ ] Before → After covers Item, consumed Material, and every changed resource/entity.
 - [ ] Existing Item Origin is preserved and refinement adds new Origin/History.
 - [ ] Dynamic result remains `RUNTIME-GENERATED`, not Global Canon.
+
+
+## Bounded Resolution Validation Gate
+- [ ] Resolver context contains Item State, Material Property Records, Method Record, Compatibility, Qualification, and Process Conditions.
+- [ ] All required inputs are sourced and pass the relevant module gates before result selection.
+- [ ] Only Method-allowed property dimensions are changed.
+- [ ] Every selected result lies inside the intersection of applicable Item, Material, and Method constraints/bounds.
+- [ ] An absent/unsourced bound is not replaced by a guessed number, default, or narrative modifier.
+- [ ] Outcome selection follows the Method Record outcome mechanism exactly; no hidden roll/probability/multiplier is introduced.
+- [ ] `SUCCESS`, `PARTIAL`, and failure states are used only when the source mechanism permits them.
+- [ ] `RESOLUTION-BLOCKED` is preserved when a required mechanism or bound cannot be established; it is not silently converted to success/failure.
+- [ ] Before/After contains every changed Item, Material, resource, and relevant entity in one transaction.
+- [ ] No numeric bonus, quality/grade/tier increment, durability change, ability/effect, or Realm scaling is inferred without Canon/source.
