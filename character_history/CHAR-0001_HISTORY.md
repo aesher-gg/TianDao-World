@@ -287,8 +287,8 @@ Gameplay snapshot berikutnya menempatkan Ryxian di Lapangan Latihan Pinggiran, K
 - Satiety: 65%
 - Cultivation Progress: 0%
 - Cultivation Law: Belum ada
-- Law Origin: ???
-- Karma: ???
+- Law Origin: NOT-APPLICABLE — Ryxian belum memiliki Cultivation Law; jalur kultivasi formal belum dimulai
+- Karma: Netral — nilai dasar 0; belum ada perubahan Karma material yang tercatat setelah save point terakhir
 - Currency: 17 Tembaga
 - Sect Contribution: 3 Poin Kontribusi Sekte Canglan
 - Affiliation: Sekte Pedang Canglan — Pelayan Luar
