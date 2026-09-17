@@ -10,8 +10,8 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Rekrutmen: ketahanan, gerak salju, dasar senjata ringan, disiplin.
 - Sikap: keras dan praktis.
 - Agenda: menjaga murid mampu bertahan di lingkungan ekstrem.
-- Relasi: ???
-- Kepala/NPC/Teknik/Realm/Bonus/Aset: ???
+- Relasi: `NOT-ESTABLISHED`
+- Kepala/NPC/Teknik/Realm/Bonus/Aset: `NOT-ESTABLISHED`
 
 ## Rule
 Tidak ada automatic survival mastery atau cultivation advancement dari keanggotaan.
