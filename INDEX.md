@@ -184,4 +184,4 @@
 - `systems/27_MODULE_ROUTER.md` wajib digunakan untuk menentukan modul REQUIRED/OPTIONAL setelah INDEX fresh berhasil.
 - `loot/00_LOOT_TABLE_DATABASE.md` dimuat bila fixed loot table, unique reward, atau content table tertentu perlu diperiksa; registry tersebut tidak membatasi dynamic loot.
 - `gm/PENDING_SYNC.md` wajib digunakan ketika write-back repository tidak tersedia atau gagal; pending changes bukan Canon tersinkron sampai diverifikasi dan ditulis oleh Admin.
-- `core/07_DATA_COMPLETENESS.md` wajib digunakan ketika field data belum lengkap, placeholder muncul, atau audit menemukan status unresolved. Runtime memakai status `NOT-INSTANTIATED`, `NOT-ESTABLISHED`, atau `RESOLUTION-BLOCKED` sesuai konteks; tanda tanya bukan placeholder repository.
+- `core/07_DATA_COMPLETENESS.md` wajib digunakan ketika field data belum lengkap, placeholder muncul, atau audit menemukan status unresolved. Runtime memakai status `NOT-INSTANTIATED`, `UNRESOLVED`, atau `RESOLUTION-BLOCKED` sesuai konteks; tanda tanya bukan placeholder repository.
