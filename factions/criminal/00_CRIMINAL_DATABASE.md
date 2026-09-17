@@ -35,7 +35,7 @@ Canon Admin. Kelompok kriminal beroperasi berdasarkan kepentingan, sumber daya, 
 - ID: CRI-005
 - Wilayah: jaringan kota, lokasi inti tidak diumumkan.
 - Aktivitas: pencurian terorganisir dan pekerjaan kriminal berbayar.
-- Identitas pimpinan: ???
+- Status pimpinan: `UNRESOLVED`
 - Aturan: loyalitas dibayar, tetapi pengkhianatan memiliki konsekuensi.
 
 ## Aturan GM
@@ -44,3 +44,4 @@ Canon Admin. Kelompok kriminal beroperasi berdasarkan kepentingan, sumber daya, 
 - Kejahatan memiliki konsekuensi hukum, reputasi, dan relasi.
 - Tidak semua kriminal memiliki kemampuan tempur tinggi.
 - Perang antar jaringan kriminal adalah event besar dan membutuhkan dasar Canon/Admin.
+- Identitas pimpinan yang berstatus `UNRESOLVED` tidak boleh ditebak atau diperlakukan sebagai fakta.
