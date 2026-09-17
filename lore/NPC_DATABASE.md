@@ -1,9 +1,9 @@
 # NPC DATABASE CANON — TIANDAO-WORLD
 
-> NPC yang belum dikenal player tetap ditampilkan sebagai `???` sampai identitas diketahui in-character.
+> NPC yang belum dikenal Character menggunakan status identity `UNRESOLVED` sampai identitas diketahui secara wajar in-character.
 
 ## Aturan Data
-Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian, agenda, hubungan, pengetahuan, reputasi terhadap player, sumber Canon, dan status data. Realm yang belum ditetapkan tidak boleh ditebak GM.
+Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian, agenda, hubungan, pengetahuan, reputasi terhadap Character, sumber Canon, dan status data. Realm yang belum ditetapkan tidak boleh ditebak GM.
 
 **Format provenance:** setiap NPC terdaftar memiliki `Sumber Canon` berdasarkan faction/lokasi yang menjadi dasar perannya. `Status data` menjelaskan bahwa entri tersebut merupakan Canon registry; status in-world yang belum ditetapkan tetap tidak boleh ditebak.
 
@@ -129,10 +129,10 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
 ## NPC Kriminal
-### `???`
-- Status: identitas belum diketahui
+### Identitas Kriminal Belum Terungkap
+- Status: `UNRESOLVED`
 - Sumber Canon: registry NPC kriminal; identitas sengaja disembunyikan sampai discovery in-character.
 - Catatan GM: jangan bocorkan nama, realm, lokasi, atau faction tanpa discovery in-character.
 
 ## Otonomi NPC
-NPC dapat berbohong, menolak, salah memahami, takut, meminta imbalan, berubah sikap, atau bertindak tanpa player. Pengetahuan NPC dibatasi pengalaman dan akses informasinya. Tidak ada NPC yang otomatis menjadi informan sempurna.
+NPC dapat berbohong, menolak, salah memahami, takut, meminta imbalan, berubah sikap, atau bertindak tanpa Character. Pengetahuan NPC dibatasi pengalaman dan akses informasinya. Tidak ada NPC yang otomatis menjadi informan sempurna.
