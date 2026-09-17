@@ -144,3 +144,94 @@ Semua formula adalah Admin Canon v1.0 dan hanya dapat diubah melalui perubahan C
 
 ## DATA COMPLETENESS GATE
 Dynamic generation tidak boleh digunakan untuk menutup field yang kosong. Setiap generated field wajib memiliki input, formula, trigger, dan batas yang ditetapkan Admin. Jika input wajib tidak tersedia, gunakan UNRESOLVED atau RESOLUTION-BLOCKED sesuai core/07_DATA_COMPLETENESS.md. Generated result tetap RUNTIME-GENERATED dan tidak menjadi Canon hanya karena muncul atau dipersistenkan.
+
+
+## 12. DYNAMIC REFINEMENT BOUNDARY
+Dynamic Refinement adalah bounded runtime resolution untuk **existing Item** yang valid. Module 25 tidak menciptakan properti material, refinement method, atau efek upgrade baru; Module 34 tetap menjadi source untuk proses refinement existing item.
+
+### 12.1 Canon Boundary
+Canonical chain:
+`Existing Item → Material Source & Properties → Refinement Method → Compatibility Validation → Dynamic Bounded Resolution → Before/After → Origin → Save`
+
+Source authority:
+- Existing Item identity/state/property/quality/condition → Module 14.
+- Material identity dan refinement-relevant properties → material/item source Canon yang terverifikasi.
+- Refinement method, qualification, process, allowed change, dan failure mechanism → Module 34 atau source method yang sah.
+- Dynamic selection within Admin-defined bounds → Module 25.
+- Routing/dependency → Modules 27 + 35.
+- State validation → State Validator.
+- Persistence/transaction → Save Pipeline.
+
+### 12.2 Required Inputs
+Dynamic Refinement hanya boleh berjalan bila input material berikut tersedia dan tervalidasi:
+1. Existing Item ID dan Current Item State.
+2. Material ID, quantity, dan valid Origin.
+3. Material properties yang **secara eksplisit** relevan terhadap refinement.
+4. Refinement Method/Procedure dengan source.
+5. Compatibility rule atau method-defined compatibility.
+6. Refiner qualification bila diwajibkan.
+7. Tool/workspace bila diwajibkan.
+8. Cost dan process time bila diwajibkan.
+9. Allowed property dimensions and bounds dari method/source.
+
+Jika salah satu required input tidak memiliki source sah, hasilnya `RESOLUTION-BLOCKED`. Dynamic Generation tidak boleh mengisi input tersebut.
+
+### 12.3 Material Property Boundary
+Material tidak memperoleh refinement effect hanya dari nama, rarity, grade, harga, deskripsi, atau plausibility.
+Refinement-relevant properties harus berasal dari source material yang sah dan terverifikasi.
+Jika property yang dibutuhkan berstatus `UNRESOLVED`, Qwen tidak boleh menebak nilai atau efeknya.
+
+### 12.4 Bounded Resolution Contract
+Module 25 boleh menentukan **hasil konkret runtime** hanya di dalam ruang yang sudah ditentukan source:
+- property dimension yang boleh berubah;
+- direction/range/bounds perubahan;
+- quality/condition ceiling;
+- compatibility;
+- success/partial/failure outcomes;
+- material consumption;
+- cost/time;
+- failure consequences bila method mengizinkannya.
+
+Module 25 **tidak boleh**:
+- menciptakan property baru;
+- menaikkan grade/tier/category tanpa mechanism source;
+- memberi ability/effect/affinity/bloodline yang tidak disediakan source;
+- mengubah ownership tanpa rule;
+- menetapkan probabilitas tersembunyi jika source tidak menyediakan mekanismenya;
+- memakai Character Realm sebagai automatic refinement multiplier.
+
+### 12.5 Resolution States
+Resolution dapat menghasilkan:
+- `SUCCESS`
+- `PARTIAL`
+- `FAILURE_UNCHANGED`
+- `FAILURE_DAMAGED`
+- `FAILURE_DESTROYED`
+- `RESOLUTION-BLOCKED`
+
+Damage/destruction hanya valid bila method/source mengizinkannya. Result tidak boleh melampaui Admin/source ceiling.
+
+### 12.6 Before/After Transaction Contract
+Setiap successful/partial/allowed failure refinement harus dapat ditelusuri:
+- BEFORE: Item State, material state, relevant resources.
+- INPUT: Material ID/quantity, method, refiner, tool/workspace.
+- RESOLUTION: compatibility, source bounds, selected outcome, consumed resources.
+- AFTER: Item State, consumed Material State, resource/currency/time changes.
+- PROVENANCE: Origin + History untuk entity yang berubah.
+
+Dynamic result berstatus `RUNTIME-GENERATED` dan tidak menjadi Global Canon.
+
+### 12.7 Anti-Improvisation Gate
+Jika source hanya menyatakan bahwa material dapat digunakan untuk refinement tetapi tidak mendefinisikan property, dimension, bound, compatibility, atau result mechanism yang diperlukan, resolusi yang bergantung pada informasi tersebut wajib `RESOLUTION-BLOCKED`.
+Narrative plausibility, Player request, prior chat memory, rarity, market value, atau nama material bukan fallback mekanis.
+
+### 12.8 Boundary With Module 34
+Module 34 menentukan **apa yang secara mekanis diperbolehkan** pada existing item.
+Module 25 menentukan **hasil konkret runtime** hanya di dalam bounds yang sudah disediakan.
+Dengan demikian:
+`Module 34 = Refinement Process/Permission`
+`Module 25 = Bounded Dynamic Resolution`
+`Module 14 = Item State Authority`
+`Module 27/35 = Routing/Dependency`
+
+Tidak ada automatic upgrade di antara ketiganya.
