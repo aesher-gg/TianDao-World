@@ -94,3 +94,18 @@ When an existing item refinement produces a dynamic result:
 5. If any required property, compatibility rule, bound, or outcome mechanism is unavailable, return `RESOLUTION-BLOCKED`.
 6. Apply one atomic before → resolution → after transaction through Save Pipeline.
 7. Never promote the runtime result to Global Canon.
+
+
+### Bounded Resolution Execution
+Untuk dynamic refinement, setelah Dynamic Refinement Runtime Gate terpenuhi, engine menjalankan resolver dengan urutan:
+
+ITEM STATE → MATERIAL PROPERTIES → METHOD RECORD → COMPATIBILITY → QUALIFICATION → PROCESS CONDITIONS → ALLOWED DIMENSIONS → BOUND INTERSECTION → OUTCOME MODEL → RUNTIME SELECTION → BEFORE/AFTER
+
+Hard rules:
+- Module 25 hanya memilih hasil konkret dalam ruang hasil yang dibuktikan Module 34.
+- Legal result per dimension adalah irisan constraint/bound yang tersedia dari Item State, Material Property source, dan Method Record.
+- Dimension yang tidak diizinkan method tidak boleh berubah.
+- Missing required bound/mechanism/input → RESOLUTION-BLOCKED.
+- Source-defined roll/probability may be used only with its source-defined parameters; otherwise no hidden roll/probability/multiplier.
+- Character Realm, rarity, name, price, appearance, plausibility, player intent, dan prior chat state bukan modifier refinement.
+- State Apply hanya dilakukan setelah Before/After lulus State Validator dan dapat dipersistenkan sebagai satu transaction.
