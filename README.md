@@ -197,7 +197,7 @@ TianDao-World secara eksplisit menolak:
 - ❌ Player intent yang diperlakukan sebagai fakta tanpa resolusi
 - ❌ Hasil procedural yang otomatis menjadi Global Canon
 
-Jika informasi memang belum tersedia dan tidak memiliki fallback resmi, gunakan **`???`** daripada mengarang fakta.
+Jika informasi memang belum tersedia dan tidak memiliki fallback resmi, gunakan **`UNRESOLVED`** atau status Data Completeness yang lebih spesifik, bukan mengarang fakta.
 
 ---
 
