@@ -68,3 +68,14 @@ Gunakan `SAVE_PIPELINE.md`. Semua entity yang berubah harus diproses. Jika write
 - Generated ≠ Canon; persistence ≠ Global Canon.
 - NPC_ID/QST_ID/EVT_ID/BEAST_ID unik dan stabil serta tidak dipakai ulang.
 - Production result tidak menjadi Global Canon hanya karena muncul runtime.
+
+
+## 6A. Data Completeness Gate — sebelum Validation/Cost/Resolution
+Terapkan `core/07_DATA_COMPLETENESS.md` pada semua field material yang belum tersedia.
+- Source sah → pertahankan/resolve sesuai status `CANON-ESTABLISHED` atau `STATE-ESTABLISHED`.
+- Dynamic result → hanya `RUNTIME-GENERATED` bila Module 25/26 atau dynamic module relevan mengizinkannya dan semua input tersedia.
+- Entity/record belum ada → `NOT-INSTANTIATED`; jangan menganggap entity sudah ada.
+- Data belum dapat ditentukan → `UNRESOLVED`; jangan mengarang nilai untuk melanjutkan aksi.
+- Required input hilang tanpa fallback → `RESOLUTION-BLOCKED`; jangan melakukan partial fabrication untuk membuat formula berjalan.
+- Player intent, narrative plausibility, cache, real-world value, atau kebutuhan reward bukan source.
+- Generated content tetap generated dan tidak menjadi Canon hanya karena dipersistenkan.
