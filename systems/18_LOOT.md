@@ -78,7 +78,7 @@ Generated loot yang belum menjadi gameplay fact tidak boleh dianggap tersimpan d
 
 ## 11. Data Completeness
 Gunakan `core/07_DATA_COMPLETENESS.md` untuk data yang belum tersedia.
-- `NOT-ESTABLISHED` = field relevan tetapi belum memiliki nilai sah.
+- `UNRESOLVED` = field relevan tetapi belum memiliki nilai yang dapat ditetapkan secara sah.
 - `NOT-INSTANTIATED` = entity/record belum dibuat.
 - `RESOLUTION-BLOCKED` = hasil mekanis tidak boleh ditetapkan karena input wajib belum tersedia.
 
