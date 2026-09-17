@@ -254,3 +254,38 @@ Jika desain yang diinginkan adalah dynamic bounded refinement, perubahan berikut
 
 ### Verification
 Direct-fetch terhadap seluruh file scope selesai pada `main`. Tidak ditemukan formula Dynamic Refinement existing-equipment yang sudah dapat dipakai sebagai source Canon. Temuan ini merupakan **integration/design gap**, bukan bukti bahwa Module 34 rusak.
+
+
+## 2026-09-18 Dynamic Refinement Canon Integration — RESOLVED
+
+### Admin Decision
+Dynamic Refinement ditempatkan sebagai **bounded runtime resolution di Module 25**, dengan Module 34 sebagai **refinement process/permission authority**. Tidak dibuat modul baru karena kebutuhan utamanya adalah memakai Dynamic Generation Engine yang sudah ada tanpa memindahkan ownership mekanik dari Module 34.
+
+Canonical chain:
+`Existing Item → Material Source & Properties → Refinement Method → Compatibility Validation → Dynamic Bounded Resolution → Before/After → Origin → Save`
+
+### Canon Boundary Established
+- Module 14 tetap authoritative untuk Item State.
+- Material refinement properties wajib berasal dari source material yang sah; nama/rarity/harga/plausibility tidak boleh menjadi implicit property.
+- Module 34 menentukan method, qualification, process permission, allowed property dimensions, compatibility, bounds, cost/time, material consumption, dan failure mechanism yang tersedia.
+- Module 25 hanya memilih hasil konkret runtime di dalam bounds tersebut.
+- Missing required source/input → `RESOLUTION-BLOCKED`.
+- Dynamic result → `RUNTIME-GENERATED`, bukan Global Canon.
+- Existing Item Origin dipertahankan; refinement menambahkan Origin/History.
+- Before → resolution → after mencakup Item, Material, resource/cost, dan entity lain yang benar-benar berubah sebagai satu transaction.
+
+### Integration Completed
+- `systems/25_DYNAMIC_GENERATION.md` — Dynamic Refinement Boundary/Contract.
+- `systems/34_ARTIFACT_WEAPON_REFINEMENT.md` — Dynamic Refinement Interface.
+- `systems/27_MODULE_ROUTER.md` — refinement routing now includes Module 25 when result is dynamic.
+- `systems/35_MODULE_INTEGRATION.md` — dependency edge 34 ↔ 25 ↔ 14 and material-source dependencies.
+- `gm/STATE_VALIDATOR.md` — Dynamic Refinement Validation Gate.
+- `gm/RUNTIME_ENGINE.md` — Dynamic Refinement Runtime Gate.
+
+### Explicit Non-Goals
+Belum ditetapkan angka bonus, probabilitas, stat multiplier, material-to-effect table, atau katalog refinement. Ini disengaja. Contract sekarang mencegah Qwen mengarang mekanik yang belum memiliki source; angka/effect baru hanya boleh ditambahkan kemudian sebagai Admin Canon.
+
+### Verification
+All six modified files were fetched again from `main` after write and confirmed to contain the Dynamic Refinement contract/gates. Latest repository HEAD after this integration: `01d2df797b7a8d5954beea2dbfad05f685752e2d`.
+
+Previous finding **🟡 Dynamic Refinement Bridge belum eksplisit** is therefore **CLOSED as an integration gap**. The remaining work is a separate mechanics-design phase only if Admin wants concrete material properties, compatibility matrices, bounds, and outcome formulas.
