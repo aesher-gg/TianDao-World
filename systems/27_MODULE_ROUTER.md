@@ -110,13 +110,18 @@ GM wajib:
 Jika write-back gagal setelah resolusi valid, gunakan `gm/PENDING_SYNC.md`; state operasional tidak dianggap Repository Saved sampai write-back diverifikasi.
 
 ## 9. Runtime Contract
-`FRESH INDEX → IDENTIFY TRIGGERS → FETCH REQUIRED MODULES ONLY → VALIDATE → RESOLVE → UPDATE/ORIGIN → SAVE → WRITE-BACK VERIFY → RESPONSE`
+`FRESH INDEX → IDENTIFY TRIGGERS → MODULE 35 DEPENDENCY CHECK → FETCH REQUIRED MODULES ONLY → VALIDATE → RESOLVE → UPDATE/ORIGIN → SAVE → WRITE-BACK VERIFY → RESPONSE`
 
 ## 10. Anti-Catalog
 Dynamic result tetap runtime content. Ia tidak menjadi fixed Canon, Bestiary, faction database, NPC registry, event registry, recipe/formula/formation registry, atau global lore hanya karena pernah muncul dalam gameplay.
 
 Fixed Canon hanya ditambahkan melalui perubahan Admin yang sah dan diverifikasi.
 
+
+## 10A. Cross-Module Integration Gate
+- Setelah trigger routing, baca `systems/35_MODULE_INTEGRATION.md` untuk dependency edges.
+- Jika aksi melintasi dua domain, semua source module yang terdampak menjadi REQUIRED sebelum validation/resolution.
+- Module 35 tidak menggantikan aturan mekanik module sumber dan tidak memaksa fetch modul yang tidak relevan.
 
 ## DATA COMPLETENESS ROUTER GATE
 Router wajib memastikan modul yang menyediakan source untuk setiap field material telah di-fetch sebelum field tersebut di-resolve. Jika source required tidak tersedia, jangan fallback ke memory/cache atau plausibility. Tandai UNRESOLVED atau tahan sebagai RESOLUTION-BLOCKED sesuai core/07_DATA_COMPLETENESS.md.
