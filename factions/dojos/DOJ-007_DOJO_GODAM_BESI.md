@@ -10,8 +10,11 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Struktur: Kepala Dojo → Pengajar → Murid Senior → Murid.
 - Rekrutmen: ujian fisik, dasar senjata berat, kepatuhan aturan.
 - Agenda: membina praktisi tingkat rendah melalui latihan fisik dan senjata disiplin.
-- Relasi: dapat berinteraksi dengan institusi lokal/faction lain melalui latihan atau kontrak sah; tidak otomatis menjadi bagian faction.
-- Kepala/NPC/Teknik/Realm/Bonus/Aset: `NOT-ESTABLISHED`
+- Relasi: dapat berinteraksi dengan institusi lokal/faction lain melalui latihan atau kontrak sah; tidak otomatis menjadi bagian faction. Tidak ada aliansi permanen lain yang dikunci.
+- Kepala: jabatan Kepala Dojo aktif; tidak ada NPC bernama yang menjadi Canon tetap.
+- Teknik spesifik: tidak ada teknik eksklusif yang dikunci sebagai Canon; pengajaran memakai teknik dasar senjata berat dan penguatan tubuh dari sumber resmi.
+- Realm/Bonus: tidak ada bonus atau kenaikan Realm otomatis dari keanggotaan; advancement mengikuti sistem kultivasi dan hasil latihan.
+- Aset: lapangan uji Desa Tiedao, aula latihan, area sparring, senjata latihan berat, dan perlengkapan latihan fisik.
 
 ## Rule
-Detail kepala, NPC bernama, teknik spesifik, realm, bonus, rank, aset, dan modifier mengikuti source Canon/Admin terpisah bila tersedia.
+Keanggotaan tidak otomatis memberikan teknik, realm, bonus, rank khusus, atau kepemilikan aset. Semua perubahan membutuhkan resolusi dan provenance yang sah.
