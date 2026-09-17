@@ -1,7 +1,7 @@
 # Module 33 — FORMATION & ARRAY
 
 ## Status
-Admin Canon v1.1
+Admin Canon v1.2
 
 ## Purpose
 Menetapkan sistem untuk blueprint, construction, activation, operation, disruption, damage, repair, dan destruction Formation/Array.
@@ -11,85 +11,91 @@ Module 33 mengatur Formation/Array sebagai struktur mekanis. Module 14 mengatur 
 
 ## Core Principle
 `Blueprint ≠ Construction ≠ Activation ≠ Operation`.
-Memiliki blueprint tidak berarti Character mampu membangun atau mengoperasikan formation.
 
 ## Source Priority
 `Canon/Admin → Fixed Formation/Blueprint Source → Current State → Valid Knowledge/Technique → Materials → Array Core → Location/Environment → Runtime Resolution`
 
-Jika input mekanis wajib tidak diketahui dan tidak ada fallback resmi, gunakan `UNRESOLVED` atau tahan resolusi.
+## Canon Formation Registry
+Baseline berikut tersedia sebagai blueprint Admin Canon. Blueprint tidak otomatis menjadi construction atau mastery.
+
+### FORM-BP-001 — Formasi Penjaga Pintu Dasar
+- Purpose: peringatan/pertahanan sederhana pada satu pintu atau jalur sempit.
+- Materials: `ITEM-MAT-002` Kayu Keras Cangyuan ×4 + `ITEM-MAT-001` Bijih Besi Kasar ×1.
+- Core: tidak wajib.
+- Area: maksimal 2 Fen dari titik pemasangan.
+- Activation: 1 operator dengan blueprint valid; membutuhkan pemasangan selesai.
+- Effect: memberi tanda/alert ketika batas formasi terganggu; tidak memberikan automatic damage.
+- Duration: selama struktur terpasang dan belum rusak; pemeriksaan state diperlukan tiap aktivasi.
+
+### FORM-BP-002 — Formasi Pengumpul Cahaya Dasar
+- Purpose: menyediakan pencahayaan area kerja kecil.
+- Materials: `ITEM-MAT-002` Kayu Keras Cangyuan ×2 + `ITEM-MAT-001` Bijih Besi Kasar ×1.
+- Core: tidak wajib.
+- Area: maksimal 3 Fen dari titik pusat.
+- Activation: operator dengan blueprint valid dan resource yang diperlukan.
+- Effect: penerangan area; tidak memberi bonus combat atau cultivation.
+- Duration: satu periode operasi sampai resource/condition yang berlaku habis.
+
+### FORM-BP-003 — Formasi Penahan Angin Dasar
+- Purpose: mengurangi gangguan angin pada area kerja terbatas.
+- Materials: `ITEM-MAT-002` Kayu Keras Cangyuan ×6 + `ITEM-MAT-005` Serat Rami ×2.
+- Core: tidak wajib.
+- Area: maksimal 5 Fen dari titik pusat.
+- Activation: operator dengan blueprint valid.
+- Effect: membatasi gangguan angin biasa di dalam area; tidak menetralisir badai atau fenomena spiritual.
+- Duration: satu periode operasi; tidak unlimited.
 
 ## Required Components
-1. Formation blueprint/procedure yang valid.
+1. Blueprint/procedure valid.
 2. Operator/builder dengan knowledge yang sah.
-3. Array materials yang valid.
-4. Array Core bila formation membutuhkannya.
-5. Lokasi/area yang sesuai.
+3. Materials yang valid.
+4. Array Core bila blueprint membutuhkannya.
+5. Lokasi/area sesuai.
 6. Resource cost.
 7. Construction/activation process.
 
-## Blueprint
-Blueprint dapat berasal dari Canon, manual, teacher, faction, item, event, discovery yang benar-benar terjadi, atau Admin Canon.
-- Blueprint tidak otomatis memberikan mastery.
-- Effect, range, cost, stability, requirements, dan disruption rules hanya digunakan jika source mendefinisikannya.
-
 ## Formation Identity & Persistence
-Formation persisten menggunakan `FORM-####` sebagai identity unik dan stabil. Array Core persisten menggunakan `ARRAYCORE-####` sebagai identity unik dan stabil. ID tidak berubah karena nama, lokasi, owner, status, atau kondisi berubah.
+Formation persisten menggunakan `FORM-####`; Array Core persisten menggunakan `ARRAYCORE-####`.
 - Current Formation State: `formations/FORM-####.md`
 - Current Array Core State: `formations/cores/ARRAYCORE-####.md`
 - Registry: `formations/formation_registry.md`
 - History: `formation_history/FORM-####_HISTORY.md` dan `formation_history/ARRAYCORE-####_HISTORY.md` bila continuity material memerlukannya.
-- Formation/Array Core yang hanya one-turn dan non-material boleh tetap runtime tanpa persistence.
-- Persistent identity tidak menjadikan Formation atau Array Core Global Canon di luar state yang benar-benar tersimpan.
 
 ## Formation State
 `Blueprint Only → Unconstructed → Constructing → Constructed/Inactive → Active → Damaged/Disrupted → Collapsed/Destroyed`
-State harus mencerminkan resolusi aktual, bukan intent Player.
 
 ## Construction
-Construction mengonsumsi material, waktu, dan resource hanya sesuai source.
-Kualitas konstruksi tidak boleh diada-adakan tanpa mekanisme yang mendukungnya.
-Construction failure dapat menghasilkan incomplete, damaged, atau failed formation bila valid.
+Construction mengonsumsi material, waktu, dan resource sesuai blueprint/source. Failure dapat menghasilkan incomplete, damaged, atau failed formation.
 
 ## Array Core
-Array Core adalah komponen terpisah jika formation membutuhkannya.
-- Core harus mempunyai Origin.
-- Core memiliki state/condition yang dapat berubah.
-- Core tidak muncul gratis.
-- Memiliki Core tidak otomatis berarti memiliki Formation.
-- Core yang persisten mengikuti identity/state/history rules di atas.
+Array Core adalah komponen terpisah bila formation membutuhkannya. Core harus mempunyai Origin dan tidak muncul gratis.
 
 ## Activation
-Activation membutuhkan semua requirement yang berlaku. Activation dapat membutuhkan operator, Qi, fuel, item, timing, location, atau trigger resmi.
-Formation terpasang tidak otomatis aktif.
+Activation membutuhkan semua requirement yang berlaku. Formation terpasang tidak otomatis aktif.
 
 ## Operation
-Saat aktif, formation memiliki state yang dapat berubah melalui cost, duration, damage, disruption, atau kondisi lain yang benar-benar didukung source.
-Tidak ada automatic unlimited duration.
+Formation aktif memiliki state yang dapat berubah melalui cost, duration, damage, disruption, atau kondisi yang didukung source.
 
 ## Cost
-Cost dapat berupa Qi, stamina, material/fuel, currency, durability, operator attention, atau resource lain bila ditentukan.
-Jangan membuat numeric cost tersembunyi.
+Cost hanya berasal dari blueprint/source atau resource rule resmi. Tidak ada numeric cost tersembunyi.
 
 ## Range & Effect
-Range dan effect harus berasal dari Formation source atau Admin Canon.
-Tidak boleh memperluas range/effect hanya karena Realm operator lebih tinggi.
-Jika range/effect tidak diketahui, statusnya `UNRESOLVED` dan efek mekanis tidak boleh diasumsikan.
+Range/effect baseline untuk tiga blueprint Canon di atas sudah ditetapkan pada registry. Formation lain yang belum memiliki blueprint Canon tetap menggunakan `UNRESOLVED` dan tidak boleh diberi effect mekanis secara asumtif.
 
 ## Disruption & Failure
 Formation dapat gagal, terganggu, rusak, dinonaktifkan, runtuh, atau dihancurkan jika mekanisme/source memungkinkan.
-Combat disruption memakai Module 12 bila menjadi combat resolution.
-Tidak ada automatic immunity hanya karena formation adalah milik Character/faction.
 
 ## Formation Combat Interaction
 Jika Formation memengaruhi combat:
 `Formation State → Valid Effect → Combat Module → Resolution → Formation/Combat Consequence`.
-Formation tidak menggantikan combat rules dan tidak memberikan automatic hit/kill/dodge/counter yang tidak disumberkan.
+
+Tidak ada automatic hit/kill/dodge/counter yang tidak disumberkan.
 
 ## Repair
-Repair adalah perubahan state pada Formation/Array Core. Material, tool, skill, time, dan result harus valid. Repair tidak otomatis memulihkan formation ke kondisi sempurna tanpa dasar.
+Repair adalah perubahan state. Material, tool, skill, time, dan result harus valid. Repair tidak otomatis memulihkan kondisi sempurna.
 
 ## Origin
-Construction, activation, modification, disruption, repair, collapse, dan destruction yang material harus memiliki:
+Construction, activation, modification, disruption, repair, collapse, dan destruction yang material wajib memiliki:
 `World Time / Entity ID / Action/Event / Cause / Resolution / Before → After / Source`.
 
 ## Anti-Cheat
@@ -103,7 +109,7 @@ Construction, activation, modification, disruption, repair, collapse, dan destru
 - Dynamic formation tidak menjadi Global Canon hanya karena muncul runtime.
 
 ## Persistence
-Formation yang material atau lintas turn harus mempunyai identity/state yang dapat dilacak. Semua entity yang berubah, termasuk Character, Formation, Array Core, consumed materials, dan shared location state bila relevan, diproses melalui Save Pipeline.
+Formation material atau lintas turn harus mempunyai identity/state yang dapat dilacak dan diproses melalui Save Pipeline.
 
 ## Runtime Contract
 `ROUTER → REQUIRED SOURCES → COMPONENT VALIDATION → CONSTRUCTION/ACTIVATION CHECK → COST → RESOLUTION → EFFECT/DAMAGE → ORIGIN → STATE/HISTORY → SAVE → VERIFY`
