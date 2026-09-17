@@ -369,3 +369,7 @@ Sistem berkebun harus memberikan rasa:
 **menanam → merawat → melihat angka berkembang → menghadapi risiko → menunggu waktu yang wajar → memanen → memperoleh hasil yang masuk akal.**
 
 Sistem harus realistis dalam sebab-akibat, tetapi cepat dalam time-scale agar cocok untuk game berbasis teks.
+
+
+## DATA COMPLETENESS GARDEN GATE
+Seed identity, growth, maturity, yield, quality, effect, harvest time, dan mutation hanya boleh berasal dari source/formula/state yang sah. Jangan mengisi field kebun dengan angka atau properti yang tidak bersumber. Entity/state yang belum dibuat tetap NOT-INSTANTIATED; data yang belum dapat ditentukan tetap UNRESOLVED.
