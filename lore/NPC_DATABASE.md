@@ -24,6 +24,16 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Perguruan Tombak Feiyun.
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
+### Gu Han
+- ID: NPC-DOJ-001
+- Peran: Kepala Perguruan Tombak Feiyun
+- Faction/Organisasi: `DOJ-001`
+- Sifat: tegas, disiplin, berorientasi pada standar latihan
+- Agenda: menjaga mutu perguruan dan kehormatan jalur tombak
+- Pengetahuan: urusan perguruan sesuai kewenangan jabatannya
+- Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Perguruan Tombak Feiyun.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
 ### Mo Qingzhu
 - Peran: Pedagang keliling Paviliun Seribu Daun
 - Sifat: tenang, oportunis, menghitung risiko
@@ -31,6 +41,16 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Pengetahuan: perdagangan dan rumor yang diperoleh sah
 - Sumber Canon: `factions/organizations/00_ORGANIZATION_DATABASE.md` — Paviliun Seribu Daun.
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
+
+### Lin Zhaoyan
+- ID: NPC-DOJ-002
+- Peran: Kepala Dojo Bunga Aprikot
+- Faction/Organisasi: `DOJ-002`
+- Sifat: tenang, teliti, menilai kemampuan melalui latihan nyata
+- Agenda: menjaga kesinambungan ajaran dan mutu dasar murid
+- Pengetahuan: urusan dojo sesuai kewenangan jabatannya
+- Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Dojo Bunga Aprikot.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Lin Yuexin
 - Peran: Tabib keliling Cangyuan
@@ -119,6 +139,56 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Pengetahuan: materi sesuai rank dan ajaran dojo
 - Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Dojo Bunga Aprikot.
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
+
+### He Tieshan
+- ID: NPC-DOJ-003
+- Peran: Kepala Dojo Batu Sungai
+- Faction/Organisasi: `DOJ-003`
+- Sifat: keras, sederhana, menghargai ketahanan
+- Agenda: menjaga dojo tetap terbuka bagi praktisi tingkat rendah
+- Pengetahuan: urusan dojo sesuai kewenangan jabatannya
+- Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Dojo Batu Sungai.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Bei Yucheng
+- ID: NPC-DOJ-004
+- Peran: Kepala Dojo Angin Utara
+- Faction/Organisasi: `DOJ-004`
+- Sifat: keras, praktis, berhati-hati terhadap medan salju
+- Agenda: menjaga kemampuan bertahan murid di lingkungan ekstrem
+- Pengetahuan: urusan dojo dan keselamatan lokal sesuai kewenangan
+- Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Dojo Angin Utara.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Luo Shayan
+- ID: NPC-DOJ-005
+- Peran: Kepala Dojo Pasir Merah
+- Faction/Organisasi: `DOJ-005`
+- Sifat: hemat, waspada, berorientasi pada keselamatan perjalanan
+- Agenda: menjaga jalur permukiman dan karavan lokal
+- Pengetahuan: urusan dojo dan kebutuhan perjalanan sesuai kewenangan
+- Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Dojo Pasir Merah.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Hai Longwei
+- ID: NPC-DOJ-006
+- Peran: Kepala Dojo Ombak Biru
+- Faction/Organisasi: `DOJ-006`
+- Sifat: tegas, waspada terhadap risiko laut
+- Agenda: keselamatan pelaut dan kesinambungan latihan medan basah
+- Pengetahuan: urusan dojo dan keselamatan laut sesuai kewenangan
+- Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Dojo Ombak Biru.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Qian Tiecheng
+- ID: NPC-DOJ-007
+- Peran: Kepala Dojo Godam Besi
+- Faction/Organisasi: `DOJ-007`
+- Sifat: disiplin, kuat pada aturan latihan, menilai kemampuan melalui praktik
+- Agenda: membina praktisi tingkat rendah melalui latihan fisik dan senjata
+- Pengetahuan: urusan dojo dan fasilitas Desa Tiedao sesuai kewenangan
+- Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Dojo Godam Besi.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
 ### Fang Zhen
 - Peran: Koordinator lapangan Aliansi Sanxiu Yuheng
