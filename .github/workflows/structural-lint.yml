@@ -1,0 +1,94 @@
+name: Structural Reference Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  structural-lint:
+    name: structural-reference-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate repository references and persistence conventions
+        shell: python
+        run: |
+          import pathlib
+          import re
+          import sys
+
+          root = pathlib.Path('.')
+          errors = []
+
+          # Exact repository paths written as Markdown inline-code references.
+          # Template paths containing placeholders are documentation schemas and
+          # cannot be resolved to a concrete repository object.
+          path_re = re.compile(r'`([^`]+)`')
+          path_like = re.compile(r'^(?:\.?/?[A-Za-z0-9_.-]+/)+[A-Za-z0-9_.-]+/?$|^[A-Za-z0-9_.-]+\.md$')
+
+          refs = []
+          for md in root.rglob('*.md'):
+              if '.git' in md.parts:
+                  continue
+              text = md.read_text(encoding='utf-8')
+              for match in path_re.finditer(text):
+                  ref = match.group(1).strip()
+                  if ref.startswith(('http://', 'https://')):
+                      continue
+                  if any(x in ref for x in ('<', '>', '[', ']', '...', '*')):
+                      continue
+                  if not path_like.match(ref):
+                      continue
+                  refs.append((md.as_posix(), ref))
+
+          for source, ref in refs:
+              target = root / ref.rstrip('/')
+              if not target.exists():
+                  errors.append(f'MISSING_REFERENCE: {source} -> {ref}')
+
+          # Canonical persistent identity/path checks for instantiated entities.
+          checks = [
+              (root / 'characters/character_registry.md', r'^### (CHAR-\d+)$', r'Current State:\s*`characters/players/(CHAR-\d+)\.md`'),
+          ]
+          for registry, heading_re, state_re in checks:
+              if not registry.exists():
+                  errors.append(f'MISSING_REGISTRY: {registry.as_posix()}')
+                  continue
+              text = registry.read_text(encoding='utf-8')
+              ids = re.findall(heading_re, text, re.M)
+              states = re.findall(state_re, text)
+              if sorted(ids) != sorted(states):
+                  errors.append(f'CHARACTER_REGISTRY_MISMATCH: {registry.as_posix()} ids={ids} states={states}')
+              for cid in ids:
+                  state = root / f'characters/players/{cid}.md'
+                  if not state.exists():
+                      errors.append(f'MISSING_CHARACTER_STATE: {cid} -> {state.as_posix()}')
+                  history = root / f'character_history/{cid}_HISTORY.md'
+                  if not history.exists():
+                      # History is optional; only flag a mismatch when the registry/state
+                      # explicitly references a history file.
+                      if f'character_history/{cid}_HISTORY.md' in text:
+                          errors.append(f'MISSING_CHARACTER_HISTORY: {cid} -> {history.as_posix()}')
+
+          # Player -> Character mappings must point to registered Character IDs.
+          player_registry = root / 'characters/players.md'
+          char_registry = root / 'characters/character_registry.md'
+          if player_registry.exists() and char_registry.exists():
+              ptext = player_registry.read_text(encoding='utf-8')
+              ctext = char_registry.read_text(encoding='utf-8')
+              registered_chars = set(re.findall(r'^### (CHAR-\d+)$', ctext, re.M))
+              for cid in re.findall(r'Character(?:\(s\)|s)?:\s*(CHAR-\d+)', ptext):
+                  if cid not in registered_chars:
+                      errors.append(f'PLAYER_CHARACTER_ORPHAN: {cid} not present in character_registry.md')
+
+          if errors:
+              print('\n'.join(errors))
+              sys.exit(1)
+
+          print(f'OK: checked {len(refs)} concrete Markdown path references.')
+          print('OK: character registry/current-state identity conventions are consistent.')
+          print('OK: player-to-character registry references are consistent.')
