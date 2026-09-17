@@ -157,3 +157,7 @@ Validation gagal → jangan terapkan perubahan material.
 `FRESH INDEX → LOAD RELEVANT CANON → LOAD STATE/TIME → SOCIAL/ENCOUNTER CONTEXT → NPC GENERATION → EVENT CHECK → QUEST CANDIDATE → VALIDATION → PLAYER CHOICE → ACTION RESOLUTION → CONSEQUENCE → ORIGIN/HISTORY → SAVE → WRITE-BACK VERIFY`.
 
 Module 25 menjadi fondasi dynamic encounter/creature/loot; Module 26 mengatur NPC/event/quest.
+
+
+## DATA COMPLETENESS HARD GATE
+Qwen boleh menentukan hasil konkret hanya setelah source/input runtime yang diwajibkan tersedia. Jangan membuat issuer, identitas, agenda, target, deadline, reward, scope, atau atribut lain hanya untuk membuat candidate lengkap. Field yang belum dapat dibuktikan tetap UNRESOLVED; required field yang menghalangi resolusi menjadi RESOLUTION-BLOCKED.
