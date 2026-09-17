@@ -17,8 +17,10 @@ Minimal mencatat, sejauh relevan:
 - `Training/Insight Process`: proses belajar/pemahaman;
 - `World Time`: waktu resolusi;
 - `Resolution`: hasil;
-- `Status`: `VALIDATED & ACTIVE`, `VALIDATED & INACTIVE`, `PENDING VALIDATION`, `REJECTED`, atau `???`;
+- `Status`: `VALIDATED & ACTIVE`, `VALIDATED & INACTIVE`, `PENDING VALIDATION`, atau `REJECTED`;
 - `Origin Reference`: rujukan ke log/history/event/item/law yang mendukung.
+
+Jika status belum dapat ditentukan secara sah, gunakan status kelengkapan data `NOT-ESTABLISHED` dan tahan aktivasi teknik.
 
 ## 3. Teknik Berbasis Law
 Jika Source Type = `Law`, Technique Origin harus menunjuk ke **Cultivation Law yang aktif** dan Law Origin yang sah. Ini membuktikan hubungan sumber, tetapi tetap membutuhkan proses penguasaan teknik.
