@@ -16,7 +16,7 @@ Memiliki blueprint tidak berarti Character mampu membangun atau mengoperasikan f
 ## Source Priority
 `Canon/Admin → Fixed Formation/Blueprint Source → Current State → Valid Knowledge/Technique → Materials → Array Core → Location/Environment → Runtime Resolution`
 
-Jika input mekanis wajib tidak diketahui dan tidak ada fallback resmi, gunakan `???` atau tahan resolusi.
+Jika input mekanis wajib tidak diketahui dan tidak ada fallback resmi, gunakan `UNRESOLVED` atau tahan resolusi.
 
 ## Required Components
 1. Formation blueprint/procedure yang valid.
@@ -73,7 +73,7 @@ Jangan membuat numeric cost tersembunyi.
 ## Range & Effect
 Range dan effect harus berasal dari Formation source atau Admin Canon.
 Tidak boleh memperluas range/effect hanya karena Realm operator lebih tinggi.
-Jika range/effect tidak diketahui: `???`.
+Jika range/effect tidak diketahui, statusnya `NOT-ESTABLISHED` dan efek mekanis tidak boleh diasumsikan.
 
 ## Disruption & Failure
 Formation dapat gagal, terganggu, rusak, dinonaktifkan, runtuh, atau dihancurkan jika mekanisme/source memungkinkan.
