@@ -199,6 +199,40 @@ Jika method tidak memiliki required source, target constraint, compatibility rul
 
 Module 25 hanya menerima method yang telah lolos gate ini; Module 25 tidak melengkapi field method yang hilang.
 
+### Bounded Resolution Formula Contract
+
+Module 34 adalah **permission/process authority**; Module 25 adalah **bounded result resolver**. Setelah seluruh precondition tervalidasi, context yang diserahkan ke Module 25 harus mengikuti:
+
+ITEM_STATE + MATERIAL_PROPERTY_RECORDS + METHOD_RECORD + COMPATIBILITY + QUALIFICATION + PROCESS_CONDITIONS → BOUNDED RESOLUTION → BEFORE/AFTER
+
+#### Resolver Input Contract
+Module 34 wajib menyerahkan hanya data yang telah tervalidasi:
+- Existing Item State dan target constraints;
+- material identity, quantity, Origin, dan refinement properties;
+- Method Record §11A;
+- compatibility result;
+- qualification result;
+- tool/workspace dan process conditions;
+- resource cost/time yang diwajibkan;
+- allowed property dimensions, bounds, outcome model, consumption, dan failure consequence.
+
+#### Legal Result Space
+Untuk setiap allowed dimension:
+
+LEGAL_RESULT = ItemConstraint ∩ MaterialBound ∩ MethodBound
+
+Resolver tidak boleh keluar dari irisan constraint/bound yang tersedia. Dimension yang tidak tercantum dalam Method Record berada di luar result space. Bound yang tidak memiliki source tidak boleh dibuat.
+
+#### Outcome Delegation
+Module 34 menentukan mekanisme outcome melalui OUTCOME_MODEL. Module 25 hanya memilih concrete runtime result sesuai mekanisme tersebut. Bila source menyediakan roll/probability, hanya parameter source yang boleh digunakan; bila tidak, tidak boleh dibuat probabilitas/roll tersembunyi.
+
+Jika required input, bound, compatibility, qualification, process condition, atau outcome mechanism tidak dapat dibuktikan, refinement tidak dilanjutkan dan statusnya RESOLUTION-BLOCKED.
+
+#### Before/After Boundary
+Resolver result harus dapat diterapkan sebagai satu transaction:
+BEFORE → RESOLUTION → AFTER
+yang mencakup Item State, consumed Material, resource/cost/time, serta Origin/History seluruh entity yang berubah.
+
 ### Resolver Boundary
 - Module 34: validasi existing item + method + qualification + process permission.
 - Module 25: memilih concrete runtime result di dalam bounds yang sah.
