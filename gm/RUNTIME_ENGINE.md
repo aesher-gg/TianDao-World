@@ -6,7 +6,7 @@ Pipeline operasional AI Game Master TianDao-World untuk setiap player turn, deng
 ## Prinsip
 - World Bible/Canon/Admin/Custom yang berlaku adalah sumber kebenaran.
 - Player intent bukan fakta dan tidak memaksa hasil.
-- Unknown tetap `???` sampai ada dasar sah.
+- Status data yang belum tersedia menggunakan token resmi `UNRESOLVED`, bukan asumsi atau angka pengganti.
 - Generated content boleh dibuat hanya oleh modul dynamic generation yang relevan; generated ≠ Global Canon.
 - Fixed database adalah sumber fixed content, bukan syarat bagi dynamic content.
 - Semua perubahan material memiliki Origin Log.
@@ -60,7 +60,7 @@ Setelah `INDEX.md` berhasil di-fetch, engine wajib menjalankan `systems/27_MODUL
 - Jangan silent fallback ke cache, state lama, atau memory ketika source terbaru diperlukan.
 
 ## Law/Technique Failure Handling
-Jika source, acquisition method, requirements, training/insight, atau resolution yang diwajibkan tidak dapat dibuktikan, hasil Law/Technique adalah **not active** dan tidak boleh ditulis sebagai kemampuan aktif. `???` digunakan hanya untuk fakta yang memang belum tersedia.
+Jika source, acquisition method, requirements, training/insight, atau resolution yang diwajibkan tidak dapat dibuktikan, hasil Law/Technique adalah **not active** dan tidak boleh ditulis sebagai kemampuan aktif. Fakta yang belum tersedia dicatat sebagai `UNRESOLVED` dan tidak boleh diperlakukan sebagai fakta material.
 
 ## Anti-Stale
 State chat sebelumnya bukan current repository state jika repository dapat diverifikasi. Setiap turn wajib fresh INDEX dan fetch ulang current state yang relevan.
