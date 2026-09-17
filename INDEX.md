@@ -89,6 +89,7 @@
 - `audits/2026-09-11_GARDENING_SYSTEM_AUDIT.md` — gardening system audit
 - `audits/2026-09-12_SPIRIT_BEAST_AUDIT.md` — Spirit Beast system audit
 - `audits/2026-09-17_UNRESOLVED_CANON_AUDIT.md` — static Canon gap vs runtime/discovery unresolved audit
+- `audits/2026-09-18_ALL_MODULE_FIELD_MAINTENANCE.md` — repository-wide field maintenance: source tracing, static Canon vs runtime classification, cross-reference sync, and verification
 
 ## Factions — Canon Databases
 - `factions/sects/00_SECT_DATABASE.md`
