@@ -85,6 +85,10 @@
 
 ## Audits
 - `audits/2026-09-10_WORLD_AUDIT.md` — repository/runtime integrity audit
+- `audits/2026-09-11_DISTANCE_LI_AUDIT.md` — distance/li integrity audit
+- `audits/2026-09-11_GARDENING_SYSTEM_AUDIT.md` — gardening system audit
+- `audits/2026-09-12_SPIRIT_BEAST_AUDIT.md` — Spirit Beast system audit
+- `audits/2026-09-17_UNRESOLVED_CANON_AUDIT.md` — static Canon gap vs runtime/discovery unresolved audit
 
 ## Factions — Canon Databases
 - `factions/sects/00_SECT_DATABASE.md`
