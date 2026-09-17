@@ -11,7 +11,7 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Rekrutmen: ujian fisik, dasar senjata berat, kepatuhan aturan.
 - Agenda: membina praktisi tingkat rendah melalui latihan fisik dan senjata disiplin.
 - Relasi: dapat berinteraksi dengan institusi lokal/faction lain melalui latihan atau kontrak sah; tidak otomatis menjadi bagian faction. Tidak ada aliansi permanen lain yang dikunci.
-- Kepala: jabatan Kepala Dojo aktif; tidak ada NPC bernama yang menjadi Canon tetap.
+- Kepala: Qian Tiecheng (`NPC-DOJ-007`); Kepala Dojo aktif.
 - Teknik spesifik: tidak ada teknik eksklusif yang dikunci sebagai Canon; pengajaran memakai teknik dasar senjata berat dan penguatan tubuh dari sumber resmi.
 - Realm/Bonus: tidak ada bonus atau kenaikan Realm otomatis dari keanggotaan; advancement mengikuti sistem kultivasi dan hasil latihan.
 - Aset: lapangan uji Desa Tiedao, aula latihan, area sparring, senjata latihan berat, dan perlengkapan latihan fisik.
