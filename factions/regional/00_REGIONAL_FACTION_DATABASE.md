@@ -5,7 +5,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 
 ## Aturan Integritas
 - Setiap ID hanya menjadi identitas registry; ID tidak memberi kekuatan, rank, teknik, bonus, aset, pemimpin, atau agenda yang tidak tertulis.
-- Setiap faction memiliki jabatan representatif utama yang dapat digunakan sebagai target sosial; nama NPC pribadi tidak dikunci sebagai Canon tetap.
+- Setiap faction memiliki jabatan representatif utama yang dapat digunakan sebagai target sosial; jika identitas pemegang jabatan sudah ditetapkan Canon, nama NPC wajib dirujuk ke `lore/NPC_DATABASE.md` dengan ID yang sama.
 - Fakta faction harus bersumber dari modul regional atau modul Canon lain yang terdaftar di INDEX.
 - GM boleh memakai fakta yang sudah tertulis, tetapi tidak boleh memperluasnya menjadi fakta global baru hanya berdasarkan nama atau genre.
 
@@ -16,7 +16,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Pegunungan Qingluan.
 - Canon: sekte ortodoks yang menjaga sebagian wilayah pegunungan dan jalur kultivasi lokal.
 - Agenda: menjaga wilayah pegunungan dan kesinambungan jalur kultivasi lokal.
-- NPC utama: jabatan Kepala Sekte dan perwakilan jalur lokal; tidak ada nama pribadi tetap.
+- NPC utama: Kepala Sekte — **Qing Yanshan** (`NPC-REG-001`).
 - Relasi dasar: kooperatif dengan Istana Bambu Giok; memiliki kepentingan material spiritual yang dapat menimbulkan kompetisi.
 
 ### Istana Bambu Giok
@@ -25,7 +25,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Pegunungan Qingluan.
 - Canon: berfokus pada pengobatan, teknik spiritual dan pengetahuan bahan.
 - Agenda: mengembangkan pengobatan, pengetahuan bahan, dan praktik teknik spiritual sesuai fokus perguruan.
-- NPC utama: jabatan Kepala Istana dan pengajar senior; tidak ada nama pribadi tetap.
+- NPC utama: Kepala Istana — **Yu Lanxin** (`NPC-REG-002`).
 - Relasi dasar: kooperatif dengan Sekte Gunung Qingluan; kepentingan material dapat tetap kompetitif.
 
 ### Paviliun Pemburu Roh
@@ -34,7 +34,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Pegunungan Qingluan.
 - Canon: pemburu monster dan pengumpul material; kontrak dan reputasi menentukan tingkat kepercayaan.
 - Agenda: memperoleh material melalui perburuan/pengumpulan dan menjaga akses kerja melalui kontrak serta reputasi.
-- NPC utama: jabatan Koordinator Kontrak dan pemburu senior; tidak ada nama pribadi tetap.
+- NPC utama: Koordinator Kontrak — **Han Lie** (`NPC-REG-003`).
 - Relasi dasar: transaksional dengan Sekte Gunung Qingluan dan Istana Bambu Giok.
 
 ## Domain Yaohuang Selatan
@@ -44,7 +44,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Domain Yaohuang Selatan.
 - Canon: konfederasi beberapa klan yao dengan kepentingan internal berbeda.
 - Agenda: menjaga kepentingan konfederasi sambil menyeimbangkan kepentingan internal antar-klan yao.
-- NPC utama: jabatan Perwakilan Konfederasi dan utusan klan; tidak ada nama pribadi tetap.
+- NPC utama: Perwakilan Konfederasi — **Yao Mingzhu** (`NPC-REG-004`).
 - Relasi dasar: pragmatis dengan Sekte Api Merah; perdagangan dengan Serikat Seratus Daun bergantung pada individu dan klan.
 
 ### Sekte Api Merah
@@ -53,7 +53,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Domain Yaohuang Selatan, berakar di kawasan pegunungan api.
 - Canon: kepentingan berpusat pada kultivasi dan sumber daya panas bumi.
 - Agenda: mengembangkan kultivasi dan mempertahankan akses terhadap sumber daya panas bumi wilayahnya.
-- NPC utama: jabatan Kepala Sekte dan pengawas sumber daya; tidak ada nama pribadi tetap.
+- NPC utama: Kepala Sekte — **Huo Zheng** (`NPC-REG-005`).
 - Relasi dasar: pragmatis dengan Istana Yaohuang; hubungan komersial dengan Serikat Seratus Daun dapat berubah berdasarkan kontrak.
 
 ## Laut Dongming
@@ -63,7 +63,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Laut Dongming.
 - Canon: memiliki kepentingan atas wilayah dan jalur laut tertentu.
 - Agenda: menjaga kepentingan wilayah dan jalur laut yang berada dalam cakupan kepentingannya.
-- NPC utama: jabatan Penjaga Jalur Laut dan perwakilan istana; tidak ada nama pribadi tetap.
+- NPC utama: Penjaga Jalur Laut — **Long Jinhai** (`NPC-REG-006`).
 - Relasi dasar: hubungan dagang dengan Aliansi Pedagang Haixu; saling menghormati namun berkepentingan wilayah berbeda dengan Sekte Pedang Ombak.
 
 ### Sekte Pedang Ombak
@@ -72,7 +72,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Laut Dongming.
 - Canon: memadukan pedang dan mobilitas di medan laut.
 - Agenda: mempertahankan dan mengembangkan latihan pedang serta mobilitas yang sesuai dengan medan laut.
-- NPC utama: jabatan Kepala Sekte dan instruktur laut senior; tidak ada nama pribadi tetap.
+- NPC utama: Kepala Sekte — **Hai Qingfeng** (`NPC-REG-007`).
 - Relasi dasar: dapat bekerja sama dalam pengawalan dengan Aliansi Pedagang Haixu; memiliki kepentingan wilayah berbeda dengan Istana Naga Dongming.
 
 ### Aliansi Pedagang Haixu
@@ -81,7 +81,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Laut Dongming.
 - Canon: jaringan niaga antarpulau; kontrak, reputasi dan keamanan menentukan akses.
 - Agenda: menjalankan perdagangan antarpulau dengan mengandalkan kontrak, reputasi, dan keamanan jalur.
-- NPC utama: jabatan Ketua Aliansi dan pengelola kontrak pelabuhan; tidak ada nama pribadi tetap.
+- NPC utama: Ketua Aliansi — **Xu Haoran** (`NPC-REG-008`).
 - Relasi dasar: berdagang dengan Istana Naga Dongming dan dapat menggunakan pengawalan Sekte Pedang Ombak.
 
 ## Tanah Salju Beiming
@@ -91,7 +91,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Tanah Salju Beiming.
 - Canon: memiliki kepentingan atas tradisi dan sumber daya spiritual wilayah dingin.
 - Agenda: mempertahankan tradisi kultivasi dan kepentingan atas sumber daya spiritual wilayah dingin.
-- NPC utama: jabatan Kepala Sekte dan pengawas sumber daya dingin; tidak ada nama pribadi tetap.
+- NPC utama: Kepala Sekte — **Xuan Yifei** (`NPC-REG-009`).
 - Relasi dasar: berhubungan dengan Benteng Besi Beichen atas keamanan wilayah dan dengan Paviliun Salju Putih melalui pertukaran sumber daya/kontrak.
 
 ### Benteng Besi Beichen
@@ -100,7 +100,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Tanah Salju Beiming.
 - Canon: menjaga jalur utara dan memiliki fungsi pertahanan serta keamanan.
 - Agenda: menjaga jalur utara serta mempertahankan fungsi pertahanan dan keamanan wilayah.
-- NPC utama: jabatan Komandan Benteng dan petugas gerbang; tidak ada nama pribadi tetap.
+- NPC utama: Komandan Benteng — **Bei Rong** (`NPC-REG-010`).
 - Relasi dasar: bekerja sama dalam logistik dan keamanan dengan Paviliun Salju Putih; memiliki hubungan keamanan wilayah dengan Sekte Salju Xuanyin.
 
 ### Paviliun Salju Putih
@@ -109,7 +109,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Tanah Salju Beiming.
 - Canon: jaringan perdagangan dan pengangkutan wilayah dingin.
 - Agenda: menjalankan perdagangan dan pengangkutan wilayah dingin melalui jaringan serta kontrak yang sah.
-- NPC utama: jabatan Kepala Logistik dan pengelola kontrak; tidak ada nama pribadi tetap.
+- NPC utama: Kepala Logistik — **Bai Xueqin** (`NPC-REG-011`).
 - Relasi dasar: bekerja sama dengan Benteng Besi Beichen; pertukaran sumber daya dengan Sekte Salju Xuanyin berlangsung melalui kontrak.
 
 ## Gurun Jinyan
@@ -119,7 +119,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Gurun Jinyan.
 - Canon: pusat spiritual dan persinggahan pengembara suci.
 - Agenda: menjalankan fungsi pusat spiritual dan persinggahan bagi pengembara suci di wilayah gurun.
-- NPC utama: jabatan Penjaga Kuil dan pengurus persinggahan; tidak ada nama pribadi tetap.
+- NPC utama: Penjaga Kuil — **Lian Shou** (`NPC-REG-012`).
 - Relasi dasar: hubungan sosial dan perlindungan dengan Liga Kafilah Jinyue bergantung konteks; memiliki kepentingan spiritual berbeda dari Sekte Pasir Emas.
 
 ### Sekte Pasir Emas
@@ -128,7 +128,7 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Gurun Jinyan.
 - Canon: memiliki kepentingan pada teknik dan sumber daya wilayah.
 - Agenda: mengembangkan kultivasi serta mempertahankan akses terhadap teknik dan sumber daya wilayah gurun.
-- NPC utama: jabatan Kepala Sekte dan pengawas sumber daya gurun; tidak ada nama pribadi tetap.
+- NPC utama: Kepala Sekte — **Jin Shatuo** (`NPC-REG-013`).
 - Relasi dasar: dapat bekerja sama dengan Liga Kafilah Jinyue melalui kontrak; memiliki kepentingan spiritual dan kultivasi berbeda dari Kuil Sembilan Teratai.
 
 ### Liga Kafilah Jinyue
@@ -137,8 +137,8 @@ Canon Admin. Registry ini menampung faction regional yang sudah disebut oleh mod
 - Wilayah: Gurun Jinyan.
 - Canon: jaringan perdagangan dan transportasi gurun; kontrak, reputasi dan keamanan menentukan akses.
 - Agenda: menjalankan perdagangan dan transportasi gurun dengan mengandalkan kontrak, reputasi, dan keamanan jalur.
-- NPC utama: jabatan Ketua Liga dan pengelola rute; tidak ada nama pribadi tetap.
+- NPC utama: Ketua Liga — **Jin Yuechang** (`NPC-REG-014`).
 - Relasi dasar: terhubung secara ekonomi/logistik dengan Kota Shajing dan Kota Jinyue; dapat bekerja sama dengan Kuil Sembilan Teratai dan Sekte Pasir Emas sesuai konteks/kontrak.
 
 ## Batas Data
-Registry ini menetapkan jabatan representatif sebagai titik kontak organisasi. Nama NPC pribadi, stat, teknik eksklusif, realm individu, dan modifier individu tidak dikunci sebagai Canon tetap tanpa source Admin tambahan. Detail baru dapat ditambahkan melalui pembaruan Canon resmi.
+Registry ini menetapkan identitas pemegang jabatan representatif yang sudah ditetapkan Admin Canon. Nama NPC, ID, dan faction harus tetap sinkron dengan `lore/NPC_DATABASE.md`. Realm, stat, teknik eksklusif, state in-world, dan modifier individu tidak ditetapkan hanya dari jabatan. Detail baru dapat ditambahkan melalui pembaruan Canon resmi.
