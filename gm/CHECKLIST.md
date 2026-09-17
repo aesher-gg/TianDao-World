@@ -21,7 +21,7 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 - [ ] Durasi sesuai Time System.
 - [ ] Tidak ada konflik Canon/Admin.
 - [ ] Active Threads yang relevan diperhitungkan.
-- [ ] Jika gardening: Garden/Crop ID, lokasi, benih, jumlah, waktu tanam, dan kondisi awal tersedia atau `???`.
+- [ ] Jika gardening: Garden/Crop ID, lokasi, benih, jumlah, waktu tanam, dan kondisi awal tersedia atau `UNRESOLVED`.
 - [ ] Jika gardening: status 0–100 konsisten dan tidak dibuat tanpa dasar.
 
 ## C. Resolution
@@ -53,6 +53,6 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 ## E. Response
 - [ ] Format `RESPONSE_FORMAT.md` dipatuhi.
 - [ ] Tidak ada fakta unsupported.
-- [ ] `???` dipertahankan untuk unknown.
+- [ ] Status data mengikuti `core/07_DATA_COMPLETENESS.md`; gunakan `UNRESOLVED`, `NOT-ESTABLISHED`, `NOT-INSTANTIATED`, atau `RESOLUTION-BLOCKED` sesuai keadaan, bukan legacy unknown marker.
 - [ ] Current state siap menjadi input turn berikutnya.
 - [ ] Save status mencerminkan status sinkronisasi sebenarnya.
