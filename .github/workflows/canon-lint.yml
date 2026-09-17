@@ -23,12 +23,25 @@ jobs:
             exit 1
           fi
 
+      - name: Reject retired NOT-ESTABLISHED status
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RIn --exclude-dir=.git --exclude-dir=.github --include='*.md' 'NOT-ESTABLISHED' .; then
+            echo 'Retired NOT-ESTABLISHED status detected.'
+            echo 'Use CANON-ESTABLISHED, STATE-ESTABLISHED, RUNTIME-GENERATED, NOT-APPLICABLE, NOT-INSTANTIATED, UNRESOLVED, or RESOLUTION-BLOCKED according to context.'
+            exit 1
+          fi
+
       - name: Verify canonical status vocabulary exists
         shell: bash
         run: |
           set -euo pipefail
           test -f core/07_DATA_COMPLETENESS.md
           grep -Fq '`UNRESOLVED`' core/07_DATA_COMPLETENESS.md
-          grep -Fq '`NOT-ESTABLISHED`' core/07_DATA_COMPLETENESS.md
           grep -Fq '`NOT-INSTANTIATED`' core/07_DATA_COMPLETENESS.md
           grep -Fq '`RESOLUTION-BLOCKED`' core/07_DATA_COMPLETENESS.md
+          if grep -Fq '`NOT-ESTABLISHED`' core/07_DATA_COMPLETENESS.md; then
+            echo 'Retired status is still present in the canonical vocabulary.'
+            exit 1
+          fi
