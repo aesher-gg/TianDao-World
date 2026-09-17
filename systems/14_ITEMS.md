@@ -40,6 +40,96 @@ Item Canon yang dapat digunakan oleh fixed loot, recipe, quest reward, atau even
 - Nama item tidak otomatis menentukan kualitas, durability, effect, atau rarity di luar data Canon item.
 - Item yang belum mempunyai Item ID Canon tidak boleh dimasukkan ke fixed loot table sebagai item spesifik.
 
+
+## 4A. MATERIAL REFINEMENT PROPERTY SCHEMA
+
+Bagian ini menetapkan **schema data**, bukan daftar efek material. Schema menjadi kontrak sumber untuk refinement existing item; nilai konkret hanya sah bila diisi oleh Canon/Admin atau source material yang terverifikasi.
+
+### 4A.1 Purpose & Boundary
+Material memiliki identity dan baseline function, tetapi **tidak otomatis memiliki refinement effect**. Refinement-relevant properties hanya boleh digunakan bila field tersebut benar-benar ditetapkan oleh source material yang sah.
+
+Canonical boundary:
+`Material Identity → Refinement Property Schema → Module 34 Compatibility/Method → Module 25 Bounded Runtime Resolution`
+
+Module 14 adalah authority untuk identity/state item. Module 34 menentukan apakah property material dapat dipakai oleh refinement method. Module 25 hanya memilih hasil runtime di dalam bounds yang sudah tersedia.
+
+### 4A.2 Schema
+Setiap material yang dipakai sebagai input refinement wajib dapat direpresentasikan dengan field berikut:
+
+| Field | Required | Fungsi |
+|---|---|---|
+| `MATERIAL_ID` | Yes | ID Canon atau instance material yang menjadi sumber input. |
+| `MATERIAL_ORIGIN` | Yes | Provenance material; harus dapat ditelusuri. |
+| `MATERIAL_QUANTITY` | Yes | Jumlah material yang benar-benar tersedia untuk proses. |
+| `REFINEMENT_PROPERTIES` | Conditional | Kumpulan property yang secara eksplisit ditetapkan source sebagai relevan untuk refinement. |
+| `APPLICABLE_DIMENSIONS` | Conditional | Dimensi item yang boleh dipengaruhi, mis. condition, durability, structural property, atau property lain **hanya bila source mendefinisikannya**. |
+| `COMPATIBILITY_TAGS` | Conditional | Tag/constraint yang dapat dibandingkan dengan requirement refinement method. |
+| `QUALITY_OR_GRADE` | Conditional | Kualitas/grade material bila source memang menetapkannya; tidak boleh diturunkan dari nama atau harga. |
+| `BOUND_SOURCE` | Conditional | Referensi source yang menetapkan ceiling/range perubahan bila material property ikut menentukan batas. |
+| `CONSUMPTION_RULE` | Conditional | Aturan jumlah material yang dikonsumsi bila proses refinement menetapkannya. |
+| `PROPERTY_STATUS` | Yes | Status data menurut Module 07: `CANON-ESTABLISHED`, `STATE-ESTABLISHED`, `RUNTIME-GENERATED`, `NOT-APPLICABLE`, `NOT-INSTANTIATED`, `UNRESOLVED`, atau `RESOLUTION-BLOCKED`. |
+| `PROPERTY_SOURCE` | Yes | Source yang membuktikan property; bukan narasi Player atau plausibility. |
+
+### 4A.3 Property Record Contract
+Setiap entry dalam `REFINEMENT_PROPERTIES` minimal memiliki:
+
+`PROPERTY_ID / PROPERTY_NAME / VALUE_OR_RANGE / UNIT_IF_APPLICABLE / APPLICABLE_ITEM_CATEGORY / SOURCE / STATUS`
+
+Aturan:
+1. `PROPERTY_ID` harus stabil bila property menjadi Canon.
+2. `VALUE_OR_RANGE` tidak boleh diisi dengan tebakan.
+3. `UNIT_IF_APPLICABLE` hanya digunakan bila mekanik source memakai unit tersebut.
+4. `APPLICABLE_ITEM_CATEGORY` membatasi target yang dapat memanfaatkan property.
+5. `SOURCE` wajib menunjuk ke Canon/Admin atau source resmi yang menetapkan property.
+6. `STATUS` wajib mengikuti vocabulary Module 07.
+
+### 4A.4 Explicit Non-Inference
+Property berikut **tidak boleh di-infer otomatis** dari material:
+- rarity;
+- market price;
+- nama/deskripsi;
+- visual appearance;
+- origin location;
+- Character Realm;
+- narrative claim;
+- hasil refinement sebelumnya;
+- kategori material semata.
+
+Khususnya, material tidak otomatis memberi:
+- bonus attack/defense;
+- durability increase;
+- quality/grade/tier increase;
+- affinity;
+- ability/effect;
+- bloodline;
+- breakthrough;
+- success probability.
+
+Semua hal tersebut memerlukan source mekanis tersendiri.
+
+### 4A.5 Missing Property Gate
+Jika refinement method membutuhkan property tertentu dan material source tidak menyediakan property tersebut:
+- field material → `UNRESOLVED` bila datanya belum dapat ditentukan;
+- resolution → `RESOLUTION-BLOCKED` bila field tersebut required untuk keputusan mekanis.
+
+Qwen tidak boleh mengisi property melalui improvisasi, memory, Player request, atau plausibility.
+
+### 4A.6 Source/State Separation
+`PROPERTY_SOURCE` menjelaskan **mengapa property ada**; `MATERIAL_ORIGIN` menjelaskan **dari mana instance material berasal**. Keduanya tidak boleh dipertukarkan.
+
+Material Canon dapat memiliki property Canon, sementara instance material tetap memerlukan Origin dan quantity/state aktual.
+
+### 4A.7 Compatibility Boundary
+Schema property tidak otomatis berarti material kompatibel dengan semua item. Compatibility harus divalidasi oleh Module 34 melalui refinement method/source.
+
+`Material Property → Compatibility Check → Allowed Dimension/Bound → Runtime Resolution`
+
+Jika tidak ada compatibility rule yang sah, jangan menyimpulkan kompatibilitas dari kemiripan nama, kategori, atau narasi.
+
+### 4A.8 No Concrete Effect Table Yet
+Schema ini **sengaja tidak menetapkan nilai bonus, multiplier, probability, compatibility matrix, atau material-specific refinement effect**. Data tersebut menjadi tahap mechanics design berikutnya dan hanya boleh ditambahkan melalui source Canon yang terdokumentasi.
+
+
 ## 5. Origin
 Setiap item harus memiliki asal:
 - pembelian;
