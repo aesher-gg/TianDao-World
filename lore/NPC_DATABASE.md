@@ -128,11 +128,19 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sumber Canon: `factions/organizations/00_ORGANIZATION_DATABASE.md` — Aliansi Sanxiu Yuheng.
 - Status data: Canon; status in-world tambahan tidak ditetapkan.
 
+### Shen Kuang
+- Peran: Pemimpin Perkumpulan Tangan Abu (CRI-005); koordinator jaringan dan pengendali kontrak bernilai tinggi
+- Sifat: dingin, kalkulatif, menghindari konflik terbuka yang tidak menguntungkan
+- Agenda: mempertahankan jaringan, keuntungan, dan kerahasiaan struktur internal
+- Pengetahuan: operasi dan handler dalam lingkup kewenangannya; tidak otomatis mengetahui identitas setiap operator lokal
+- Sumber Canon: `factions/criminal/00_CRIMINAL_DATABASE.md` — Perkumpulan Tangan Abu.
+- Status data: Canon; detail state in-world tambahan tidak ditetapkan.
+
 ## NPC Kriminal
 ### Identitas Kriminal Belum Terungkap
 - Status: `UNRESOLVED`
 - Sumber Canon: registry NPC kriminal; identitas sengaja disembunyikan sampai discovery in-character.
-- Catatan GM: jangan bocorkan nama, realm, lokasi, atau faction tanpa discovery in-character.
+- Catatan GM: jangan bocorkan nama, realm, lokasi, atau faction tanpa discovery in-character. Entri ini mewakili kriminal lain yang belum teridentifikasi, bukan pemimpin Perkumpulan Tangan Abu yang telah ditetapkan di atas.
 
 ## Otonomi NPC
 NPC dapat berbohong, menolak, salah memahami, takut, meminta imbalan, berubah sikap, atau bertindak tanpa Character. Pengetahuan NPC dibatasi pengalaman dan akses informasinya. Tidak ada NPC yang otomatis menjadi informan sempurna.
