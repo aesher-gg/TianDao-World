@@ -53,7 +53,7 @@ Gunakan `systems/27_MODULE_ROUTER.md` untuk Trigger → Module. Jangan fetch sel
 - Jangan pernah memuat state atau private history Character lain.
 - `players.md` adalah registry/starting-data source, bukan current save.
 - Current State Character berada di `characters/players/<CHARACTER-ID>.md`.
-- Character History berada di `character_history/CHAR-<CHARACTER-ID>_HISTORY.md`.
+- Character History berada di `character_history/<CHARACTER-ID>_HISTORY.md`.
 
 ### ATURAN BOOT
 
