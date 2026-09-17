@@ -1,7 +1,7 @@
 # Module 33 — FORMATION & ARRAY
 
 ## Status
-Admin Canon v1.0
+Admin Canon v1.1
 
 ## Purpose
 Menetapkan sistem untuk blueprint, construction, activation, operation, disruption, damage, repair, dan destruction Formation/Array.
@@ -73,7 +73,7 @@ Jangan membuat numeric cost tersembunyi.
 ## Range & Effect
 Range dan effect harus berasal dari Formation source atau Admin Canon.
 Tidak boleh memperluas range/effect hanya karena Realm operator lebih tinggi.
-Jika range/effect tidak diketahui, statusnya `NOT-ESTABLISHED` dan efek mekanis tidak boleh diasumsikan.
+Jika range/effect tidak diketahui, statusnya `UNRESOLVED` dan efek mekanis tidak boleh diasumsikan.
 
 ## Disruption & Failure
 Formation dapat gagal, terganggu, rusak, dinonaktifkan, runtuh, atau dihancurkan jika mekanisme/source memungkinkan.
