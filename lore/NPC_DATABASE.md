@@ -34,6 +34,66 @@ Setiap NPC dapat memiliki identitas, peran, realm, faction, lokasi, kepribadian,
 - Sumber Canon: `factions/dojos/00_DOJO_DATABASE.md` — Perguruan Tombak Feiyun.
 - Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
 
+### Shen Yue
+- ID: NPC-SEC-001
+- Peran: Kepala Sekte Pedang Canglan
+- Faction/Organisasi: `SEC-001`
+- Sifat: tenang, tegas, menjaga disiplin internal
+- Agenda: menjaga reputasi sekte dan kesinambungan jalur pedang
+- Pengetahuan: urusan sekte sesuai kewenangan jabatannya
+- Sumber Canon: `factions/sects/00_SECT_DATABASE.md` — Sekte Pedang Canglan.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Qing Lan
+- ID: NPC-SEC-002
+- Peran: Master Paviliun Teratai Qinglan
+- Faction/Organisasi: `SEC-002`
+- Sifat: hati-hati, teliti, konservatif dalam keputusan
+- Agenda: menjaga sumber herbal dan tradisi pengobatan
+- Pengetahuan: urusan paviliun sesuai kewenangan jabatannya
+- Sumber Canon: `factions/sects/00_SECT_DATABASE.md` — Paviliun Teratai Qinglan.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Tian Hezhang
+- ID: NPC-SEC-003
+- Peran: Kepala Aula Segel Tianhe
+- Faction/Organisasi: `SEC-003`
+- Sifat: formal, prosedural, sangat memperhatikan integritas segel
+- Agenda: mencegah penyalahgunaan teknik segel dan menjaga keamanan dokumen
+- Pengetahuan: urusan aula dan prosedur segel sesuai kewenangan
+- Sumber Canon: `factions/sects/00_SECT_DATABASE.md` — Aula Segel Tianhe.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Jin Ruyang
+- ID: NPC-SEC-004
+- Peran: Kepala Sekte Matahari Jernih
+- Faction/Organisasi: `SEC-004`
+- Sifat: disiplin, mandiri, hemat terhadap sumber air
+- Agenda: menjaga sumber air dan jalur ziarah gurun
+- Pengetahuan: urusan sekte dan sumber daya lokal sesuai kewenangan
+- Sumber Canon: `factions/sects/00_SECT_DATABASE.md` — Sekte Matahari Jernih.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Dong Haoran
+- ID: NPC-SEC-005
+- Peran: Kepala Istana Ombak Timur
+- Faction/Organisasi: `SEC-005`
+- Sifat: protektif, tegas terhadap keamanan pelabuhan
+- Agenda: mengamankan rute kapal dan sumber daya laut
+- Pengetahuan: urusan istana dan pertahanan pelabuhan sesuai kewenangan
+- Sumber Canon: `factions/sects/00_SECT_DATABASE.md` — Istana Ombak Timur.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
+### Bei Xuelan
+- ID: NPC-SEC-006
+- Peran: Kepala Istana Salju Beiming
+- Faction/Organisasi: `SEC-006`
+- Sifat: tertutup, tenang, ketat terhadap akses wilayah inti
+- Agenda: menjaga wilayah inti dari eksploitasi eksternal
+- Pengetahuan: urusan istana dan wilayah inti sesuai kewenangan
+- Sumber Canon: `factions/sects/00_SECT_DATABASE.md` — Istana Salju Beiming.
+- Status data: Canon; realm dan state in-world tambahan tidak ditetapkan.
+
 ### Mo Qingzhu
 - Peran: Pedagang keliling Paviliun Seribu Daun
 - Sifat: tenang, oportunis, menghitung risiko
