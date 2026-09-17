@@ -8,12 +8,12 @@ Admin Canon v1.1 — individual organization detail.
 - Wilayah: Tanah Salju Beiming
 - Canon: Jaringan perdagangan dan pengangkutan wilayah dingin.
 - Agenda: Menjalankan perdagangan dan pengangkutan wilayah dingin melalui jaringan serta kontrak yang sah.
-- Struktur internal: Kepala Paviliun → Pengelola Rute → Pemimpin Karavan → Pengangkut/Agen.
+- Struktur internal: Kepala Logistik → Pengelola Rute → Pemimpin Karavan → Pengangkut/Agen.
 - Rekrutmen: pengalaman perjalanan, reputasi, kemampuan logistik, dan kontrak.
 - Akses: rute, kontrak, kendaraan, dan gudang mengikuti izin serta hubungan dagang.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
-- NPC utama: Tidak ada pemimpin bernama yang dikunci; NPC merchant/route manager dibuat melalui Module 26.
+- NPC utama: Bai Xueqin (`NPC-REG-011`) — Kepala Logistik.
 
 ## Relasi
 - Benteng Besi Beichen: kerja sama logistik dan keamanan.
