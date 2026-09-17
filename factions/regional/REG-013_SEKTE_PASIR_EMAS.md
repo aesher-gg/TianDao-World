@@ -13,7 +13,7 @@ Admin Canon v1.2 — individual organization detail.
 - Akses: wilayah internal dan sumber daya khusus memerlukan status, izin, kontrak, atau hak yang sah.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini; teknik mengikuti database teknik, guru, manual, event, atau sumber valid lain.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis; Realm dan kemampuan mengikuti state individu serta sistem kultivasi.
-- NPC utama: Tidak ada NPC pemimpin bernama yang dikunci; NPC recurring dibuat melalui Module 26 bila diperlukan dan menjadi persisten hanya setelah memperoleh NPC_ID serta state.
+- NPC utama: Jin Shatuo (`NPC-REG-013`) — Kepala Sekte.
 
 ## Relasi
 - Liga Kafilah Jinyue: kerja sama melalui kontrak dan kebutuhan logistik gurun.
