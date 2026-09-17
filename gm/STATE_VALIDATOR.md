@@ -148,3 +148,15 @@ Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dy
 
 ## Invalid State
 Jika pemeriksaan material gagal, jangan menerapkan state. Kembali ke nilai terakhir terverifikasi atau tahan resolusi. Jangan menulis memory yang bergantung pada state gagal.
+
+
+## Data Completeness Enforcement
+- [ ] Setiap field material yang belum tersedia memiliki status dari `core/07_DATA_COMPLETENESS.md`.
+- [ ] `CANON-ESTABLISHED` memiliki sumber Canon/Admin yang dapat diverifikasi.
+- [ ] `STATE-ESTABLISHED` berasal dari Current State yang terverifikasi.
+- [ ] `RUNTIME-GENERATED` memiliki module/formula/trigger/input yang sah dan tidak dibuat hanya untuk mengisi field.
+- [ ] `NOT-INSTANTIATED` tidak diperlakukan sebagai entity/record aktif.
+- [ ] `UNRESOLVED` tidak diperlakukan sebagai fakta dan tidak diubah menjadi nilai konkret tanpa source sah.
+- [ ] `RESOLUTION-BLOCKED` digunakan bila required input hilang tanpa fallback resmi.
+- [ ] Tidak ada nilai yang berasal dari tebakan, plausibility, cache lama, real-world fallback, atau player demand.
+- [ ] Narrative/dialogue tidak dipakai sebagai bukti Canon/State tanpa source dan resolusi yang sah.
