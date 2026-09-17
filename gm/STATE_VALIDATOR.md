@@ -160,3 +160,15 @@ Jika pemeriksaan material gagal, jangan menerapkan state. Kembali ke nilai terak
 - [ ] `RESOLUTION-BLOCKED` digunakan bila required input hilang tanpa fallback resmi.
 - [ ] Tidak ada nilai yang berasal dari tebakan, plausibility, cache lama, real-world fallback, atau player demand.
 - [ ] Narrative/dialogue tidak dipakai sebagai bukti Canon/State tanpa source dan resolusi yang sah.
+
+
+## Dynamic Refinement Validation Gate
+- [ ] Existing Item State is current and valid.
+- [ ] Material ID, quantity, Origin, and refinement-relevant properties have a valid source.
+- [ ] Refinement Method defines or references the allowed property dimensions, compatibility, bounds, and outcome mechanism.
+- [ ] Module 25 is used only for concrete runtime selection inside those bounds.
+- [ ] No property, grade, tier, category, ability, affinity, or effect is inferred from rarity/name/market value/Realm/plausibility.
+- [ ] Missing required refinement source/input results in `RESOLUTION-BLOCKED`.
+- [ ] Before → After covers Item, consumed Material, and every changed resource/entity.
+- [ ] Existing Item Origin is preserved and refinement adds new Origin/History.
+- [ ] Dynamic result remains `RUNTIME-GENERATED`, not Global Canon.
