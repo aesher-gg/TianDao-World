@@ -61,14 +61,15 @@ Modul ini adalah penghubung resmi antar-modul. Ia tidak menambah mekanik baru. I
 | 31 Crafting/Forging | 14 Items; 10 Economy; material source; 32/34 only when the process explicitly crosses those domains |
 | 32 Alchemy/Pills | 14 Items; material/herb source; 10 Economy; 31/34 only when the process explicitly crosses those domains |
 | 33 Formation/Arrays | 14 Items; 09 Cultivation; 12 Combat; 31 Crafting; 34 Refinement; Formation persistence |
-| 34 Artifact/Weapon Refinement | 14 Items; 31 Crafting; 32 Alchemy when alchemical material is used; 15 Techniques where explicitly relevant; Save/Origin |
+| 34 Artifact/Weapon Refinement | 14 Items; 25 Dynamic Generation when refinement result is dynamic; 31 Crafting; 32 Alchemy when alchemical material is used; 15 Techniques where explicitly relevant; Save/Origin |
 | 35 Module Integration | No gameplay mechanics; it connects and constrains cross-module dependency resolution |
 
 ## 4. Production Cross-Module Contract
 - New item / material processing → 31 + 14.
 - Alchemy product → 32 + 14.
 - Formation construction/operation → 33 + 14; add 31/09/12 when actually affected.
-- Existing item refinement → 34 + 14; add 31/32/15 only when the actual process uses them.
+- Existing item refinement → 34 + 14; add 25 when the result is dynamically resolved; add 31/32/15 only when the actual process uses them.
+- Dynamic refinement → 34 + 25 + 14; material-source modules (31/32) become REQUIRED when they supply the actual refinement material/process.
 - Cross-module production must preserve input → process → result provenance and before → after for every changed entity.
 
 ## 5. Dynamic Entity Contract
