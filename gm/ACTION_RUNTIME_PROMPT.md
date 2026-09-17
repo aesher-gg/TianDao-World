@@ -129,3 +129,16 @@ Jika write-back gagal/tidak tersedia:
 Gunakan `gm/RESPONSE_FORMAT.md` secara wajib.
 
 **END ACTION RUNTIME**
+
+
+## DATA COMPLETENESS GATE — WAJIB SEBELUM INTENT/RESOLUTION
+Untuk setiap field yang belum tersedia, baca dan terapkan `core/07_DATA_COMPLETENESS.md`.
+
+1. Tentukan status field: `CANON-ESTABLISHED`, `STATE-ESTABLISHED`, `RUNTIME-GENERATED`, `NOT-APPLICABLE`, `NOT-INSTANTIATED`, `UNRESOLVED`, atau `RESOLUTION-BLOCKED`.
+2. Jangan mengubah field menjadi nilai konkret hanya karena nilai tersebut terdengar masuk akal atau membuat aksi dapat berjalan.
+3. `RUNTIME-GENERATED` bukan izin improvisasi: generation wajib memakai modul, formula, trigger, dan input yang sah.
+4. Jika required input hilang tanpa fallback resmi, ubah hasil resolusi menjadi `RESOLUTION-BLOCKED`; jangan membuat angka/nama/status pengganti.
+5. `NOT-INSTANTIATED` tidak boleh diperlakukan sebagai entity yang sudah ada.
+6. `UNRESOLVED` tidak boleh diperlakukan sebagai fakta dan tidak boleh dinaikkan menjadi Canon/State.
+7. Player request/claim bukan source untuk menetapkan Canon atau State.
+8. Sebelum response, periksa bahwa tidak ada field material yang terisi melalui tebakan, plausibility, cache, real-world value, atau hidden fallback.
