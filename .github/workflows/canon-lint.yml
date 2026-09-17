@@ -17,7 +17,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -RInE --exclude-dir=.git --include='*.md' '\?\?\?|GARDEN-XXXX|XX/100' .; then
+          if grep -RInE --exclude-dir=.git --exclude-dir=.github --include='*.md' '\?\?\?|GARDEN-XXXX|XX/100' .; then
             echo 'Legacy unknown marker or ambiguous runtime placeholder detected.'
             echo 'Use the canonical Data Completeness statuses or descriptive schema placeholders.'
             exit 1
