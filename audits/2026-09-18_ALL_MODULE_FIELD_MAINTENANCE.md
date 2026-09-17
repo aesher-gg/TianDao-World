@@ -19,7 +19,7 @@ Audit ini **tidak dibatasi pada modul NPC**. Scope mencakup seluruh modul yang d
 ## Scope
 - Core: `core/00`–`core/07`
 - Realms: `realms/01`–`realms/07`
-- Systems: `systems/08`–`systems/34`
+- Systems: `systems/08`–`systems/35`
 - Bestiary dan fixed loot database
 - Character registries/state/history boundaries
 - Faction databases: sect, dojo, regional, organization, criminal, imperial
