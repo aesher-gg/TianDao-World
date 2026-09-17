@@ -9,7 +9,7 @@ Admin Canon — individual organization detail derived from dojo registry.
 - Struktur: Kepala Dojo → Pengajar → Murid Inti → Murid Dalam → Murid.
 - Rekrutmen: pengamatan kemampuan dan karakter; status murid diperoleh melalui peristiwa sah.
 - Agenda: mendidik murid dan menjaga kesinambungan ajaran.
-- Kepala: jabatan Kepala Dojo aktif; tidak ada NPC bernama yang menjadi Canon tetap.
+- Kepala: Lin Zhaoyan (`NPC-DOJ-002`); Kepala Dojo aktif.
 - Teknik spesifik: tidak ada teknik eksklusif yang dikunci sebagai Canon; pengajaran menggunakan teknik pedang yang sah dari database teknik.
 - Realm/Bonus: tidak ada bonus atau kenaikan Realm otomatis dari keanggotaan; kemajuan mengikuti sistem kultivasi dan hasil latihan.
 - Aset: aula latihan, halaman pedang, ruang pengajaran, rak senjata latihan, dan perlengkapan latihan dasar.
