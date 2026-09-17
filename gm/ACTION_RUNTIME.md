@@ -115,3 +115,15 @@ State atau profil yang hanya berasal dari chat context tidak boleh dianggap seba
 Jika fresh fetch gagal atau data tidak dapat diverifikasi, jangan menebak. Gunakan `UNRESOLVED`, tahan resolusi yang membutuhkan data tersebut, atau nyatakan masalah sinkronisasi.
 
 ## Aksiku:
+
+
+## 🔒 DATA COMPLETENESS ENFORCEMENT
+Gunakan `core/07_DATA_COMPLETENESS.md` sebagai authority untuk setiap field yang belum lengkap.
+
+- Bedakan dengan tegas `CANON-ESTABLISHED`, `STATE-ESTABLISHED`, `RUNTIME-GENERATED`, `NOT-APPLICABLE`, `NOT-INSTANTIATED`, `UNRESOLVED`, dan `RESOLUTION-BLOCKED`.
+- Jangan mengisi field kosong dengan tebakan, plausibility, cache, waktu nyata, angka dunia nyata, atau asumsi naratif.
+- Dynamic generation hanya boleh menghasilkan nilai bila module/formula/trigger dan input sah tersedia. Hasil generated tidak otomatis menjadi Canon.
+- Jika input wajib hilang dan tidak ada fallback resmi, resolusi harus ditahan sebagai `RESOLUTION-BLOCKED`.
+- `NOT-INSTANTIATED` berarti entity/record belum ada; jangan membuat entity hanya agar format profil lengkap.
+- `UNRESOLVED` bukan nilai dan bukan izin improvisasi.
+- Setiap nilai material yang menjadi state harus dapat dijelaskan dengan `Dasarnya dari mana?` dan memiliki source/resolution serta Origin bila diwajibkan.
