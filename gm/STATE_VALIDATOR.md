@@ -61,7 +61,7 @@ Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dy
 - [ ] QST_ID unik/stabil bila lintas-turn.
 - [ ] Lifecycle sesuai Module 26.
 - [ ] Deadline memiliki dasar waktu.
-- [ ] Reward provenance valid: Fixed Canon/Event/Mission → valid source → Dynamic Loot → `???`.
+- [ ] Reward provenance valid: Fixed Canon/Event/Mission → valid source → Dynamic Loot → `RESOLUTION-BLOCKED`.
 - [ ] Tidak ada reward, breakthrough, item, uang, teknik gratis atau automatic Realm scaling.
 
 ## Dynamic Creature / Loot
@@ -77,7 +77,7 @@ Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dy
 - [ ] Individual file tidak boleh bertentangan dengan registry.
 - [ ] Struktur/jabatan/relasi hanya dianggap Canon bila tersimpan sebagai Admin Canon.
 - [ ] Faction membership, rank, contract, promotion, expulsion, dan akses tidak berubah tanpa sebab/resolusi sah.
-- [ ] `???` tetap unknown bila tidak ada sumber.
+- [ ] Data yang belum tersedia menggunakan status kelengkapan resmi dari `core/07_DATA_COMPLETENESS.md`.
 
 ## Crafting / Forging — Module 31
 - [ ] Material yang digunakan benar-benar tersedia dan memiliki valid Origin.
@@ -99,7 +99,7 @@ Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dy
 - [ ] Cost dan waktu valid.
 - [ ] Failure/deviation mungkin terjadi bila proses mendukungnya; tidak ada automatic success.
 - [ ] Pill quality/quantity mengikuti formula/fixed source; tidak ditebak untuk memberi reward.
-- [ ] Effect/potency/side effect/defect hanya berasal dari source yang valid; unknown tetap `???`.
+- [ ] Effect/potency/side effect/defect hanya berasal dari source yang valid; status belum tersedia mengikuti Data Completeness.
 - [ ] Hasil Pill/Product mendapat Item State dan Item Origin sesuai Module 14.
 
 ## Formation / Array — Module 33
