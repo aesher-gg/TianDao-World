@@ -13,7 +13,7 @@ Admin Canon v1.1 — individual organization detail.
 - Akses: ruang suci, layanan, dan fasilitas mengikuti aturan kuil.
 - Teknik spesifik: Tidak ada teknik unik yang dikunci pada file ini.
 - Realm/Stat/Bonus: Tidak ada bonus stat otomatis.
-- NPC utama: Tidak ada kepala kuil bernama yang dikunci; NPC recurring dibuat melalui Module 26.
+- NPC utama: Lian Shou (`NPC-REG-012`) — Penjaga Kuil.
 
 ## Relasi
 - Liga Kafilah Jinyue: hubungan sosial/perlindungan bergantung konteks.
