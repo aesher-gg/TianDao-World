@@ -147,3 +147,7 @@ Gunakan `core/07_DATA_COMPLETENESS.md` untuk field Law Origin yang belum tersedi
 
 ## 9. Integrasi
 QiCap menjadi input untuk HP, AttackPower, PassiveDefense, resource combat, dan evaluasi kemampuan untuk Realm yang memiliki QiCap standar. Realm juga memengaruhi interaksi, encounter, dan hit chance.
+
+
+## DATA COMPLETENESS CULTIVATION GATE
+Realm, QiCap, breakthrough requirement, Law, Law Origin, progress, dan hasil breakthrough hanya boleh ditetapkan dari Canon/State/Origin/resolution yang sah. Tidak ada interpolation, assumed requirement, automatic breakthrough, atau Law/Technique dari plausibility. Field unresolved tetap unresolved; required acquisition data yang hilang menahan resolusi.
