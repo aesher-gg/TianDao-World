@@ -113,6 +113,6 @@ A loot candidate that lacks a valid Item identity remains unresolved and does no
 
 
 ## 2026-09-18 Item Grade Integration
-Every lootable Item Canon has an ITEM_GRADE under Module 14. Loot resolution must validate Item Identity first, then consume the registered ITEM_GRADE. Loot grade cannot be invented, upgraded, or changed by GM narrative. Grade does not itself determine quantity, quality, price, effect, or combat power.
+Every lootable Item Canon has an ITEM_GRADE and GRADE_LEVEL under Module 14. Loot resolution must validate Item Identity first, then consume the registered grade and level. Loot grade or level cannot be invented, upgraded, or changed by GM narrative. Grade or level does not itself determine quantity, quality, price, effect, or combat power.
 
 For dynamic loot, an unresolved item identity means its grade is also unresolved. Do not assign a grade to make an unresolved loot candidate executable. Fixed loot tables must agree with the Item Canon grade unless they reference a distinct variant identity.
