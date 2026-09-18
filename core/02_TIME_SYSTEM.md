@@ -15,7 +15,7 @@ Tidur adalah pengecualian resmi dari batas maksimal 3 jam per turn.
 - Tidur tidak menghentikan dunia. NPC, event, cuaca, ancaman, perjalanan pihak lain, dan kejadian dunia tetap dapat berlangsung selama karakter tidur.
 - Tidur tidak menjamin keamanan. Jika lokasi tidak aman atau terdapat event yang memengaruhi karakter, GM wajib meresolusinya secara realistis.
 - Pemulihan HP, Stamina, kondisi, trauma, atau resource lain selama tidur mengikuti modul terkait dan tidak otomatis berarti pemulihan penuh.
-- Satiety tetap diproses secara normal selama waktu tidur berlalu.
+- Satiety tetap diproses secara normal selama waktu tidur berlalu, lalu `Satiety State` wajib diturunkan dari threshold Canonical di `systems/11_VITALITY.md`; GM tidak boleh menafsirkan status lapar secara naratif.
 - Jika karakter terganggu, dibangunkan, atau terbangun secara alami karena kondisi tertentu, waktu bangun ditentukan oleh resolusi dunia.
 
 ## 3. Istirahat
