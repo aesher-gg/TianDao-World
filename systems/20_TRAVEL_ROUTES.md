@@ -423,3 +423,24 @@ Bagian ini menetapkan source Canon numerik untuk kecepatan terbang. Record di ba
 - Acquisition: wajib berasal dari Technique/Ability/Item/Mount Origin yang sah.
 - Runtime Status: hanya ACTIVE setelah source method tervalidasi pada Character.
 - Version: AERIAL-SOURCE-BASELINE-001
+
+
+## 20C-1B — Canon Amendment: Realm 4 Intrinsic Flight
+**Status: Admin Canon — authoritative amendment to Flight Eligibility.**
+
+### Capability Record
+| CAPABILITY_ID | Capability | Unlock | Technique Required | Status |
+|---|---|---|---|---|
+| `FLY-INTRINSIC-001` | Flight Capability Intrinsic | Realm 4 — Core Formation | No | CANON-ESTABLISHED |
+
+### Authority Rules
+1. From Realm 4 onward, a Character is **FLIGHT-ELIGIBLE intrinsically** without possessing a flight Technique.
+2. Realm 1–3 are not intrinsically flight-eligible.
+3. `FLY-INTRINSIC-001` does not grant or imply any named Technique, `FLY-SRC-*`, manual, teacher, artifact, item, mount, or external flight method.
+4. Technique-based flight remains a separate path and requires valid Technique/Ability/Item/Mount provenance.
+5. Intrinsic eligibility does not by itself define speed, range, duration, Qi/Stamina cost, altitude, or environmental modifiers. Missing parameters remain `UNRESOLVED`.
+6. Until an explicit intrinsic speed source is established, numeric travel duration using intrinsic flight is `UNRESOLVED`/`RESOLUTION-BLOCKED`; GM must not borrow a `FLY-SRC-*` speed or surface-route speed.
+7. Intrinsic Flight Capability and a named Flight Technique must not be stacked unless Canon explicitly permits the combination.
+
+### Precedence Amendment
+For Flight Eligibility, this section supersedes the earlier generic statement that high Realm alone never grants flight: **Realm 4 is the explicit Canon exception because it grants intrinsic Flight Capability, not a Technique.**
