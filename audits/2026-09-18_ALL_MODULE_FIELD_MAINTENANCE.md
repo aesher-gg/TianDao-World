@@ -454,3 +454,47 @@ Tahap ini tidak menetapkan bonus, probability, multiplier, quality increment, du
 **🟢 Bounded Resolution Formula — ESTABLISHED.**
 
 Next mechanics-design dependency: **🟡 Outcome/Bound Source Catalog**, yaitu pengisian source Canon konkret untuk property dimension, bounds, compatibility, dan outcome mechanism yang memang ingin tersedia. Tanpa source konkret, formula tetap memblokir resolusi yang membutuhkan nilai tersebut.
+
+
+## 🟡 MECHANICS DESIGN — OUTCOME / BOUND SOURCE CATALOG
+
+### Finding
+Bounded Resolution Formula sudah menentukan cara memilih hasil di dalam legal result space, tetapi belum tersedia source Canon konkret yang dapat mengisi property, compatibility, bound, qualification, process condition, dan outcome untuk refinement.
+
+### Admin Resolution
+Established Module 34 §12 — OUTCOME / BOUND SOURCE CATALOG dan satu starter source:
+
+- SRC-REF-001 — Basic Iron Condition Restoration
+- Material: ITEM-MAT-001 Bijih Besi Kasar
+- Target: existing metal Weapon
+- Allowed dimension: CONDITION saja
+- Bound: DAMAGED → SERVICEABLE; SERVICEABLE → SERVICEABLE
+- Compatibility: existing metal Weapon + material tersedia
+- Qualification: valid basic metalworking/forging qualification source
+- Process: valid metalworking forge/workspace
+- Outcome: deterministic requirement/process validation
+- Tidak menetapkan bonus numerik, probability, multiplier, quality/grade/tier increase, ability, affinity, atau durability angka.
+
+Module 14 juga menambahkan REFPROP-MAT-001-001 — METAL_FORMABILITY = BASIC dengan source SRC-REF-001.
+
+### Hard Resolution Gates
+- Catalog adalah whitelist, bukan izin improvisasi.
+- Hanya SOURCE_ID executable yang boleh dipakai.
+- Material di luar scope source tidak memperoleh effect.
+- Dimension dan bound yang tidak tercantum tidak boleh dibuat.
+- Conflict antar source tanpa mekanisme resolusi → RESOLUTION-BLOCKED.
+- Qwen tidak boleh memperluas catalog saat runtime.
+
+### Integration
+- Module 14: material property source.
+- Module 34: source catalog, compatibility, bound, qualification, process, outcome.
+- Module 25: runtime selection hanya dalam catalog/method bounds.
+- State Validator: verifies source provenance and Before/After.
+- Runtime Engine: enforces source availability before resolution.
+
+### Status
+**🟢 Outcome/Bound Source Catalog — INITIAL BASELINE ESTABLISHED.**
+
+Catatan: ini bukan berarti seluruh refinement system sudah memiliki katalog lengkap. Source lain tetap UNRESOLVED / RESOLUTION-BLOCKED sampai source Canon konkret ditambahkan.
+
+Next dependency: **🟡 Refinement Outcome Expansion & Source Coverage Audit** — memperluas source secara terkontrol hanya untuk material/property/dimension yang memang memiliki dasar Canon.
