@@ -79,3 +79,20 @@ Terapkan `core/07_DATA_COMPLETENESS.md` pada semua field material yang belum ter
 - Required input hilang tanpa fallback → `RESOLUTION-BLOCKED`; jangan melakukan partial fabrication untuk membuat formula berjalan.
 - Player intent, narrative plausibility, cache, real-world value, atau kebutuhan reward bukan source.
 - Generated content tetap generated dan tidak menjadi Canon hanya karena dipersistenkan.
+
+
+## AERIAL-DISTANCE FLIGHT RESOLUTION
+For any flight-travel intent, the resolver must execute this source chain before calculating duration:
+
+`FLIGHT ELIGIBILITY → FLIGHT SPEED SOURCE → AERIAL-DISTANCE REGISTRY LOOKUP → TRAVEL TIME`
+
+Rules:
+- `systems/20_TRAVEL_ROUTES.md` is the source authority for aerial distance.
+- Lookup must match the actual Origin and Destination nodes.
+- A registered `AERIAL_DISTANCE_BASELINE` is a Canon input in Li, not a value to be recalculated.
+- Surface `DISTANCE_BASELINE` is not a fallback.
+- Straight-line distance, map geometry, estimated coordinates, or a multi-leg surface route are not fallback sources.
+- Missing exact aerial-distance record → `AERIAL-DISTANCE-UNRESOLVED` / `UNRESOLVED`; do not calculate a numeric flight duration.
+- When the exact record exists, preserve its `AERIAL_DISTANCE_ID` and source ID in the resolution Origin.
+- Intrinsic Realm 4+ flight and named Flight Techniques remain separate eligibility/speed paths; neither path may invent an aerial distance.
+- Numeric environmental/detour modifiers require separate sourced mechanics.
