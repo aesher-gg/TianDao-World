@@ -266,3 +266,86 @@ Output hanya dapat dibuat melalui recipe/procedure yang valid; penetapan identit
 6. Output Source menjaga traceability dari identity ke recipe/formula; actual acquisition tetap ditentukan oleh production resolution.
 7. Module 31/32 tetap menjadi authority process/recipe/formula. Module 14 menjadi authority identity/state/provenance boundary.
 8. Production output tidak menjadi Global Canon instance hanya karena registry identity ditetapkan.
+
+## 2026-09-18 XIANXIA ITEM GRADE SYSTEM — 品阶
+
+### 14.1 Prinsip
+Setiap **Item Instance dan Item Canon** memiliki satu `ITEM_GRADE` sebagai tingkat品阶. Grade adalah kelas intrinsik sumber/potensi material atau benda dalam skala dunia, **bukan Character Realm, bukan quality, bukan condition, dan bukan durability**.
+
+Hierarki resmi:
+1. **凡阶 (Fan / Mortal Grade)** — benda/material dunia fana dan perlengkapan dasar.
+2. **黄阶 (Huang / Yellow Grade)** — material/peralatan yang melampaui standar fana dan mulai memiliki nilai spiritual/metafisik.
+3. **玄阶 (Xuan / Profound Grade)** — material/peralatan dengan sifat spiritual yang lebih kuat dan teknik pembuatan lebih maju.
+4. **地阶 (Di / Earth Grade)** — benda dengan kualitas sumber dan struktur yang sangat tinggi.
+5. **天阶 (Tian / Heaven Grade)** — benda langka dengan nilai dan kemampuan tingkat tinggi.
+6. **王阶 (Wang / King Grade)** — benda yang mencapai kelas penguasa/raja dalam tradisi item dunia.
+7. **皇阶 (Huang / Emperor Grade)** — benda kelas kaisar, sangat langka dan berdampak besar.
+8. **圣阶 (Sheng / Saint Grade)** — benda yang telah mencapai kelas suci.
+9. **仙阶 (Xian / Immortal Grade)** — benda tingkat abadi; berada di atas seluruh grade sebelumnya.
+
+### 14.2 Grade ≠ Quality ≠ Condition
+- `ITEM_GRADE` = kelas品阶 intrinsik.
+- `QUALITY` = mutu aktual instance/hasil produksi, hanya jika source menetapkannya.
+- `CONDITION` = kondisi fisik saat ini.
+- `DURABILITY` = ketahanan, bila sistem/item menetapkannya.
+- `RARITY` = klasifikasi kelangkaan bila source menetapkannya.
+
+Tidak boleh mengubah salah satu field menjadi field lain. Grade tidak otomatis memberi bonus attack/defense, ability, affinity, resistance, bloodline, price, atau breakthrough.
+
+### 14.3 Canon Grade Registry
+Grade awal Canon ditetapkan sebagai berikut. Penetapan ini berlaku untuk **identity Canon**, bukan pemberian instance gratis kepada Character.
+
+| Item ID | ITEM_GRADE | Konsep sumber |
+|---|---|---|
+| ITEM-MAT-001 | 凡阶 | Bijih besi dasar dunia fana |
+| ITEM-MAT-002 | 凡阶 | Kayu keras regional biasa |
+| ITEM-MAT-003 | 凡阶 | Kulit binatang biasa |
+| ITEM-MAT-004 | 凡阶 | Taring binatang biasa |
+| ITEM-HERB-001 | 凡阶 | Herbal dasar |
+| ITEM-HERB-002 | 凡阶 | Herbal racun dasar |
+| ITEM-CONS-001 | 凡阶 | Consumable medis dasar |
+| ITEM-CONS-002 | 凡阶 | Penetral racun dasar |
+| ITEM-WPN-001 | 凡阶 | Belati besi sederhana |
+| ITEM-WPN-002 | 凡阶 | Pedang besi standar |
+| ITEM-MAT-005 | 凡阶 | Serat rami umum |
+| ITEM-MAT-006 | 凡阶 | Batu api sederhana |
+| ITEM-MAT-007 | 黄阶 | Getah dari sumber pinus spiritual Qingluan |
+| ITEM-HERB-003 | 黄阶 | Jamur dari ekosistem kabut Wuyin |
+| ITEM-MAT-008 | 黄阶 | Material mineral panas bumi Huoyan |
+| ITEM-HERB-004 | 黄阶 | Madu biologis bernilai spiritual regional |
+| ITEM-MAT-009 | 黄阶 | Mutiara dari sumber laut Dongming |
+| ITEM-MAT-010 | 黄阶 | Kulit/fauna sumber dingin Beiming |
+| ITEM-MAT-011 | 黄阶 | Kristal garam mineral Jinyan |
+| ITEM-MAT-012 | 黄阶 | Giok regional Baiyu |
+| ITEM-MAT-013 | 凡阶 | Serat tanaman sungai Cangyuan |
+| ITEM-MAT-014 | 黄阶 | Cangkang organisme laut Lanyue |
+| ITEM-CRAFT-001 | 凡阶 | Tali hasil processing serat umum |
+| ITEM-CRAFT-002 | 黄阶 | Blank giok hasil processing |
+| ITEM-CRAFT-003 | 黄阶 | Manik dari mutiara Dongming |
+| ITEM-CRAFT-004 | 黄阶 | Lempeng cangkang Lanyue |
+| ITEM-WPN-003 | 黄阶 | Bilah dengan input material Huoyan |
+| ITEM-EQP-001 | 黄阶 | Equipment berbasis Kulit Dingin Beiming |
+| ITEM-ALC-001 | 黄阶 | Produk proses dari sumber spiritual Qingluan |
+| ITEM-ALC-002 | 黄阶 | Produk proses Jamur Kabut Wuyin |
+| ITEM-ALC-003 | 黄阶 | Produk proses Madu Seratus Bunga |
+
+### 14.4 Grade Inheritance & Production Ceiling
+1. Loot candidate memakai grade dari Item Canon setelah Item Identity Gate lolos; loot belum menjadi instance hanya karena grade diketahui.
+2. Processing/crafting/alchemy output wajib memiliki `OUTPUT_ITEM_GRADE` yang ditentukan recipe/formula atau registry.
+3. Output tidak boleh naik grade hanya karena jumlah input lebih banyak, Character Realm lebih tinggi, narasi, harga, rarity, atau keberhasilan produksi.
+4. Refinement tidak boleh menaikkan grade kecuali Method Record secara eksplisit mengizinkan perubahan `ITEM_GRADE` dan menetapkan bound-nya.
+5. Quality dapat berubah tanpa mengubah grade hanya jika source produksi/refinement mengizinkannya.
+6. Grade yang belum dapat dibuktikan = `UNRESOLVED`; jika grade required untuk resolution = `RESOLUTION-BLOCKED`.
+7. Item baru yang belum memiliki Canon identity tidak boleh diberi grade lalu diperlakukan sebagai Item Canon. Identity Gate tetap lebih dulu.
+8. Fixed loot table tidak boleh memberikan grade yang berbeda dari Item Canon kecuali source table secara eksplisit merupakan variant identity yang berbeda.
+
+### 14.5 Anti-Exploit
+GM dilarang:
+- menaikkan grade untuk menguntungkan Player/NPC;
+- menyamakan grade dengan Realm;
+- memberi grade berdasarkan nama seperti "roh", "ancient", "king", atau "divine" tanpa registry/source;
+- menggabungkan beberapa item lalu otomatis menciptakan grade lebih tinggi;
+- mengubah grade setelah hasil resolution diketahui;
+- menggunakan grade sebagai hidden numeric modifier.
+
+Urutan valid: **Item Identity → Grade Source → Quality/Condition → Applicable Effect Source → Resolution → Origin/Save**.
