@@ -1,7 +1,7 @@
 # SYSTEM INTEGRITY AUDIT — ITEM → LOOT → PRODUCTION → ECONOMY → RUNTIME → SAVE
 
 ## Status
-**🟡 FOLLOW-UP AUDIT — GAP FOUND AND FIXED; RE-VERIFICATION REQUIRED**
+**🟢 FOLLOW-UP AUDIT — F-001 FIXED AND VERIFIED**
 
 Tanggal: 2026-09-18
 Scope: Item, Loot, Regional Source, Crafting/Forging, Alchemy, Economy, Module Router, Module Integration, Runtime Engine, Action Resolver, State Validator, Save Pipeline, Data Completeness.
@@ -174,3 +174,21 @@ Admin memperbarui `systems/32_ALCHEMY_PILLS.md`:
 `Regional Source → Acquisition/Loot → Item Instance → Recipe/Formula → Processing → Output Instance → Economy/Usage → Origin → History → Save`
 
 Untuk F-001, chain sekarang **ditahan sebelum Output Instance**, sehingga runtime tidak dapat melewati identity gap secara diam-diam. Setelah output identity Canon tersedia melalui Admin change yang terpisah, chain dapat dibuka kembali melalui audit/verifikasi baru.
+
+
+## Follow-up Verification — 2026-09-18
+
+Fresh fetch setelah commit `993c958025d0b012e413aedfd7c4344009df255c` memverifikasi `systems/32_ALCHEMY_PILLS.md` menggunakan content SHA `cacaf00f348eabd6481e3f73b72182194500b719`.
+
+Verified:
+- FORMULA-ALC-001 output sekarang `UNRESOLVED`.
+- Formula tersebut `RESOLUTION-BLOCKED` untuk runtime sampai output identity sah tersedia.
+- Tidak ada anonymous Item Instance yang boleh dibuat.
+- Input tidak boleh dikonsumsi melalui save sebelum resolusi production valid.
+- Quantity rule mengecualikan output `UNRESOLVED`/`RESOLUTION-BLOCKED` dari instance runtime.
+- Tidak ada Item ID baru yang ditambahkan.
+- Tidak ada Character/Inventory/World State gameplay yang dimutasi oleh audit.
+
+**F-001: CLOSED.**
+
+Catatan: hasil repository search dapat masih menampilkan excerpt indeks lama; verifikasi final untuk file yang diubah dilakukan melalui fresh file fetch dan SHA di atas, bukan excerpt search cache.
