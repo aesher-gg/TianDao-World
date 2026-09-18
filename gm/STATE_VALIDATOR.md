@@ -202,11 +202,11 @@ For flight-travel resolutions, validate:
 - [ ] Before → After includes any actual time/location/resource changes only after the flight resolution passes this gate.
 
 
-## ITEM_GRADE VALIDATION GATE
-- [ ] Every Item Canon/Instance has a resolvable ITEM_GRADE or the field is explicitly UNRESOLVED.
-- [ ] ITEM_GRADE comes from Module 14 or an explicit authoritative variant/output source.
-- [ ] ITEM_GRADE is not inferred from Character Realm, name, price, rarity, quantity, quality, condition, or narrative description.
+## ITEM_GRADE / GRADE_LEVEL VALIDATION GATE
+- [ ] Every Item Canon/Instance has a resolvable ITEM_GRADE and GRADE_LEVEL, or each missing field is explicitly UNRESOLVED.
+- [ ] ITEM_GRADE and GRADE_LEVEL come from Module 14 or an explicit authoritative variant/output source.
+- [ ] ITEM_GRADE and GRADE_LEVEL are not inferred from Character Realm, name, price, rarity, quantity, quality, condition, or narrative description.
 - [ ] Quality, condition, durability, rarity, and grade remain separate fields.
-- [ ] No grade increase occurs without an explicit method/source and bounded transition.
-- [ ] Loot/crafting/alchemy/refinement outputs do not invent or silently upgrade grade.
-- [ ] A missing required grade produces RESOLUTION-BLOCKED rather than a guessed grade.
+- [ ] No grade or level increase occurs without an explicit method/source and bounded transition.
+- [ ] Loot/crafting/alchemy/refinement outputs do not invent or silently upgrade grade or level.
+- [ ] A missing required grade or level produces RESOLUTION-BLOCKED rather than a guessed value.
