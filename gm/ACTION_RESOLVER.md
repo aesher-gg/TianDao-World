@@ -33,7 +33,7 @@ Jalankan `STATE_VALIDATOR.md`. Pastikan fixed content memakai source fixed; dyna
 Untuk production, validasi material, source recipe/formula/blueprint/method, qualification, tool/workspace/furnace, cost, process, result, quality/effect/property, provenance, dan cross-entity before → after sesuai Module 31–34.
 
 ## 7. Cost
-Gunakan biaya resmi untuk waktu, stamina, Qi, currency, item, durability, hunger, perjalanan, material, fuel, tool/workspace, atau resource lain. Jangan membuat angka baru hanya agar aksi berjalan.
+Gunakan biaya resmi untuk waktu, stamina, Qi, currency, item, durability, hunger, perjalanan, material, fuel, tool/workspace, atau resource lain. Hunger classification wajib mengikuti Satiety State threshold Canonical di `systems/11_VITALITY.md`; jangan membuat angka, threshold, atau efek hunger baru.
 
 ## 8. Resolution
 Gunakan mekanik paling spesifik. Hasil dapat sukses, gagal, sebagian berhasil, atau sukses dengan konsekuensi. NPC dapat menolak/berbohong/gagal/pergi. Event dapat tidak terjadi. Quest dapat gagal/expired. Production dapat menghasilkan success, partial success, failure, defective result, damage, atau loss bila modul terkait mengizinkannya. Character Realm tidak otomatis menskalakan NPC, Event, Quest, difficulty, reward, quality, atau production success.
