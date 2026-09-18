@@ -57,3 +57,31 @@ Monster memakai Combat, Vitality, Items, Loot, Geography, Time, Travel, Events, 
 Dynamic generation memakai `systems/25_DYNAMIC_GENERATION.md`.
 
 Spirit Beast memakai modul-modul tersebut bila relevan dan menggunakan `systems/24_SPIRIT_BEASTS.md` untuk relationship, taming, ownership, contract, growth/evolution, lifecycle, state, history, dan save integration.
+
+## 8. MONSTER INDIVIDUAL PERSISTENCE GATE
+Monster encounter biasa tidak menjadi persistent entity. Namun, bila satu individu Monster menjadi **recurring/material** dan continuity lintas turn memengaruhi resolusi, runtime wajib menginstansiasinya sebagai entity terpisah.
+
+### Persistence classes
+- **ENCOUNTER-ONLY:** hasil encounter selesai tanpa kebutuhan continuity → tidak membuat ID/state/history.
+- **MATERIAL-RECURRING:** individu yang kembali muncul, memiliki kondisi/lokasi/riwayat yang memengaruhi turn berikutnya, menjadi target quest/event material, atau memiliki konsekuensi individual yang harus dilacak → wajib memiliki `MONSTER_ID` stabil.
+- **DECEASED/ARCHIVED:** individu yang mati permanen/diarsipkan mempertahankan record historis; `MONSTER_ID` tidak boleh dipakai ulang.
+
+Canonical persistence paths:
+- `characters/monster_registry.md` — registry mapping `MONSTER_ID` → Current Monster State/History.
+- `characters/monsters/<MONSTER_ID>.md` — current state individual Monster.
+- `monster_history/<MONSTER_ID>_HISTORY.md` — append-oriented history.
+
+Minimum persistent Monster State:
+`MONSTER_ID / Species-or-Archetype / Classification / Tier / Realm-or-UNRESOLVED / Current Location / Habitat / HP / Condition / Temperament / Behavior / Status / Origin / Last World Time`.
+
+`MONSTER_ID` adalah identity individu, bukan species ID. Species dapat tetap `RUNTIME-GENERATED` dan tidak menjadi Global Canon hanya karena individu dipersistenkan.
+
+Persistence tidak berarti ownership, taming, loyalty, contract, atau loot. Monster tetap independen. Loot hanya diproses melalui Module 18/25 setelah acquisition yang sah.
+
+### Monster persistence transaction
+Jika encounter/action mengubah Monster persistent:
+`LOAD MONSTER STATE/HISTORY → VALIDATE → RESOLVE → BEFORE/AFTER → ORIGIN → MONSTER HISTORY → SAVE → WRITE-BACK VERIFY`.
+
+Jika satu action mengubah Character + Monster + Item/Loot + Event/World consequence, setiap entity yang berubah harus memiliki before→after dan Origin sendiri. Jangan menyimpan Character saja.
+
+Generated Monster yang belum membutuhkan continuity tetap `RUNTIME-GENERATED` dan tidak dibuat persistent hanya untuk mengisi database.
