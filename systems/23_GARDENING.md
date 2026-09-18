@@ -371,5 +371,39 @@ Sistem berkebun harus memberikan rasa:
 Sistem harus realistis dalam sebab-akibat, tetapi cepat dalam time-scale agar cocok untuk game berbasis teks.
 
 
+## 23. Persistence and Runtime Integrity Gate
+Gardening entities that persist across turns must use stable IDs and explicit state/history rather than narrative-only memory.
+
+Recommended persistence paths:
+- `characters/garden_registry.md`
+- `characters/gardens/<GARDEN_ID>.md`
+- `garden_history/<GARDEN_ID>_HISTORY.md`
+
+Minimum persistent Garden State: GARDEN_ID, owner/controller or `UNRESOLVED`, location, area, garden statuses, active Crop Batch IDs or `NOT-INSTANTIATED`, Last World Time, and Origin.
+
+Minimum persistent Crop Batch State: CROP_BATCH_ID, Garden ID, crop identity/source, quantity, planting World Time, Growth, Health, Water, Nutrition, Disease, Pest, Quality Potential, Maturity, Estimated Harvest or `UNRESOLVED`, and Origin.
+
+A template or narrative mention does not create a persistent garden. Create/update registry, state, and history only after a valid resolution.
+
+## 24. Numeric Resolution and Anti-Cheat Gate
+The 0–100 ranges define domains, not free numeric choices. Every numeric change must have a source, cause, and bounded rule.
+
+- Do not invent numeric changes such as `+10` or `-20` when Canon provides no rate.
+- Passive Growth requires a sourced growth-rate rule; otherwise the numeric result is `UNRESOLVED` or `RESOLUTION-BLOCKED`.
+- Random pest, disease, weather, failure, or similar outcomes require the verifiable RNG contract in `core/04_ANTI_CHEAT.md`.
+- No narrative reroll, substitution, or result rewrite is permitted.
+- Harvest quantity/quality requires a valid formula or fixed source; a 0–100 plant status is not itself a harvest formula.
+
+## 25. Cross-Module Boundary
+- Time/growth: `core/02_TIME_SYSTEM.md` + Gardening.
+- Action/time/stamina cost: `core/03_ACTION_SYSTEM.md` + `systems/11_VITALITY.md` when Vitality is affected.
+- Seed/material/item identity: `systems/14_ITEMS.md` and valid acquisition source.
+- Harvest/loot: `systems/18_LOOT.md` + `systems/25_DYNAMIC_GENERATION.md` when dynamic loot is used.
+- Economy/market: `systems/10_ECONOMY.md` + `systems/21_REGIONAL_ECONOMY.md` when regional market data is required.
+- Crafting/processing: `systems/31_CRAFTING_FORGING.md` or `systems/32_ALCHEMY_PILLS.md` when applicable.
+- Persistence: `core/05_SAVE_INTEGRITY.md`, `core/06_ID_AND_SAVE_SYSTEM.md`, State Validator, and Save Pipeline.
+
+A consumer module may not invent gardening values supplied by this module, and Gardening may not invent values owned by another source.
+
 ## DATA COMPLETENESS GARDEN GATE
 Seed identity, growth, maturity, yield, quality, effect, harvest time, dan mutation hanya boleh berasal dari source/formula/state yang sah. Jangan mengisi field kebun dengan angka atau properti yang tidak bersumber. Entity/state yang belum dibuat tetap NOT-INSTANTIATED; data yang belum dapat ditentukan tetap UNRESOLVED.
