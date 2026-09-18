@@ -166,3 +166,52 @@ ITEM-MAT-001 memiliki satu refinement-relevant property yang ditetapkan oleh SRC
 Property ini hanya menyatakan bahwa ITEM-MAT-001 memiliki formability dasar untuk source tersebut. Property ini **bukan bonus item** dan tidak boleh diterjemahkan menjadi attack, defense, durability, quality, tier, ability, affinity, atau probability.
 
 Untuk SRC-REF-001, compatibility tetap harus mengikuti Method/Source Record; keberadaan property ini tidak membuat material kompatibel dengan seluruh Weapon secara otomatis.
+
+## 4B. ADMIN CANON — REGIONAL MATERIAL & ITEM EXPANSION
+
+> Penambahan ini bukan quota catalog. Setiap item di bawah harus memiliki **bibit/bebet/bobot**: sumber geografis atau ekologis yang jelas, jalur perolehan yang sah, fungsi yang benar-benar terhubung ke sistem TianDao, serta dampak dunia yang dapat diverifikasi. Item tidak menjadi milik Character tertentu hanya karena ditetapkan di Canon.
+
+### 4B.1 Canon Item Registry
+
+| Item ID | Nama | Kategori | Baseline fungsi | Canon Origin | Dampak TianDao |
+|---|---|---|---|---|---|
+| ITEM-MAT-007 | Getah Pinus Roh Qingluan | Material/Alchemy | bahan pengikat dan pengawet untuk proses material/kayu | Hutan pinus spiritual Pegunungan Qingluan; dipanen dari pohon yang benar-benar menghasilkan getah | membuka jalur material regional Qingluan untuk crafting/alchemy dan menjadi komoditas bahan spiritual |
+| ITEM-HERB-003 | Jamur Kabut Wuyin | Herb | bahan herbal untuk proses alchemy/obat yang kompatibel | Hutan Wuyin, Pegunungan Qingluan; tumbuh pada area lembap berkabut | membuat Hutan Wuyin memiliki sumber bahan herbal bernilai dan memberi alasan gameplay untuk ekspedisi/pengumpulan berisiko |
+| ITEM-MAT-008 | Terak Besi Api Huoyan | Material | bahan campuran/umpan material untuk forging yang membutuhkan sumber logam panas bumi | zona panas bumi Pegunungan Huoyan; berasal dari endapan/aktivitas mineral yang terekspos | menghubungkan geologi Huoyan dengan forging dan perdagangan material; tidak otomatis menaikkan kualitas senjata |
+| ITEM-HERB-004 | Madu Seratus Bunga | Herb/Consumable Ingredient | bahan pangan/herbal dan input proses alchemy yang kompatibel | Lembah Seratus Bunga; berasal dari koloni penyerbuk lokal yang mengambil nektar flora lembah | menciptakan komoditas biologis regional yang menghubungkan flora, fauna, alchemy, dan ekonomi |
+| ITEM-MAT-009 | Mutiara Pasang Dongming | Material/Accessory Material | bahan perhiasan, perdagangan, atau komponen proses yang secara eksplisit memerlukan material mutiara | perairan pesisir Laut Dongming; diperoleh dari kerang/makhluk laut yang benar-benar menghasilkan mutiara | menambah jalur ekonomi laut dan risiko pengambilan sumber daya; tidak otomatis memiliki efek spiritual |
+| ITEM-MAT-010 | Kulit Dingin Beiming | Material | bahan pakaian/perlindungan dingin | hasil pengulitan sah fauna/monster yang hidup di habitat dingin Beiming dan memang memiliki kulit/fur yang dapat dimanfaatkan | menghubungkan survival wilayah dingin dengan crafting perlindungan; tidak menghapus aturan suhu otomatis |
+| ITEM-MAT-011 | Kristal Garam Jinyan | Material | bahan pengawet, perdagangan, dan proses material yang membutuhkan garam mineral | endapan garam mineral Oasis/Jalur Gurun Jinyan yang dapat ditambang secara sah | memberi nilai ekonomi pada jalur oasis dan mendukung logistik pangan tanpa menciptakan air atau suplai gratis |
+| ITEM-MAT-012 | Pecahan Giok Baiyu | Material | bahan kerajinan, ukiran, atau konstruksi/komponen formation bila recipe mengizinkan | endapan/limbah pengerjaan giok di sekitar Kota Baiyu; bukan otomatis berasal dari reruntuhan kuno | menghubungkan Kota Baiyu dengan kerajinan bernilai dan sumber material yang dapat diperdagangkan |
+| ITEM-MAT-013 | Serat Sungai Cangyuan | Material | bahan anyaman, tali, dan perbaikan perlengkapan sederhana | tanaman serat di tepian sungai Dataran Cangyuan yang dipanen secara berkelanjutan | memperkuat ekonomi material dasar Cangyuan dan memberi alternatif lokal selain Serat Rami |
+| ITEM-MAT-014 | Cangkang Karang Lanyue | Material | bahan kerajinan/komponen pelindung atau dekoratif yang membutuhkan cangkang keras | Kepulauan Lanyue; diperoleh dari organisme laut bercangkang yang telah mati/ditangkap secara sah | menghubungkan eksplorasi kepulauan dengan ekonomi bahan laut; tidak memberi armor stat otomatis |
+
+### 4B.2 Provenance / Bibit-Bebet-Bobot Gate
+
+Untuk seluruh ITEM-* di §4B:
+1. **Bibit / source identity:** setiap item memiliki asal geografis/ekologis yang dinyatakan di Canon.
+2. **Bebet / acquisition lineage:** item hanya sah diperoleh melalui panen, pengumpulan, pengolahan, loot, atau perdagangan yang kompatibel dengan source. Canon item tidak memberikan instance gratis.
+3. **Bobot / systemic weight:** dampak item dinyatakan pada fungsi sistemik yang relevan; tidak boleh diterjemahkan menjadi stat, rarity, harga, atau efek khusus tanpa source mekanis.
+4. **Instance provenance:** setiap instance tetap membutuhkan Origin Log berisi source entity/location, acquisition method, World Time, claimant/owner, dan perubahan kepemilikan.
+5. **No universal availability:** asal regional tidak berarti item selalu tersedia, selalu muncul, atau dapat dibeli di semua kota.
+6. **No automatic effect:** nama dan asal item tidak otomatis menciptakan affinity, buff, resistance, breakthrough, technique, bloodline, atau quality tier.
+7. **No Character inheritance:** penambahan Canon item tidak mengubah inventory/current state Character yang sudah ada.
+8. **Loot integration:** fixed loot hanya boleh menunjuk Item ID yang telah ada dan source condition yang sesuai.
+9. **Dynamic boundary:** di luar fixed source, item tetap dapat menjadi hasil runtime hanya bila Dynamic Loot/Generation dan source validation memang mengizinkannya.
+10. **Data completeness:** quantity, condition, quality, ownership, availability, dan instance location yang belum diketahui tetap mengikuti core/07_DATA_COMPLETENESS.md.
+
+### 4B.3 Regional Source IDs
+
+Sumber berikut adalah **Canon source class**, bukan instance item dan bukan jaminan spawn:
+- SRC-RES-CGY-001 — Serat Sungai Cangyuan — tepian sungai Dataran Cangyuan
+- SRC-RES-QGL-001 — Getah Pinus Roh Qingluan — hutan pinus Pegunungan Qingluan
+- SRC-RES-QGL-002 — Jamur Kabut Wuyin — Hutan Wuyin
+- SRC-RES-YHS-001 — Terak Besi Api Huoyan — zona panas bumi Pegunungan Huoyan
+- SRC-RES-YHS-002 — Madu Seratus Bunga — Lembah Seratus Bunga
+- SRC-RES-DGM-001 — Mutiara Pasang Dongming — pesisir Laut Dongming
+- SRC-RES-DGM-002 — Cangkang Karang Lanyue — Kepulauan Lanyue
+- SRC-RES-BMG-001 — Kulit Dingin Beiming — habitat dingin Tanah Salju Beiming
+- SRC-RES-GJY-001 — Kristal Garam Jinyan — endapan garam mineral Gurun Jinyan
+- SRC-RES-TYN-001 — Pecahan Giok Baiyu — rantai pengerjaan/limbah giok Kota Baiyu
+
+Source class hanya membuktikan **asal yang sah**; actual quantity/condition/availability harus berasal dari runtime atau state yang tervalidasi.
