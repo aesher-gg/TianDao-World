@@ -238,3 +238,84 @@ Catatan: daftar ini adalah **coverage gap**, bukan daftar route yang boleh diteb
 
 ### Travel Maintenance Status
 **🟢 TRAVEL ROUTE DATABASE — BASELINE ROUTES ESTABLISHED & ROUTE-ID HARDENED**
+
+
+## 20B — GLOBAL ROUTE CONNECTIVITY EXPANSION
+
+### Status
+**Admin Canon — Global Route Graph Connectivity Established**
+
+Bagian ini menetapkan baseline route tambahan agar seluruh node yang tercatat dalam `lore/CITY_VILLAGE_DATABASE.md` memiliki jalur sah menuju jaringan global. Keterhubungan berarti **reachable melalui satu atau lebih route leg**, bukan setiap node harus memiliki direct route ke semua node lain.
+
+### Route Tambahan — Dataran Cangyuan
+| ROUTE_ID | Route | Distance | Terrain | Primary Transport | Status |
+|---|---|---:|---|---|---|
+| TRV-CGY-005 | Kota Yunjing ↔ Desa Xingcun | 58 Li | jalan desa/pertanian | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-CGY-006 | Kota Yunjing ↔ Desa Tiedao | 92 Li | jalan dagang/kerja logam | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+
+### Route Tambahan — Pegunungan Qingluan
+| ROUTE_ID | Route | Distance | Terrain | Primary Transport | Status |
+|---|---|---:|---|---|---|
+| TRV-QGL-005 | Kota Qingluan ↔ Kota Lingshan | 64 Li | kaki gunung/jalan dagang | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-QGL-006 | Kota Qingluan ↔ Desa Yunhe | 72 Li | lembah/jalur gunung | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-QGL-007 | Desa Yunhe ↔ Desa Yunmu | 54 Li | jalur lembah/hutan | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-QGL-008 | Kota Qingluan ↔ Pos Gunung Lianfeng | 118 Li | jalur pegunungan | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+
+### Route Tambahan — Domain Yaohuang Selatan
+| ROUTE_ID | Route | Distance | Terrain | Primary Transport | Status |
+|---|---|---:|---|---|---|
+| TRV-YHS-005 | Kota Nanyao ↔ Kota Huoyan | 88 Li | jalan selatan/panas | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-YHS-006 | Kota Nanyao ↔ Desa Nanyue | 74 Li | jalur perbatasan/desa | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+
+### Route Tambahan — Laut Dongming
+| ROUTE_ID | Route | Distance | Terrain | Primary Transport | Status |
+|---|---|---:|---|---|---|
+| TRV-DGM-005 | Pelabuhan Donghai ↔ Kota Haicheng | 52 Li | jalan pesisir | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-DGM-006 | Kota Haicheng ↔ Desa Nelayan Qingyu | 68 Li | jalan pesisir | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+
+### Route Tambahan — Tanah Salju Beiming
+| ROUTE_ID | Route | Distance | Terrain | Primary Transport | Status |
+|---|---|---:|---|---|---|
+| TRV-BMG-005 | Kota Beixue ↔ Desa Hanlin | 72 Li | jalur salju/permukiman | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-BMG-006 | Desa Xuehe ↔ Pos Es Fengbei | 64 Li | jalur sungai beku/salju | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+
+### Route Tambahan — Gurun Jinyan
+| ROUTE_ID | Route | Distance | Terrain | Primary Transport | Status |
+|---|---|---:|---|---|---|
+| TRV-GJY-005 | Kota Jinyang ↔ Kota Shajing | 96 Li | jalur oasis/kafilah | Karavan darat biasa / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-GJY-006 | Kota Jinyang ↔ Desa Shazhen | 54 Li | jalur oasis | Jalan kaki / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-GJY-007 | Kota Jinyue ↔ Pos Karavan Huangfeng | 70 Li | jalur kafilah gurun | Karavan darat biasa / tunggangan darat biasa | CANON-ESTABLISHED |
+| TRV-GJY-008 | Kota Shajing ↔ Pos Karavan Huangfeng | 82 Li | jalur kafilah gurun | Karavan darat biasa / tunggangan darat biasa | CANON-ESTABLISHED |
+
+### Global Connectivity Rules
+1. Semua settlement dan non-settlement regional location yang tercatat pada City/Village Database kini memiliki sedikitnya satu edge route dalam graph ini.
+2. Route baru di atas adalah **baseline geografis Canon**, bukan jaminan sarana tersedia pada saat Character melakukan perjalanan. Ketersediaan sarana tetap diverifikasi pada runtime.
+3. Primary Transport menunjukkan sarana yang kompatibel dengan karakteristik route; jika sarana aktual tidak diketahui, GM tidak boleh mengubahnya menjadi durasi numerik tanpa validasi runtime.
+4. Jalur laut tetap mengikuti aturan kapal, cuaca, pelayaran, dan checkpoint. Route registry tidak menjamin keberangkatan kapal.
+5. Route darat tetap tunduk pada kondisi medan, cuaca, keamanan, suplai, stamina, encounter, dan event yang benar-benar berlaku.
+6. Route graph tidak menciptakan jalan pintas. Perjalanan antarnode yang tidak memiliki direct edge harus menggunakan chain dari route yang masing-masing valid.
+7. Jarak multi-leg adalah jumlah route leg yang benar-benar dipakai; tidak boleh menggantikan chain dengan jarak garis lurus atau direct route yang tidak tercatat.
+8. Semua perjalanan lebih dari 3 jam aksi wajib menggunakan checkpoint sesuai aturan modul ini dan Time System.
+
+### Connectivity Verification Target
+Node yang sebelumnya berada di coverage gap sekarang masuk ke graph melalui route berikut:
+- Xingcun → Yunjing
+- Tiedao → Yunjing
+- Qingluan → Lingshan/Yunhe/Lianfeng
+- Yunhe → Yunmu → jaringan Lingshan
+- Huoyan → Nanyao
+- Nanyue → Nanyao
+- Pelabuhan Donghai → Haicheng → jaringan Laut Dongming
+- Desa Nelayan Qingyu → Haicheng
+- Hanlin → Beixue
+- Pos Es Fengbei → Xuehe
+- Jinyang → Shajing → jaringan Gurun Jinyan
+- Shazhen → Jinyang
+- Pos Karavan Huangfeng → Jinyue/Shajing
+
+Dengan route anchor antarkawasan yang sudah ada, graph regional tersebut terhubung ke satu jaringan dunia melalui Yunjing dan koridor Canon antarkawasan.
+
+### Maintenance Boundary
+- Penambahan ini tidak menetapkan populasi, NPC, toko, harga, event, quest, jadwal kapal, kondisi cuaca, atau akses Character.
+- Tidak ada route baru yang boleh diasumsikan hanya karena dua lokasi tampak berdekatan di peta.
+- Perubahan jarak baseline selanjutnya harus melalui Admin maintenance dan verifikasi graph agar tidak memutus konektivitas atau menciptakan konflik route.
