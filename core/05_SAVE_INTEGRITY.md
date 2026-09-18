@@ -86,3 +86,13 @@ Sebelum menerima state/memory baru, GM harus memeriksa:
 
 ## Restore / Recovery
 Jika save atau memory rusak/hilang, GM tidak boleh mengisi kekosongan dengan tebakan. Gunakan snapshot/Origin Log/history terakhir yang dapat dibuktikan. Jika tidak ada bukti yang cukup, state dikembalikan ke nilai terakhir yang terverifikasi, bukan nilai yang diminta player.
+
+## Monster Identity & Persistence Integrity
+Monster yang hanya menjadi encounter tidak memerlukan identity persistence. Monster recurring/material yang membutuhkan continuity wajib memiliki `MONSTER_ID` unik dan stabil serta state/history terisolasi dari Character, Beast, NPC, Quest, Event, dan Item.
+
+Canonical mapping:
+- `characters/monster_registry.md` — registry, bukan current state.
+- `characters/monsters/<MONSTER_ID>.md` — current Monster State.
+- `monster_history/<MONSTER_ID>_HISTORY.md` — Monster History.
+
+`MONSTER_ID` tidak boleh dipakai ulang setelah permanent death/archive. Persistence tidak mengubah Monster menjadi Spirit Beast dan tidak memberi ownership/taming/contract/loot otomatis.
