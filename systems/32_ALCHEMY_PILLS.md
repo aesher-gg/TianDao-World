@@ -149,4 +149,4 @@ Semua formula tetap membutuhkan qualification, tool, process, resource cost, res
 
 
 ## 2026-09-18 Item Grade Integration
-Alchemy output is an Item and therefore requires ITEM_GRADE. Formula output grade is sourced from the Canon Item Registry/formula record. A higher alchemist Realm, larger batch, better narrative circumstances, or successful resolution cannot silently upgrade grade. Grade and quality are separate fields; any grade transition requires an explicit Canon method and bound.
+Alchemy output is an Item and therefore requires ITEM_GRADE and GRADE_LEVEL. Formula output grade and level are sourced from the Canon Item Registry/formula record. A higher alchemist Realm, larger batch, better narrative circumstances, or successful resolution cannot silently upgrade grade. Grade/level and quality are separate fields; any grade or level transition requires an explicit Canon method and bound.
