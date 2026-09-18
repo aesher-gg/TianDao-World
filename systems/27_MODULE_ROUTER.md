@@ -126,3 +126,9 @@ Fixed Canon hanya ditambahkan melalui perubahan Admin yang sah dan diverifikasi.
 
 ## DATA COMPLETENESS ROUTER GATE
 Router wajib memastikan modul yang menyediakan source untuk setiap field material telah di-fetch sebelum field tersebut di-resolve. Jika source required tidak tersedia, jangan fallback ke memory/cache atau plausibility. Tandai UNRESOLVED atau tahan sebagai RESOLUTION-BLOCKED sesuai core/07_DATA_COMPLETENESS.md.
+
+
+## 2026-09-18 RNG / Modifier Integrity Gate
+- Any routed module that performs random resolution must consume the RNG contract from `core/04_ANTI_CHEAT.md`.
+- Any numeric modifier must pass the source/identity/non-stacking gate from `core/04_ANTI_CHEAT.md`.
+- A module cannot downgrade RNG/modifier failure into narrative judgment or an arbitrary numeric fallback.
