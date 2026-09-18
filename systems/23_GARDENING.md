@@ -30,7 +30,7 @@ GM tidak boleh memberikan hasil panen sebelum waktu pertumbuhan yang sesuai terp
 - Berlaku untuk sayuran, tanaman pangan cepat, herbal biasa, dan tanaman non-spiritual lain yang termasuk kategori biasa.
 
 ### Tanaman Spiritual
-- Waktu pertumbuhan standar: 15–60 hari in-game.
+- Durasi pertumbuhan tanaman spiritual: maksimal 15 hari in-game, tergantung jenis tanaman dan kondisi yang memiliki source sah.
 - **Batas maksimal standar: 60 hari (2 bulan) in-game.**
 - Tanaman khusus buatan Admin dapat memiliki aturan tersendiri jika terdokumentasi.
 
