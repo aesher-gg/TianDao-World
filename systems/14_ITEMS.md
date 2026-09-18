@@ -153,3 +153,16 @@ Jika Character memberikan atau menggunakan item untuk Spirit Beast, item harus b
 
 ## 8. Integrasi
 Items terhubung dengan Economy, Loot, Combat, Techniques, Organizations, Reputation, Spirit Beast, Crafting, Alchemy, Formation, Refinement, dan Save Integrity.
+
+
+### 4A.9 Catalog-Sourced Canon Property
+
+ITEM-MAT-001 memiliki satu refinement-relevant property yang ditetapkan oleh SRC-REF-001:
+
+| PROPERTY_ID | PROPERTY_NAME | VALUE_OR_RANGE | APPLICABLE_ITEM_CATEGORY | SOURCE | STATUS |
+|---|---|---|---|---|---|
+| REFPROP-MAT-001-001 | METAL_FORMABILITY | BASIC | Metal Weapon | SRC-REF-001 — Basic Iron Condition Restoration | CANON-ESTABLISHED |
+
+Property ini hanya menyatakan bahwa ITEM-MAT-001 memiliki formability dasar untuk source tersebut. Property ini **bukan bonus item** dan tidak boleh diterjemahkan menjadi attack, defense, durability, quality, tier, ability, affinity, atau probability.
+
+Untuk SRC-REF-001, compatibility tetap harus mengikuti Method/Source Record; keberadaan property ini tidak membuat material kompatibel dengan seluruh Weapon secara otomatis.
