@@ -96,3 +96,9 @@ RESOLUTION → narrative rewrite → reroll → altered result.
 
 Setiap audit/runtime yang menemukan konflik atau celah yang memungkinkan GM memilih hasil setelah melihat konsekuensi harus memperlakukannya sebagai integrity defect dan menahan state-changing resolution sampai source/authority diperbaiki.
 undefined
+
+### Item Grade Integrity
+- ITEM_GRADE/品阶 is a sourced item property, not a GM narrative label.
+- GM may not upgrade, downgrade, or invent item grade from Character Realm, quantity, price, rarity, quality, condition, material name, or narrative difficulty.
+- Loot/crafting/alchemy/refinement must consume the registered grade or enter UNRESOLVED/RESOLUTION-BLOCKED when required grade data is missing.
+- Grade transitions require an explicit Canon/Admin method with bounded before→after values.
