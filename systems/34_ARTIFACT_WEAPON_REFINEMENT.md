@@ -240,5 +240,66 @@ yang mencakup Item State, consumed Material, resource/cost/time, serta Origin/Hi
 - State Validator: validates before/after and provenance.
 - Save Pipeline: persists the complete transaction.
 
+
+
+## 12. OUTCOME / BOUND SOURCE CATALOG
+
+Catalog ini adalah **source mekanis konkret** untuk refinement. Record di bawah adalah Admin Canon yang sengaja dibatasi pada perubahan yang dapat dijelaskan tanpa bonus numerik. Record catalog tidak boleh diperluas oleh Qwen.
+
+### 12.1 Source Record Contract
+
+Setiap source refinement aktif wajib memuat:
+
+SOURCE_ID / SOURCE_STATUS / SOURCE_AUTHORITY / MATERIAL_SCOPE / TARGET_ITEM_SCOPE / PROPERTY_DIMENSIONS / COMPATIBILITY / BOUNDS / QUALIFICATION / PROCESS_CONDITIONS / OUTCOME_MODEL / CONSUMPTION / FAILURE_CONSEQUENCE
+
+SOURCE_STATUS = CANON-ESTABLISHED hanya bila seluruh field yang required untuk eksekusi sudah ditetapkan. Record yang belum lengkap tidak dapat dipakai sebagai executable refinement.
+
+### 12.2 SRC-REF-001 — Basic Iron Condition Restoration
+
+| Field | Canonical Value |
+|---|---|
+| SOURCE_ID | SRC-REF-001 |
+| SOURCE_STATUS | CANON-ESTABLISHED |
+| SOURCE_AUTHORITY | Admin Canon — TianDao-World Refinement Source Catalog |
+| MATERIAL_SCOPE | ITEM-MAT-001 — Bijih Besi Kasar |
+| TARGET_ITEM_SCOPE | Existing Weapon dengan state CONDITION = DAMAGED atau CONDITION = SERVICEABLE |
+| PROPERTY_DIMENSIONS | CONDITION saja |
+| COMPATIBILITY | Compatible hanya bila target adalah existing Weapon berbahan logam dan material ITEM-MAT-001 tersedia |
+| BOUND | DAMAGED → SERVICEABLE; SERVICEABLE → SERVICEABLE. Tidak ada transition ke quality/grade/tier/ability/affinity baru |
+| QUALIFICATION | Refiner wajib memiliki source sah untuk basic metalworking/forging qualification |
+| PROCESS_CONDITIONS | Forge/workspace metalworking yang valid wajib tersedia; material dan target item harus benar-benar tersedia |
+| OUTCOME_MODEL | Deterministic requirement/process validation: bila seluruh requirement terpenuhi, transition yang diizinkan source dapat diterapkan; bila tidak terpenuhi, refinement diblokir |
+| CONSUMPTION | Tidak ditetapkan pada source ini; bila quantity consumption diperlukan oleh proses aktual, harus berasal dari source proses tersendiri |
+| FAILURE_CONSEQUENCE | Tidak ditetapkan; source ini tidak mengizinkan damage/destruction atau hidden failure mechanism |
+
+**Hard boundary:** SRC-REF-001 hanya mengatur condition transition yang tertulis di atas. Ia tidak memberi attack bonus, defense bonus, durability angka, quality/grade/tier increase, ability, affinity, atau probability.
+
+### 12.3 Source Execution Rule
+
+Untuk SRC-REF-001:
+
+ITEM CONDITION + MATERIAL SCOPE + COMPATIBILITY + QUALIFICATION + PROCESS CONDITIONS → CONDITION TRANSITION → BEFORE/AFTER
+
+Jika target tidak memenuhi compatibility atau qualification, jangan mengubah item. Jika field required dari source ternyata tidak dapat diverifikasi pada runtime, gunakan RESOLUTION-BLOCKED.
+
+### 12.4 Catalog Boundary
+
+1. Catalog source adalah **whitelist**, bukan izin improvisasi.
+2. Qwen hanya boleh memakai SOURCE_ID yang statusnya executable dan field required-nya lengkap.
+3. Material yang tidak tercantum dalam MATERIAL_SCOPE tidak memperoleh effect dari source tersebut.
+4. Property dimension yang tidak tercantum tidak boleh berubah.
+5. Bound yang tidak tercantum tidak boleh dibuat.
+6. Source tidak boleh digabungkan untuk menciptakan effect baru kecuali compatibility/method source secara eksplisit mengizinkan composition.
+7. Dynamic selection tetap hanya memilih hasil di dalam bound source; catalog tidak memberi hak untuk memilih angka baru.
+8. Bila source catalog dan source yang lebih spesifik bertentangan, gunakan source yang lebih spesifik dan terverifikasi; bila konflik tidak dapat diselesaikan, RESOLUTION-BLOCKED.
+
+### 12.5 Numeric Boundary
+
+Catalog ini **tidak** menetapkan bonus numerik, multiplier, probability, roll, atau scaling. DAMAGED → SERVICEABLE adalah state transition Canon, bukan angka bonus.
+
+### 12.6 Expansion Rule
+
+Penambahan material, property dimension, compatibility rule, bound, qualification, process condition, consumption, atau outcome baru wajib menjadi record SOURCE_ID tersendiri atau revisi Admin Canon yang terdokumentasi. Qwen tidak boleh memperluas catalog saat runtime.
+
 ### Explicit Prohibition
 Material rarity, nama, market value, Character Realm, atau narrative plausibility tidak boleh dipakai sebagai implicit refinement effect.
