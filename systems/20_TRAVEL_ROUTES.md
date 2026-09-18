@@ -319,3 +319,65 @@ Dengan route anchor antarkawasan yang sudah ada, graph regional tersebut terhubu
 - Penambahan ini tidak menetapkan populasi, NPC, toko, harga, event, quest, jadwal kapal, kondisi cuaca, atau akses Character.
 - Tidak ada route baru yang boleh diasumsikan hanya karena dua lokasi tampak berdekatan di peta.
 - Perubahan jarak baseline selanjutnya harus melalui Admin maintenance dan verifikasi graph agar tidak memutus konektivitas atau menciptakan konflik route.
+
+
+## 20C — AERIAL TRAVEL / FLIGHT MAINTENANCE
+
+### Status
+**Admin Canon — Aerial Travel Framework Established**
+
+Aerial Travel adalah metode perjalanan terpisah dari route darat/laut. Registry route permukaan tetap menjadi authority untuk perjalanan darat dan laut. Kemampuan terbang tidak otomatis mengubah route permukaan menjadi route udara.
+
+### Aerial Travel Record Contract
+Setiap rute atau koridor udara yang sudah memiliki baseline numerik harus dapat dipetakan ke:
+- `AER_ID` — ID unik koridor/rute udara.
+- `ORIGIN` — location node Canon atau posisi runtime yang valid.
+- `DESTINATION` — location node Canon atau tujuan runtime yang valid.
+- `AERIAL_DISTANCE_BASELINE` — jarak udara resmi dalam Li/Fen/Cun; jika belum ditetapkan gunakan `UNRESOLVED`.
+- `FLIGHT_METHOD` — teknik, ability, item/artifact, mount, atau metode lain yang benar-benar dimiliki/tersedia.
+- `FLIGHT_SPEED_SOURCE` — source yang memberikan kecepatan numerik; tanpa source numerik, kecepatan tetap `UNRESOLVED`.
+- `FLIGHT_REQUIREMENT` — syarat aktivasi/metode.
+- `AIRSPACE_CONDITION` — kondisi atau pembatasan udara yang memang memiliki source.
+- `CHECKPOINT_RULE` — checkpoint sesuai Time/Action bila perjalanan melewati batas aksi.
+- `ROUTE_STATUS` — `CANON-ESTABLISHED`, `UNRESOLVED`, atau `RESOLUTION-BLOCKED`.
+- `SOURCE` — sumber Canon/Admin yang menetapkan record.
+
+### Flight Eligibility
+- **FLIGHT-ELIGIBLE** hanya jika Character benar-benar memiliki metode terbang yang tervalidasi.
+- Realm tinggi **tidak otomatis** berarti dapat terbang.
+- Teknik/ability yang menyebut dapat terbang belum otomatis memiliki kecepatan numerik.
+- Jika teknik/ability/artifact memiliki kecepatan resmi, gunakan nilai tersebut.
+- Jika kemampuan terbang ada tetapi speed source tidak ada, Character dapat dianggap memiliki kemampuan terbang untuk validasi eligibility, tetapi durasi numerik perjalanan menjadi `UNRESOLVED` dan resolusi yang membutuhkan durasi numerik menjadi `RESOLUTION-BLOCKED`.
+- Flight method yang tidak tercatat pada Character State/Origin tidak boleh diasumsikan dimiliki.
+
+### Aerial Distance
+- Jarak route permukaan **tidak boleh dipakai sebagai jarak udara** kecuali source Canon/Admin secara eksplisit menyatakannya.
+- Jarak udara tidak boleh dibuat dari perkiraan garis lurus, peta visual, atau angka dunia nyata.
+- Jika belum ada baseline aerial distance yang sah untuk pasangan lokasi/koridor, field tetap `UNRESOLVED`.
+- Admin dapat menetapkan aerial corridor/baseline baru melalui maintenance berikutnya tanpa mengubah route permukaan.
+
+### Aerial Resolution
+Untuk perjalanan udara:
+`Waktu perjalanan = jarak udara / kecepatan terbang efektif + hambatan yang memiliki dasar sah.`
+
+- Kecepatan efektif wajib berasal dari source flight method yang tervalidasi.
+- Jangan membuat multiplier atau penalti persen untuk ketinggian, cuaca, angin, beban, atau cedera tanpa source Canon/Admin.
+- Airspace restriction, barrier, faction control, encounter, weather, stamina, altitude, dan kondisi lain hanya diterapkan bila relevan dan bersumber dari sistem/Canon.
+- Flight dapat mengabaikan medan permukaan yang tidak relevan dengan lintasan udara, tetapi tidak otomatis mengabaikan hambatan udara, barrier, wilayah terlarang, encounter, atau biaya resource.
+- Teleportasi tetap merupakan metode berbeda dan hanya sah jika source Canon menyediakannya.
+
+### Checkpoint & Persistence
+- Perjalanan udara yang melewati 3 jam aksi mengikuti checkpoint Travel + Time System.
+- Checkpoint minimal mencatat waktu, posisi/lokasi, jarak udara tersisa bila diketahui, kondisi, stamina/Qi bila relevan, dan kejadian perjalanan.
+- Jika flight method memiliki maximum flight duration/range, nilai tersebut wajib berasal dari source method dan harus divalidasi sebelum perjalanan.
+- Perubahan material pada lokasi, kondisi, resource, atau metode flight mengikuti Save Pipeline dan Origin/History bila diperlukan.
+
+### Current Aerial Baseline Boundary
+Tidak ada kecepatan terbang generik berbasis Realm dan tidak ada aerial distance generik yang diturunkan dari route permukaan. Sampai Admin menetapkan source numerik, kedua field tersebut tetap `UNRESOLVED`.
+
+### Data Completeness Aerial Gate
+Required input:
+`FLIGHT_METHOD + FLIGHT_REQUIREMENT + AERIAL_DISTANCE_BASELINE + FLIGHT_SPEED_SOURCE`.
+
+Jika eligibility belum tervalidasi → `RESOLUTION-BLOCKED`.
+Jika eligibility tervalidasi tetapi distance/speed numerik belum tersedia → jangan mengarang durasi; gunakan `UNRESOLVED` untuk field yang hilang dan `RESOLUTION-BLOCKED` untuk resolusi yang memerlukan angka tersebut.
