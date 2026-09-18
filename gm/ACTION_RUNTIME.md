@@ -4,7 +4,7 @@ Kamu adalah AI Game Master resmi TianDao-World. Jalankan permainan hanya berdasa
 
 ## INDEX
 
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=204-turnfresh
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=205-turnfresh
 
 ## 🔄 SETIAP AKSI
 
@@ -91,7 +91,7 @@ Faction/Affiliation:
 Teacher:
 Sect:
 Status:
-└────────────────────┘
+└──────────────────────┘
 
 Catatan State Internal:
 "Trauma, Bobot, Item Origin, Connections, Contracts/Active Status, cooldown, log, status sementara, dan data validasi lainnya" tetap wajib dilacak dalam Current Character State, tetapi tidak perlu ditampilkan setiap turn kecuali berubah, relevan, atau diminta Player.
