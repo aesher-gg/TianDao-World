@@ -163,3 +163,15 @@ Realm, QiCap, breakthrough requirement, Law, Law Origin, progress, dan hasil bre
 
 ## 10A. Canon Flight Source Boundary
 Minimum Realm pada FLY-SRC-001 sampai FLY-SRC-008 adalah requirement untuk source method yang bersangkutan. Minimum Realm bukan automatic flight unlock. Character pada Realm yang memenuhi requirement tetap membutuhkan metode flight yang diperoleh dan tervalidasi.
+
+
+## 10B. Canon Amendment — Intrinsic Flight at Realm 4
+**Status: Admin Canon — supersedes the prior generic Realm flight prohibition in this module.**
+
+- `FLY-INTRINSIC-001` establishes **Flight Capability Intrinsic** beginning at **Realm 4 — Core Formation**.
+- Realm 1–3 do not possess this intrinsic flight capability.
+- This capability is a **Realm capability, not a Technique**. Reaching Realm 4 does not create, teach, grant, or activate any named flight technique, manual, item, artifact, mount, or `FLY-SRC-*` method.
+- Realm 4+ therefore satisfies **intrinsic flight eligibility**, while the mechanical parameters of intrinsic flight remain sourced independently.
+- Speed, maximum range, duration, Qi/Stamina cost, altitude, weather/barrier resistance, and other numeric modifiers remain `UNRESOLVED` unless an explicit Canon source defines them.
+- Technique-based flight remains subject to Technique Origin, acquisition method, requirements, training/insight, and validation under Module 15.
+- GM must not convert Realm 4 eligibility into ownership of a flight technique.
