@@ -109,3 +109,10 @@ This file does not override module mechanics, create missing Canon, or force irr
 - `systems/15_TECHNIQUES.md` remains the source authority for acquisition/provenance of named Flight Techniques.
 - `systems/20_TRAVEL_ROUTES.md` consumes either the validated intrinsic capability or a separately validated flight method; it must not manufacture missing speed/range/duration values.
 - Reaching Realm 4 must never be recorded as acquisition of a named flight technique.
+
+## 9B. Canon Aerial-Distance Provenance Amendment
+- systems/20_TRAVEL_ROUTES.md is the authoritative source for AERIAL_DISTANCE_BASELINE through AERIAL-DISTANCE-CANON-BASELINE-001.
+- Travel resolution must consume aerial distance from the AERIAL-DISTANCE Canon Registry; it must never derive aerial distance from surface route distance, straight-line geometry, or an unregistered route chain.
+- Intrinsic flight speed remains sourced by AERIAL-INTRINSIC-SPEED-BASELINE-001; named flight techniques remain sourced through their own Technique Origin and FLY-SRC-*.
+- Therefore the flight dependency chain is: FLIGHT-ELIGIBILITY → FLIGHT-SPEED-SOURCE → AERIAL-DISTANCE-SOURCE → TRAVEL TIME → CHECKPOINT/PERSISTENCE.
+- Missing aerial-distance source produces UNRESOLVED for distance and prevents numeric flight-duration resolution.
