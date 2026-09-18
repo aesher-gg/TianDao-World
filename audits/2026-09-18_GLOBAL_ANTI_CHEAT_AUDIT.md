@@ -72,10 +72,12 @@ This audit is separate from the previously closed Global Structural Audit. The e
 
 
 ## 2026-09-18 Xianxia Item Grade Maintenance
-- Module 14 now defines the canonical 品阶 hierarchy: 凡阶 → 黄阶 → 玄阶 → 地阶 → 王阶 → 皇阶 → 圣阶 → 仙阶.
-- Canon Item IDs currently registered in Module 14 each receive an explicit initial ITEM_GRADE.
-- ITEM_GRADE is separated from QUALITY, CONDITION, DURABILITY, and RARITY.
-- Loot, crafting, alchemy, and refinement are explicitly prohibited from inventing or silently upgrading grade.
-- Refinement may only change grade when an explicit method lists ITEM_GRADE as an allowed dimension with a bounded transition.
+- Module 14 now defines the canonical Item Grade hierarchy and a three-level `GRADE_LEVEL` vocabulary using Latin-alphabet names only: `Di | Tian | Huang Tian`.
+- Canon Item IDs currently registered in Module 14 each receive an explicit initial `ITEM_GRADE` and `GRADE_LEVEL`.
+- `ITEM_GRADE` and `GRADE_LEVEL` are separated from `QUALITY`, `CONDITION`, `DURABILITY`, and `RARITY`.
+- Loot, crafting, alchemy, and refinement are explicitly prohibited from inventing or silently upgrading grade or level.
+- Refinement may only change grade or level when an explicit method lists the relevant property as an allowed dimension with a bounded transition.
 - Dynamic/unresolved loot cannot be made executable by assigning a guessed grade.
-- State Validator now checks grade source, separation, and transition bounds.
+- State Validator now checks grade/level source, separation, and transition bounds.
+
+- Runtime integration verified across Module 14, Anti-Cheat, Loot, Crafting/Forging, Alchemy, Artifact/Weapon Refinement, and State Validator; legacy `GRADE_STEP` / `Earth Step` / `Sky Step` / `Heaven Step` tokens are absent from the audited files.
