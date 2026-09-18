@@ -382,3 +382,7 @@ Jika qualification atau workspace tidak tersedia pada Current State, hasil tetap
 
 ### 12A.6 Canon Scope
 Method ini adalah single baseline refinement source, bukan katalog upgrade otomatis. Admin tidak menetapkan bonus, multiplier, probability, hidden roll, Realm scaling, quality/tier escalation, atau property dimension tambahan melalui source ini.
+
+
+## 2026-09-18 Item Grade Integration
+Refinement must treat ITEM_GRADE as a separately validated property. Existing item grade remains unchanged unless the active Refinement Method explicitly lists ITEM_GRADE in ALLOWED_PROPERTY_DIMENSIONS and defines a bounded grade transition. No Realm scaling, rarity inference, hidden modifier, or narrative success can upgrade grade.
