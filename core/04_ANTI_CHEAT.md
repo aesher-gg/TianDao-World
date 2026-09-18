@@ -98,7 +98,7 @@ Setiap audit/runtime yang menemukan konflik atau celah yang memungkinkan GM memi
 undefined
 
 ### Item Grade Integrity
-- ITEM_GRADE/品阶 is a sourced item property, not a GM narrative label.
-- GM may not upgrade, downgrade, or invent item grade from Character Realm, quantity, price, rarity, quality, condition, material name, or narrative difficulty.
-- Loot/crafting/alchemy/refinement must consume the registered grade or enter UNRESOLVED/RESOLUTION-BLOCKED when required grade data is missing.
-- Grade transitions require an explicit Canon/Admin method with bounded before→after values.
+- ITEM_GRADE and GRADE_LEVEL are sourced item properties, not GM narrative labels.
+- GM may not upgrade, downgrade, or invent ITEM_GRADE or GRADE_LEVEL from Character Realm, quantity, price, rarity, quality, condition, material name, or narrative difficulty.
+- Loot/crafting/alchemy/refinement must consume the registered grade and level, or enter UNRESOLVED/RESOLUTION-BLOCKED when required grade data is missing.
+- Grade or level transitions require an explicit Canon/Admin method with bounded before→after values.
