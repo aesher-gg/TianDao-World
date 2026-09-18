@@ -109,3 +109,17 @@ Hard rules:
 - Source-defined roll/probability may be used only with its source-defined parameters; otherwise no hidden roll/probability/multiplier.
 - Character Realm, rarity, name, price, appearance, plausibility, player intent, dan prior chat state bukan modifier refinement.
 - State Apply hanya dilakukan setelah Before/After lulus State Validator dan dapat dipersistenkan sebagai satu transaction.
+
+
+## AERIAL-DISTANCE RESOLUTION GATE
+When the trigger is travel by flight:
+1. Load `systems/20_TRAVEL_ROUTES.md` as the authoritative Travel source.
+2. Determine flight eligibility from the validated current Character/Realm state and the applicable intrinsic or named-method source.
+3. Determine flight speed only from the applicable Canon speed source.
+4. Resolve Origin → Destination against the **AERIAL-DISTANCE Canon Registry** using `AERIAL-DISTANCE-CANON-BASELINE-001`.
+5. Do not derive aerial distance from surface routes, straight-line geometry, coordinates, route chaining, or narrative plausibility.
+6. If an exact registered aerial-distance record exists, use its Canon Li value.
+7. If no valid record exists, set aerial distance to `UNRESOLVED`; if required for duration, the flight-duration resolution becomes `UNRESOLVED` and must not be fabricated.
+8. Apply the Travel formula only after eligibility, speed, and aerial distance are all defined.
+9. Any detour, barrier, restricted airspace, weather modifier, encounter, or other numeric adjustment requires its own Canon/Admin source.
+10. Record the selected `AERIAL_DISTANCE_ID` in the resolution/provenance when a registry record is consumed.
