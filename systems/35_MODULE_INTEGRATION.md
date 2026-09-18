@@ -116,3 +116,10 @@ This file does not override module mechanics, create missing Canon, or force irr
 - Intrinsic flight speed remains sourced by AERIAL-INTRINSIC-SPEED-BASELINE-001; named flight techniques remain sourced through their own Technique Origin and FLY-SRC-*.
 - Therefore the flight dependency chain is: FLIGHT-ELIGIBILITY → FLIGHT-SPEED-SOURCE → AERIAL-DISTANCE-SOURCE → TRAVEL TIME → CHECKPOINT/PERSISTENCE.
 - Missing aerial-distance source produces UNRESOLVED for distance and prevents numeric flight-duration resolution.
+
+
+## 9C. RNG / Modifier Infrastructure Contract
+- `core/04_ANTI_CHEAT.md` is the authority for random-resolution integrity and numeric modifier non-stacking.
+- Modules 25 and 26 are consumers of that contract for dynamic encounter/event/loot/NPC resolution.
+- A missing RNG source or missing required modifier source is a resolution dependency failure, not permission to improvise.
+- Module 35 does not create RNG values or modifier values; it only enforces the dependency boundary.
