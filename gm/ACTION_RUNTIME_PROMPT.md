@@ -96,7 +96,7 @@ Jika relevan:
 
 ### GARDENING RUNTIME
 - Waktu pertumbuhan mengikuti `systems/23_GARDENING.md`.
-- Tanaman biasa standar 3–10 hari; tanaman spiritual standar 15–60 hari.
+- Gardening growth cap: tanaman biasa maksimal 7 hari in-game; tanaman spiritual maksimal 15 hari in-game. Durasi aktual tergantung jenis tanaman dan kondisi dengan source sah.
 - Jangan memberikan panen sebelum Maturity/waktu valid.
 - Status numerik 0–100 hanya berubah karena sebab yang valid.
 - Jangan membuat angka status secara acak atau melakukan hidden time-skip.
