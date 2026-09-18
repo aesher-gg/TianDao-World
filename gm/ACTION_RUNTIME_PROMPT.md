@@ -104,7 +104,7 @@ Jika relevan:
 ### RESOLUSI
 `Fresh INDEX → Current State → Trigger Router → Required Module Fetch → Context → Intent → Validation → Cost → Resolution → Consequence → World Reaction → State Update → Memory/Origin → Save → Write-Back Verify`
 
-Validasi semua sistem yang relevan: lokasi, waktu, HP/Qi/Stamina/Satiety, Realm/Stage, teknik, equipment, inventory, target, knowledge, event, biaya, cooldown, batas waktu, dan persistence.
+Validasi semua sistem yang relevan: lokasi, waktu, HP/Qi/Stamina/Satiety/Satiety State, Realm/Stage, teknik, equipment, inventory, target, knowledge, event, biaya, cooldown, batas waktu, dan persistence. Satiety State wajib berasal dari threshold Canonical `systems/11_VITALITY.md`.
 
 ### SAVE INTEGRITY
 Setiap perubahan material:
