@@ -94,3 +94,21 @@ Monster ecosystem terhubung dengan World Map, Travel Routes, Time, Vitality, Com
 
 ## DATA COMPLETENESS ECOLOGY GATE
 Habitat memberi input, bukan izin mengarang species, pressure, threat, ability, atau loot. Generated creature hanya sah bila Module 25 dan data ekologis yang diwajibkan tersedia. Field yang tidak dapat ditentukan tetap mengikuti core/07_DATA_COMPLETENESS.md.
+
+## ECOLOGICAL IMPACT TRANSACTION GATE
+Ekosistem bukan sekadar tabel encounter. Encounter, hunting, harvest, migration, habitat disturbance, predator removal, perubahan sumber air, dan event dapat menghasilkan konsekuensi ekologis **hanya jika resolusi benar-benar mendukungnya**.
+
+### Impact classes
+- **LOCAL-TRANSIENT:** efek sesaat pada encounter/lokasi; tidak perlu persistent population record.
+- **LOCAL-MATERIAL:** perubahan material pada jalur, sumber air, pertanian, fishing ground, hunting ground, atau encounter pressure; simpan sebagai World/Regional consequence pada state yang memang tersedia.
+- **INDIVIDUAL-PERSISTENT:** dampak berasal dari individu Monster/Spirit Beast yang harus dilacak lintas turn; gunakan `MONSTER_ID` atau `BEAST_ID` dan history entity tersebut.
+
+Impact resolution wajib mempunyai:
+`Region/Habitat + Cause + Source Entity/Action + Resolution + Before/After Impact + World Time + Origin`.
+
+Dilarang mengubah ecological impact menjadi angka populasi, encounter pressure, harga pasar, atau resource yield jika modul/source yang relevan tidak menyediakan bound/formula. Jika input wajib tidak tersedia → `UNRESOLVED` atau `RESOLUTION-BLOCKED`.
+
+Dampak ekologis tidak otomatis memberi loot, item, stat, reputation, karma, atau quest reward. Konsekuensi ekonomi/loot hanya diterapkan bila rantai resolusi terkait benar-benar menghasilkan perubahan tersebut.
+
+### Population boundary
+Tidak ada kewajiban menyimpan populasi setiap species. Population/ecology menjadi persistent hanya ketika ada state/impact material yang memerlukan continuity. Jangan membuat pseudo-population counter untuk mengisi kekosongan data.
