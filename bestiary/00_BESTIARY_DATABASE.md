@@ -1,7 +1,7 @@
 # 00 — FIXED BESTIARY DATABASE
 
 ## Status
-Admin Canon v1.4 — Fixed Bestiary Concepts, Habitats, Provenance & World Impact
+Admin Canon v1.5 — Fixed Bestiary Concepts, Habitats, Provenance, World Impact & Loot Maintenance Expansion
 
 ## Purpose
 Registry untuk makhluk yang sengaja ditetapkan Admin sebagai fixed Canon. Database ini melengkapi, bukan menggantikan, Dynamic Monster/Spirit Beast Generation pada `systems/25_DYNAMIC_GENERATION.md`.
