@@ -110,3 +110,38 @@ Perubahan bahan, furnace/tool state, Pill/Item State, Character State, Origin, d
 
 ## DATA COMPLETENESS ALCHEMY GATE
 Formula, material, qualification, tool, cost, quality, quantity, effect, potency, side effect, dan defect wajib bersumber dari formula/procedure/state yang sah. Jangan menciptakan effect atau angka untuk melengkapi hasil. Missing required source/input → RESOLUTION-BLOCKED; unknown field → status resmi.
+
+## 11. ADMIN CANON — REGIONAL ALCHEMY MATERIAL PATHS
+
+Path berikut memperluas fungsi item regional tanpa menciptakan efek medis tersembunyi.
+
+### FORMULA-ALC-004 — Bubuk Pengawet Getah Qingluan
+- Input: ITEM-MAT-007 Getah Pinus Roh Qingluan ×1 + ITEM-HERB-001 Rumput Embun Pagi ×1
+- Tool: mortar/penggiling bersih; pemanasan ringan
+- Process: pengeringan → penggilingan → pencampuran → pengeringan akhir
+- Output: ITEM-ALC-001 Bubuk Pengawet Qingluan ×1
+- Effect: bahan proses pengawetan; tidak memberi buff atau durability bonus otomatis
+- Cost: input dikonsumsi pada successful resolution
+
+### FORMULA-ALC-005 — Bubuk Jamur Kabut Wuyin
+- Input: ITEM-HERB-003 Jamur Kabut Wuyin ×2
+- Tool: alat pengering dan penggiling bersih
+- Process: pengeringan → pemilahan → penggilingan → penyimpanan kedap
+- Output: ITEM-ALC-002 Bubuk Jamur Wuyin ×1
+- Effect: bahan alchemy/obat untuk formula lain yang secara eksplisit menerima bahan ini; tidak memberi efek ketika hanya disimpan
+- Cost: input dikonsumsi pada successful resolution
+
+### FORMULA-ALC-006 — Sirup Madu Seratus Bunga
+- Input: ITEM-HERB-004 Madu Seratus Bunga ×1
+- Tool: wadah proses bersih
+- Process: penyaringan → pemanasan ringan → pendinginan
+- Output: ITEM-ALC-003 Sirup Madu Seratus Bunga ×1
+- Effect: bahan consumable/alchemy; tidak menetapkan pemulihan HP/Qi numerik
+- Cost: input dikonsumsi pada successful resolution
+
+### 11.1 Output Identity
+- ITEM-ALC-001 Bubuk Pengawet Qingluan — Alchemy Material.
+- ITEM-ALC-002 Bubuk Jamur Wuyin — Alchemy Material.
+- ITEM-ALC-003 Sirup Madu Seratus Bunga — Consumable/Alchemy Material.
+
+Semua formula tetap membutuhkan qualification, tool, process, resource cost, resolution, Origin, History, dan Save sesuai Module 32.
