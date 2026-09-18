@@ -146,3 +146,7 @@ Path berikut memperluas fungsi item regional tanpa menciptakan efek medis tersem
 - ITEM-ALC-003 Sirup Madu Seratus Bunga — Consumable/Alchemy Material.
 
 Semua formula tetap membutuhkan qualification, tool, process, resource cost, resolution, Origin, History, dan Save sesuai Module 32.
+
+
+## 2026-09-18 Item Grade Integration
+Alchemy output is an Item and therefore requires ITEM_GRADE. Formula output grade is sourced from the Canon Item Registry/formula record. A higher alchemist Realm, larger batch, better narrative circumstances, or successful resolution cannot silently upgrade grade. Grade and quality are separate fields; any grade transition requires an explicit Canon method and bound.
