@@ -1,7 +1,7 @@
 # Module 32 — ALCHEMY & PILL REFINEMENT
 
 ## Status
-Admin Canon v1.2
+Admin Canon v1.3
 
 ## Purpose
 Menetapkan pipeline khusus untuk memproses herb/material menjadi Pill atau produk alkimia melalui formula, alchemist qualification, furnace, preparation, refinement, dan validated resolution.
@@ -31,9 +31,10 @@ Formula dasar berikut adalah formula Admin Canon dan dapat diajarkan/disalin han
 - Input: `ITEM-HERB-001` Rumput Embun Pagi ×2.
 - Tool: mortar/penggiling bersih; furnace tidak wajib.
 - Process: keringkan → tumbuk → ayak.
-- Output: 1 unit bubuk herbal dasar.
-- Effect: tidak menetapkan efek combat/medis baru; digunakan sebagai bahan proses.
-- Cost: bahan input dikonsumsi; waktu proses minimal 30 menit.
+- Output: `UNRESOLVED` — 1 unit bubuk herbal dasar.
+- Output Identity Gate: **RESOLUTION-BLOCKED** untuk produksi runtime sampai output memiliki Item ID Canon/identity yang sah di `systems/14_ITEMS.md` §4D, atau ditetapkan secara eksplisit sebagai non-item output oleh Canon. Formula ini tidak boleh membuat instance item anonim.
+- Effect: tidak menetapkan efek combat/medis baru; dimaksudkan sebagai bahan proses.
+- Cost: bahan input tidak boleh dianggap terkonsumsi sebelum resolusi production yang valid; waktu proses minimal 30 menit bila formula menjadi executable.
 
 ### FORMULA-ALC-002 — Pil Penetral Racun Dasar
 - Input: `ITEM-HERB-001` Rumput Embun Pagi ×2 + `ITEM-HERB-002` Rumput Jarum Beracun ×1.
@@ -78,7 +79,7 @@ Jika formula atau sistem menyediakan check, gunakan check tersebut. Jika tidak, 
 Untuk formula Canon di atas, kualitas default adalah **Basic** bila seluruh requirement terpenuhi dan tidak ada failure. Kualitas lebih tinggi tidak diberikan tanpa source/qualification/proses yang menetapkannya.
 
 ## Quantity
-Quantity mengikuti formula: setiap formula di atas menghasilkan 1 unit output per successful batch. Batch tambahan membutuhkan input tambahan dan resolusi tambahan.
+Quantity mengikuti formula: setiap formula yang memiliki output identity sah menghasilkan 1 unit output per successful batch. Batch tambahan membutuhkan input tambahan dan resolusi tambahan. Formula dengan output `UNRESOLVED`/`RESOLUTION-BLOCKED` tidak menghasilkan instance runtime dan tidak boleh mengonsumsi input melalui save.
 
 ## Effect & Defect
 Efek, potency, duration, side effect, toxicity, atau defect harus memiliki source mekanis yang valid. Formula baseline di atas hanya memakai efek yang secara eksplisit tercantum; tidak ada efek tersembunyi.
