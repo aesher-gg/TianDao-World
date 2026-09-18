@@ -175,3 +175,14 @@ Minimum Realm pada FLY-SRC-001 sampai FLY-SRC-008 adalah requirement untuk sourc
 - Speed, maximum range, duration, Qi/Stamina cost, altitude, weather/barrier resistance, and other numeric modifiers remain `UNRESOLVED` unless an explicit Canon source defines them.
 - Technique-based flight remains subject to Technique Origin, acquisition method, requirements, training/insight, and validation under Module 15.
 - GM must not convert Realm 4 eligibility into ownership of a flight technique.
+
+## 10C. Canon Intrinsic Flight Speed Reference
+The intrinsic Flight Capability at Realm 4+ uses the speed source `AERIAL-INTRINSIC-SPEED-BASELINE-001` in Module 20. The source defines baseline speed by current Realm:
+- Realm 4: 100 Li/jam
+- Realm 5: 200 Li/jam
+- Realm 6: 400 Li/jam
+- Realm 7: 800 Li/jam
+- Realm 8: 1.200 Li/jam
+- Realm 9: 2.000 Li/jam
+
+These are intrinsic-capability speeds, not Technique speeds. They do not grant or imply any named Flight Technique. Other flight parameters remain unresolved unless separately sourced.
