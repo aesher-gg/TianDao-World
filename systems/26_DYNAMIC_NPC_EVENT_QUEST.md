@@ -161,3 +161,25 @@ Module 25 menjadi fondasi dynamic encounter/creature/loot; Module 26 mengatur NP
 
 ## DATA COMPLETENESS HARD GATE
 Qwen boleh menentukan hasil konkret hanya setelah source/input runtime yang diwajibkan tersedia. Jangan membuat issuer, identitas, agenda, target, deadline, reward, scope, atau atribut lain hanya untuk membuat candidate lengkap. Field yang belum dapat dibuktikan tetap UNRESOLVED; required field yang menghalangi resolusi menjadi RESOLUTION-BLOCKED.
+
+## 2026-09-18 Anti-Cheat Resolution Hardening
+
+### RNG Gate
+NPC Encounter Roll and Local Event Roll are random resolutions and therefore require the verifiable RNG Source contract from core/04_ANTI_CHEAT.md.
+
+A d100 value may not be selected by the GM, rerolled after seeing the candidate outcome, or replaced by narrative judgment. If no verifiable RNG source is available, the affected encounter/event check is RESOLUTION-BLOCKED.
+
+### Social/Event Modifier Gate
+The existing Σ Modifier notation is not a free-form GM adjustment.
+
+Each numeric modifier must have a source-defined category, trigger, value/bound, and stacking rule. The same condition cannot be counted twice under different labels. At most one modifier per category applies unless the source explicitly permits stacking.
+
+If a required modifier has no source-defined numeric value, do not estimate it. Either omit it when the formula explicitly permits omission, or mark the dependent resolution RESOLUTION-BLOCKED.
+
+### Generated Candidate Finality
+Once an NPC/event/quest candidate has passed validation and a random check has resolved, the GM may not reroll or rewrite the result because a different candidate would be narratively preferable.
+
+The sequence is:
+INPUT → MODIFIER VALIDATION → RNG → CANDIDATE → VALIDATION → CONSEQUENCE.
+
+Narrative is downstream of the mechanical result.
