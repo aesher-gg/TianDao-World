@@ -119,3 +119,9 @@ Reference ke source tersebut tidak menggantikan Technique Origin. Character teta
 - Any **named Flight Technique** remains a separate technique entity and cannot be granted merely because the Character reaches Realm 4.
 - A Flight Technique must still satisfy the complete Technique Origin gate: source, acquisition method, requirements, training/insight, resolution, status, and origin reference.
 - The intrinsic capability does not satisfy the provenance requirements of any `FLY-SRC-*` technique.
+
+## 11C. Flight Speed Source Separation
+- `AERIAL-INTRINSIC-SPEED-BASELINE-001` is the speed authority for Realm-based intrinsic flight.
+- Its speed values must never be used as evidence that a Character acquired `FLY-SRC-001` through `FLY-SRC-008`.
+- A named Flight Technique retains its own Technique Origin and uses its own validated source speed.
+- If both intrinsic flight and a named Flight Technique are available, the runtime must not stack their speeds unless a Canon source explicitly permits it.
