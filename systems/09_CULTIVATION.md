@@ -151,3 +151,11 @@ QiCap menjadi input untuk HP, AttackPower, PassiveDefense, resource combat, dan 
 
 ## DATA COMPLETENESS CULTIVATION GATE
 Realm, QiCap, breakthrough requirement, Law, Law Origin, progress, dan hasil breakthrough hanya boleh ditetapkan dari Canon/State/Origin/resolution yang sah. Tidak ada interpolation, assumed requirement, automatic breakthrough, atau Law/Technique dari plausibility. Field unresolved tetap unresolved; required acquisition data yang hilang menahan resolusi.
+
+
+## 10. Flight / Aerial Mobility Boundary
+- Kemampuan terbang bukan hak otomatis dari Realm. Character hanya dapat terbang jika ada technique, ability, artifact/item, mount, atau metode lain yang tervalidasi.
+- Source flight harus dapat ditelusuri melalui Technique Origin, Item Origin, ability record, atau source Canon yang relevan.
+- Realm dapat menjadi requirement bila source method menetapkannya, tetapi GM tidak boleh membuat aturan "Realm X pasti bisa terbang" tanpa Canon.
+- Memiliki kemampuan terbang tidak otomatis menetapkan kecepatan, jarak maksimum, durasi, biaya Qi/Stamina, atau ketahanan terhadap cuaca/barrier.
+- Nilai tersebut hanya aktif bila source method mendefinisikannya. Jika belum tersedia, gunakan `UNRESOLVED` dan tahan resolusi numerik sesuai Data Completeness.
