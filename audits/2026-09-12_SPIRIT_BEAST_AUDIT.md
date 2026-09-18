@@ -143,3 +143,61 @@ Fresh fetch setelah write-back memverifikasi:
 - `core/06_ID_AND_SAVE_SYSTEM.md` content SHA `23aff421028038008cb7a844b474c4300a1befbe`.
 - `characters/monster_registry.md` exists and currently contains no active Monster individual.
 - No new Item Canon/Item ID created.
+
+
+## Loot Profile → Existing Item Canon Audit — 2026-09-18
+
+Audit dilakukan satu per satu terhadap seluruh 39 fixed creature entries (16 Monster + 23 Spirit Beast), dengan cross-check Bestiary, Module 14 Items, Module 18 Loot, Module 25 Dynamic Generation, dan Loot Table Database.
+
+**Constraint:** tidak ada Item ID baru yang dibuat. Loot Profile tetap kemungkinan sumber loot, bukan guaranteed drop. Jika runtime hendak mengubah material menjadi Item tetapi tidak ada identity/source mapping yang sah, hasil tetap UNRESOLVED atau RESOLUTION-BLOCKED.
+
+| Creature | Loot basis | Existing Item Canon | Hasil |
+|---|---|---|---|
+| SB-001 | daging/sisik/tanduk; Air Mata Naga | Tidak ada Item langsung | UNRESOLVED material khas |
+| SB-002 | daging/bulu/kulit/cakar; Kelenjar Embun | ITEM-MAT-003 kandidat generik | UNRESOLVED mapping |
+| SB-003 | daging/cangkang/sisik/cakar; Fragmen Cangkang | Tidak ada Item langsung | UNRESOLVED |
+| SB-004 | daging/bulu/paruh/cakar; Bulu Awan | Tidak ada Item langsung | UNRESOLVED |
+| SB-005 | daging/kulit/bulu/tanduk; Serpihan Tanduk | ITEM-MAT-003 kandidat generik | UNRESOLVED mapping |
+| SB-006 | daging/bulu/cakar/taring; batu yang benar-benar dibawa | ITEM-MAT-004 kandidat generik | UNRESOLVED mapping |
+| SB-007 | daging/bulu/kulit/cakar/taring; kumis roh | ITEM-MAT-003/004 kandidat generik | UNRESOLVED mapping |
+| SB-008 | daging/sisik/sirip/gigi; Sisik Biru | Tidak ada Item langsung | UNRESOLVED |
+| SB-009 | daging/bulu/kulit/cakar; Bulu Salju | ITEM-MAT-010 Kulit Dingin Beiming | DIRECT EXISTING ITEM untuk skin/fur valid |
+| SB-010 | daging/kulit/bulu/taring/cakar; Bulu Kabut | ITEM-MAT-003/004 kandidat generik | UNRESOLVED mapping |
+| SB-011 | daging/kulit/sisik/taring; Racun Zamrud | Tidak ada Item langsung | UNRESOLVED |
+| SB-012 | daging/kulit/bulu/tanduk/kuku; Tanduk Tebing | ITEM-MAT-003 kandidat generik | UNRESOLVED mapping |
+| SB-013 | daging/bulu/cakar/paruh; Bulu Bara | Tidak ada Item langsung | UNRESOLVED |
+| SB-014 | daging/cangkang/capit; Fragmen Cangkang | ITEM-MAT-014 Cangkang Karang Lanyue | DIRECT EXISTING ITEM untuk shell valid di Lanyue |
+| SB-015 | daging/kulit/rambut/kuku/tulang; Rambut Angin | ITEM-MAT-003 kandidat generik | UNRESOLVED mapping |
+| BST-001 | daging/kulit/bulu/taring/cakar | ITEM-MAT-003/004 pada generic tables | GENERIC CANDIDATE, source ID belum eksplisit |
+| BST-002 | daging/kulit/bulu/cakar/taring; lemak | ITEM-MAT-003/004 pada generic tables | GENERIC CANDIDATE, source ID belum eksplisit |
+| BST-003 | daging/kulit/taring; Taring Hutan | ITEM-MAT-003/004 pada generic tables | GENERIC CANDIDATE, source ID belum eksplisit |
+| BST-004 | daging/bulu/cakar/taring; batu yang dibawa | ITEM-MAT-004 kandidat | GENERIC CANDIDATE, source ID belum eksplisit |
+| BST-005 | daging/kulit/bulu/cakar/taring; Kulit Loreng | ITEM-MAT-003/004 kandidat | GENERIC CANDIDATE, source ID belum eksplisit |
+| BST-006 | daging/bulu/cakar/paruh; Bulu Sayap | Tidak ada Item langsung | UNRESOLVED |
+| BST-007 | daging/kulit/gigi/cakar; Kulit Punggung | ITEM-MAT-003 kandidat | GENERIC CANDIDATE, source ID belum eksplisit |
+| BST-008 | daging/kulit/tanduk/cakar; Sisik Gurun | Tidak ada Item langsung | UNRESOLVED |
+| BST-009 | daging/bulu/kulit/cakar/taring; Bulu Pasir | ITEM-MAT-003/004 kandidat | GENERIC CANDIDATE, source ID belum eksplisit |
+| BST-010 | daging/kulit/bulu/tanduk/kuku; Tanduk Besi | ITEM-MAT-003 kandidat | GENERIC CANDIDATE, source ID belum eksplisit |
+| BST-011 | daging/kulit/tanduk/tulang | ITEM-MAT-003 kandidat; ITEM-MAT-013 bukan drop creature | GENERIC CANDIDATE, tidak auto-map |
+| BST-012 | cangkang luar/kaki; serat jaring | ITEM-HERB-003 adalah resource habitat, bukan drop | UNRESOLVED |
+| BST-013 | daging/kulit/gigi/tulang; mineral panas bumi | ITEM-MAT-008 adalah geological resource, bukan drop | UNRESOLVED |
+| BST-014 | daging/cangkang/capit; pasir/lempung | Tidak ada Item langsung | UNRESOLVED |
+| BST-015 | daging/kulit/bulu/taring/cakar | ITEM-MAT-010 Kulit Dingin Beiming | DIRECT EXISTING ITEM untuk skin/fur valid |
+| BST-016 | jaringan tubuh bila harvest mendukung | Tidak ada Item langsung | UNRESOLVED |
+| SB-016 | kulit/tanduk/tulang | ITEM-MAT-003 kandidat; ITEM-MAT-013 bukan drop | GENERIC CANDIDATE, tidak auto-map |
+| SB-017 | kulit/bulu/tanduk | ITEM-MAT-003 kandidat | GENERIC CANDIDATE, tidak auto-map |
+| SB-018 | kulit/cakar/tulang | Tidak ada Item langsung | UNRESOLVED |
+| SB-019 | bulu/kulit/cakar/taring | ITEM-MAT-003/004 kandidat | GENERIC CANDIDATE, tidak auto-map |
+| SB-020 | kulit/lemak/gigi | Tidak ada Item langsung untuk material khusus | UNRESOLVED |
+| SB-021 | kulit/bulu/tanduk/tulang | ITEM-MAT-010 Kulit Dingin Beiming | DIRECT EXISTING ITEM untuk skin/fur valid |
+| SB-022 | cangkang/sisik/cakar | ITEM-MAT-011 adalah mineral deposit, bukan biological drop | UNRESOLVED |
+| SB-023 | bulu/cakar/paruh | ITEM-MAT-014 khusus organisme bercangkang, bukan burung | UNRESOLVED |
+
+### Concrete Gaps Found
+
+- **4 direct cross-reference gaps** ditemukan dan diperbaiki tanpa membuat Item baru: SB-009 → ITEM-MAT-010; SB-014 → ITEM-MAT-014; BST-015 → ITEM-MAT-010; SB-021 → ITEM-MAT-010.
+- ITEM-MAT-003 dan ITEM-MAT-004 memang Canon dan dipakai generic loot tables, tetapi tidak dipaksakan ke creature hanya berdasarkan anatomi. Fixed table membutuhkan source classification yang eksplisit.
+- ITEM-MAT-013, ITEM-HERB-003, ITEM-MAT-008, dan ITEM-MAT-011 tetap resource regional/geological; kedekatan habitat tidak mengubahnya menjadi creature drop.
+- Special materials seperti Air Mata Naga Sungai, Bulu Kabut Kelabu, Racun Zamrud, Kulit Loreng Utuh, dan Bulu Bara tetap konsep loot dan belum menjadi Item Canon.
+- Actual loot chain tetap: Creature/Source → Valid Acquisition → Loot Potential → Loot Candidate → Item Identity Gate → Origin → Item Instance.
+- Tidak ada Item Canon baru dan generic loot tables tidak diubah.
