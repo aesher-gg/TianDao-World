@@ -36,7 +36,7 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 
 ## D. Post-Action
 - [ ] Waktu berubah tepat.
-- [ ] HP/Qi/Stamina/Satiety/status diperbarui.
+- [ ] HP/Qi/Stamina/Satiety/Satiety State/status diperbarui; Satiety State diverifikasi terhadap threshold Canonical Vitality.
 - [ ] Inventory/equipment/currency/technique/reputation/Karma diperbarui bila sah.
 - [ ] Jika gardening: status kebun/tanaman, jumlah, pertumbuhan, kesehatan, air, nutrisi, penyakit, hama, kualitas, dan maturity konsisten.
 - [ ] Jika gardening: Disease/Pest semakin tinggi berarti semakin buruk.
