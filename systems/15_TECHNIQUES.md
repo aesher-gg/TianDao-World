@@ -97,3 +97,17 @@ Technique identity, source, acquisition, requirements, training, mastery, effect
 - Bila teknik menetapkan flight capability tetapi tidak menetapkan speed, maximum range, duration, atau cost, field tersebut tidak boleh diimprovisasi.
 - Travel mengambil flight speed dan batas penggunaan dari Technique/Item/Ability source yang tervalidasi; Travel tidak menciptakan stat flight baru.
 - Teknik terbang yang baru diperoleh tetap membutuhkan Technique Origin, acquisition method, requirements, training/insight, dan validasi sebelum dapat dipasang sebagai aktif.
+
+
+## 11A. Canon Flight Source References
+Teknik flight yang menggunakan baseline Admin Canon harus menunjuk ke salah satu source resmi pada Module 20:
+- FLY-SRC-001 — Teknik Perjalanan Awan Dasar — 60 Li/jam.
+- FLY-SRC-002 — Teknik Perjalanan Awan Lanjutan — 120 Li/jam.
+- FLY-SRC-003 — Teknik Arus Langit — 240 Li/jam.
+- FLY-SRC-004 — Teknik Langit Roh — 480 Li/jam.
+- FLY-SRC-005 — Teknik Melintasi Kekosongan — 800 Li/jam.
+- FLY-SRC-006 — Teknik Jalan Bintang — 1.200 Li/jam.
+- FLY-SRC-007 — Teknik Menembus Langit — 1.800 Li/jam.
+- FLY-SRC-008 — Teknik Kenaikan Abadi — 2.500 Li/jam.
+
+Reference ke source tersebut tidak menggantikan Technique Origin. Character tetap wajib memiliki acquisition, requirements, training/insight, dan status ACTIVE yang tervalidasi.
