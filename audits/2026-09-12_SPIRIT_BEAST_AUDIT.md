@@ -111,3 +111,35 @@ Verified provenance gate: **Bibit/Bebet/Bobot**.
 No new Item ID added by this Bestiary expansion.
 
 **Canon expansion is verified.**
+
+## Monster → Loot → Ecology → Runtime → Persistence Follow-up — 2026-09-18
+
+### Audit Result
+**PASS WITH STRUCTURAL CLOSURE.** Audit menemukan satu gap nyata: Spirit Beast sudah memiliki persistence architecture lengkap, tetapi Monster recurring/material belum memiliki identity/save path yang eksplisit. Encounter-only Monster memang tidak perlu dipersistenkan, namun individu Monster yang memengaruhi continuity lintas turn membutuhkan identity dan history yang stabil.
+
+### Closed Finding — Monster Individual Persistence
+Ditambahkan persistence gate pada `systems/13_MONSTERS.md`:
+- encounter-only tidak mendapat ID persistence;
+- recurring/material individual memakai `MONSTER_ID` stabil;
+- canonical paths: `characters/monster_registry.md`, `characters/monsters/<MONSTER_ID>.md`, `monster_history/<MONSTER_ID>_HISTORY.md`;
+- before→after, Origin, History, Save, dan write-back verification wajib;
+- persistence tidak mengubah Monster menjadi Spirit Beast dan tidak memberi ownership/taming/contract/loot otomatis.
+
+### Ecological Impact Gate
+`systems/19_REGIONAL_MONSTER_ECOSYSTEM.md` kini membedakan local-transient, local-material, dan individual-persistent impact. Dampak ekologis tidak boleh dipaksa menjadi population counter, encounter pressure, harga, atau resource yield numerik tanpa source/formula yang sah. Jika input wajib tidak tersedia → `UNRESOLVED` / `RESOLUTION-BLOCKED`.
+
+### Loot Boundary
+`systems/18_LOOT.md` dan Module 25 tetap menjadi sumber resolusi loot. Creature existence, tier, habitat, atau bestiary entry tidak otomatis menghasilkan loot. No new Item ID was added in this follow-up.
+
+### Runtime / Save Integration
+`gm/RUNTIME_ENGINE.md`, `gm/ACTION_RESOLVER.md`, `gm/STATE_VALIDATOR.md`, dan `gm/SAVE_PIPELINE.md` telah diaudit untuk dynamic creature/loot, validation, Origin, dan persistence; Save Pipeline kini juga memiliki aturan eksplisit untuk persistent Monster.
+
+### Verification
+Fresh fetch setelah write-back memverifikasi:
+- `systems/13_MONSTERS.md` content SHA `09b18ec27ce0c4093b1cb771cdb7542a1e3fddd4`.
+- `systems/19_REGIONAL_MONSTER_ECOSYSTEM.md` content SHA `eebd39fd9ef84db29330db30ea66ec1d059760b2`.
+- `gm/SAVE_PIPELINE.md` content SHA `520593e40967a83ee2ce80b5c2999057d94f297a`.
+- `core/05_SAVE_INTEGRITY.md` content SHA `19999b274cc3136865224ede603ea80623ac4ac9`.
+- `core/06_ID_AND_SAVE_SYSTEM.md` content SHA `23aff421028038008cb7a844b474c4300a1befbe`.
+- `characters/monster_registry.md` exists and currently contains no active Monster individual.
+- No new Item Canon/Item ID created.
