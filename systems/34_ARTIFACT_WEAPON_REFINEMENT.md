@@ -307,7 +307,7 @@ Material rarity, nama, market value, Character Realm, atau narrative plausibilit
 
 ## 12A. ADMIN CANON METHOD ESTABLISHMENT — SRC-REF-001
 
-Admin Canon secara eksplisit menetapkan source execution baseline berikut agar SRC-REF-001 dapat memiliki Method Record yang dapat dirujuk runtime. Penetapan ini tidak memberi qualification kepada Character secara otomatis dan tidak membuktikan akses workspace pada Current State Character.
+Admin Canon secara eksplisit menetapkan source execution baseline berikut agar SRC-REF-001 dapat memiliki Method Record yang dapat dirujuk runtime. Penetapan ini berlaku sebagai Canon sistem untuk seluruh Character dan tidak memberi qualification atau akses workspace kepada Character mana pun secara otomatis.
 
 ### 12A.1 Method Record — METHOD-REF-001
 | Field | Canon Value |
@@ -348,7 +348,7 @@ Tidak ada dimension lain yang diizinkan berubah melalui METHOD-REF-001. Secara k
 | REALM_RULE | Character Realm tidak memberikan qualification secara otomatis |
 | STATUS | CANON-ESTABLISHED |
 
-Qualification ini adalah source Canon, bukan pemberian skill kepada Ryxian atau Character lain. Current Character State tetap menjadi penentu apakah qualification tersebut sudah diperoleh.
+Qualification ini adalah source Canon global, bukan pemberian skill kepada Character tertentu. Current Character State milik Character aktif tetap menjadi penentu apakah qualification tersebut sudah diperoleh.
 
 ### 12A.4 Workspace Source — WORK-REF-001
 | Field | Canon Value |
@@ -362,7 +362,10 @@ Qualification ini adalah source Canon, bukan pemberian skill kepada Ryxian atau 
 | STATE_RULE | Runtime availability/access wajib berasal dari Current State, location, faction/access rule, or another valid source |
 | STATUS | CANON-ESTABLISHED |
 
-### 12A.5 Execution Boundary
+### 12A.5 Multi-Character Execution Boundary
+Method, qualification, dan workspace source pada bagian 12A adalah **Global Canon/System Definition** dan tidak terikat pada `CHAR-0001`, `PLAYER-0001`, Ryxian, atau Character tertentu. Setiap Character yang akan menggunakan method ini harus melewati gate berdasarkan Current Character State miliknya sendiri. Tidak ada Character yang memperoleh qualification, workspace access, material, item instance, atau readiness hanya karena source Canon ini ada.
+
+### 12A.6 Execution Boundary
 Dengan penetapan ini, SRC-REF-001 kini memiliki explicit chain:
 SRC-REF-001 → METHOD-REF-001 → QUAL-REF-001 + WORK-REF-001 → DIM-REF-CONDITION-001 → BOUNDED RESOLUTION
 
