@@ -10,7 +10,7 @@ Menetapkan pipeline khusus untuk memproses herb/material menjadi Pill atau produ
 - Module 32 menangani Alchemy, Pill Refinement, dan hasil alkimia.
 - Module 31 menangani crafting/forging umum.
 - Module 34 menangani refinement item/artifact/weapon yang sudah ada.
-- Module 14 tetap menjadi sumber state/identity item hasil alchemy.
+- Module 14 tetap menjadi sumber state/identity item hasil alchemy. Seluruh output `ITEM-ALC-*` yang ditetapkan oleh formula wajib memiliki identity di `systems/14_ITEMS.md` §4D sebelum dapat diperlakukan sebagai output production yang sah.
 
 ## Source Priority
 `Canon/Admin → Fixed Formula/Pill Source → Current State → Valid Material Origin → Alchemist Qualification → Furnace/Tool → Runtime Resolution`
