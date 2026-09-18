@@ -111,3 +111,11 @@ Teknik flight yang menggunakan baseline Admin Canon harus menunjuk ke salah satu
 - FLY-SRC-008 — Teknik Kenaikan Abadi — 2.500 Li/jam.
 
 Reference ke source tersebut tidak menggantikan Technique Origin. Character tetap wajib memiliki acquisition, requirements, training/insight, dan status ACTIVE yang tervalidasi.
+
+
+## 11B. Canon Boundary — Intrinsic Flight Is Not a Technique
+- `FLY-INTRINSIC-001` is a **Cultivation/Realm capability** beginning at Realm 4, not a Technique record.
+- It therefore does not require Technique Origin, acquisition event, manual, teacher, or learning history.
+- Any **named Flight Technique** remains a separate technique entity and cannot be granted merely because the Character reaches Realm 4.
+- A Flight Technique must still satisfy the complete Technique Origin gate: source, acquisition method, requirements, training/insight, resolution, status, and origin reference.
+- The intrinsic capability does not satisfy the provenance requirements of any `FLY-SRC-*` technique.
