@@ -381,3 +381,45 @@ Required input:
 
 Jika eligibility belum tervalidasi → `RESOLUTION-BLOCKED`.
 Jika eligibility tervalidasi tetapi distance/speed numerik belum tersedia → jangan mengarang durasi; gunakan `UNRESOLVED` untuk field yang hilang dan `RESOLUTION-BLOCKED` untuk resolusi yang memerlukan angka tersebut.
+
+
+### 20C-1 — Canon Flight Source Registry
+
+Bagian ini menetapkan source Canon numerik untuk kecepatan terbang. Record di bawah adalah sumber metode, bukan pemberian otomatis kepada Character.
+
+| FLIGHT_SOURCE_ID | Canon Method | Minimum Realm | Flight Speed | Scope |
+|---|---|---|---:|---|
+| FLY-SRC-001 | Teknik Perjalanan Awan Dasar | Realm 2 — Qi Refining | 60 Li/jam | penerbangan stabil jarak dekat–menengah |
+| FLY-SRC-002 | Teknik Perjalanan Awan Lanjutan | Realm 3 — Foundation Establishment | 120 Li/jam | penerbangan stabil jarak menengah |
+| FLY-SRC-003 | Teknik Arus Langit | Realm 4 — Core Formation | 240 Li/jam | penerbangan cepat lintas wilayah |
+| FLY-SRC-004 | Teknik Langit Roh | Realm 5 — Nascent Soul | 480 Li/jam | penerbangan jarak jauh |
+| FLY-SRC-005 | Teknik Melintasi Kekosongan | Realm 6 — Soul Transformation | 800 Li/jam | penerbangan berkecepatan tinggi |
+| FLY-SRC-006 | Teknik Jalan Bintang | Realm 7 — Void Severing | 1.200 Li/jam | lintasan udara ekstrem |
+| FLY-SRC-007 | Teknik Menembus Langit | Realm 8 — Tribulation Crossing | 1.800 Li/jam | penerbangan ekstrem |
+| FLY-SRC-008 | Teknik Kenaikan Abadi | Realm 9 — Immortal Ascension | 2.500 Li/jam | mobilitas udara tingkat Immortal |
+
+#### Source Authority Rules
+1. FLIGHT_SOURCE_ID adalah Admin Canon Source untuk speed ketika metode tersebut benar-benar diperoleh dan aktif pada Character.
+2. Minimum Realm adalah requirement metode, bukan aturan bahwa seluruh Character pada Realm tersebut otomatis dapat terbang.
+3. Character yang memenuhi requirement tetap membutuhkan Technique/Ability Origin yang membuktikan metode tersebut benar-benar diperoleh dan aktif.
+4. Character tidak boleh memilih FLIGHT_SOURCE_ID hanya karena mencapai Realm minimum.
+5. Jika Character memiliki metode flight lain dengan speed resmi yang berbeda, speed metode Character tersebut menjadi source yang digunakan.
+6. Jika technique hanya membuktikan FLIGHT-ELIGIBLE tetapi tidak menunjuk ke speed source, speed tetap UNRESOLVED.
+7. Artifact, mount, Spirit Beast, atau metode eksternal dapat memiliki speed source sendiri dan tidak otomatis memakai registry kultivasi ini.
+8. Tidak ada stacking speed antar-technique. Satu metode flight aktif menjadi source movement speed untuk resolusi perjalanan, kecuali Canon method secara eksplisit mendefinisikan kombinasi.
+9. Angka speed adalah baseline normal untuk metode tersebut. Cuaca, barrier, combat, stamina, resource cost, maximum range, dan kondisi lain tidak mendapat modifier numerik kecuali memiliki source resmi.
+10. Kecepatan ini tidak mengubah jarak route permukaan dan tidak mengubah Character State secara otomatis.
+
+#### Flight Method Resolution
+- FLIGHT-ELIGIBLE + SPEED-DEFINED + AERIAL-DISTANCE-DEFINED → perjalanan udara dapat dihitung secara numerik.
+- FLIGHT-ELIGIBLE + SPEED-DEFINED + AERIAL-DISTANCE-UNRESOLVED → durasi tetap UNRESOLVED.
+- FLIGHT-ELIGIBLE + SPEED-UNRESOLVED → durasi tetap UNRESOLVED.
+- Tidak ada FLIGHT-ELIGIBLE → flight action RESOLUTION-BLOCKED.
+- Flight source tidak memberikan technique, item, artifact, mount, atau permission kepada Character.
+
+#### Canon Provenance
+- Source Type: Admin Canon
+- Source Authority: systems/20_TRAVEL_ROUTES.md
+- Acquisition: wajib berasal dari Technique/Ability/Item/Mount Origin yang sah.
+- Runtime Status: hanya ACTIVE setelah source method tervalidasi pada Character.
+- Version: AERIAL-SOURCE-BASELINE-001
