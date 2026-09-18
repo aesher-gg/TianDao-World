@@ -35,7 +35,7 @@ Jika modul REQUIRED gagal di-fetch:
 - jangan mengarang isi atau fallback diam-diam ke cache.
 
 ## INDEX AKTIF
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=204-turnfresh
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=205-turnfresh
 
 URL ini adalah INDEX aktif yang ditetapkan Admin. Jangan menggantinya dengan versi/query parameter INDEX lain.
 
