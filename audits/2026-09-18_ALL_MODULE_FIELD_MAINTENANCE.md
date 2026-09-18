@@ -664,3 +664,34 @@ Langkah arsitektur berikutnya bukan menambah efek refinement. Pilihan yang sah a
 2. bila Admin memang hendak menetapkan Canon baru, buat source method/qualification/workspace secara eksplisit sebagai Admin Canon terlebih dahulu, dengan seluruh field required §11A, sebelum mengaktifkan runtime execution.
 
 Sampai salah satu basis tersebut ada, Qwen wajib menghasilkan RESOLUTION-BLOCKED untuk eksekusi SRC-REF-001 yang membutuhkan input tersebut.
+
+
+## 2026-09-18 Admin Canon Method Establishment — SRC-REF-001
+
+### Decision
+Admin secara eksplisit menetapkan baseline Canon untuk menutup source gap method/qualification/workspace yang ditemukan pada End-to-End Execution Audit. Penetapan ini dilakukan sebagai single baseline source, bukan katalog upgrade otomatis.
+
+### Established Canon
+- METHOD-REF-001 — Basic Iron Condition Restoration Method.
+- QUAL-REF-001 — Basic Metalworking Qualification.
+- WORK-REF-001 — Basic Metalworking Forge Workspace.
+- DIM-REF-CONDITION-001 — CONDITION transition bounded to DAMAGED → SERVICEABLE dan SERVICEABLE → SERVICEABLE.
+- Material input: ITEM-MAT-001, 1 discrete material unit, valid Origin.
+- Outcome: deterministic requirement/process validation; invalid precondition → RESOLUTION-BLOCKED.
+- Resource rule: 1 discrete ITEM-MAT-001 consumed only on valid successful application; no additional currency/Qi/stamina/fuel/tool-durability cost established by this baseline.
+- Process time: 1 valid process cycle; no additional numeric clock duration established.
+
+### Boundary
+Qualification source existence tidak memberikan qualification otomatis kepada Character. Workspace source existence tidak membuktikan availability/access pada Current State. Runtime tetap wajib memverifikasi qualification Origin, workspace availability/access, target Item State, material Origin/quantity, compatibility, process conditions, Before/After, Origin/History, dan Save Pipeline.
+
+No attack/defense bonus, numeric durability, quality/grade/tier escalation, ability/effect, affinity, bloodline, breakthrough, ownership change, hidden probability/roll, multiplier, atau Realm scaling ditambahkan.
+
+### Status
+**🟢 Admin Canon Method Establishment — SOURCE CHAIN ESTABLISHED**
+
+SRC-REF-001 → METHOD-REF-001 → QUAL-REF-001 + WORK-REF-001 → DIM-REF-CONDITION-001 → BOUNDED RESOLUTION
+
+Status SRC-REF-001 tetap CANON-ESTABLISHED dan sekarang memiliki explicit method/qualification/workspace source references. Ini belum berarti refinement dapat dijalankan untuk Character tertentu; execution readiness tetap bergantung pada Current State.
+
+### Next Dependency
+**🟡 SRC-REF-001 Character Execution Readiness Audit** — verifikasi apakah Character/current location benar-benar memiliki qualification Origin, akses WORK-REF-001, target existing Weapon yang sesuai, material Origin/quantity, dan seluruh precondition sebelum satu pun state-changing refinement dijalankan.
