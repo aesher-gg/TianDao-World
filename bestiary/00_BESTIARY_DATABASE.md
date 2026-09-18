@@ -162,6 +162,7 @@ Actual loot tetap mengikuti `systems/18_LOOT.md` dan `systems/25_DYNAMIC_GENERAT
 - Habitat Resource: Tumbuhan tahan dingin hanya jika tersedia.
 - Acquisition: Harvest.
 - Condition: Bulu dapat kotor, rusak, atau terbakar.
+- Canon Item Mapping: `ITEM-MAT-010` Kulit Dingin Beiming — hanya untuk kulit/fur yang memenuhi source condition item; tidak mengubah Special Material `Bulu Salju Xuanyin` menjadi item Canon.
 - Core: Tidak ada.
 
 ### SB-010 — Serigala Kabut Kelabu
@@ -222,6 +223,7 @@ Actual loot tetap mengikuti `systems/18_LOOT.md` dan `systems/25_DYNAMIC_GENERAT
 - Habitat Resource: Tidak ada default.
 - Acquisition: Harvest.
 - Condition: Cangkang/capit dapat retak atau hancur.
+- Canon Item Mapping: `ITEM-MAT-014` Cangkang Karang Lanyue — hanya untuk cangkang yang memenuhi source condition Kepulauan Lanyue; tidak mengubah `Fragmen Cangkang Giok Laut` menjadi item Canon.
 - Core: Tidak ada.
 
 ### SB-015 — Kuda Angin Padang
@@ -436,6 +438,7 @@ Actual loot tetap mengikuti `systems/18_LOOT.md` dan `systems/25_DYNAMIC_GENERAT
 - Habitat Resource: tidak ada default.
 - Acquisition: harvest.
 - Condition: bulu/kulit dapat basah, beku, atau rusak.
+- Canon Item Mapping: `ITEM-MAT-010` Kulit Dingin Beiming — kulit/fur hasil harvest sah yang memenuhi source condition item.
 - Core: Tidak ada.
 
 ### BST-016 — Ubur-Ubur Cahaya Dongming
@@ -528,6 +531,7 @@ Actual loot tetap mengikuti `systems/18_LOOT.md` dan `systems/25_DYNAMIC_GENERAT
 - Growth Potential: sedang.
 - Spiritual Affinity: cold/wood sebagai descriptor, bukan resistance otomatis.
 - Possible Biological Loot: kulit, bulu, tanduk, tulang bila acquisition sah.
+- Canon Item Mapping: `ITEM-MAT-010` Kulit Dingin Beiming — hanya bagian kulit/fur yang memenuhi source condition item; tanduk/tulang tetap tanpa Item ID Canon yang terverifikasi.
 - Special Material: tidak ada default.
 - Core: Tidak ada.
 
