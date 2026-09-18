@@ -270,12 +270,12 @@ Output hanya dapat dibuat melalui recipe/procedure yang valid; penetapan identit
 ## 2026-09-18 XIANXIA ITEM GRADE SYSTEM
 
 ### 14.1 Prinsip
-Setiap **Item Instance dan Item Canon** memiliki satu `ITEM_GRADE` dan satu `GRADE_STEP`. Grade adalah kelas intrinsik sumber/potensi material atau benda dalam skala dunia, **bukan Character Realm, bukan quality, bukan condition, dan bukan durability**.
+Setiap **Item Instance dan Item Canon** memiliki satu `ITEM_GRADE` dan satu `GRADE_LEVEL`. Grade adalah kelas intrinsik sumber/potensi material atau benda dalam skala dunia, **bukan Character Realm, bukan quality, bukan condition, dan bukan durability**.
 
-Setiap Grade memiliki tiga step resmi:
-- **Earth Step**
-- **Sky Step**
-- **Heaven Step**
+Setiap Grade memiliki tiga level resmi:
+- **Di**
+- **Tian**
+- **Huang Tian**
 
 Hierarki Grade resmi:
 1. **Fan Grade** — Mortal
@@ -290,77 +290,77 @@ Hierarki Grade resmi:
 
 Format canonical:
 `ITEM_GRADE = <Grade>`
-`GRADE_STEP = Earth | Sky | Heaven`
+`GRADE_LEVEL = Earth | Sky | Heaven`
 
-Contoh valid: `Fan Grade / Earth Step`, `Huang Grade / Sky Step`, `Xian Grade / Heaven Step`.
+Contoh valid: `Fan Grade / Di`, `Huang Grade / Tian`, `Xian Grade / Huang Tian`.
 
 ### 14.2 Grade ≠ Step ≠ Quality ≠ Condition
 - `ITEM_GRADE` = kelas intrinsik item.
-- `GRADE_STEP` = posisi internal item dalam Grade tersebut.
+- `GRADE_LEVEL` = posisi internal item dalam Grade tersebut.
 - `QUALITY` = mutu aktual instance/hasil produksi, hanya jika source menetapkannya.
 - `CONDITION` = kondisi fisik saat ini.
 - `DURABILITY` = ketahanan, bila sistem/item menetapkannya.
 - `RARITY` = klasifikasi kelangkaan bila source menetapkannya.
 
-Grade dan Step tidak otomatis memberi bonus attack/defense, ability, affinity, resistance, bloodline, price, atau breakthrough. Step juga tidak boleh diperlakukan sebagai hidden numeric modifier tanpa source mekanis.
+Grade dan Level tidak otomatis memberi bonus attack/defense, ability, affinity, resistance, bloodline, price, atau breakthrough. Level juga tidak boleh diperlakukan sebagai hidden numeric modifier tanpa source mekanis.
 
 ### 14.3 Canon Grade Registry
-Grade dan Step awal Canon ditetapkan sebagai berikut. Penetapan ini berlaku untuk **identity Canon**, bukan pemberian instance gratis kepada Character.
+Grade dan Level awal Canon ditetapkan sebagai berikut. Penetapan ini berlaku untuk **identity Canon**, bukan pemberian instance gratis kepada Character.
 
-| Item ID | ITEM_GRADE | GRADE_STEP | Konsep sumber |
+| Item ID | ITEM_GRADE | GRADE_LEVEL | Konsep sumber |
 |---|---|---|---|
-| ITEM-MAT-001 | Fan Grade | Earth Step | Bijih besi dasar dunia fana |
-| ITEM-MAT-002 | Fan Grade | Earth Step | Kayu keras regional biasa |
-| ITEM-MAT-003 | Fan Grade | Earth Step | Kulit binatang biasa |
-| ITEM-MAT-004 | Fan Grade | Earth Step | Taring binatang biasa |
-| ITEM-HERB-001 | Fan Grade | Earth Step | Herbal dasar |
-| ITEM-HERB-002 | Fan Grade | Earth Step | Herbal racun dasar |
-| ITEM-CONS-001 | Fan Grade | Earth Step | Consumable medis dasar |
-| ITEM-CONS-002 | Fan Grade | Earth Step | Penetral racun dasar |
-| ITEM-WPN-001 | Fan Grade | Earth Step | Belati besi sederhana |
-| ITEM-WPN-002 | Fan Grade | Earth Step | Pedang besi standar |
-| ITEM-MAT-005 | Fan Grade | Earth Step | Serat rami umum |
-| ITEM-MAT-006 | Fan Grade | Earth Step | Batu api sederhana |
-| ITEM-MAT-007 | Huang Grade | Earth Step | Getah dari sumber pinus spiritual Qingluan |
-| ITEM-HERB-003 | Huang Grade | Earth Step | Jamur dari ekosistem kabut Wuyin |
-| ITEM-MAT-008 | Huang Grade | Earth Step | Material mineral panas bumi Huoyan |
-| ITEM-HERB-004 | Huang Grade | Earth Step | Madu biologis bernilai spiritual regional |
-| ITEM-MAT-009 | Huang Grade | Earth Step | Mutiara dari sumber laut Dongming |
-| ITEM-MAT-010 | Huang Grade | Earth Step | Kulit/fauna sumber dingin Beiming |
-| ITEM-MAT-011 | Huang Grade | Earth Step | Kristal garam mineral Jinyan |
-| ITEM-MAT-012 | Huang Grade | Earth Step | Giok regional Baiyu |
-| ITEM-MAT-013 | Fan Grade | Earth Step | Serat tanaman sungai Cangyuan |
-| ITEM-MAT-014 | Huang Grade | Earth Step | Cangkang organisme laut Lanyue |
-| ITEM-CRAFT-001 | Fan Grade | Earth Step | Tali hasil processing serat umum |
-| ITEM-CRAFT-002 | Huang Grade | Earth Step | Blank giok hasil processing |
-| ITEM-CRAFT-003 | Huang Grade | Earth Step | Manik dari mutiara Dongming |
-| ITEM-CRAFT-004 | Huang Grade | Earth Step | Lempeng cangkang Lanyue |
-| ITEM-WPN-003 | Huang Grade | Earth Step | Bilah dengan input material Huoyan |
-| ITEM-EQP-001 | Huang Grade | Earth Step | Equipment berbasis Kulit Dingin Beiming |
-| ITEM-ALC-001 | Huang Grade | Earth Step | Produk proses dari sumber spiritual Qingluan |
-| ITEM-ALC-002 | Huang Grade | Earth Step | Produk proses Jamur Kabut Wuyin |
-| ITEM-ALC-003 | Huang Grade | Earth Step | Produk proses Madu Seratus Bunga |
+| ITEM-MAT-001 | Fan Grade | Di | Bijih besi dasar dunia fana |
+| ITEM-MAT-002 | Fan Grade | Di | Kayu keras regional biasa |
+| ITEM-MAT-003 | Fan Grade | Di | Kulit binatang biasa |
+| ITEM-MAT-004 | Fan Grade | Di | Taring binatang biasa |
+| ITEM-HERB-001 | Fan Grade | Di | Herbal dasar |
+| ITEM-HERB-002 | Fan Grade | Di | Herbal racun dasar |
+| ITEM-CONS-001 | Fan Grade | Di | Consumable medis dasar |
+| ITEM-CONS-002 | Fan Grade | Di | Penetral racun dasar |
+| ITEM-WPN-001 | Fan Grade | Di | Belati besi sederhana |
+| ITEM-WPN-002 | Fan Grade | Di | Pedang besi standar |
+| ITEM-MAT-005 | Fan Grade | Di | Serat rami umum |
+| ITEM-MAT-006 | Fan Grade | Di | Batu api sederhana |
+| ITEM-MAT-007 | Huang Grade | Di | Getah dari sumber pinus spiritual Qingluan |
+| ITEM-HERB-003 | Huang Grade | Di | Jamur dari ekosistem kabut Wuyin |
+| ITEM-MAT-008 | Huang Grade | Di | Material mineral panas bumi Huoyan |
+| ITEM-HERB-004 | Huang Grade | Di | Madu biologis bernilai spiritual regional |
+| ITEM-MAT-009 | Huang Grade | Di | Mutiara dari sumber laut Dongming |
+| ITEM-MAT-010 | Huang Grade | Di | Kulit/fauna sumber dingin Beiming |
+| ITEM-MAT-011 | Huang Grade | Di | Kristal garam mineral Jinyan |
+| ITEM-MAT-012 | Huang Grade | Di | Giok regional Baiyu |
+| ITEM-MAT-013 | Fan Grade | Di | Serat tanaman sungai Cangyuan |
+| ITEM-MAT-014 | Huang Grade | Di | Cangkang organisme laut Lanyue |
+| ITEM-CRAFT-001 | Fan Grade | Di | Tali hasil processing serat umum |
+| ITEM-CRAFT-002 | Huang Grade | Di | Blank giok hasil processing |
+| ITEM-CRAFT-003 | Huang Grade | Di | Manik dari mutiara Dongming |
+| ITEM-CRAFT-004 | Huang Grade | Di | Lempeng cangkang Lanyue |
+| ITEM-WPN-003 | Huang Grade | Di | Bilah dengan input material Huoyan |
+| ITEM-EQP-001 | Huang Grade | Di | Equipment berbasis Kulit Dingin Beiming |
+| ITEM-ALC-001 | Huang Grade | Di | Produk proses dari sumber spiritual Qingluan |
+| ITEM-ALC-002 | Huang Grade | Di | Produk proses Jamur Kabut Wuyin |
+| ITEM-ALC-003 | Huang Grade | Di | Produk proses Madu Seratus Bunga |
 
-**Baseline rule:** seluruh Item Canon yang saat ini telah ditetapkan berada pada `Earth Step` dari Grade masing-masing. `Sky Step` dan `Heaven Step` belum boleh diberikan tanpa source Canon/Admin yang menetapkan transisi atau identity variant yang sah.
+**Baseline rule:** seluruh Item Canon yang saat ini telah ditetapkan berada pada `Di` dari Grade masing-masing. `Tian` dan `Huang Tian` belum boleh diberikan tanpa source Canon/Admin yang menetapkan transisi atau identity variant yang sah.
 
 ### 14.4 Grade & Step Inheritance / Production Ceiling
-1. Loot candidate memakai `ITEM_GRADE` dan `GRADE_STEP` dari Item Canon setelah Item Identity Gate lolos; loot belum menjadi instance hanya karena grade/step diketahui.
-2. Processing/crafting/alchemy output wajib memiliki `OUTPUT_ITEM_GRADE` dan `OUTPUT_GRADE_STEP` yang ditentukan recipe/formula atau registry.
-3. Output tidak boleh naik Grade atau Step hanya karena jumlah input lebih banyak, Character Realm lebih tinggi, narasi, harga, rarity, atau keberhasilan produksi.
-4. Refinement tidak boleh menaikkan Grade atau Step kecuali Method Record secara eksplisit mengizinkan perubahan tersebut dan menetapkan bound transition.
-5. Quality dapat berubah tanpa mengubah Grade/Step hanya jika source produksi/refinement mengizinkannya.
-6. Grade atau Step yang belum dapat dibuktikan = `UNRESOLVED`; jika required untuk resolution = `RESOLUTION-BLOCKED`.
-7. Item baru yang belum memiliki Canon identity tidak boleh diberi Grade/Step lalu diperlakukan sebagai Item Canon. Identity Gate tetap lebih dulu.
-8. Fixed loot table tidak boleh memberikan Grade/Step yang berbeda dari Item Canon kecuali source table secara eksplisit merupakan variant identity yang berbeda.
+1. Loot candidate memakai `ITEM_GRADE` dan `GRADE_LEVEL` dari Item Canon setelah Item Identity Gate lolos; loot belum menjadi instance hanya karena grade/level diketahui.
+2. Processing/crafting/alchemy output wajib memiliki `OUTPUT_ITEM_GRADE` dan `OUTPUT_GRADE_LEVEL` yang ditentukan recipe/formula atau registry.
+3. Output tidak boleh naik Grade atau Level hanya karena jumlah input lebih banyak, Character Realm lebih tinggi, narasi, harga, rarity, atau keberhasilan produksi.
+4. Refinement tidak boleh menaikkan Grade atau Level kecuali Method Record secara eksplisit mengizinkan perubahan tersebut dan menetapkan bound transition.
+5. Quality dapat berubah tanpa mengubah Grade/Level hanya jika source produksi/refinement mengizinkannya.
+6. Grade atau Level yang belum dapat dibuktikan = `UNRESOLVED`; jika required untuk resolution = `RESOLUTION-BLOCKED`.
+7. Item baru yang belum memiliki Canon identity tidak boleh diberi Grade/Level lalu diperlakukan sebagai Item Canon. Identity Gate tetap lebih dulu.
+8. Fixed loot table tidak boleh memberikan Grade/Level yang berbeda dari Item Canon kecuali source table secara eksplisit merupakan variant identity yang berbeda.
 
 ### 14.5 Anti-Exploit
 GM dilarang:
-- menaikkan Grade atau Step untuk menguntungkan Player/NPC;
-- menyamakan Grade/Step dengan Realm;
-- memberi Grade/Step berdasarkan nama seperti "roh", "ancient", "king", atau "divine" tanpa registry/source;
-- menggabungkan beberapa item lalu otomatis menciptakan Grade/Step lebih tinggi;
-- mengubah Grade/Step setelah hasil resolution diketahui;
-- menggunakan Grade atau Step sebagai hidden numeric modifier.
+- menaikkan Grade atau Level untuk menguntungkan Player/NPC;
+- menyamakan Grade/Level dengan Realm;
+- memberi Grade/Level berdasarkan nama seperti "roh", "ancient", "king", atau "divine" tanpa registry/source;
+- menggabungkan beberapa item lalu otomatis menciptakan Grade/Level lebih tinggi;
+- mengubah Grade/Level setelah hasil resolution diketahui;
+- menggunakan Grade atau Level sebagai hidden numeric modifier.
 
 Urutan valid:
-**Item Identity → Grade Source → Step Source → Quality/Condition → Applicable Effect Source → Resolution → Origin/Save**.
+**Item Identity → Grade Source → Level Source → Quality/Condition → Applicable Effect Source → Resolution → Origin/Save**.
