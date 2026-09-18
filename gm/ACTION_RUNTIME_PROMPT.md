@@ -35,7 +35,7 @@ Jika modul REQUIRED gagal:
 Tahan resolusi yang bergantung pada modul tersebut.
 
 ## INDEX AKTIF
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=204-turnfresh
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=205-turnfresh
 
 Jangan mengganti URL INDEX aktif dengan versi/query parameter lain.
 
