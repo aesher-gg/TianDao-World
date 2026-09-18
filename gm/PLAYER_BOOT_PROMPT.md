@@ -28,13 +28,13 @@ Saya ingin memulai sebagai:
 ### SUMBER WAJIB
 
 **INDEX:**
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=204-turnfresh
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/INDEX.md?v=205-turnfresh
 
 **PLAYER REGISTRY:**
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/characters/players.md?v=204-turnfresh
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/characters/players.md?v=205-turnfresh
 
 **CHARACTER REGISTRY:**
-https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/characters/character_registry.md?v=204-turnfresh
+https://raw.githubusercontent.com/aesher-gg/TianDao-World/main/characters/character_registry.md?v=205-turnfresh
 
 Fresh fetch sumber terbaru sebelum boot. Jangan gunakan ingatan, system date, data lama, atau asumsi sebagai pengganti sumber.
 
