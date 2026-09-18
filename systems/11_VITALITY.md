@@ -71,9 +71,31 @@ Stamina tidak boleh dipulihkan secara gratis. Pemulihan membutuhkan waktu dan ko
 Naik Realm tidak berarti stamina current otomatis kembali penuh. Setelah breakthrough, **StaminaMax** berubah mengikuti Realm/Stage baru, sedangkan **Current Stamina** tetap mengikuti hasil resolusi breakthrough dan kondisi pemulihan yang sah.
 
 ## 4. Satiety
+Satiety dicatat sebagai persentase 0–100%. Makanan mengembalikan satiety sesuai item resmi.
+
+### 4.1 Satiety State Threshold — Canonical
+Satiety State ditentukan **hanya** oleh rentang berikut. GM/Qwen tidak boleh membuat ambang lapar sendiri.
+
+| Satiety | Canonical State | Hunger Classification |
+|---:|---|---|
+| 76–100% | **Satiated** | Not Hungry |
+| 51–75% | **Fed** | Not Hungry |
+| 26–50% | **Hungry** | Hungry |
+| 1–25% | **Very Hungry** | Hungry |
+| 0% | **Starving** | Starving |
+
+Rules:
+- **Not Hungry = 51–100%**.
+- **Hungry = 1–50%**.
+- **Starving = 0%**.
+- Thresholds are descriptive state labels and do not create hidden HP, Stamina, focus, recovery, or other numeric penalties.
+- Any gameplay effect caused by a Satiety State must have a separate official modifier/table source.
+- A change in Satiety State is derived from the resolved Satiety percentage; GM must not choose the state narratively.
+- Satiety remains clamped to 0–100%.
+
 Satiety dicatat sebagai persentase 0–100%. Makanan mengembalikan satiety sesuai item resmi. Kelaparan memengaruhi kondisi, stamina, fokus, dan pemulihan sesuai tabel/modifier resmi.
 
-### 4.1 FastingMultiplier Resmi
+### 4.2 FastingMultiplier Resmi
 FastingMultiplier ditentukan berdasarkan Realm dan tidak boleh ditebak, diinterpolasi, atau diganti dengan fallback metabolisme buatan GM.
 
 | Realm | FastingMultiplier | JamSampaiKosong |
@@ -99,7 +121,7 @@ Aturan:
 - Early/Middle/Peak tidak otomatis mengubah FastingMultiplier.
 - Satiety selalu dibatasi pada 0–100%.
 
-### 4.2 Perhitungan Satiety Berbasis Waktu
+### 4.3 Perhitungan Satiety Berbasis Waktu
 Untuk interval waktu tanpa makanan:
 
 **SatietyDrainRate = 100% ÷ JamSampaiKosong**
