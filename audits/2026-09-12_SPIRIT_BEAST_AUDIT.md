@@ -80,3 +80,34 @@ No unresolved architectural blocker was found in the audited integration layer. 
 ## Conclusion
 
 The Spirit Beast architecture is now integrated into the repository's identity, save, validation, runtime, memory, monster, and item boundaries. Persistent Beast gameplay is structurally ready, subject to the same requirement as all other gameplay: a concrete Beast must have a valid source and state before it can be used.
+
+## Canon Expansion Follow-up — 2026-09-18
+
+Admin melakukan perluasan fixed Bestiary setelah evaluasi bahwa fixed creature Canon masih terlalu tipis untuk memberi jangkar ekologis regional yang cukup. Penambahan tidak diperlakukan sebagai quota.
+
+### Added Fixed Creatures
+- Monster: BST-011 sampai BST-016 — 6 entry.
+- Spirit Beast: SB-016 sampai SB-023 — 8 entry.
+
+### Provenance Gate
+Setiap entry baru memuat:
+- **Bibit:** asal ekologis/geografis dan jalur terbentuknya species.
+- **Bebet:** habitat, pola kemunculan, acquisition/lifecycle context.
+- **Bobot:** dampak terhadap ekologi, agriculture, travel, fishing, hunting, market supply, atau encounter pressure.
+
+### Integrity Boundary
+- Tidak ada Character yang memperoleh creature instance.
+- Tidak ada BEAST_ID runtime yang dibuat.
+- Tidak ada taming/ownership/contract yang diberikan.
+- Tidak ada ability/technique/bloodline/evolution otomatis.
+- Possible biological loot bukan Item Canon baru dan tidak membuat Item ID baru.
+- Dynamic Generation tetap terbuka di luar fixed entries.
+- Fixed entry tidak menjamin encounter atau loot.
+
+### Verification
+Fresh fetch setelah write-back menghasilkan Bestiary content SHA `7daa77f7434778de65e20ed38967ddc41a0e1f67`.
+Verified fixed counts: **16 Monster + 23 Spirit Beast**.
+Verified provenance gate: **Bibit/Bebet/Bobot**.
+No new Item ID added by this Bestiary expansion.
+
+**Canon expansion is verified.**
