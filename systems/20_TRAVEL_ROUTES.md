@@ -483,3 +483,119 @@ For Flight Eligibility, this section supersedes the earlier generic statement th
 `Realm <4` → no intrinsic flight eligibility.
 
 `Named Flight Technique` → resolve through its own Technique Origin and `FLY-SRC-*`; do not substitute intrinsic speed as proof of technique acquisition.
+
+## 20D — AERIAL-DISTANCE CANON REGISTRY
+
+### Status
+**Admin Canon — Aerial Distance Baseline Registry v1.0**
+
+Bagian ini adalah sumber resmi untuk **jarak udara baseline** antar-node yang telah ditetapkan. Nilai AERIAL_DISTANCE_BASELINE berdiri sebagai data geografis udara tersendiri dan **bukan hasil konversi, penyalinan, pengurangan persentase, atau pengukuran ulang dari jarak route permukaan**.
+
+### Aerial Distance Record Contract
+Setiap record menggunakan:
+- AERIAL_DISTANCE_ID — ID unik registry.
+- ORIGIN — location node Canon.
+- DESTINATION — location node Canon.
+- AERIAL_DISTANCE_BASELINE — jarak lintasan udara dalam Li.
+- DISTANCE_TYPE — DIRECT-AERIAL-BASELINE.
+- ROUTE_DEPENDENCY — NONE; route permukaan tidak menjadi sumber angka.
+- SOURCE — AERIAL-DISTANCE-CANON-BASELINE-001.
+- STATUS — CANON-ESTABLISHED.
+
+### Canon Source
+**Source ID:** AERIAL-DISTANCE-CANON-BASELINE-001  
+**Source Type:** Admin Canon  
+**Authority:** systems/20_TRAVEL_ROUTES.md  
+**Status:** CANON-ESTABLISHED
+
+### Regional Aerial Distance Registry
+
+| AERIAL_DISTANCE_ID | Origin ↔ Destination | Aerial Distance |
+|---|---|---:|
+| AER-DIST-001 | Kota Yunjing ↔ Kota Luoxing | 118 Li |
+| AER-DIST-002 | Kota Luoxing ↔ Desa Baihe | 63 Li |
+| AER-DIST-003 | Kota Luoxing ↔ Kota Heiyu | 214 Li |
+| AER-DIST-004 | Desa Baihe ↔ Lembah Qinghe | 91 Li |
+| AER-DIST-005 | Kota Yunjing ↔ Desa Xingcun | 49 Li |
+| AER-DIST-006 | Kota Yunjing ↔ Desa Tiedao | 78 Li |
+| AER-DIST-007 | Kota Lingshan ↔ Desa Yunmu | 39 Li |
+| AER-DIST-008 | Kota Lingshan ↔ Lembah Qingsong | 76 Li |
+| AER-DIST-009 | Lembah Qingsong ↔ Puncak Tianque | 51 Li |
+| AER-DIST-010 | Desa Yunmu ↔ Hutan Wuyin | 31 Li |
+| AER-DIST-011 | Kota Qingluan ↔ Kota Lingshan | 53 Li |
+| AER-DIST-012 | Kota Qingluan ↔ Desa Yunhe | 59 Li |
+| AER-DIST-013 | Desa Yunhe ↔ Desa Yunmu | 45 Li |
+| AER-DIST-014 | Kota Qingluan ↔ Pos Gunung Lianfeng | 96 Li |
+| AER-DIST-015 | Kota Nanyao ↔ Pelabuhan Chixia | 101 Li |
+| AER-DIST-016 | Kota Nanyao ↔ Hutan Cangmang | 29 Li |
+| AER-DIST-017 | Hutan Cangmang ↔ Lembah Seratus Bunga | 77 Li |
+| AER-DIST-018 | Kota Nanyao ↔ Pegunungan Huoyan | 138 Li |
+| AER-DIST-019 | Kota Nanyao ↔ Kota Huoyan | 72 Li |
+| AER-DIST-020 | Kota Nanyao ↔ Desa Nanyue | 60 Li |
+| AER-DIST-021 | Kota Haicheng ↔ Pulau Yuehai | 158 Li |
+| AER-DIST-022 | Pulau Yuehai ↔ Kepulauan Lanyue | 226 Li |
+| AER-DIST-023 | Kota Haicheng ↔ Pulau Qionghua | 271 Li |
+| AER-DIST-024 | Kepulauan Lanyue ↔ Jurang Laut Canglong | 359 Li |
+| AER-DIST-025 | Pelabuhan Donghai ↔ Kota Haicheng | 43 Li |
+| AER-DIST-026 | Kota Haicheng ↔ Desa Nelayan Qingyu | 55 Li |
+| AER-DIST-027 | Kota Beixue ↔ Benteng Hanjiang | 126 Li |
+| AER-DIST-028 | Benteng Hanjiang ↔ Desa Xuehe | 70 Li |
+| AER-DIST-029 | Desa Xuehe ↔ Lembah Bingxin | 111 Li |
+| AER-DIST-030 | Kota Beixue ↔ Reruntuhan Tianhan | 249 Li |
+| AER-DIST-031 | Kota Beixue ↔ Desa Hanlin | 59 Li |
+| AER-DIST-032 | Desa Xuehe ↔ Pos Es Fengbei | 52 Li |
+| AER-DIST-033 | Kota Shajing ↔ Kota Jinyue | 148 Li |
+| AER-DIST-034 | Kota Shajing ↔ Oasis Qingyu | 91 Li |
+| AER-DIST-035 | Kota Jinyue ↔ Laut Pasir Wuheng | 68 Li |
+| AER-DIST-036 | Laut Pasir Wuheng ↔ Makam Tianri | 190 Li |
+| AER-DIST-037 | Kota Jinyang ↔ Kota Shajing | 78 Li |
+| AER-DIST-038 | Kota Jinyang ↔ Desa Shazhen | 43 Li |
+| AER-DIST-039 | Kota Jinyue ↔ Pos Karavan Huangfeng | 57 Li |
+| AER-DIST-040 | Kota Shajing ↔ Pos Karavan Huangfeng | 67 Li |
+| AER-DIST-041 | Kota Tianjing ↔ Kota Baiyu | 68 Li |
+| AER-DIST-042 | Kota Baiyu ↔ Desa Minghe | 53 Li |
+| AER-DIST-043 | Kota Tianjing ↔ Desa Minghe | 97 Li |
+
+### Inter-Regional Aerial Distance Registry
+
+| AERIAL_DISTANCE_ID | Origin ↔ Destination | Aerial Distance |
+|---|---|---:|
+| AER-DIST-044 | Kota Yunjing ↔ Kota Tianjing | 960 Li |
+| AER-DIST-045 | Kota Yunjing ↔ Kota Lingshan | 344 Li |
+| AER-DIST-046 | Kota Yunjing ↔ Kota Nanyao | 1.510 Li |
+| AER-DIST-047 | Kota Yunjing ↔ Kota Haicheng | 1.410 Li |
+| AER-DIST-048 | Kota Yunjing ↔ Kota Beixue | 1.960 Li |
+| AER-DIST-049 | Kota Yunjing ↔ Kota Jinyang | 1.670 Li |
+
+### Registry Rules
+1. Registry ini adalah **source geografis udara**, bukan source speed.
+2. AERIAL_DISTANCE_BASELINE tidak boleh dihitung dari DISTANCE_BASELINE route permukaan.
+3. Tidak boleh memakai straight-line geometry, koordinat peta, atau perkiraan GM untuk mengisi record yang belum ada.
+4. Aerial distance dan surface route distance adalah dua field berbeda dan dapat memiliki nilai berbeda.
+5. Aerial distance tidak berarti lintasan tersebut bebas dari barrier, airspace restriction, encounter, cuaca, atau kondisi lain.
+6. Registry tidak memberikan Flight Capability, Flight Technique, speed, permission, atau sarana kepada Character.
+7. Jika pasangan Origin/Destination memiliki record registry ini, distance dapat digunakan untuk resolusi flight setelah eligibility dan speed tervalidasi.
+8. Jika pasangan tidak memiliki record, GM wajib memakai UNRESOLVED; tidak boleh menurunkan distance dari route lain atau chain surface.
+9. Multi-leg aerial travel hanya sah jika setiap leg memiliki aerial-distance record atau source Canon lain yang secara eksplisit mengizinkannya.
+10. Aerial distance tetap dalam Li dan menjadi input ke formula waktu perjalanan bersama speed flight yang sah.
+11. Perubahan kondisi aktual seperti cuaca, barrier, restricted airspace, encounter, atau detour tidak boleh diberi modifier numerik tanpa source Canon/Admin.
+12. Registry ini tidak otomatis memberi akses udara ke lokasi; access/permission tetap mengikuti source lokasi/faksi/event yang relevan.
+
+### Flight Resolution Gate
+FLIGHT-ELIGIBLE + SPEED-DEFINED + AERIAL-DISTANCE-DEFINED → duration dapat dihitung.
+
+FLIGHT-ELIGIBLE + SPEED-DEFINED + AERIAL-DISTANCE-UNRESOLVED → duration UNRESOLVED.
+
+FLIGHT-ELIGIBLE + SPEED-UNRESOLVED + AERIAL-DISTANCE-DEFINED → duration UNRESOLVED.
+
+FLIGHT-ELIGIBLE tidak tervalidasi → RESOLUTION-BLOCKED.
+
+### Coverage Boundary
+Registry ini mencakup seluruh baseline route regional dan seluruh koridor antarkawasan yang saat ini telah memiliki angka pada Module 20. **Ini tidak berarti semua pasangan lokasi di dunia memiliki direct aerial distance.** Pasangan di luar registry tetap UNRESOLVED sampai Admin menetapkan record baru.
+
+### Provenance
+- SOURCE_ID: AERIAL-DISTANCE-CANON-BASELINE-001
+- SOURCE_TYPE: Admin Canon
+- AUTHORITY: systems/20_TRAVEL_ROUTES.md
+- STATUS: CANON-ESTABLISHED
+- DISTANCE_TYPE: DIRECT-AERIAL-BASELINE
