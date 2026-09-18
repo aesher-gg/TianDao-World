@@ -159,3 +159,7 @@ Realm, QiCap, breakthrough requirement, Law, Law Origin, progress, dan hasil bre
 - Realm dapat menjadi requirement bila source method menetapkannya, tetapi GM tidak boleh membuat aturan "Realm X pasti bisa terbang" tanpa Canon.
 - Memiliki kemampuan terbang tidak otomatis menetapkan kecepatan, jarak maksimum, durasi, biaya Qi/Stamina, atau ketahanan terhadap cuaca/barrier.
 - Nilai tersebut hanya aktif bila source method mendefinisikannya. Jika belum tersedia, gunakan `UNRESOLVED` dan tahan resolusi numerik sesuai Data Completeness.
+
+
+## 10A. Canon Flight Source Boundary
+Minimum Realm pada FLY-SRC-001 sampai FLY-SRC-008 adalah requirement untuk source method yang bersangkutan. Minimum Realm bukan automatic flight unlock. Character pada Realm yang memenuhi requirement tetap membutuhkan metode flight yang diperoleh dan tervalidasi.
