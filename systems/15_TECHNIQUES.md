@@ -90,3 +90,10 @@ Techniques terhubung dengan Cultivation Law, Law Origin, Combat, Vitality, Items
 
 ## DATA COMPLETENESS TECHNIQUE GATE
 Technique identity, source, acquisition, requirements, training, mastery, effect, cost, dan status wajib dapat ditelusuri ke source/Origin yang sah. UNRESOLVED berarti tidak aktif dan tidak boleh ditebak. Missing required provenance/acquisition → tahan aktivasi atau gunakan RESOLUTION-BLOCKED sesuai konteks.
+
+
+## 11. Flight / Mobility Technique Boundary
+- Teknik yang memberikan flight/aerial mobility harus mendefinisikan efeknya secara eksplisit sebelum efek tersebut dipakai dalam Travel.
+- Bila teknik menetapkan flight capability tetapi tidak menetapkan speed, maximum range, duration, atau cost, field tersebut tidak boleh diimprovisasi.
+- Travel mengambil flight speed dan batas penggunaan dari Technique/Item/Ability source yang tervalidasi; Travel tidak menciptakan stat flight baru.
+- Teknik terbang yang baru diperoleh tetap membutuhkan Technique Origin, acquisition method, requirements, training/insight, dan validasi sebelum dapat dipasang sebagai aktif.
