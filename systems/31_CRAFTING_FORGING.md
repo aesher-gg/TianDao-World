@@ -153,4 +153,4 @@ Semua recipe tunduk pada Module 31: material, recipe, qualification, tool/worksp
 
 
 ## 2026-09-18 Item Grade Integration
-Every produced Item has an ITEM_GRADE. Recipe output must reference a Canon Item Identity whose grade is registered in Module 14, or explicitly establish an output grade through an Admin Canon source before runtime execution. Crafting/forging success does not automatically increase grade. Material quantity, Character Realm, tool quality, market price, or narrative difficulty cannot create a higher grade unless the recipe/method explicitly defines the grade transition.
+Every produced Item has an ITEM_GRADE and GRADE_LEVEL. Recipe output must reference a Canon Item Identity whose grade and level are registered in Module 14, or explicitly establish both through an Admin Canon source before runtime execution. Crafting/forging success does not automatically increase grade or level. Material quantity, Character Realm, tool quality, market price, or narrative difficulty cannot create a higher grade unless the recipe/method explicitly defines the grade transition.
