@@ -102,3 +102,10 @@ Module 25 tidak menjadi source untuk missing bounds, effects, probabilities, ata
 
 ## 8. Boundary Rule
 This file does not override module mechanics, create missing Canon, or force irrelevant fetches. Ia memastikan hubungan Module A membutuhkan Module B menjadi hubungan repository-level yang eksplisit, bukan orphan statement di dalam satu file.
+
+## 9A. Canon Flight Provenance Amendment
+- `Realm 4+ → FLY-INTRINSIC-001` is a valid source of **intrinsic flight eligibility** and is distinct from Technique provenance.
+- `systems/09_CULTIVATION.md` is the source authority for the Realm 4 intrinsic capability boundary.
+- `systems/15_TECHNIQUES.md` remains the source authority for acquisition/provenance of named Flight Techniques.
+- `systems/20_TRAVEL_ROUTES.md` consumes either the validated intrinsic capability or a separately validated flight method; it must not manufacture missing speed/range/duration values.
+- Reaching Realm 4 must never be recorded as acquisition of a named flight technique.
