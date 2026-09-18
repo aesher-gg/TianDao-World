@@ -318,3 +318,43 @@ Dengan demikian:
 `Module 27/35 = Routing/Dependency`
 
 Tidak ada automatic upgrade di antara ketiganya.
+
+## 2026-09-18 Anti-Cheat Resolution Hardening
+
+### RNG Gate
+Every random step in this module (including Encounter d100, random composition, random selection, or any future random outcome) must consume a verifiable RNG Source under core/04_ANTI_CHEAT.md.
+
+Required runtime record:
+ROLL_ID / RNG_SOURCE / PURPOSE / INPUT-SEED-CONTEXT / RESULT / WORLD_TIME / ENTITY-ID when applicable.
+
+No GM-selected roll, reroll, result substitution, or post-outcome reroll is legal. If a verifiable RNG source is unavailable, the random-dependent resolution is RESOLUTION-BLOCKED.
+
+### Modifier Registry Gate
+The existing notation "Σ Modifier" is not permission to invent or stack modifiers.
+
+A numeric modifier is executable only when a source explicitly defines:
+- modifier category/identity;
+- trigger condition;
+- numeric value or bounded range;
+- whether stacking is permitted;
+- affected formula.
+
+At most one modifier from the same category may apply unless the source explicitly permits stacking. Equivalent conditions may not be counted twice under different labels.
+
+Until such a source record exists, an otherwise unsupported numeric modifier is ignored as a mechanical input; if the modifier is required for the requested resolution, the resolution is RESOLUTION-BLOCKED rather than guessed.
+
+### Loot Score Source Gate
+The existing Loot Potential formula names four score components beyond Source Tier Score:
+Habitat Score / Harvest-Defeat Method / Condition / Special Event.
+
+Those names are not executable numeric values by themselves.
+
+Each component must have a source record defining its scoring rule. If a component is required but its score cannot be sourced, do not choose a number from 0–20. The affected Loot Potential resolution is RESOLUTION-BLOCKED unless a fixed table or other valid source independently determines the loot result.
+
+Source Tier Score remains executable exactly as defined in this module.
+
+### Deterministic Resolution Order
+For every generated outcome:
+SOURCE INPUTS → VALIDATED MODIFIERS → VERIFIED RNG (if formula is random) → RESULT → VALIDATION → NARRATIVE.
+
+Narrative generation cannot influence a previously unresolved numeric input, roll, modifier, Tier, quantity, rarity, or loot result.
