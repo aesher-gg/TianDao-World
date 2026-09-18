@@ -95,3 +95,18 @@ Namun, ketiadaan fixed loot table **bukan lagi larangan menghasilkan loot**. Sou
 
 ## DATA COMPLETENESS LOOT GATE
 Loot field (item, quantity, quality, tier, ownership/provenance) hanya boleh dihasilkan dari fixed table atau Dynamic Loot Formula dengan input sah. Ketiadaan fixed table bukan izin menebak. Jika source/input wajib tidak tersedia, jangan menciptakan drop; gunakan status resmi dan/atau RESOLUTION-BLOCKED.
+
+## 2026-09-18 Anti-Cheat Resolution Hardening
+
+### Loot Numeric Integrity
+Module 18 consumes the Loot Potential formula from Module 25. GM must not assign Habitat Score, Harvest/Defeat Method, Condition, or Special Event scores by intuition.
+
+Each score must be backed by a source record or fixed table. If a required score is missing, the numeric Loot Potential is RESOLUTION-BLOCKED rather than completed with a guessed 0–20 value.
+
+### Loot Selection Finality
+After Loot Potential and the applicable fixed/dynamic selection mechanism are resolved, the GM may not reroll, substitute, duplicate, or upgrade the loot because of narrative preference.
+
+The legal order is:
+VALID SOURCE → VALID ACQUISITION → VALID SCORE INPUTS → RNG (if source requires it) → LOOT RESULT → ITEM IDENTITY VALIDATION → ORIGIN → SAVE.
+
+A loot candidate that lacks a valid Item identity remains unresolved and does not enter Inventory.
