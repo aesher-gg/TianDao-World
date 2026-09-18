@@ -137,3 +137,104 @@ Registry ini menjadi sumber rute dan konvensi jarak untuk World Map, Time, Actio
 
 ## DATA COMPLETENESS TRAVEL GATE
 Jarak, rute, sarana, kecepatan, modifier, dan durasi numerik hanya boleh berasal dari source resmi yang tersedia. Jika field required tidak memiliki baseline sah, jangan mengarang angka atau mengasumsikan sarana; gunakan UNRESOLVED/RESOLUTION-BLOCKED sesuai Data Completeness.
+
+
+## 20A — ROUTE RECORD STANDARD & MAINTENANCE HARDENING
+
+### Route Record Contract
+Setiap baseline route yang executable harus dapat dipetakan ke record berikut:
+- `ROUTE_ID` — ID unik route.
+- `ORIGIN` — settlement/location node Canon.
+- `DESTINATION` — settlement/location node Canon.
+- `DISTANCE_BASELINE` — jarak route resmi dalam Li/Fen/Cun.
+- `TERRAIN` — medan yang sudah ditetapkan oleh source route.
+- `PRIMARY_TRANSPORT` — sarana utama bila source menetapkannya.
+- `ROUTE_STATUS` — `CANON-ESTABLISHED`, `UNRESOLVED`, atau `RESOLUTION-BLOCKED` sesuai Data Completeness.
+- `SOURCE` — sumber Canon/Admin yang menetapkan record.
+- `CHECKPOINT_RULE` — penerapan checkpoint bila perjalanan melewati batas aksi.
+- `ACCESS_CONDITION` — kondisi akses yang memang memiliki source; jangan diasumsikan.
+
+### Canon Route IDs
+ID berikut mengidentifikasi seluruh baseline route yang **sudah memiliki angka** pada registry ini. ID tidak mengubah jarak atau menciptakan route baru.
+
+#### Dataran Cangyuan
+- `TRV-CGY-001` — Kota Yunjing ↔ Kota Luoxing — 144 Li — jalan dagang — CANON-ESTABLISHED.
+- `TRV-CGY-002` — Kota Luoxing ↔ Desa Baihe — 76 Li — jalur pertanian/sungai — CANON-ESTABLISHED.
+- `TRV-CGY-003` — Kota Luoxing ↔ Kota Heiyu — 252 Li — jalur dagang/perbatasan — CANON-ESTABLISHED.
+- `TRV-CGY-004` — Desa Baihe ↔ Lembah Qinghe — 108 Li — jalan pedalaman — CANON-ESTABLISHED.
+
+#### Pegunungan Qingluan
+- `TRV-QGL-001` — Kota Lingshan ↔ Desa Yunmu — 48 Li — kaki gunung/jalur pemburu — CANON-ESTABLISHED.
+- `TRV-QGL-002` — Kota Lingshan ↔ Lembah Qingsong — 92 Li — jalur spiritual — CANON-ESTABLISHED.
+- `TRV-QGL-003` — Lembah Qingsong ↔ Puncak Tianque — 62 Li — pendakian sulit — CANON-ESTABLISHED.
+- `TRV-QGL-004` — Desa Yunmu ↔ Hutan Wuyin — 38 Li — hutan/kabut — CANON-ESTABLISHED.
+
+#### Domain Yaohuang Selatan
+- `TRV-YHS-001` — Kota Nanyao ↔ Pelabuhan Chixia — 122 Li — jalur perdagangan — CANON-ESTABLISHED.
+- `TRV-YHS-002` — Kota Nanyao ↔ Hutan Cangmang — 36 Li — pintu hutan — CANON-ESTABLISHED.
+- `TRV-YHS-003` — Hutan Cangmang ↔ Lembah Seratus Bunga — 94 Li — pedalaman/berisiko — CANON-ESTABLISHED.
+- `TRV-YHS-004` — Kota Nanyao ↔ Pegunungan Huoyan — 166 Li — jalur pegunungan — CANON-ESTABLISHED.
+
+#### Laut Dongming
+- `TRV-DGM-001` — Kota Haicheng ↔ Pulau Yuehai — 192 Li — laut utama — CANON-ESTABLISHED.
+- `TRV-DGM-002` — Pulau Yuehai ↔ Kepulauan Lanyue — 276 Li — laut antarpulau — CANON-ESTABLISHED.
+- `TRV-DGM-003` — Kota Haicheng ↔ Pulau Qionghua — 328 Li — jalur dagang spiritual — CANON-ESTABLISHED.
+- `TRV-DGM-004` — Kepulauan Lanyue ↔ Jurang Laut Canglong — 436 Li — laut dalam/ekspedisi — CANON-ESTABLISHED.
+
+#### Tanah Salju Beiming
+- `TRV-BMG-001` — Kota Beixue ↔ Benteng Hanjiang — 154 Li — jalur benteng — CANON-ESTABLISHED.
+- `TRV-BMG-002` — Benteng Hanjiang ↔ Desa Xuehe — 86 Li — jalur permukiman — CANON-ESTABLISHED.
+- `TRV-BMG-003` — Desa Xuehe ↔ Lembah Bingxin — 138 Li — ekspedisi es — CANON-ESTABLISHED.
+- `TRV-BMG-004` — Kota Beixue ↔ Reruntuhan Tianhan — 308 Li — ekspedisi utara — CANON-ESTABLISHED.
+
+#### Gurun Jinyan
+- `TRV-GJY-001` — Kota Shajing ↔ Kota Jinyue — 182 Li — jalur kafilah — CANON-ESTABLISHED.
+- `TRV-GJY-002` — Kota Shajing ↔ Oasis Qingyu — 114 Li — gurun/persinggahan — CANON-ESTABLISHED.
+- `TRV-GJY-003` — Kota Jinyue ↔ Laut Pasir Wuheng — 84 Li — ekspedisi gurun — CANON-ESTABLISHED.
+- `TRV-GJY-004` — Laut Pasir Wuheng ↔ Makam Tianri — 236 Li — gurun/ekspedisi — CANON-ESTABLISHED.
+
+#### Jantung Tianyuan
+- `TRV-TYN-001` — Kota Tianjing ↔ Kota Baiyu — 84 Li — jalan administrasi/akademi — CANON-ESTABLISHED.
+- `TRV-TYN-002` — Kota Baiyu ↔ Desa Minghe — 66 Li — jalan agrikultur — CANON-ESTABLISHED.
+- `TRV-TYN-003` — Kota Tianjing ↔ Desa Minghe — 120 Li — jalan administrasi/agrikultur — CANON-ESTABLISHED.
+
+#### Koridor Antarkawasan
+- `TRV-XRG-001` — Kota Yunjing ↔ Kota Tianjing — 1.180 Li — jalan dagang/administrasi — CANON-ESTABLISHED.
+- `TRV-XRG-002` — Kota Yunjing ↔ Kota Lingshan — 420 Li — jalan darat/kaki gunung — CANON-ESTABLISHED.
+- `TRV-XRG-003` — Kota Yunjing ↔ Kota Nanyao — 1.860 Li — jalan dagang/perbatasan — CANON-ESTABLISHED.
+- `TRV-XRG-004` — Kota Yunjing ↔ Kota Haicheng — 1.740 Li — jalan dagang + pelabuhan — CANON-ESTABLISHED.
+- `TRV-XRG-005` — Kota Yunjing ↔ Kota Beixue — 2.420 Li — jalan dagang/benteng — CANON-ESTABLISHED.
+- `TRV-XRG-006` — Kota Yunjing ↔ Kota Jinyang — 2.060 Li — jalur dagang/kafilah — CANON-ESTABLISHED.
+
+### Route Coverage Audit — Settlement Database
+Route registry **sudah memiliki baseline numerik**, tetapi tidak semua settlement pada `lore/CITY_VILLAGE_DATABASE.md` memiliki route langsung. Itu bukan izin untuk mengarang route.
+
+Settlement/lokasi yang **belum memiliki route langsung yang terdaftar** harus tetap diperlakukan sebagai `UNRESOLVED` untuk hubungan tersebut sampai Admin menetapkan route baru dengan record lengkap:
+- Kota Qingluan
+- Kota Huoyan
+- Desa Nanyue
+- Desa Xingcun
+- Desa Tiedao
+- Pos Gunung Lianfeng
+- Desa Yunhe
+- Kota Nanyao ↔ kota/settlement Yaohuang lain di luar route yang tercatat
+- Desa Nelayan Qingyu
+- Kota Haicheng ↔ Pelabuhan Donghai
+- Kota Haicheng ↔ settlement pesisir lain yang belum tercatat
+- Kota Jinyang ↔ settlement Gurun Jinyan lain yang belum tercatat
+- Kota Tianjing ↔ settlement Jantung Tianyuan lain di luar baseline yang tercatat
+
+Catatan: daftar ini adalah **coverage gap**, bukan daftar route yang boleh ditebak. Route baru membutuhkan source Admin/Cannon yang menetapkan endpoint, jarak, medan, dan sarana yang relevan.
+
+### Route Resolution Rules
+1. Endpoint harus merupakan location node yang sudah Canon atau valid runtime location.
+2. Jarak route tidak boleh dihitung sebagai garis lurus dari peta.
+3. Jika route langsung tidak terdaftar tetapi terdapat beberapa route Canon yang membentuk chain, GM hanya boleh menghitung perjalanan multi-leg jika setiap leg memang sah dan endpoint-nya tersambung.
+4. Tidak boleh membuat edge implisit hanya karena dua settlement berada dalam region yang sama.
+5. Route distance tidak menentukan durasi tanpa transport speed yang sah.
+6. Jika sarana tidak ditentukan dan durasi numerik dibutuhkan, resolution menggunakan `UNRESOLVED`/`RESOLUTION-BLOCKED`, bukan asumsi jalan kaki.
+7. Route event, encounter, weather, checkpoint, dan state update harus mengikuti runtime systems; route registry hanya menyediakan baseline geografis.
+8. Route yang belum memiliki baseline tidak boleh dibuat oleh GM hanya untuk menyelesaikan perjalanan Player.
+
+### Travel Maintenance Status
+**🟢 TRAVEL ROUTE DATABASE — BASELINE ROUTES ESTABLISHED & ROUTE-ID HARDENED**
