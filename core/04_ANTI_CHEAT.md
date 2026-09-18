@@ -47,3 +47,51 @@ Gunakan `core/07_DATA_COMPLETENESS.md`. Data yang belum ada memakai status terko
 
 ## Penegakan
 Pelanggaran pertama diberi peringatan; pengulangan mendapat konsekuensi in-character; pelanggaran berat/berulang dapat menghentikan sesi.
+
+
+## 2026-09-18 Anti-Cheat Hardening — Resolution/RNG Integrity
+
+### Random Resolution Authority
+Setiap formula yang menggunakan roll/randomness (d100, random selection, weighted selection, random encounter, random event, random loot/result) wajib memiliki RNG Source yang dapat diverifikasi pada runtime.
+
+Minimum record:
+- ROLL_ID
+- RNG_SOURCE
+- PURPOSE
+- INPUT/SEED CONTEXT
+- RESULT
+- WORLD TIME
+- ENTITY/CHARACTER ID bila relevan
+
+Aturan:
+1. GM tidak boleh memilih angka roll secara naratif.
+2. GM tidak boleh mengganti hasil roll setelah melihat konsekuensi.
+3. Satu roll yang sudah dipakai tidak boleh di-reroll tanpa mekanisme Canon yang secara eksplisit mengizinkan reroll.
+4. Roll untuk satu tujuan tidak boleh dipakai ulang untuk tujuan berbeda kecuali formula Canon menyatakan demikian.
+5. Jika RNG source tidak tersedia atau hasil tidak dapat diverifikasi, hasil random menjadi RESOLUTION-BLOCKED; jangan mengganti dengan tebakan, roll mental, atau angka yang dipilih GM.
+6. Narasi hanya boleh dibuat setelah hasil mekanis ditetapkan.
+7. RNG failure tidak boleh diubah menjadi success/failure yang menguntungkan salah satu pihak.
+
+### Modifier Non-Stacking Gate
+Numeric modifier hanya sah jika:
+- berasal dari source/formula yang menyebut modifier tersebut;
+- memiliki kategori/identity yang dapat ditelusuri;
+- memiliki nilai/bound yang ditetapkan source;
+- diterapkan paling banyak sekali untuk kategori yang sama dalam satu resolution, kecuali source secara eksplisit mengizinkan stacking;
+- tidak diduplikasi dengan nama berbeda untuk kondisi yang sama.
+
+GM tidak boleh membuat modifier baru dari narrative plausibility, keadaan terasa cocok, nama, rarity, Realm, atau kebutuhan cerita.
+
+### Custom/Admin Boundary
+Custom/Admin dapat menetapkan atau mengubah world/content mechanics yang memang menjadi scope file Custom/Admin, tetapi tidak boleh melemahkan identity/save isolation, Origin/History requirements, fresh-fetch requirement, State Validator/Save Pipeline gates, Data Completeness rules, anti-cheat/RNG integrity, atau status RESOLUTION-BLOCKED kecuali ada amendment Admin/Core yang eksplisit pada authority yang bersangkutan.
+
+Custom content tidak boleh menjadi jalur bypass untuk Core integrity.
+
+### Resolution Finality
+Setelah RESOLUTION ditetapkan:
+RESOLUTION → CONSEQUENCE → BEFORE/AFTER → ORIGIN → SAVE
+
+Tidak boleh:
+RESOLUTION → narrative rewrite → reroll → altered result.
+
+Setiap audit/runtime yang menemukan konflik atau celah yang memungkinkan GM memilih hasil setelah melihat konsekuensi harus memperlakukannya sebagai integrity defect dan menahan state-changing resolution sampai source/authority diperbaiki.
