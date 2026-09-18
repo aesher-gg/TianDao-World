@@ -95,3 +95,4 @@ Tidak boleh:
 RESOLUTION → narrative rewrite → reroll → altered result.
 
 Setiap audit/runtime yang menemukan konflik atau celah yang memungkinkan GM memilih hasil setelah melihat konsekuensi harus memperlakukannya sebagai integrity defect dan menahan state-changing resolution sampai source/authority diperbaiki.
+undefined
