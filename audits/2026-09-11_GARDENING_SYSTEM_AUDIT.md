@@ -51,8 +51,8 @@
 
 ## 7. Runtime Safety Rules Added
 1. Do not invent garden numbers without a cause.
-2. Do not make ordinary plants mature beyond the 10-day standard cap.
-3. Do not make spiritual plants mature beyond the 60-day standard cap unless an Admin rule explicitly overrides it.
+2. Do not make ordinary plants mature beyond the 7-day cap.
+3. Do not make spiritual plants mature beyond the 15-day cap.
 4. Do not harvest before valid maturity/time.
 5. Do not use hidden time-skip to mature crops.
 6. Do not duplicate seeds or harvest without a valid source.
