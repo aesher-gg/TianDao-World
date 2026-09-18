@@ -561,6 +561,130 @@ Actual loot tetap mengikuti `systems/18_LOOT.md` dan `systems/25_DYNAMIC_GENERAT
 - Special Material: tidak ada default.
 - Core: Tidak ada.
 
+
+## Fixed Entries — Maintenance Expansion 2026-09-18
+> Batch maintenance ini menambah niche ekologis baru tanpa membuat Item ID baru. Setiap entry memiliki Bibit, Bebet, Bobot, dan Loot Profile. Loot tetap possible source; actual drop tunduk pada Module 18/25.
+
+### BST-017 — Bangau Rawa Cangyuan
+- Tier: 1
+- Region/Habitat: Dataran Cangyuan — rawa, sawah basah, dan tepian sungai tenang.
+- Bibit / Origin: burung air lokal yang berkembang pada lahan basah Cangyuan; bukan hasil summon atau eksperimen.
+- Bebet / Acquisition: mencari ikan kecil, katak, dan hewan air dangkal; sarang/koloni hanya ada bila kondisi habitat mendukung.
+- Bobot / World Impact: mengendalikan sebagian populasi hewan air kecil dan serangga sawah; perubahan populasinya dapat menjadi indikator gangguan lahan basah.
+- Konsep: waspada, mampu terbang jauh, menghindari manusia kecuali sarang diganggu.
+- Loot Profile: daging, bulu, paruh, cakar bila harvest sah.
+- Special Material: tidak ada default.
+- Acquisition: Harvest.
+- Condition: bulu/sayap dapat rusak; bagian kecil dapat hilang akibat metode harvest.
+- Core: Tidak ada.
+
+### BST-018 — Kijang Hutan Qingluan
+- Tier: 1
+- Region/Habitat: Pegunungan Qingluan — kaki gunung dan hutan terbuka dengan vegetasi rendah.
+- Bibit / Origin: herbivora lokal yang berkembang dari populasi kijang pegunungan; tidak memiliki asal spiritual khusus.
+- Bebet / Acquisition: kawanan kecil mengikuti sumber air dan vegetasi; dapat menjadi mangsa predator lokal.
+- Bobot / World Impact: menyebarkan biji dan menjadi mangsa penting predator hutan; perubahan kawanan memengaruhi jalur pemburu dan tekanan predator.
+- Konsep: cepat, pemalu, mengandalkan pendengaran dan lari zig-zag.
+- Loot Profile: daging, kulit, bulu, tanduk, kuku bila harvest sah.
+- Canon Item Mapping: `ITEM-MAT-003` Kulit Binatang Biasa — hanya kulit/fur yang memenuhi source condition item.
+- Special Material: tidak ada default.
+- Acquisition: Harvest.
+- Condition: kulit/bulu dapat rusak; tanduk dapat patah.
+- Core: Tidak ada.
+
+### BST-019 — Ikan Batu Dongming
+- Tier: 1
+- Region/Habitat: Laut Dongming — perairan dangkal berbatu dan terumbu dekat pesisir Lanyue.
+- Bibit / Origin: ikan laut lokal yang beradaptasi dengan dasar berbatu dan kamuflase alami.
+- Bebet / Acquisition: menetap di celah batu dan berburu hewan air kecil; tidak muncul otomatis pada seluruh Laut Dongming.
+- Bobot / World Impact: bagian dari rantai makanan pesisir dan mangsa predator laut; kelimpahannya dapat memengaruhi hasil tangkapan lokal.
+- Konsep: lambat tetapi sulit terlihat, mengandalkan penyamaran.
+- Loot Profile: daging, sisik, sirip, tulang bila harvest sah.
+- Special Material: tidak ada default.
+- Acquisition: Harvest.
+- Condition: sisik/tubuh dapat rusak oleh alat atau metode penangkapan.
+- Core: Tidak ada.
+
+### BST-020 — Kadal Garam Jinyan
+- Tier: 1
+- Region/Habitat: Gurun Jinyan — tepian oasis mineral dan batuan yang menerima embun malam.
+- Bibit / Origin: reptil gurun lokal yang beradaptasi pada air mineral dan garam mikrohabitat oasis.
+- Bebet / Acquisition: aktif pada waktu yang sesuai suhu; berlindung di celah batu dan tidak hidup di gurun tanpa sumber air.
+- Bobot / World Impact: predator serangga kecil dan sumber pangan bagi burung/reptil yang lebih besar; perubahan populasinya dapat mengikuti perubahan mikrohabitat oasis.
+- Konsep: cepat, pemalu, menggunakan warna tubuh untuk kamuflase.
+- Loot Profile: daging, kulit, sisik, cakar bila harvest sah.
+- Special Material: tidak ada default.
+- Acquisition: Harvest.
+- Condition: kulit/sisik dapat rusak saat penangkapan.
+- Core: Tidak ada.
+
+### SB-024 — Ikan Koi Awan Cangyuan
+- Tier: 2
+- Region/Habitat: Dataran Cangyuan — kolam, kanal, dan bagian sungai yang tenang dengan kualitas air sesuai.
+- Bibit / Origin: Spirit Beast ikan air tawar yang berkembang alami pada jalur air Cangyuan; bukan hasil pemeliharaan atau kontrak kecuali ada sumber terpisah.
+- Bebet / Acquisition: hidup berkelompok kecil di perairan tenang; perpindahan mengikuti kualitas air, musim, dan sumber makanan.
+- Bobot / World Impact: memakan organisme air kecil dan ikut memindahkan nutrien antarbagian perairan; keberadaannya dapat memengaruhi nilai ekonomi tangkapan lokal.
+- Konsep: tenang, waspada terhadap gangguan, memiliki pola sisik yang berbeda antarindividu.
+- Growth Potential: sedang.
+- Spiritual Affinity: water descriptor; tidak memberi technique otomatis.
+- Loot Profile: daging, sisik, sirip bila acquisition sah.
+- Special Material: tidak ada default.
+- Acquisition: Harvest.
+- Condition: sisik/sirip dapat rusak.
+- Core: Tidak ada.
+
+### SB-025 — Lebah Roh Seratus Bunga
+- Tier: 2
+- Region/Habitat: Domain Yaohuang Selatan — Lembah Seratus Bunga dan habitat bunga yang benar-benar mendukung koloni.
+- Bibit / Origin: Spirit Beast penyerbuk yang berkembang bersama vegetasi berbunga lokal; bukan manifestasi dari satu bunga tertentu.
+- Bebet / Acquisition: hidup dalam koloni; sarang harus benar-benar ditemukan dan tidak dapat dianggap tersedia hanya karena karakter berada di Lembah Seratus Bunga.
+- Bobot / World Impact: membantu penyerbukan tanaman dan menjadi penghubung antara vegetasi, hasil kebun, dan produksi madu; gangguan koloni dapat berdampak pada tanaman sekitar.
+- Konsep: defensif terhadap sarang, aktif mengikuti sumber bunga.
+- Growth Potential: sedang; perkembangan koloni bergantung habitat dan nutrisi.
+- Spiritual Affinity: wood/flower descriptor.
+- Loot Profile: madu hanya bila sarang benar-benar dapat dipanen; material sarang/lilin hanya bila metode acquisition mendukung.
+- Canon Item Mapping: `ITEM-HERB-004` Madu Seratus Bunga — hanya madu yang memenuhi source condition regional resource; tidak mengubah lebah menjadi source otomatis untuk setiap madu di wilayah.
+- Acquisition: Collection/Harvest.
+- Condition: kerusakan sarang atau gangguan koloni dapat menurunkan/meniadakan hasil.
+- Core: Tidak ada.
+
+### SB-026 — Kambing Salju Beiming
+- Tier: 2
+- Region/Habitat: Tanah Salju Beiming — lereng berbatu, padang salju, dan jalur vegetasi tahan dingin.
+- Bibit / Origin: Spirit Beast herbivora yang berkembang alami pada populasi kambing gunung Beiming.
+- Bebet / Acquisition: kawanan kecil berpindah mengikuti vegetasi dan perlindungan batu; tidak muncul pada dataran es tanpa sumber pakan.
+- Bobot / World Impact: pemakan vegetasi dan mangsa predator salju; jalur perpindahannya dapat memengaruhi rute pemburu dan pemetaan sumber pangan.
+- Konsep: kuat memanjat, defensif ketika terpojok.
+- Growth Potential: sedang.
+- Spiritual Affinity: cold/earth descriptor.
+- Loot Profile: daging, kulit, bulu, tanduk, kuku bila acquisition sah.
+- Canon Item Mapping: `ITEM-MAT-010` Kulit Dingin Beiming — hanya kulit/fur yang memenuhi source condition item.
+- Acquisition: Harvest.
+- Condition: bulu/kulit dapat rusak; tanduk dapat patah.
+- Core: Tidak ada.
+
+### SB-027 — Kerang Bulan Lanyue
+- Tier: 2
+- Region/Habitat: Laut Dongming — dasar dangkal berbatu/berkarang di sekitar Kepulauan Lanyue.
+- Bibit / Origin: Spirit Beast moluska yang berkembang alami pada habitat pasang-surut Lanyue.
+- Bebet / Acquisition: menetap pada substrat yang sesuai dan bergerak mengikuti kondisi pasang; individu hanya dapat ditemukan bila habitat benar-benar mendukung.
+- Bobot / World Impact: menyaring partikel air dan menjadi bagian dari rantai makanan pesisir; kepadatan koloni dapat memengaruhi mikrohabitat dasar laut.
+- Konsep: lambat, defensif, cangkang keras; tidak agresif tanpa gangguan.
+- Growth Potential: stabil.
+- Spiritual Affinity: water/earth descriptor.
+- Loot Profile: cangkang, daging, jaringan lunak bila harvest sah.
+- Canon Item Mapping: `ITEM-MAT-014` Cangkang Karang Lanyue — hanya cangkang yang memenuhi source condition organisme laut bercangkang; bukan setiap batu karang.
+- Acquisition: Harvest/Collection.
+- Condition: cangkang dapat retak atau hancur; habitat access tetap diperlukan.
+- Core: Tidak ada.
+
+## Maintenance Expansion Loot Gate
+- Setiap BST-017—BST-020 dan SB-024—SB-027 memiliki Loot Profile eksplisit.
+- Existing Item Mapping hanya digunakan ketika source condition item benar-benar cocok; tidak ada Item ID baru yang dibuat pada batch ini.
+- Special Material yang tidak memiliki Item Canon tidak dipaksa menjadi Item Canon.
+- Actual loot tetap: Creature/Source → Valid Acquisition → Loot Potential → Loot Candidate → Item Identity Gate → Origin → Item Instance.
+- Bibit/Bebet/Bobot adalah basis canon creature; ketiganya tidak memberikan loot instance, currency, ability, ownership, atau reward secara otomatis.
+
 ## Provenance & World-Impact Gate for Fixed Creatures
 Untuk seluruh BST-011—BST-016 dan SB-016—SB-023:
 1. **Bibit:** species harus memiliki asal ekologis/geografis yang eksplisit; tidak boleh berasal dari summon, eksperimen, atau sejarah tersembunyi tanpa Canon.
