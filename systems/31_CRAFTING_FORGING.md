@@ -150,3 +150,7 @@ Recipe berikut dibuat karena masing-masing memiliki input regional yang jelas da
 - Purpose: weapon dasar; quality ceiling dan performance mengikuti source produksi, bukan nama Huoyan saja
 
 Semua recipe tunduk pada Module 31: material, recipe, qualification, tool/workspace, cost, time, validation, resolution, Origin dan Save tetap wajib.
+
+
+## 2026-09-18 Item Grade Integration
+Every produced Item has an ITEM_GRADE. Recipe output must reference a Canon Item Identity whose grade is registered in Module 14, or explicitly establish an output grade through an Admin Canon source before runtime execution. Crafting/forging success does not automatically increase grade. Material quantity, Character Realm, tool quality, market price, or narrative difficulty cannot create a higher grade unless the recipe/method explicitly defines the grade transition.
