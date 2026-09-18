@@ -47,7 +47,7 @@ Modul ini adalah penghubung resmi antar-modul. Ia tidak menambah mekanik baru. I
 | 17 Reputation | 08 Organizations; 10 Economy; NPC/social/event resolution; 16 Karma where relevant |
 | 18 Loot | 12 Combat; 13 Monsters; Events/Missions; 14 Items; 10 Economy; 08 Organizations; 16 Karma; 17 Reputation; 25 Dynamic Generation; Save Integrity |
 | 19 Regional Monster Ecosystem | World Map; 20 Travel; Time; 11 Vitality; 12 Combat; 18 Loot; 10 Economy; 16 Karma; 17 Reputation; Events; 24 Spirit Beast; 25 Dynamic Generation |
-| 20 Travel Routes | World Map; Time; Action; 11 Vitality; 10 Economy; 13 Monsters; Factions; Events |
+| 20 Travel Routes | World Map; Time; Action; 11 Vitality; 10 Economy; 13 Monsters; Factions; Events; 09 Cultivation; 15 Techniques |
 | 21 Regional Economy | 14 Items; 18 Loot; 08 Organizations; Factions; 20 Travel; Time; 17 Reputation; 16 Karma; Events |
 | 22 Regional Faction Relations | 08 Organizations/Factions; 17 Reputation; 16 Karma; Economy/contracts; Events |
 | 23 Gardening | 03 Action; Time; 14 Items; 10 Economy; 20 Travel where location/supply matters; 32 Alchemy when alchemical processing is actually involved |
