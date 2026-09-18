@@ -238,3 +238,31 @@ Item regional tidak berhenti sebagai collectible. Path berikut menetapkan hubung
 - ITEM-WPN-003 Bilah Besi Huoyan — Weapon — hasil PATH-ITEM-006.
 
 Output hanya dapat dibuat melalui recipe/procedure yang valid; penetapan identity tidak memberikan instance gratis.
+
+
+
+## 4D. PRODUCTION OUTPUT CANON REGISTRY — CROSS-MODULE ITEM IDENTITY
+
+> Registry ini adalah authority identity untuk seluruh output item yang telah ditetapkan oleh Admin melalui Module 31/32. Recipe/formula menentukan cara memperoleh output; Module 14 tetap menentukan identity, kategori, baseline function, dan boundary Item State. Registry ini tidak membuat instance item secara otomatis.
+
+| Item ID | Nama | Kategori | Output Source | Baseline Function | Instance Status |
+|---|---|---|---|---|---|
+| ITEM-CRAFT-001 | Tali Serat Cangyuan | Material/Tool Component | RECIPE-CRAFT-001 / PATH-ITEM-001 | tali/ikat untuk crafting dan perjalanan | NOT-INSTANTIATED |
+| ITEM-EQP-001 | Mantel Kulit Dingin | Equipment/Clothing | RECIPE-CRAFT-002 / PATH-ITEM-002 | pakaian dingin; efek perlindungan hanya jika equipment source menetapkannya | NOT-INSTANTIATED |
+| ITEM-CRAFT-002 | Blank Giok Ukir | Material/Component | RECIPE-CRAFT-003 / PATH-ITEM-003 | bahan setengah jadi untuk ukiran/formation yang kompatibel | NOT-INSTANTIATED |
+| ITEM-CRAFT-003 | Manik Mutiara Dongming | Material/Accessory Component | RECIPE-CRAFT-004 / PATH-ITEM-004 | komponen aksesori/perdagangan | NOT-INSTANTIATED |
+| ITEM-CRAFT-004 | Lempeng Cangkang Lanyue | Material/Component | RECIPE-CRAFT-005 / PATH-ITEM-005 | komponen kerajinan keras | NOT-INSTANTIATED |
+| ITEM-WPN-003 | Bilah Besi Huoyan | Weapon | RECIPE-CRAFT-006 / PATH-ITEM-006 | weapon dasar; quality/performance mengikuti source produksi | NOT-INSTANTIATED |
+| ITEM-ALC-001 | Bubuk Pengawet Qingluan | Alchemy Material | FORMULA-ALC-004 | bahan pengawet/proses material | NOT-INSTANTIATED |
+| ITEM-ALC-002 | Bubuk Jamur Wuyin | Alchemy Material | FORMULA-ALC-005 | bahan alchemy/obat untuk formula yang secara eksplisit kompatibel | NOT-INSTANTIATED |
+| ITEM-ALC-003 | Sirup Madu Seratus Bunga | Consumable/Alchemy Material | FORMULA-ALC-006 | bahan consumable/alchemy; tidak menetapkan pemulihan HP/Qi numerik | NOT-INSTANTIATED |
+
+### 4D.1 Identity Boundary
+1. Item ID pada registry ini adalah content identity, bukan instance ownership.
+2. NOT-INSTANTIATED berarti belum ada instance runtime yang sah; recipe/formula tidak memberikan item gratis.
+3. Setelah produksi berhasil, instance wajib memiliki Item State aktual, Origin, claimant/owner, World Time, quantity, dan perubahan kepemilikan sesuai Module 14 + Save Pipeline.
+4. Output yang gagal/defective hanya menggunakan identity ini bila hasil mekanis/source memang menetapkan output tersebut; tidak boleh dipaksakan menjadi success.
+5. Kategori, fungsi, quality, durability, effect, rarity, dan market value tidak boleh diinfer dari nama output.
+6. Output Source menjaga traceability dari identity ke recipe/formula; actual acquisition tetap ditentukan oleh production resolution.
+7. Module 31/32 tetap menjadi authority process/recipe/formula. Module 14 menjadi authority identity/state/provenance boundary.
+8. Production output tidak menjadi Global Canon instance hanya karena registry identity ditetapkan.
