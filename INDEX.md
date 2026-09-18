@@ -92,6 +92,7 @@
 - `audits/2026-09-17_UNRESOLVED_CANON_AUDIT.md` — static Canon gap vs runtime/discovery unresolved audit
 - `audits/2026-09-18_ALL_MODULE_FIELD_MAINTENANCE.md` — repository-wide field maintenance: source tracing, static Canon vs runtime classification, cross-reference sync, and verification
 - `audits/2026-09-18_ITEM_PRODUCTION_SYSTEM_INTEGRITY.md` — item → loot → production → economy → runtime → save integrity audit
+- `audits/2026-09-18_GLOBAL_ANTI_CHEAT_AUDIT.md` — repository-wide GM exploit, randomness, modifier, dynamic resolution, and anti-cheat integrity audit
 
 ## Factions — Canon Databases
 - `factions/sects/00_SECT_DATABASE.md`
