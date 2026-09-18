@@ -136,7 +136,7 @@ Memastikan state dan persistent memory merupakan hasil transisi sah, termasuk dy
 - [ ] Production result tidak memberikan ability/effect/quality/tier yang tidak memiliki source.
 
 ## Post-Resolution
-- [ ] Time, cost, HP/Qi/Stamina/Satiety, lokasi, inventory, equipment, currency, Karma/Reputation tepat.
+- [ ] Time, cost, HP/Qi/Stamina/Satiety, Satiety State, lokasi, inventory, equipment, currency, Karma/Reputation tepat; Satiety State cocok dengan threshold Canonical Vitality.
 - [ ] NPC reaction sesuai knowledge/agenda/autonomy.
 - [ ] Event berubah hanya melalui trigger/resolution sah.
 - [ ] Quest progress/reward sesuai resolusi.
