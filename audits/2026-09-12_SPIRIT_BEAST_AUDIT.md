@@ -201,3 +201,33 @@ Audit dilakukan satu per satu terhadap seluruh 39 fixed creature entries (16 Mon
 - Special materials seperti Air Mata Naga Sungai, Bulu Kabut Kelabu, Racun Zamrud, Kulit Loreng Utuh, dan Bulu Bara tetap konsep loot dan belum menjadi Item Canon.
 - Actual loot chain tetap: Creature/Source → Valid Acquisition → Loot Potential → Loot Candidate → Item Identity Gate → Origin → Item Instance.
 - Tidak ada Item Canon baru dan generic loot tables tidak diubah.
+
+
+## Maintenance Expansion — Creature + Loot Profile — 2026-09-18
+
+### Admin Objective
+Menambah fixed Monster/Spirit Beast baru hanya jika setiap entry memiliki **Bibit + Bebet + Bobot + Loot Profile** yang dapat ditelusuri. Batch ini tidak membuat Item ID baru.
+
+| ID | Creature | Bibit | Bebet | Bobot | Loot Profile | Existing Item Mapping |
+|---|---|---|---|---|---|---|
+| BST-017 | Bangau Rawa Cangyuan | Burung air lokal Cangyuan | Rawa/sawah basah/sungai tenang; encounter mengikuti habitat | Kontrol hewan air/serangga dan indikator kesehatan lahan basah | daging, bulu, paruh, cakar | none; biological loot |
+| BST-018 | Kijang Hutan Qingluan | Herbivora lokal kaki gunung | Kawanan kecil mengikuti air/vegetasi | Penyebar biji + mangsa predator; memengaruhi jalur pemburu | daging, kulit, bulu, tanduk, kuku | ITEM-MAT-003 untuk kulit/fur yang memenuhi source condition |
+| BST-019 | Ikan Batu Dongming | Ikan laut lokal berbatu | Celah batu/perairan dangkal yang sesuai | Rantai makanan pesisir dan suplai tangkapan | daging, sisik, sirip, tulang | none; biological loot |
+| BST-020 | Kadal Garam Jinyan | Reptil gurun lokal | Oasis mineral/celah batu dengan kelembapan cukup | Predator serangga + indikator mikrohabitat oasis | daging, kulit, sisik, cakar | none; biological loot |
+| SB-024 | Ikan Koi Awan Cangyuan | Spirit Beast ikan air tawar lokal | Kolam/kanal/sungai tenang dengan kualitas air sesuai | Memengaruhi nutrien dan ekonomi tangkapan lokal | daging, sisik, sirip | none; biological loot |
+| SB-025 | Lebah Roh Seratus Bunga | Spirit Beast penyerbuk lokal | Koloni dan sarang harus benar-benar ditemukan | Penyerbukan, vegetasi, dan produksi madu | madu; material sarang/lilin bila acquisition mendukung | ITEM-HERB-004 untuk madu yang memenuhi source condition |
+| SB-026 | Kambing Salju Beiming | Spirit Beast herbivora lokal | Kawanan mengikuti vegetasi/perlindungan lereng | Tekanan vegetasi, mangsa predator, rute pemburu | daging, kulit, bulu, tanduk, kuku | ITEM-MAT-010 untuk kulit/fur yang memenuhi source condition |
+| SB-027 | Kerang Bulan Lanyue | Spirit Beast moluska pasang-surut | Dasar dangkal berbatu/berkarang yang sesuai | Penyaringan air + pembentukan mikrohabitat pesisir | cangkang, daging, jaringan lunak | ITEM-MAT-014 untuk cangkang yang memenuhi source condition |
+
+### Validation Result
+- **8/8** entry memiliki Bibit, Bebet, dan Bobot eksplisit.
+- **8/8** entry memiliki Loot Profile eksplisit.
+- **4** existing Item Mapping digunakan hanya jika source condition terpenuhi.
+- **0 Item ID baru** dibuat.
+- Tidak ada loot instance, Character State, Beast State, Monster State, ownership, contract, ability, atau reward yang tercipta dari penambahan canon ini.
+- Loot tetap tunduk pada `systems/18_LOOT.md` dan `systems/25_DYNAMIC_GENERATION.md`.
+- Special/biological material tanpa Item Canon tetap dapat berstatus `UNRESOLVED` pada Item Identity Gate; tidak boleh dipaksakan menjadi item.
+- Fixed Bestiary tetap tidak membatasi Dynamic Generation.
+
+### Maintenance Decision
+Batch ini **VALID sebagai Admin Canon expansion** karena setiap creature memiliki ecological provenance dan loot source yang eksplisit, sementara Item Canon tidak diperluas secara arbitrer.
