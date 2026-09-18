@@ -101,3 +101,52 @@ Crafting lintas turn atau perubahan material/item yang material wajib melewati S
 
 ## DATA COMPLETENESS PRODUCTION GATE
 Recipe, blueprint, procedure, skill, qualification, tool, workspace, cost, quality, dan result hanya boleh berasal dari source yang sah atau mekanisme improvisasi yang secara eksplisit didukung source. Improvisasi yang sekadar membuat crafting berhasil dilarang. Missing required input → RESOLUTION-BLOCKED; unknown non-required field → status resmi.
+
+## 14. ADMIN CANON — REGIONAL CRAFTING RECIPES
+
+Recipe berikut dibuat karena masing-masing memiliki input regional yang jelas dan output yang mempunyai kegunaan lanjutan. Recipe bukan skill/qualification otomatis.
+
+### RECIPE-CRAFT-001 — Tali Serat Cangyuan
+- Input: ITEM-MAT-013 Serat Sungai Cangyuan ×2
+- Tool: alat pemintal/anyam yang valid
+- Process: pengeringan → pemintalan → pemilinan → pengikatan
+- Output: ITEM-CRAFT-001 Tali Serat Cangyuan ×1
+- Cost: seluruh input dikonsumsi; waktu proses mengikuti resolution produksi yang valid
+- Quality: Basic bila seluruh requirement terpenuhi dan tidak ada failure
+
+### RECIPE-CRAFT-002 — Mantel Kulit Dingin Beiming
+- Input: ITEM-MAT-010 Kulit Dingin Beiming ×2 + ITEM-MAT-013 Serat Sungai Cangyuan ×1
+- Tool: jarum/peralatan jahit yang valid
+- Process: pemotongan → fitting → jahit → finishing
+- Output: ITEM-EQP-001 Mantel Kulit Dingin ×1
+- Effect: tidak menambahkan resistance numerik; fungsi pakaian dingin mengikuti equipment rules yang terpisah
+
+### RECIPE-CRAFT-003 — Blank Giok Ukir
+- Input: ITEM-MAT-012 Pecahan Giok Baiyu ×3
+- Tool: alat pemotong/pemoles giok yang valid
+- Process: sortir → pemotongan → perataan → pemolesan kasar
+- Output: ITEM-CRAFT-002 Blank Giok Ukir ×1
+- Purpose: input untuk recipe ukiran/formation yang kompatibel; tidak memberi efek formation otomatis
+
+### RECIPE-CRAFT-004 — Manik Mutiara Dongming
+- Input: ITEM-MAT-009 Mutiara Pasang Dongming ×1
+- Tool: bor/pemoles material yang valid
+- Process: pengeboran → pemolesan → finishing
+- Output: ITEM-CRAFT-003 Manik Mutiara Dongming ×1
+- Purpose: komponen aksesori/perdagangan; tidak menetapkan nilai pasar tetap
+
+### RECIPE-CRAFT-005 — Lempeng Cangkang Lanyue
+- Input: ITEM-MAT-014 Cangkang Karang Lanyue ×2
+- Tool: alat potong/poles yang valid
+- Process: pembersihan → pemotongan → perataan → finishing
+- Output: ITEM-CRAFT-004 Lempeng Cangkang Lanyue ×1
+- Purpose: komponen kerajinan; efek armor/defense harus berasal dari recipe/equipment source
+
+### RECIPE-CRAFT-006 — Bilah Besi Huoyan
+- Input: ITEM-MAT-001 Bijih Besi Kasar ×2 + ITEM-MAT-008 Terak Besi Api Huoyan ×1
+- Tool: forge/workspace valid
+- Process: peleburan → pemurnian → penempaan → pendinginan
+- Output: ITEM-WPN-003 Bilah Besi Huoyan ×1
+- Purpose: weapon dasar; quality ceiling dan performance mengikuti source produksi, bukan nama Huoyan saja
+
+Semua recipe tunduk pada Module 31: material, recipe, qualification, tool/workspace, cost, time, validation, resolution, Origin dan Save tetap wajib.
