@@ -75,3 +75,13 @@ Jika satu aksi mengubah Character + NPC + Event + Quest + Reward, setiap entity 
 
 ## Recovery
 Tidak boleh memundurkan waktu, menghapus konsekuensi, atau menciptakan aset/memory tanpa source. Jika write-back gagal atau verifikasi gagal, tandai `PENDING SYNC`; perubahan belum menjadi Repository Saved.
+
+### Monster / Ecological Persistence
+Monster encounter-only tidak memerlukan save entity. Monster yang menjadi recurring/material wajib memakai `MONSTER_ID` stabil, Current Monster State, dan Monster History melalui persistence gate pada `systems/13_MONSTERS.md`.
+
+Canonical paths:
+- `characters/monster_registry.md`
+- `characters/monsters/<MONSTER_ID>.md`
+- `monster_history/<MONSTER_ID>_HISTORY.md`
+
+Untuk perubahan persistent Monster, save wajib menyimpan before→after, Origin, dan History. Jika ecological consequence juga material, persist hanya pada World/Regional state yang benar-benar tersedia; jangan membuat population/resource numeric fallback tanpa source/formula.
