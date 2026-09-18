@@ -444,3 +444,42 @@ Bagian ini menetapkan source Canon numerik untuk kecepatan terbang. Record di ba
 
 ### Precedence Amendment
 For Flight Eligibility, this section supersedes the earlier generic statement that high Realm alone never grants flight: **Realm 4 is the explicit Canon exception because it grants intrinsic Flight Capability, not a Technique.**
+
+## 20C-1C — Canon Intrinsic Flight Speed Source Registry
+**Source ID:** `AERIAL-INTRINSIC-SPEED-BASELINE-001`  
+**Source Type:** Admin Canon  
+**Authority:** `systems/20_TRAVEL_ROUTES.md`  
+**Status:** CANON-ESTABLISHED
+
+### Intrinsic Flight Speed Table
+| SPEED_ID | Realm | Flight Capability | Baseline Speed |
+|---|---|---|---:|
+| `FLY-INTRINSIC-SPEED-004` | Realm 4 — Core Formation | Intrinsic Flight | **100 Li/jam** |
+| `FLY-INTRINSIC-SPEED-005` | Realm 5 — Nascent Soul | Intrinsic Flight | **200 Li/jam** |
+| `FLY-INTRINSIC-SPEED-006` | Realm 6 — Soul Transformation | Intrinsic Flight | **400 Li/jam** |
+| `FLY-INTRINSIC-SPEED-007` | Realm 7 — Void Severing | Intrinsic Flight | **800 Li/jam** |
+| `FLY-INTRINSIC-SPEED-008` | Realm 8 — Tribulation Crossing | Intrinsic Flight | **1.200 Li/jam** |
+| `FLY-INTRINSIC-SPEED-009` | Realm 9 — Immortal Ascension | Intrinsic Flight | **2.000 Li/jam** |
+
+### Authority & Anti-Exploitation Rules
+1. The table defines the **baseline normal speed** of intrinsic flight. It does not create the Flight Capability; eligibility comes from `FLY-INTRINSIC-001`.
+2. A Character must actually be at the listed Realm and have a validated current Realm State before the corresponding speed may be used.
+3. A higher Realm does not permit use of a lower or higher tier arbitrarily. Use the speed matching the Character's current Realm unless another Canon source explicitly overrides it.
+4. These values are **not Technique speeds** and must never be recorded as acquisition of `FLY-SRC-001` through `FLY-SRC-008`.
+5. A Character at Realm 4+ does not need to possess a flight Technique to use the intrinsic baseline.
+6. Technique, artifact, item, mount, Spirit Beast, or other flight sources remain separate. They may define a different speed only when their own source is valid.
+7. No stacking of intrinsic speed with Technique speed, artifact speed, mount speed, or other movement speed unless Canon explicitly authorizes the combination.
+8. The values are baseline normal-flight speeds. No numeric bonus/penalty for weather, altitude, barrier, combat, load, injury, Qi consumption, or other conditions may be invented.
+9. Speed alone does not establish maximum range, flight duration, Qi/Stamina cost, altitude, maneuverability, combat performance, or environmental resistance. Those fields remain `UNRESOLVED` until separately sourced.
+10. Aerial distance remains governed by an aerial-distance source. Surface route distance and straight-line geometry must not be substituted.
+11. If Character Realm is unresolved, intrinsic flight speed is `UNRESOLVED`; do not infer it from narrative context.
+12. If the Character is Realm 4+ but the aerial route distance is unresolved, flight eligibility and speed may be validated while travel duration remains `UNRESOLVED`.
+
+### Resolution
+`Realm 4+ + FLY-INTRINSIC-001 + matching SPEED_ID + AERIAL-DISTANCE-DEFINED` → numeric intrinsic-flight travel duration may be calculated.
+
+`Realm 4+ + FLY-INTRINSIC-001 + matching SPEED_ID + AERIAL-DISTANCE-UNRESOLVED` → duration `UNRESOLVED`.
+
+`Realm <4` → no intrinsic flight eligibility.
+
+`Named Flight Technique` → resolve through its own Technique Origin and `FLY-SRC-*`; do not substitute intrinsic speed as proof of technique acquisition.
