@@ -498,3 +498,65 @@ Module 14 juga menambahkan REFPROP-MAT-001-001 — METAL_FORMABILITY = BASIC den
 Catatan: ini bukan berarti seluruh refinement system sudah memiliki katalog lengkap. Source lain tetap UNRESOLVED / RESOLUTION-BLOCKED sampai source Canon konkret ditambahkan.
 
 Next dependency: **🟡 Refinement Outcome Expansion & Source Coverage Audit** — memperluas source secara terkontrol hanya untuk material/property/dimension yang memang memiliki dasar Canon.
+
+
+## 2026-09-18 Refinement Outcome Expansion & Source Coverage Audit
+
+### Objective
+Tahap ini mengecek apakah material Canon dan refinement dimension yang sudah ada memiliki dasar yang cukup untuk dibuat menjadi **source refinement Canon tambahan**. Audit ini bukan perintah untuk membuat katalog upgrade otomatis.
+
+### Coverage Rule
+Material hanya dapat memperoleh source refinement baru bila seluruh rantai berikut dapat ditetapkan tanpa inferensi:
+
+`Material → Target Existing Item → Property Dimension → Compatibility → Bound → Qualification → Process Conditions → Outcome Model → Consumption/Failure`
+
+Jika salah satu komponen required belum memiliki source yang sah, kandidat tidak dibuat sebagai executable Canon dan tetap `UNRESOLVED` atau `RESOLUTION-BLOCKED` sesuai Module 07.
+
+### Current Material / Refinement Coverage
+
+| Material | Baseline Canon | Refinement Source | Candidate Dimension | Audit Result |
+|---|---|---|---|---|
+| `ITEM-MAT-001` Bijih Besi Kasar | bahan logam umum | `SRC-REF-001` | `CONDITION` | **COVERED** — source executable terbatas pada metal Weapon dan transition `DAMAGED → SERVICEABLE` / `SERVICEABLE → SERVICEABLE` |
+| `ITEM-MAT-002` Kayu Keras Cangyuan | bahan konstruksi umum | belum ada | CONDITION / structural property | **NOT READY** — tidak ada target existing Item Canon yang secara eksplisit menetapkan konstruksi kayu untuk source ini; jangan membuat target atau effect baru hanya untuk mengisi coverage |
+| `ITEM-MAT-003` Kulit Binatang Biasa | bahan kulit umum | belum ada | CONDITION / structural property | **NOT READY** — belum ada target existing Item Canon dan method yang menetapkan penggunaan refinement kulit |
+| `ITEM-MAT-004` Taring Binatang Biasa | komponen material umum | belum ada | structural / edge property | **BLOCKED FOR EXPANSION** — tidak ada property source, compatibility rule, target item, atau bound Canon yang cukup untuk menetapkan perubahan |
+| `ITEM-MAT-005` Serat Rami | bahan tali/kerajinan | belum ada | structural property | **NOT READY** — baseline hanya menetapkan fungsi umum; belum ada target refinement existing item dan bound source |
+| `ITEM-MAT-006` Batu Api | sumber api sederhana / tool | belum ada | condition/property | **NOT A REFINEMENT PRIORITY** — fungsi Canon saat ini adalah tool/source api sederhana, bukan source material refinement existing item |
+| Herb / Consumable Canon | bahan herbal / consumable | belum ada refinement source | effect/property | **OUT OF CURRENT REFINEMENT SCOPE** — Module 34 tidak boleh mengubah fungsi alchemy/medical item tanpa source domain yang tepat |
+
+### Dimension Coverage
+
+| Refinement Dimension | Status | Reason |
+|---|---|---|
+| `CONDITION` | **CANON-COVERED** | `SRC-REF-001` memberi transition kualitatif yang eksplisit |
+| `DURABILITY` | **NOT COVERED** | belum ada bound/source Canon yang menetapkan perubahan durability |
+| Structural property | **NOT COVERED** | belum ada source yang menetapkan target, property, bound, dan outcome |
+| Quality / Grade | **NOT COVERED** | tidak boleh dinaikkan otomatis; membutuhkan source tersendiri |
+| Tier / Category | **NOT COVERED** | membutuhkan mekanisme Canon eksplisit |
+| Ability / Effect | **NOT COVERED** | membutuhkan source mekanis eksplisit; tidak boleh berasal dari material name/rarity |
+| Affinity / Bloodline / Breakthrough | **NOT COVERED** | berada di luar source refinement yang tersedia |
+| Ownership | **NOT A MATERIAL REFINEMENT DIMENSION** | perubahan ownership mengikuti transfer/transaction rules, bukan material effect |
+| Success Probability | **NOT COVERED** | tidak ada probability/roll source; hidden probability dilarang |
+
+### Source Expansion Decision
+
+Audit menetapkan bahwa **belum ada kandidat material kedua yang cukup lengkap untuk langsung dijadikan executable refinement source tanpa menciptakan target/effect baru yang belum memiliki dasar Canon**.
+
+Keputusan ini disengaja:
+1. `SRC-REF-001` tetap menjadi baseline source Canon.
+2. `ITEM-MAT-002`–`ITEM-MAT-005` tidak diberi effect refinement hanya karena nama/fungsi material tampak cocok.
+3. Tidak ada durability bonus, attack/defense bonus, quality upgrade, tier upgrade, affinity, ability, atau probability yang ditambahkan.
+4. Material yang belum memiliki target existing Item Canon yang jelas tidak dipaksa menjadi refinement source.
+5. Source baru hanya dibuka ketika ada Canon/Admin basis yang dapat mengisi seluruh Source Record Contract pada Module 34 §12.1.
+
+### Next Coverage Trigger
+
+Kandidat source berikutnya baru layak dibuka bila repository memiliki salah satu dari:
+- existing Item Canon dengan material/struktur target yang jelas;
+- refinement method/procedure yang benar-benar menetapkan property dimension;
+- Admin Canon yang secara eksplisit menetapkan bound dan outcome;
+- source process dari Module 31/32/33 atau domain lain yang memang menjadi dependency refinement.
+
+**Status tahap:** **🟢 Coverage Audit Completed — No Unsupported Source Expansion**
+
+**Next dependency:** `🟡` Source Coverage Expansion hanya jika ditemukan target/method/property Canon yang memenuhi Source Record Contract; jika belum, pertahankan catalog sebagai whitelist terbatas.
