@@ -303,3 +303,79 @@ Penambahan material, property dimension, compatibility rule, bound, qualificatio
 
 ### Explicit Prohibition
 Material rarity, nama, market value, Character Realm, atau narrative plausibility tidak boleh dipakai sebagai implicit refinement effect.
+
+
+## 12A. ADMIN CANON METHOD ESTABLISHMENT — SRC-REF-001
+
+Admin Canon secara eksplisit menetapkan source execution baseline berikut agar SRC-REF-001 dapat memiliki Method Record yang dapat dirujuk runtime. Penetapan ini tidak memberi qualification kepada Character secara otomatis dan tidak membuktikan akses workspace pada Current State Character.
+
+### 12A.1 Method Record — METHOD-REF-001
+| Field | Canon Value |
+|---|---|
+| METHOD_ID | METHOD-REF-001 |
+| METHOD_SOURCE | Admin Canon — TianDao-World Basic Iron Condition Restoration Method |
+| TARGET_ITEM_CATEGORY | Existing Weapon berbahan logam |
+| TARGET_ITEM_CONSTRAINTS | CONDITION = DAMAGED atau SERVICEABLE; existing Item State wajib terverifikasi |
+| MATERIAL_REQUIREMENTS | ITEM-MAT-001 — Bijih Besi Kasar; 1 discrete material unit; valid Origin |
+| COMPATIBILITY_RULE | Target wajib merupakan existing metal Weapon dan ITEM-MAT-001 wajib tersedia; selain itu INCOMPATIBLE |
+| REQUIRED_REFINER_QUALIFICATION | QUAL-REF-001 — Basic Metalworking Qualification |
+| REQUIRED_TOOL_WORKSPACE | WORK-REF-001 — Basic Metalworking Forge Workspace |
+| PROCESS_STEPS | Inspect target → prepare forge/workspace → prepare material → apply basic metalworking/forging process to the damaged condition → cool/stabilize → inspect final condition |
+| PROCESS_TIME | 1 valid process cycle; tidak menetapkan durasi jam/menit tambahan pada source ini |
+| RESOURCE_COST | 1 discrete unit ITEM-MAT-001; tidak ada currency, Qi, stamina, fuel, atau tool-durability cost tambahan yang ditetapkan source ini |
+| ALLOWED_PROPERTY_DIMENSIONS | CONDITION |
+| CHANGE_BOUNDS | DAMAGED → SERVICEABLE; SERVICEABLE → SERVICEABLE |
+| OUTCOME_MODEL | Deterministic requirement/process validation: jika seluruh required inputs, qualification, workspace, compatibility, dan process conditions terpenuhi, apply transition yang diizinkan; jika tidak, RESOLUTION-BLOCKED |
+| MATERIAL_CONSUMPTION_RULE | 1 discrete unit ITEM-MAT-001 dikonsumsi pada valid successful application; bila resolution RESOLUTION-BLOCKED, material tidak dikonsumsi |
+| FAILURE_CONSEQUENCE | Tidak ada failure-damage/destruction mechanism pada baseline method ini; invalid precondition memblokir proses |
+| METHOD_STATUS | CANON-ESTABLISHED |
+
+### 12A.2 Method Property Contract
+| DIMENSION_ID | TARGET_PROPERTY | DIRECTION_OR_ALLOWED_CHANGE | BOUND_SOURCE | SOURCE | STATUS |
+|---|---|---|---|---|---|
+| DIM-REF-CONDITION-001 | CONDITION | DAMAGED → SERVICEABLE; SERVICEABLE → SERVICEABLE | METHOD-REF-001 | Admin Canon — Basic Iron Condition Restoration Method | CANON-ESTABLISHED |
+
+Tidak ada dimension lain yang diizinkan berubah melalui METHOD-REF-001. Secara khusus, method ini tidak menetapkan attack, defense, numeric durability, quality, grade, tier, category, ability, effect, affinity, bloodline, ownership, atau breakthrough change.
+
+### 12A.3 Qualification Source — QUAL-REF-001
+| Field | Canon Value |
+|---|---|
+| QUALIFICATION_ID | QUAL-REF-001 |
+| QUALIFICATION_NAME | Basic Metalworking Qualification |
+| SOURCE | Admin Canon — TianDao-World Refinement Qualification Baseline |
+| ORIGIN_REQUIREMENT | Qualification harus diperoleh melalui Origin yang tercatat; keberadaan source ini tidak berarti Character otomatis memilikinya |
+| PERMITTED_SCOPE | Memenuhi qualification gate untuk METHOD-REF-001 dan basic metalworking process yang secara eksplisit merujuk qualification ini |
+| REALM_RULE | Character Realm tidak memberikan qualification secara otomatis |
+| STATUS | CANON-ESTABLISHED |
+
+Qualification ini adalah source Canon, bukan pemberian skill kepada Ryxian atau Character lain. Current Character State tetap menjadi penentu apakah qualification tersebut sudah diperoleh.
+
+### 12A.4 Workspace Source — WORK-REF-001
+| Field | Canon Value |
+|---|---|
+| WORKSPACE_ID | WORK-REF-001 |
+| WORKSPACE_NAME | Basic Metalworking Forge Workspace |
+| SOURCE | Admin Canon — TianDao-World Basic Metalworking Workspace Baseline |
+| REQUIRED_FOR | METHOD-REF-001 |
+| REQUIRED_CAPABILITY | Valid forge/workspace untuk basic metalworking/forging process |
+| AVAILABILITY_RULE | Workspace harus benar-benar tersedia dan dapat diakses pada Current State; source ini tidak memberikan akses otomatis kepada Character |
+| STATE_RULE | Runtime availability/access wajib berasal dari Current State, location, faction/access rule, or another valid source |
+| STATUS | CANON-ESTABLISHED |
+
+### 12A.5 Execution Boundary
+Dengan penetapan ini, SRC-REF-001 kini memiliki explicit chain:
+SRC-REF-001 → METHOD-REF-001 → QUAL-REF-001 + WORK-REF-001 → DIM-REF-CONDITION-001 → BOUNDED RESOLUTION
+
+Namun chain tersebut tidak berarti setiap Character dapat langsung mengeksekusinya. Runtime tetap wajib membuktikan:
+1. existing target item dan current condition;
+2. ITEM-MAT-001 quantity/origin;
+3. qualification Origin pada refiner;
+4. workspace availability/access;
+5. process conditions;
+6. compatibility;
+7. Before/After dan Save Pipeline.
+
+Jika qualification atau workspace tidak tersedia pada Current State, hasil tetap RESOLUTION-BLOCKED meskipun Method Record sudah CANON-ESTABLISHED.
+
+### 12A.6 Canon Scope
+Method ini adalah single baseline refinement source, bukan katalog upgrade otomatis. Admin tidak menetapkan bonus, multiplier, probability, hidden roll, Realm scaling, quality/tier escalation, atau property dimension tambahan melalui source ini.
