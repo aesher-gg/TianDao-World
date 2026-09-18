@@ -1,7 +1,7 @@
 # SYSTEM INTEGRITY AUDIT — ITEM → LOOT → PRODUCTION → ECONOMY → RUNTIME → SAVE
 
 ## Status
-**🟢 STRUCTURAL INTEGRITY AUDIT — CLOSED**
+**🟡 FOLLOW-UP AUDIT — GAP FOUND AND FIXED; RE-VERIFICATION REQUIRED**
 
 Tanggal: 2026-09-18
 Scope: Item, Loot, Regional Source, Crafting/Forging, Alchemy, Economy, Module Router, Module Integration, Runtime Engine, Action Resolver, State Validator, Save Pipeline, Data Completeness.
@@ -147,3 +147,30 @@ Repository sekarang memiliki contract untuk menelusuri:
 source → acquisition → item identity/instance → processing → output identity/instance → usage/economy → provenance → history → save.
 
 Ini tidak berarti setiap possible item di dunia telah dipre-generate, setiap market telah diisi, atau setiap production action otomatis executable. Runtime availability, ownership, qualification, workspace, quantity, condition, market state, dan input wajib lain tetap tunduk pada source/state gates.
+
+## Follow-up Audit — 2026-09-18
+
+Audit lanjutan setelah audit awal menemukan satu celah nyata pada **Formula/Output Identity**:
+
+### Finding F-001 — FORMULA-ALC-001 anonymous output
+
+FORMULA-ALC-001 sebelumnya menyatakan output **"1 unit bubuk herbal dasar"** tanpa Item ID Canon. Ini tidak memenuhi chain produksi ketika output tersebut diperlakukan sebagai alchemy product/item karena Module 32 mensyaratkan hasil alchemy menjadi Item State dan Module 14 menjadi authority identity/state.
+
+**Dampak:** formula dapat terlihat executable secara naratif sementara output tidak memiliki identity yang dapat dipersistenkan secara sah. Ini berisiko menciptakan anonymous item instance atau konsumsi input tanpa result identity.
+
+### Fix F-001
+
+Admin memperbarui `systems/32_ALCHEMY_PILLS.md`:
+- version → **Admin Canon v1.3**;
+- output FORMULA-ALC-001 sekarang berstatus `UNRESOLVED`;
+- production runtime untuk formula tersebut ditetapkan `RESOLUTION-BLOCKED` sampai output memiliki Item ID Canon/identity sah di Module 14 §4D, atau Canon secara eksplisit menetapkannya sebagai non-item output;
+- input tidak boleh dianggap terkonsumsi sebelum resolusi production valid;
+- quantity rule diperketat agar output `UNRESOLVED`/`RESOLUTION-BLOCKED` tidak menghasilkan instance runtime.
+
+**No new Item was added.** Tidak ada instance gameplay yang dibuat atau diberikan kepada Character.
+
+### Re-verification target
+
+`Regional Source → Acquisition/Loot → Item Instance → Recipe/Formula → Processing → Output Instance → Economy/Usage → Origin → History → Save`
+
+Untuk F-001, chain sekarang **ditahan sebelum Output Instance**, sehingga runtime tidak dapat melewati identity gap secara diam-diam. Setelah output identity Canon tersedia melalui Admin change yang terpisah, chain dapat dibuka kembali melalui audit/verifikasi baru.
