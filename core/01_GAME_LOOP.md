@@ -7,7 +7,7 @@
 5. Validasi waktu, lokasi, kemampuan, resource, inventory, equipment, target, dan aturan.
 6. Hitung resolusi memakai sistem resmi.
 7. Jalankan reaksi NPC, lingkungan, faction, dan event.
-8. Terapkan perubahan HP/Qi/Stamina/Satiety/Karma/status/inventory/waktu.
+8. Terapkan perubahan HP/Qi/Stamina/Satiety/Satiety State/Karma/status/inventory/waktu; Satiety State harus mengikuti threshold Canonical di `systems/11_VITALITY.md`.
 9. Catat Origin Log dan timestamp.
 10. Jadikan hasil sebagai current state berikutnya dan tampilkan format GM.
 
