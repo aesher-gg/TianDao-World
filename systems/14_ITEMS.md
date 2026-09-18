@@ -215,3 +215,26 @@ Sumber berikut adalah **Canon source class**, bukan instance item dan bukan jami
 - SRC-RES-TYN-001 — Pecahan Giok Baiyu — rantai pengerjaan/limbah giok Kota Baiyu
 
 Source class hanya membuktikan **asal yang sah**; actual quantity/condition/availability harus berasal dari runtime atau state yang tervalidasi.
+
+## 4C. MECHANICAL ITEM PATHS — REGIONAL PROCESSING
+
+Item regional tidak berhenti sebagai collectible. Path berikut menetapkan hubungan mekanis yang sah tanpa memberikan stat tersembunyi.
+
+| Path ID | Input | Proses | Output | Fungsi |
+|---|---|---|---|---|
+| PATH-ITEM-001 | ITEM-MAT-013 Serat Sungai Cangyuan | pemintalan + anyaman | ITEM-CRAFT-001 Tali Serat Cangyuan | tali/ikat untuk crafting dan perjalanan; bukan bonus combat |
+| PATH-ITEM-002 | ITEM-MAT-010 Kulit Dingin Beiming | pemotongan + jahit | ITEM-EQP-001 Mantel Kulit Dingin | perlengkapan pakaian dingin; perlindungan mekanis hanya berlaku jika equipment system memberi rule |
+| PATH-ITEM-003 | ITEM-MAT-012 Pecahan Giok Baiyu | pemilahan + pembentukan | ITEM-CRAFT-002 Blank Giok Ukir | bahan setengah jadi untuk recipe ukiran/formation yang kompatibel |
+| PATH-ITEM-004 | ITEM-MAT-009 Mutiara Pasang Dongming | pengeboran + pemolesan | ITEM-CRAFT-003 Manik Mutiara Dongming | komponen aksesori/perdagangan; tidak otomatis memberi efek spiritual |
+| PATH-ITEM-005 | ITEM-MAT-014 Cangkang Karang Lanyue | pembersihan + pemotongan | ITEM-CRAFT-004 Lempeng Cangkang Lanyue | komponen kerajinan keras; armor effect memerlukan recipe/equipment source terpisah |
+| PATH-ITEM-006 | ITEM-MAT-008 Terak Besi Api Huoyan + ITEM-MAT-001 Bijih Besi Kasar | peleburan/forging | ITEM-WPN-003 Bilah Besi Huoyan | output weapon dasar; tidak menetapkan quality atau bonus khusus tanpa source tambahan |
+
+### 4C.1 Output Item Identity
+- ITEM-CRAFT-001 Tali Serat Cangyuan — Material/Tool Component — hasil PATH-ITEM-001.
+- ITEM-EQP-001 Mantel Kulit Dingin — Equipment/Clothing — hasil PATH-ITEM-002.
+- ITEM-CRAFT-002 Blank Giok Ukir — Material/Component — hasil PATH-ITEM-003.
+- ITEM-CRAFT-003 Manik Mutiara Dongming — Material/Accessory Component — hasil PATH-ITEM-004.
+- ITEM-CRAFT-004 Lempeng Cangkang Lanyue — Material/Component — hasil PATH-ITEM-005.
+- ITEM-WPN-003 Bilah Besi Huoyan — Weapon — hasil PATH-ITEM-006.
+
+Output hanya dapat dibuat melalui recipe/procedure yang valid; penetapan identity tidak memberikan instance gratis.
