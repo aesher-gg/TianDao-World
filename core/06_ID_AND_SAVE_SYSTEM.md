@@ -248,3 +248,15 @@ Jika repository write-back tidak tersedia, GM wajib menyatakan bahwa save/memory
 - Jangan mengubah memory lama untuk membuat kejadian baru tampak pernah terjadi.
 - Koreksi Admin harus dapat dibedakan dari event gameplay.
 - Jika fakta tidak dapat dibuktikan, gunakan `UNRESOLVED` atau jangan simpan.
+
+## Monster ID & Save Lifecycle
+Monster persistence memakai `MONSTER_ID` hanya ketika individual Monster menjadi recurring/material dan continuity lintas turn benar-benar diperlukan. Format standar: `MONSTER-0001`, `MONSTER-0002`, `MONSTER-0003`.
+
+Rules: unique, stable, permanent, independent of species/name, and never reused after permanent death/archive.
+
+Canonical paths:
+- `characters/monster_registry.md`
+- `characters/monsters/<MONSTER_ID>.md`
+- `monster_history/<MONSTER_ID>_HISTORY.md`
+
+Generated encounter-only Monster tetap runtime tanpa ID persistence. Persisting an individual does not make its species Global Canon.
