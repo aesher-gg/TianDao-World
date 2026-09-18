@@ -64,3 +64,26 @@ Arus perdagangan antarkawasan membutuhkan rute, sarana, kontrak, suplai dan wakt
 
 ## Integrasi
 Regional Economy terhubung dengan Items, Loot, Organizations, Factions, Travel, Time, Reputation, Karma dan Events.
+## 8. Regional Commodity Chains — Item Canon Integration
+
+Komoditas baru sekarang memiliki rantai ekonomi yang eksplisit. Ini bukan price list; harga tetap ditentukan oleh Module 10 dan kondisi pasar.
+
+| Region | Source | Commodity Flow | Downstream Demand | Economic Role |
+|---|---|---|---|---|
+| Dataran Cangyuan | SRC-RES-CGY-001 | Serat Sungai Cangyuan → Tali Serat Cangyuan | perjalanan, workshop, pertanian, crafting | substitusi lokal material tali; memperkuat perdagangan sungai/darat |
+| Pegunungan Qingluan | SRC-RES-QGL-001 | Getah Pinus Roh Qingluan → Bubuk Pengawet Qingluan | workshop kayu/material, alchemy | komoditas hutan bernilai proses |
+| Pegunungan Qingluan | SRC-RES-QGL-002 | Jamur Kabut Wuyin → Bubuk Jamur Wuyin | alchemist/herbalist | meningkatkan nilai ekspedisi dan perdagangan herbal |
+| Domain Yaohuang Selatan | SRC-RES-YHS-001 | Terak Besi Api Huoyan + Bijih Besi → Bilah Besi Huoyan | smith/weapon market | menghubungkan resource panas bumi dengan manufaktur |
+| Domain Yaohuang Selatan | SRC-RES-YHS-002 | Madu Seratus Bunga → Sirup Madu Seratus Bunga | alchemist, apothecary, konsumsi | komoditas biologis bernilai proses |
+| Laut Dongming | SRC-RES-DGM-001 | Mutiara Pasang Dongming → Manik Mutiara Dongming | pengrajin aksesori, perdagangan | komoditas laut bernilai tinggi tanpa fixed price |
+| Laut Dongming | SRC-RES-DGM-002 | Cangkang Karang Lanyue → Lempeng Cangkang Lanyue | artisan/crafting | bahan kerajinan laut dengan jalur produksi |
+| Tanah Salju Beiming | SRC-RES-BMG-001 | Kulit Dingin Beiming + Serat Cangyuan → Mantel Kulit Dingin | survival/travel/workshop | menghubungkan resource dingin dengan manufaktur pakaian |
+| Jantung Tianyuan | SRC-RES-TYN-001 | Pecahan Giok Baiyu → Blank Giok Ukir | artisan/formation-compatible workshops | memberi nilai pada limbah produksi dan kerajinan giok |
+| Gurun Jinyan | SRC-RES-GJY-001 | Kristal Garam Jinyan | preservation/trade/logistics | komoditas oasis dan kebutuhan pengawetan |
+
+### 8.1 Economy Boundaries
+- Canon chain tidak menetapkan harga tetap.
+- Availability, quantity, quality, legal access, transport cost, tax, scarcity dan demand tetap dinamis/source-dependent.
+- Barang regional tidak otomatis muncul di kota lain; perdagangan memerlukan rute, sarana, waktu, suplai dan kepemilikan yang sah.
+- Resource source dan processing recipe tidak memberi akses Character secara otomatis.
+- Jika source atau market state belum diketahui, nilai transaksi tetap mengikuti status data resmi; Qwen tidak boleh mengarang harga.
