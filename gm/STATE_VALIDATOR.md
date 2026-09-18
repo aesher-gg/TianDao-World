@@ -185,3 +185,18 @@ Jika pemeriksaan material gagal, jangan menerapkan state. Kembali ke nilai terak
 - [ ] `RESOLUTION-BLOCKED` is preserved when a required mechanism or bound cannot be established; it is not silently converted to success/failure.
 - [ ] Before/After contains every changed Item, Material, resource, and relevant entity in one transaction.
 - [ ] No numeric bonus, quality/grade/tier increment, durability change, ability/effect, or Realm scaling is inferred without Canon/source.
+
+
+## AERIAL-DISTANCE STATE VALIDATION GATE
+For flight-travel resolutions, validate:
+- [ ] `systems/20_TRAVEL_ROUTES.md` was fetched from current repository state.
+- [ ] Flight eligibility is validated independently from aerial distance.
+- [ ] Flight speed has a valid Canon/State source.
+- [ ] Origin and Destination are valid location nodes for the requested travel.
+- [ ] The consumed aerial-distance record exists in the AERIAL-DISTANCE Canon Registry.
+- [ ] `AERIAL_DISTANCE_BASELINE` is used exactly as the registered Canon Li value; no conversion from surface route distance occurs.
+- [ ] No straight-line geometry, coordinate estimate, narrative plausibility, or unregistered route chain was used.
+- [ ] If no exact record exists, aerial distance remains `UNRESOLVED` and numeric duration is not applied.
+- [ ] Any detour/barrier/weather/airspace/encounter modifier has an independent valid source; otherwise no numeric modifier is introduced.
+- [ ] The resolution records `AERIAL_DISTANCE_ID` + source ID when a registry entry is consumed.
+- [ ] Before → After includes any actual time/location/resource changes only after the flight resolution passes this gate.
