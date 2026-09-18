@@ -35,7 +35,7 @@ Bootstrap karakter baru/sesi baru juga mengikuti `gm/PLAYER_BOOT_PROMPT.md` dan 
 | Technique/Jurus | `systems/15_TECHNIQUES.md` | Cultivation/Items/Law |
 | Item/Equipment/Inventory | `systems/14_ITEMS.md` | Economy/Loot/Technique/Production |
 | Economy/transaksi | `systems/10_ECONOMY.md` | Regional Economy/Faction |
-| Travel/perjalanan | `systems/20_TRAVEL_ROUTES.md` | Region/World Map/Encounter |
+| Travel/perjalanan/flight | `systems/20_TRAVEL_ROUTES.md` | Region/World Map/Encounter/Cultivation/Techniques |
 | Monster/encounter | `systems/13_MONSTERS.md`, `systems/25_DYNAMIC_GENERATION.md` | Regional Ecosystem/Combat/Loot |
 | Fixed Bestiary source | `bestiary/00_BESTIARY_DATABASE.md` | Monster/Dynamic Generation |
 | Loot | `systems/18_LOOT.md`, `systems/25_DYNAMIC_GENERATION.md` | Items/Economy/Source module |
