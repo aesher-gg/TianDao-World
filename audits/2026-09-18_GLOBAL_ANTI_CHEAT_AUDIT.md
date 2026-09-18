@@ -69,3 +69,13 @@ No state-changing resolution may bypass a failed integrity gate.
 **🟡 GLOBAL ANTI-CHEAT / GM EXPLOIT AUDIT — HARDENING APPLIED / INFRASTRUCTURE DEPENDENCIES OPEN**
 
 This audit is separate from the previously closed Global Structural Audit. The earlier closure remains historical; this is a new security/integrity scope focused on GM exploit resistance.
+
+
+## 2026-09-18 Xianxia Item Grade Maintenance
+- Module 14 now defines the canonical 品阶 hierarchy: 凡阶 → 黄阶 → 玄阶 → 地阶 → 王阶 → 皇阶 → 圣阶 → 仙阶.
+- Canon Item IDs currently registered in Module 14 each receive an explicit initial ITEM_GRADE.
+- ITEM_GRADE is separated from QUALITY, CONDITION, DURABILITY, and RARITY.
+- Loot, crafting, alchemy, and refinement are explicitly prohibited from inventing or silently upgrading grade.
+- Refinement may only change grade when an explicit method lists ITEM_GRADE as an allowed dimension with a bounded transition.
+- Dynamic/unresolved loot cannot be made executable by assigning a guessed grade.
+- State Validator now checks grade source, separation, and transition bounds.
