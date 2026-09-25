@@ -5,7 +5,7 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 ## A. Boot
 - [ ] INDEX dimuat dan Load Order diikuti.
 - [ ] Core Rules dimuat.
-- [ ] `39_CUSTOM_EVENTS.md` dimuat pada awal sesi.
+- [ ] `39_CUSTOM_EVENTS.md` dimuat bila trigger/aksi membutuhkannya.
 - [ ] Custom/Admin yang berlaku dimuat.
 - [ ] Modul realm/system/faction/lore relevan dimuat.
 - [ ] Jika gardening relevan, `systems/23_GARDENING.md` dimuat.
@@ -31,7 +31,7 @@ Checklist validasi wajib sebelum dan sesudah resolusi aksi.
 - [ ] NPC/monster/lingkungan/faction/event diproses bila relevan.
 - [ ] Konsekuensi logis diterapkan.
 - [ ] Jika gardening: pertumbuhan mengikuti waktu yang benar-benar berlalu.
-- [ ] Jika gardening: tanaman biasa ≤10 hari dan tanaman spiritual ≤60 hari standar.
+- [ ] Jika gardening: tanaman biasa ≤7 hari dan tanaman spiritual ≤15 hari standar.
 - [ ] Jika gardening: panen hanya terjadi setelah waktu/Maturity sesuai.
 
 ## D. Post-Action
