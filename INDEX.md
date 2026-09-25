@@ -142,7 +142,7 @@
 ## Load Order
 1. **Fresh `INDEX.md`** — router dan source load-order untuk turn tersebut.
 2. Core rules, termasuk `core/07_DATA_COMPLETENESS.md` untuk status data.
-3. Custom content dan event resmi yang relevan.
+3. Custom content dan event resmi yang relevan — fetch hanya bila trigger/aksi membutuhkannya; `events/39_CUSTOM_EVENTS.md` bukan always-load exception.
 4. Current World Time sesuai hierarchy resmi.
 5. Relevant realm/system modules, termasuk `systems/24_SPIRIT_BEASTS.md` bila Spirit Beast relevan, `systems/25_DYNAMIC_GENERATION.md` bila encounter/creature/loot generation relevan, `systems/26_DYNAMIC_NPC_EVENT_QUEST.md` bila NPC/event/quest generation atau resolution relevan, `systems/27_MODULE_ROUTER.md` untuk trigger routing, persistence modules bila entity persistence relevan, serta `systems/31_CRAFTING_FORGING.md`, `systems/32_ALCHEMY_PILLS.md`, `systems/33_FORMATION_ARRAYS.md`, atau `systems/34_ARTIFACT_WEAPON_REFINEMENT.md` sesuai trigger.
 6. Faction databases dan individual organization files bila relevan.
