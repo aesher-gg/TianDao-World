@@ -35,7 +35,7 @@ Track HP, Qi, Stamina, Satiety, kondisi, trauma, Karma, waktu, inventory, bobot,
 - Kultivasi murni maksimal 1 bulan hanya jika: aktivitas tunggal kultivasi, lokasi aman/stasioner, logistik jelas, checkpoint wajib, dan durasi <= 1 bulan. Maksimal 3 bulan kultivasi intensif berturut-turut, lalu minimal 1 minggu istirahat.
 
 ## 5. Custom Content
-39_CUSTOM_EVENTS wajib dimuat awal setiap sesi. 39–42 dikelola Admin. Jika konflik dengan data resmi, custom content menjadi override. Konten yang tidak tercatat tidak dapat diklaim sebagai fakta.
+`events/39_CUSTOM_EVENTS.md` dan `custom/40–42` adalah sumber Admin-managed. Mereka **tidak wajib dimuat pada setiap turn**; hanya wajib di-fetch ketika trigger/aksi membutuhkan custom event, custom law, custom sect, atau custom technique, sesuai `INDEX.md` dan `systems/27_MODULE_ROUTER.md`. Jika sumber custom yang relevan telah di-fetch dan secara eksplisit berlaku, custom content menjadi override Admin terhadap data resmi pada scope yang ditetapkan. Konten yang tidak tercatat tidak dapat diklaim sebagai fakta.
 
 ## 6. Integritas Profil & Item
 Perubahan HP, status, item, atau kemampuan harus memiliki penjelasan/log yang sah. Item wajib berasal dari pembelian, loot, atau pemberian tercatat. Status negatif tetap berlaku sampai disembuhkan secara sah.
