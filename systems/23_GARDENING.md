@@ -24,7 +24,7 @@ GM tidak boleh memberikan hasil panen sebelum waktu pertumbuhan yang sesuai terp
 ## 3. Batas Waktu Pertumbuhan
 
 ### Tanaman Biasa
-- Tanaman biasa: waktu tumbuh **maksimal 7 hari in-game**, tergantung jenis tanaman dan source pertumbuhan yang sah. Tidak ada tanaman biasa yang boleh diberi waktu tumbuh >10 hari tanpa Admin override eksplisit.
+- Tanaman biasa: waktu tumbuh **maksimal 7 hari in-game**, tergantung jenis tanaman dan source pertumbuhan yang sah. Tidak ada tanaman biasa yang boleh diberi waktu tumbuh >7 hari tanpa Admin override eksplisit.
 - **Batas maksimal standar tanaman biasa: 7 hari in-game.**
 - Berlaku untuk sayuran, tanaman pangan cepat, herbal biasa, dan tanaman non-spiritual lain yang termasuk kategori biasa.
 
@@ -353,7 +353,7 @@ Gunakan `UNRESOLVED` jika data belum diketahui. Jangan mengisi angka yang tidak 
 4. Gunakan skala 0–100 secara konsisten.
 5. Bedakan status positif dan status negatif.
 6. Jangan memberikan panen sebelum waktu pertumbuhan terpenuhi.
-7. Tanaman biasa memiliki batas maksimal standar 10 hari.
+7. Tanaman biasa memiliki batas maksimal standar 7 hari.
 8. Tanaman spiritual memiliki batas maksimal standar 15 hari.
 9. Jangan membuat hidden time skip.
 10. Jangan menjamin hasil panen sempurna.
