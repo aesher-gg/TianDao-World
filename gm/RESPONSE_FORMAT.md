@@ -3,39 +3,23 @@
 Format standar dan **WAJIB** untuk setiap respons AI Game Master TianDao-World.
 
 ## 1. ATURAN UMUM
-
-- Setiap respons gameplay wajib mengikuti struktur di bawah.
-- **Balasan pertama/boot wajib menggunakan format Boot.**
-- Setiap balasan setelah aksi Player wajib menggunakan format Action.
+- Setiap respons gameplay wajib mengikuti format di bawah.
+- **Setiap memulai karakter/session baru, format Boot wajib menampilkan Profil Karakter lengkap berdasarkan Current Character State terbaru.**
+- Setelah aksi Player, gunakan format yang sama dan perbarui state berdasarkan resolusi valid.
 - Jangan mengganti format dengan narasi bebas.
-- Field yang belum tersedia harus memakai status dari `core/07_DATA_COMPLETENESS.md`, bukan tanda tanya.
-- Jangan mengisi tahun, tanggal, jam, cuaca, lokasi, status, item, teknik, atau angka lain berdasarkan waktu sistem/kalender dunia nyata.
+- Jangan mengarang field yang tidak tersedia; gunakan status dari `core/07_DATA_COMPLETENESS.md`.
+- Waktu yang ditampilkan adalah **World Time**, bukan waktu nyata.
 
-## 2. SUMBER WAKTU
+## 2. FORMAT WAJIB BALASAN
 
-- `Waktu TianDao-World` adalah **waktu dunia dalam game**, bukan waktu perangkat/server/sistem.
-- **Hierarki sumber World Time wajib:** `Current World Time Repository → Character State World Time → status terkontrol bila keduanya tidak tersedia`.
-- `Current World Time Repository` adalah waktu dunia bersama yang ditetapkan/tervalidasi Admin di repository dan menjadi sumber utama.
-- Jika Current World Time Repository tersedia, gunakan waktu tersebut.
-- Jika tidak tersedia tetapi Character State memiliki World Time terakhir yang valid, gunakan waktu dari Character State.
-- Jika keduanya tidak tersedia, setiap komponen waktu yang belum diketahui memakai `UNRESOLVED` dan tidak boleh diisi dengan waktu nyata.
-- **Epoch Tahun 1 tidak lagi menjadi fallback boot/runtime.**
-- Jika era dunia saat ini ditetapkan Admin sebagai **Era Kebangkitan**, gunakan era tersebut bersama tahun resmi yang tercatat di repository. Jangan menciptakan angka tahun sendiri.
-- Tahun 2026 dunia nyata **tidak boleh pernah muncul sebagai Tahun Dunia** kecuali Canon/Admin secara eksplisit menetapkannya.
-- Jam dan Cuaca hanya ditampilkan jika tersedia dari state/resolusi/sumber resmi; jika belum tersedia gunakan `UNRESOLVED`.
-- Waktu hanya maju melalui aksi/event valid. Tidak boleh memakai waktu nyata untuk menggantikan World Time.
-
-## 3. FORMAT BOOT — BALASAN PERTAMA
-
-```text
+```
 🕒 Waktu TianDao-World
-Tahun: <YEAR> | Musim: <SEASON> | Tanggal: <DATE> | Hari: <DAY> | Cuaca: <WEATHER> | Jam: <TIME>
+Tahun: ... | Musim: ... | Tanggal: ... | Bulan: ... | Hari: ... | Cuaca: ... | Jam: ...
 
-Status Boot: World Bible dimuat | Player terverifikasi | Character terverifikasi | Memory dimuat bila tersedia
+📖 Narasi
+[Deskripsi aksi, hasil, NPC, lingkungan, konsekuensi, dan reaksi dunia.]
 
-Narasi Pembuka
-[Mulai tepat dari state karakter yang sah. Tidak ada aksi otomatis.]
-
+👤 Profil Karakter
 ┌── Profil Karakter ──┐
 Nama:
 Gender: | Usia:
@@ -48,78 +32,39 @@ Karma: | Reputation:
 
 Currency:
 Equipment:
+    Pakaian/Armor:
+    Senjata:
+    Aksesoris:
 Inventory:
-Weight:
 
 Teknik:
 Cultivation Progress:
 Law Origin:
-Item Origin:
 
 Faction/Affiliation:
 Teacher:
 Sect:
-Connections:
-Contracts/Active Status:
 Status:
 └────────────────────┘
-
-Aksiku:
 ```
 
-Boot harus langsung memulai narasi dari kondisi resmi karakter. Jangan menciptakan kejadian, hadiah, kemampuan, atau perubahan state hanya untuk membuat pembukaan lebih menarik.
+## 3. ATURAN PROFIL
+- Saat karakter/session pertama kali dimulai, **WAJIB tampilkan Profil Karakter lengkap**.
+- Data profil harus berasal dari **Current Character State/Save Point yang telah diverifikasi**.
+- Jika ada konflik dengan context/cache/narasi lama, Current Character State terbaru menang.
+- Jangan mengubah profil hanya untuk menyesuaikan narasi.
+- Perubahan state harus berasal dari aksi/resolusi Canon yang sah.
+- Field yang belum tersedia memakai status resmi completeness; jangan menebak.
 
-## 4. FORMAT ACTION — SETIAP BALASAN SETELAH AKSI
+## 4. WORLD TIME
+Gunakan hierarki:
+**Current World Time Repository → Character State World Time → status completeness resmi.**
 
-```text
-🕒 Waktu TianDao-World
-Tahun: <YEAR> | Musim: <SEASON> | Tanggal: <DATE> | Hari: <DAY> | Cuaca: <WEATHER> | Jam: <TIME>
+Jangan menggunakan tanggal/jam dunia nyata atau membuat waktu dunia sendiri.
 
-Narasi
-[Hasil aksi, konsekuensi, NPC, lingkungan, dan dialog bila relevan.]
-
-┌── Profil Karakter ──┐
-Nama:
-Gender: | Usia:
-Tingkat Kultivasi:
-
-HP: / | Qi: / | Stamina: / | Lapar: %
-
-Kondisi:
-Karma: | Reputation:
-
-Currency:
-Equipment:
-Inventory:
-Weight:
-
-Teknik:
-Cultivation Progress:
-Law Origin:
-Item Origin:
-
-Faction/Affiliation:
-Teacher:
-Sect:
-Connections:
-Contracts/Active Status:
-Status:
-└────────────────────┘
-
-Hasil Aksi: ...
-Waktu Berlalu: ...
-Biaya: ...
-Perubahan Penting: ...
-Save Status: ...
-
-Aksiku:
-```
-
-## 5. GARDENING
-Jika gardening relevan, tampilkan Garden/Crop Status numerik yang relevan sesuai `systems/23_GARDENING.md`. Jangan mengarang angka yang tidak diketahui; gunakan status completeness yang berlaku.
-
-## 6. INTEGRITAS
-- Format tidak boleh menjadi alasan untuk mengarang data.
-- State harus berasal dari Current Character State dan resolusi valid.
-- Semua perubahan material harus melalui Origin Log dan Save Pipeline.
-- Jika write-back gagal, jangan menyatakan save tersinkron.
+## 5. INTEGRITAS
+- Format bukan alasan untuk mengarang data.
+- Semua state harus berasal dari sumber Canon/State/Runtime yang sah.
+- Ikuti `gm/GM_PROMPT.md`, `gm/RUNTIME_ENGINE.md`, INDEX, dan modul relevan.
+- Jika required data gagal diverifikasi, tahan resolusi dan gunakan failure mode resmi.
+- Repository Saved hanya boleh dinyatakan setelah write-back dan verification berhasil.
