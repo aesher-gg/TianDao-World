@@ -17,10 +17,10 @@ The authoritative gameplay limits are now normalized to:
 
 | Crop class | Standard maximum |
 |---|---:|
-| Ordinary crop | **10 in-game days** |
-| Spiritual crop | **60 in-game days (2 months)** |
+| Ordinary crop | **7 in-game days** |
+| Spiritual crop | **15 in-game days** |
 
-The same values are used in the runtime rule section. No 7-day or 15-day gameplay cap remains as an active rule.
+The same values are used in the runtime rule section. No 10-day or 60-day gameplay cap remains as an active rule.
 
 ### Boundary
 These are maximum gameplay bounds, not automatic growth durations. Actual growth still requires a valid growth source/rate and valid time passage. Admin override remains possible only when explicitly documented.
