@@ -354,7 +354,7 @@ Gunakan `UNRESOLVED` jika data belum diketahui. Jangan mengisi angka yang tidak 
 4. Gunakan skala 0–100 secara konsisten.
 5. Bedakan status positif dan status negatif.
 6. Jangan memberikan panen sebelum waktu pertumbuhan terpenuhi.
-7. Tanaman biasa memiliki batas maksimal 10 hari.
+7. Tanaman biasa memiliki batas maksimal standar 10 hari.
 8. Tanaman spiritual memiliki batas maksimal standar 60 hari.
 9. Jangan membuat hidden time skip.
 10. Jangan menjamin hasil panen sempurna.
