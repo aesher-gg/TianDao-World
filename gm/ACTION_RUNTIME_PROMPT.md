@@ -1,5 +1,16 @@
 # ACTION RUNTIME PROMPT — TIANDAO-WORLD
 
+## CURRENT SAVE AUTHORITY
+
+**Untuk Ryxian / CHAR-0001, current save aktif adalah `characters/players/CHAR-0001.md` — Save Version 6, Verified Gameplay Save Point, 1200 Era Kebangkitan — Musim Semi — Tanggal 19 Bulan Naga — Minggu — 14:45.**
+
+- `character_history/CHAR-0001_HISTORY.md` adalah **history saja**, bukan current save.
+- Metadata historis **Version 5** di Character History tidak boleh digunakan sebagai latest save.
+- Jangan pernah rollback ke Version 5 kecuali ada Admin Save Point baru yang secara eksplisit menetapkannya sebagai current.
+- Jika Current Character State dan History berbeda, **Current Character State menang**.
+- Setelah fresh fetch, verifikasi field **Save Version / Last Verified / State Status** dari Current Character State sebelum boot/resolusi.
+
+
 ## FUNGSI
 Prompt ini digunakan **SETIAP AKSI** setelah boot. Bukan untuk mengambil starting data.
 
