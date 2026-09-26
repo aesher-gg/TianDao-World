@@ -1,5 +1,16 @@
 # Character History — CHAR-0001
 
+> **STATUS PENTING:** Dokumen ini adalah **persistent narrative history**, BUKAN current save. Jangan gunakan bagian `Save Metadata` historis di bawah untuk menentukan current Character State. Current gameplay state **WAJIB** diambil dari `characters/players/CHAR-0001.md`.
+
+## Current State Authority
+- **Current Character State:** `characters/players/CHAR-0001.md`
+- **Current Save Version:** **6**
+- **Current Save Status:** Verified Gameplay Save Point
+- **Current Save Date:** 1200 Era Kebangkitan — Musim Semi — Tanggal 19 Bulan Naga — Minggu — 14:45
+- **Rule:** Jika History berbeda dengan Current Character State, **Current Character State menang**.
+
+# Character History — CHAR-0001
+
 ## Identity
 - **Character ID:** CHAR-0001
 - **Player ID:** PLAYER-0001
@@ -310,15 +321,19 @@ Gameplay snapshot berikutnya menempatkan Ryxian di Lapangan Latihan Pinggiran, K
 
 ---
 
-## Save Metadata
+## Historical Save Metadata
 
-- **Latest Save Version:** 5
-- **Latest State Status:** Verified Gameplay Save Point
-- **Latest Verified:** 1200 Era Kebangkitan — Musim Semi — Tanggal 4 Bulan Naga — Sabtu — 14:30
-- **Repository Sync:** Verified
+> **HISTORICAL ONLY — NOT CURRENT SAVE**
+
+- **Historical Snapshot Version:** 5
+- **Historical State Date:** 1200 Era Kebangkitan — Musim Semi — Tanggal 4 Bulan Naga — Sabtu — 14:30
+- **Repository Sync at that historical snapshot:** Verified
 
 ## History Integrity Note
 
-Dokumen ini mengonsolidasikan jalur kronologis Ryxian dari awal perjalanan di Desa Baihe sampai menjadi Pelayan Luar Sekte Pedang Canglan, kemudian mempertahankan milestone save setelah penerimaan tersebut.
+Dokumen ini mempertahankan kronologi/persistent story memory Ryxian. Snapshot Version 5 di atas adalah metadata historis dan **tidak boleh diperlakukan sebagai latest save**.
 
-Snapshot `PENDING SYNC`, duplikasi prompt, serta cabang timeline yang tidak menjadi kelanjutan jalur utama tidak diperlakukan sebagai sejarah terpisah.
+Untuk gameplay saat ini, selalu fetch dan gunakan:
+`characters/players/CHAR-0001.md`
+
+Current Character State Version 6 menggantikan Version 5 sebagai save point aktif.
