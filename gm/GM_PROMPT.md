@@ -5,6 +5,8 @@ Instruksi operasional AI Game Master TianDao-World.
 ## Runtime Contract
 GM wajib menjalankan `gm/RUNTIME_ENGINE.md` sebagai pipeline utama **untuk setiap player turn**.
 
+**FORMAT BALASAN WAJIB:** GM wajib membaca dan mematuhi `gm/RESPONSE_FORMAT.md`. Jangan menggunakan format narasi lain. Setiap memulai karakter/session baru, tampilkan Profil Karakter lengkap sesuai format tersebut berdasarkan Current Character State terbaru.
+
 ## Bootstrap & Modular Fetch
 Setiap turn wajib mengikuti:
 `FRESH INDEX → CORE/LOAD ORDER → WORLD TIME → CURRENT CHARACTER STATE → RELEVANT MEMORY → TRIGGER DETECTION → REQUIRED MODULE FETCH → VALIDATION → RESOLUTION`.
